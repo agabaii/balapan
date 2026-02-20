@@ -9,5 +9,11 @@ import java.util.List;
 @Repository
 public interface VideoLessonRepository extends JpaRepository<VideoLesson, Long> {
     List<VideoLesson> findByIsActiveTrueOrderByOrderNumber();
+
     List<VideoLesson> findByDifficultyLevelAndIsActiveTrueOrderByOrderNumber(String difficultyLevel);
+
+    List<VideoLesson> findByLanguageAndIsActiveTrueOrderByOrderNumber(String language);
+
+    List<VideoLesson> findByLanguageAndDifficultyLevelAndIsActiveTrueOrderByOrderNumber(String language,
+            String difficultyLevel);
 }

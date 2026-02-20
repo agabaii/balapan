@@ -15,34 +15,46 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StoryChapter {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @ManyToOne
     @JoinColumn(name = "story_id", nullable = false)
     @JsonBackReference("story-chapters")
     private Story story;
-    
+
     @Column(name = "chapter_number", nullable = false)
     private Integer chapterNumber;
-    
+
+    @Column(name = "title_kk", length = 200)
+    private String titleKk;
+
+    @Column(name = "title_ru", length = 200)
+    private String titleRu;
+
+    @Column(name = "title_en", length = 200)
+    private String titleEn;
+
     @Column(columnDefinition = "TEXT", nullable = false)
     private String textKk; // Текст на казахском
-    
+
     @Column(columnDefinition = "TEXT")
     private String textRu; // Перевод на русский
-    
+
+    @Column(columnDefinition = "TEXT")
+    private String textEn; // Перевод на английский
+
     @Column(name = "audio_url")
     private String audioUrl;
-    
+
     @Column(name = "character_name")
     private String characterName; // Имя персонажа говорящего
-    
+
     @Column(name = "character_image_url")
     private String characterImageUrl;
-    
+
     @OneToMany(mappedBy = "chapter", cascade = CascadeType.ALL)
     @JsonManagedReference("chapter-questions")
     @OrderBy("questionNumber ASC")

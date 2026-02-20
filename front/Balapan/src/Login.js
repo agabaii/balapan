@@ -4,8 +4,11 @@ import { ArrowLeft } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import apiService from './services/api';
 
+import { getTranslation } from './translations';
+
 export default function BalapanLogin() {
   const navigate = useNavigate();
+  const t = getTranslation();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -18,25 +21,31 @@ export default function BalapanLogin() {
 
     // Валидация
     if (!username || username.length < 3) {
-      setError('Username должен быть минимум 3 символа');
+      setError(t.usernameMin);
       setLoading(false);
       return;
     }
 
     if (!password || password.length < 6) {
-      setError('Пароль должен быть минимум 6 символов');
+      setError(t.passwordMin);
       setLoading(false);
       return;
     }
 
     const result = await apiService.login(username, password);
-    
+
     if (result.success) {
-      navigate('/language');
+      // Если уже есть активный курс — сразу на уроки, иначе выбор языка
+      const activeCourses = JSON.parse(localStorage.getItem('activeCourses') || '[]');
+      if (activeCourses.length > 0) {
+        navigate('/lesson');
+      } else {
+        navigate('/language');
+      }
     } else {
-      setError(result.message || 'Ошибка входа');
+      setError(result.message || t.error);
     }
-    
+
     setLoading(false);
   };
 
@@ -45,8 +54,8 @@ export default function BalapanLogin() {
       {/* Header */}
       <header className="px-6 py-4 flex justify-between items-center">
         <Link to="/">
-          <img 
-            src="/fav.png" 
+          <img
+            src="/fav.png"
             className="h-18 cursor-pointer hover:opacity-80 transition"
             alt="Balapan Logo"
           />
@@ -62,7 +71,7 @@ export default function BalapanLogin() {
       <div className="max-w-lg mx-auto px-8 py-16">
         {/* Title */}
         <h1 className="text-2xl font-semibold text-gray-800 text-center mb-10">
-          Уже есть аккаунт?
+          {t.haveAccount}
         </h1>
 
         {error && (
@@ -75,13 +84,13 @@ export default function BalapanLogin() {
           {/* Username Field */}
           <div className="mb-6">
             <label className="block text-sm font-semibold text-gray-800 mb-2">
-              Username:
+              {t.username}:
             </label>
             <input
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="Введите username"
+              placeholder={t.username}
               className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg bg-white text-gray-800"
               disabled={loading}
             />
@@ -90,13 +99,13 @@ export default function BalapanLogin() {
           {/* Password Field */}
           <div className="mb-10">
             <label className="block text-sm font-semibold text-gray-800 mb-2">
-              Password:
+              {t.password}:
             </label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Введите пароль"
+              placeholder={t.password}
               className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg bg-white text-gray-800"
               disabled={loading}
             />
@@ -108,13 +117,13 @@ export default function BalapanLogin() {
             disabled={loading}
             className="block w-full bg-pink-300 hover:bg-pink-400 text-white font-bold py-4 px-8 rounded-2xl transition shadow-[0_4px_0_0_#C54554] text-center mb-4 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {loading ? 'ВХОД...' : 'ПРОДОЛЖИТЬ'}
+            {loading ? t.wait : t.continue}
           </button>
         </form>
 
         {/* Forgot Password Link */}
         <Link to="/password" className="block text-center text-sm text-gray-500">
-          Забыли пароль? <span className="text-pink-300 font-semibold">Восстановить</span>
+          {t.dontHaveAccount} <Link to="/register"><span className="text-pink-300 font-semibold">{t.register}</span></Link>
         </Link>
       </div>
     </div>

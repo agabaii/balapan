@@ -2,9 +2,14 @@ import { Home, Headphones, Play, BookOpen } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import apiService from './services/api';
+import { getTranslation } from './translations';
+import { useApp } from './context/AppContext';
+import TopBar from './TopBar';
+
 
 export default function Lessons() {
   const navigate = useNavigate();
+  const { currentCourseId, interfaceLang } = useApp();
   const [courseData, setCourseData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [userData, setUserData] = useState(null);
@@ -17,9 +22,14 @@ export default function Lessons() {
   useEffect(() => {
     loadCourseAndUser();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [currentCourseId]);
+
 
   const loadCourseAndUser = async () => {
+    setLoading(true);
+    setCurrentLevelIndex(0);
+    setCurrentPage(0);
+
     const userResult = await apiService.getUserProfile();
     if (userResult.success) {
       setUserData(userResult.user);
@@ -33,7 +43,7 @@ export default function Lessons() {
       setCompletedLessons(completed);
     }
 
-    const courseId = localStorage.getItem('selectedCourseId');
+    const courseId = currentCourseId || localStorage.getItem('selectedCourseId');
     if (!courseId) {
       navigate('/language');
       return;
@@ -47,12 +57,15 @@ export default function Lessons() {
     setLoading(false);
   };
 
+
+  const t = getTranslation(interfaceLang);
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FFFECF' }}>
         <div className="text-center">
           <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-pink-400 mx-auto mb-4"></div>
-          <p className="text-gray-700 font-medium">Загрузка курса...</p>
+          <p className="text-gray-700 font-medium">{t.loading}</p>
         </div>
       </div>
     );
@@ -62,9 +75,9 @@ export default function Lessons() {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FFFECF' }}>
         <div className="text-center">
-          <p className="text-gray-700 font-medium mb-4">Курс не найден</p>
+          <p className="text-gray-700 font-medium mb-4">{t.coursesNotFound}</p>
           <Link to="/language" className="text-pink-400 hover:underline">
-            Вернуться к выбору курса
+            {t.back}
           </Link>
         </div>
       </div>
@@ -160,30 +173,7 @@ export default function Lessons() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#FFFECF' }}>
-      <header className="px-6 py-4 flex justify-between items-center">
-        <Link to="/">
-          <img
-            src="/fav.png"
-            className="h-18 cursor-pointer hover:opacity-80 transition"
-            alt="Balapan Logo"
-          />
-        </Link>
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2 rounded-full px-4 py-2">
-            <span className="text-2xl">🔥</span>
-            <span className="font-bold text-orange-500 text-lg">
-              {userData?.currentStreak || 0}
-            </span>
-          </div>
-          <Link to="/Profile">
-            <img
-              src="/ava.jpg"
-              className="w-10 h-10 rounded-full object-cover"
-              alt="Avatar"
-            />
-          </Link>
-        </div>
-      </header>
+      <TopBar userData={userData} />
 
       <div className="flex">
         <div className="w-48 px-4 py-6 space-y-2">
@@ -193,23 +183,7 @@ export default function Lessons() {
             style={{ backgroundColor: '#FFE0F0', color: '#F9ADD1' }}
           >
             <Home size={20} style={{ color: '#F9ADD1' }} />
-            <span>ИЗУЧЕНИЕ</span>
-          </Link>
-          <Link
-            to="/podcasts"
-            className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition"
-            style={{ color: '#A0A0FF' }}
-          >
-            <Headphones size={20} style={{ color: '#A0A0FF' }} />
-            <span>ПОДКАСТЫ</span>
-          </Link>
-          <Link
-            to="/videos"
-            className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition"
-            style={{ color: '#A0A0FF' }}
-          >
-            <Play size={20} style={{ color: '#A0A0FF' }} />
-            <span>ВИДЕО</span>
+            <span>{t.navHome}</span>
           </Link>
           <Link
             to="/stories"
@@ -217,7 +191,23 @@ export default function Lessons() {
             style={{ color: '#A0A0FF' }}
           >
             <BookOpen size={20} style={{ color: '#A0A0FF' }} />
-            <span>ИСТОРИИ</span>
+            <span>{t.navStories}</span>
+          </Link>
+          <Link
+            to="/videos"
+            className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition"
+            style={{ color: '#A0A0FF' }}
+          >
+            <Play size={20} style={{ color: '#A0A0FF' }} />
+            <span>{t.navVideos}</span>
+          </Link>
+          <Link
+            to="/podcasts"
+            className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition"
+            style={{ color: '#A0A0FF' }}
+          >
+            <Headphones size={20} style={{ color: '#A0A0FF' }} />
+            <span>{t.navPodcasts}</span>
           </Link>
         </div>
 
@@ -229,16 +219,16 @@ export default function Lessons() {
                   onClick={goToPreviousLevel}
                   disabled={currentLevelIndex === 0}
                   className={`px-4 py-2 rounded-full text-sm font-bold transition ${currentLevelIndex === 0
-                      ? 'opacity-30 cursor-not-allowed text-gray-400'
-                      : 'bg-pink-200 hover:bg-pink-300 text-gray-800'
+                    ? 'opacity-30 cursor-not-allowed text-gray-400'
+                    : 'bg-pink-200 hover:bg-pink-300 text-gray-800'
                     }`}
                 >
-                  ← Предыдущий
+                  ← {t.prevLevelBtn}
                 </button>
 
                 <div className="text-center flex-1">
                   <div className="text-xs font-bold mb-1" style={{ color: '#A0A0FF' }}>
-                    Уровень {currentLevel.levelNumber} из {totalLevels}
+                    {t.level} {currentLevel.levelNumber} {t.outOf} {totalLevels}
                   </div>
                   <h2 className="text-2xl font-black" style={{ color: '#A0A0FF' }}>
                     {currentLevel.title}
@@ -249,11 +239,11 @@ export default function Lessons() {
                   onClick={goToNextLevel}
                   disabled={currentLevelIndex === totalLevels - 1}
                   className={`px-4 py-2 rounded-full text-sm font-bold transition ${currentLevelIndex === totalLevels - 1
-                      ? 'opacity-30 cursor-not-allowed text-gray-400'
-                      : 'bg-pink-200 hover:bg-pink-300 text-gray-800'
+                    ? 'opacity-30 cursor-not-allowed text-gray-400'
+                    : 'bg-pink-200 hover:bg-pink-300 text-gray-800'
                     }`}
                 >
-                  Следующий →
+                  {t.nextLevelBtn} →
                 </button>
               </div>
 
@@ -263,11 +253,11 @@ export default function Lessons() {
 
               <div className="flex items-center justify-center gap-4 mt-4">
                 <span className="text-sm font-bold" style={{ color: '#A0A0FF' }}>
-                  {lessons.length} {lessons.length === 1 ? 'урок' : 'уроков'}
+                  {lessons.length} {lessons.length === 1 ? t.lessonCount1 : t.lessonCountMany}
                 </span>
                 <span className="text-sm" style={{ color: '#A0A0FF' }}>•</span>
                 <span className="text-sm font-bold" style={{ color: '#A0A0FF' }}>
-                  Страница {currentPage + 1} из {totalPages}
+                  {t.page} {currentPage + 1} {t.outOf} {totalPages}
                 </span>
               </div>
             </div>
@@ -294,13 +284,13 @@ export default function Lessons() {
                           color: '#F9ADD1',
                           boxShadow: '0 4px 0 0 #FFFB57'
                         }}>
-                        НАЧАТЬ
+                        {t.start}
                       </div>
                     )}
 
                     {!lessonItem.unlocked && clickedLockedLesson === lessonItem.id && (
                       <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 bg-gray-700 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap z-20">
-                        {isCurrentLevelUnlocked ? 'Пройди предыдущие уроки' : 'Пройди все уроки предыдущего уровня'}
+                        {isCurrentLevelUnlocked ? t.lockedPrevious : t.lockedPrevLevel}
                       </div>
                     )}
 
@@ -317,8 +307,8 @@ export default function Lessons() {
                         }
                       }}
                       className={`relative w-28 h-28 rounded-full flex items-center justify-center transition-all ${lessonItem.unlocked
-                          ? 'hover:scale-105 cursor-pointer'
-                          : 'cursor-not-allowed grayscale'
+                        ? 'hover:scale-105 cursor-pointer'
+                        : 'cursor-not-allowed grayscale'
                         }`}
                       style={lessonItem.unlocked ? {
                         backgroundColor: '#FFDAEC',
@@ -364,11 +354,11 @@ export default function Lessons() {
                   onClick={goToPreviousPage}
                   disabled={currentPage === 0}
                   className={`px-6 py-3 rounded-xl font-bold text-sm transition ${currentPage === 0
-                      ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                      : 'bg-pink-300 hover:bg-pink-400 text-white shadow-[0_4px_0_0_#C54554]'
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : 'bg-pink-300 hover:bg-pink-400 text-white shadow-[0_4px_0_0_#C54554]'
                     }`}
                 >
-                  ← Назад
+                  ← {t.prevBtn}
                 </button>
 
                 <div className="flex gap-2">
@@ -394,11 +384,11 @@ export default function Lessons() {
                   onClick={goToNextPage}
                   disabled={currentPage === totalPages - 1}
                   className={`px-6 py-3 rounded-xl font-bold text-sm transition ${currentPage === totalPages - 1
-                      ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                      : 'bg-pink-300 hover:bg-pink-400 text-white shadow-[0_4px_0_0_#C54554]'
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : 'bg-pink-300 hover:bg-pink-400 text-white shadow-[0_4px_0_0_#C54554]'
                     }`}
                 >
-                  Далее →
+                  {t.nextBtn} →
                 </button>
               </div>
             )}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { getTranslation } from './translations';
 
 export default function BalapanLanding() {
   const [currentLanguageIndex, setCurrentLanguageIndex] = useState(0);
@@ -18,76 +19,7 @@ export default function BalapanLanding() {
     en: 'Site language: English'
   };
 
-  const translations = {
-    ru: {
-      hero: 'Изучаем языки вместе с Балапан!',
-      startLearning: 'НАЧАТЬ ИЗУЧЕНИЕ',
-      haveAccount: 'У МЕНЯ УЖЕ ЕСТЬ АККАУНТ',
-      aboutTitle: 'Казахский язык и не только. Начинайте как Балапан!',
-      aboutText: 'С Балапан вы освоите базовые фразы и грамматику за считанные дни. Мы разработали короткие, эффективные уроки, которые превратят учебу в захватывающую игру. Зарабатывайте награды, открывайте достижения и общайтесь свободно, как никогда раньше',
-      howTitle: 'Как это работает?',
-      step1: 'Начни с нуля',
-      step2: 'Учись каждый день',
-      step3: 'Расти вместе',
-      ctaTitle: 'Языки с Балапан',
-      ctaButton: 'НАЧАТЬ',
-      footerAbout: 'About us',
-      footerCourses: 'Курсы',
-      footerSupport: 'Поддержка',
-      footerProducts: 'Продукты',
-      footerPodcasts: 'Подкасты',
-      footerHelp: 'Помощь',
-      footerFaq: 'Частые вопросы',
-      footerPrivacy: 'конфиденциальность',
-      footerLanguages: 'Языки:'
-    },
-    kk: {
-      hero: 'Балапанмен бірге тілдерді үйренеміз!',
-      startLearning: 'ОҚУДЫ БАСТАУ',
-      haveAccount: 'МЕНІҢ АККАУНТЫМ БАР',
-      aboutTitle: 'Қазақ тілі және басқалары. Балапан ретінде бастаңыз!',
-      aboutText: 'Балапанмен сіз негізгі сөйлемдер мен грамматиканы бірнеше күнде меңгересіз. Біз оқуды қызықты ойынға айналдыратын қысқа, тиімді сабақтар әзірледік. Сыйлықтар жинаңыз, жетістіктерді ашыңыз және бұрын-соңды болмаған еркін сөйлесіңіз',
-      howTitle: 'Бұл қалай жұмыс істейді?',
-      step1: 'Нөлден бастаңыз',
-      step2: 'Күн сайын үйреніңіз',
-      step3: 'Бірге өсіңіз',
-      ctaTitle: 'Балапанмен тілдер',
-      ctaButton: 'БАСТАУ',
-      footerAbout: 'Біз туралы',
-      footerCourses: 'Курстар',
-      footerSupport: 'Қолдау',
-      footerProducts: 'Өнімдер',
-      footerPodcasts: 'Подкасттар',
-      footerHelp: 'Көмек',
-      footerFaq: 'Жиі қойылатын сұрақтар',
-      footerPrivacy: 'Құпиялылық',
-      footerLanguages: 'Тілдер:'
-    },
-    en: {
-      hero: 'Learn languages with Balapan!',
-      startLearning: 'START LEARNING',
-      haveAccount: 'I ALREADY HAVE AN ACCOUNT',
-      aboutTitle: 'Kazakh language and more. Start like Balapan!',
-      aboutText: 'With Balapan you will master basic phrases and grammar in just days. We have developed short, effective lessons that will turn learning into an exciting game. Earn rewards, unlock achievements and communicate freely like never before',
-      howTitle: 'How does it work?',
-      step1: 'Start from scratch',
-      step2: 'Learn every day',
-      step3: 'Grow together',
-      ctaTitle: 'Languages with Balapan',
-      ctaButton: 'START',
-      footerAbout: 'About us',
-      footerCourses: 'Courses',
-      footerSupport: 'Support',
-      footerProducts: 'Products',
-      footerPodcasts: 'Podcasts',
-      footerHelp: 'Help',
-      footerFaq: 'FAQ',
-      footerPrivacy: 'Privacy',
-      footerLanguages: 'Languages:'
-    }
-  };
-
-  const t = translations[selectedInterfaceLanguage];
+  const t = getTranslation();
 
   const handleLanguageChange = (langCode) => {
     setSelectedInterfaceLanguage(langCode);

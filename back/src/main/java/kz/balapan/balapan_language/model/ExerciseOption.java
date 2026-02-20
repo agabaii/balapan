@@ -12,22 +12,25 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ExerciseOption {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @ManyToOne
     @JoinColumn(name = "exercise_id", nullable = false)
     @JsonBackReference("exercise-options")
     private Exercise exercise;
-    
+
     @Column(name = "option_text", nullable = false, columnDefinition = "TEXT")
     private String optionText;
-    
+
     @Column(name = "is_correct")
     private Boolean isCorrect = false;
-    
+
     @Column(name = "option_order", nullable = false)
     private Integer optionOrder;
+
+    @Column(name = "audio_url")
+    private String audioUrl;
 }

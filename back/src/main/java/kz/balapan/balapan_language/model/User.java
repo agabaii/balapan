@@ -54,7 +54,7 @@ public class User {
     private String verificationCode;
 
     @Column(name = "is_verified")
-    private boolean isVerified = false;
+    private Boolean isVerified = false;
 
     @PrePersist
     protected void onCreate() {

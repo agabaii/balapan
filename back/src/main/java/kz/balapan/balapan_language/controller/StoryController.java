@@ -15,30 +15,31 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/stories")
 public class StoryController {
-    
+
     @Autowired
     private StoryService storyService;
-    
+
     /**
      * Получить все активные истории
      * GET /api/stories
      */
     @GetMapping
-    public ResponseEntity<List<Story>> getAllStories() {
-        List<Story> stories = storyService.getAllActiveStories();
+    public ResponseEntity<List<Story>> getAllStories(@RequestParam(required = false) String language) {
+        List<Story> stories = storyService.getAllActiveStories(language);
         return ResponseEntity.ok(stories);
     }
-    
+
     /**
      * Получить истории по уровню сложности
      * GET /api/stories/difficulty/{level}
      */
     @GetMapping("/difficulty/{level}")
-    public ResponseEntity<List<Story>> getStoriesByDifficulty(@PathVariable String level) {
-        List<Story> stories = storyService.getStoriesByDifficulty(level);
+    public ResponseEntity<List<Story>> getStoriesByDifficulty(@PathVariable String level,
+            @RequestParam(required = false) String language) {
+        List<Story> stories = storyService.getStoriesByDifficulty(level, language);
         return ResponseEntity.ok(stories);
     }
-    
+
     /**
      * Получить конкретную историю по ID
      * GET /api/stories/{id}
@@ -46,10 +47,10 @@ public class StoryController {
     @GetMapping("/{id}")
     public ResponseEntity<?> getStoryById(@PathVariable Long id) {
         return storyService.getStoryById(id)
-            .map(ResponseEntity::ok)
-            .orElse(ResponseEntity.notFound().build());
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
-    
+
     /**
      * Начать историю
      * POST /api/stories/start
@@ -59,13 +60,13 @@ public class StoryController {
         try {
             Long userId = request.get("userId");
             Long storyId = request.get("storyId");
-            
+
             UserStoryProgress progress = storyService.startStory(userId, storyId);
-            
+
             Map<String, Object> response = new HashMap<>();
             response.put("success", true);
             response.put("progress", progress);
-            
+
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             Map<String, Object> error = new HashMap<>();
@@ -74,7 +75,7 @@ public class StoryController {
             return ResponseEntity.badRequest().body(error);
         }
     }
-    
+
     /**
      * Ответить на вопрос
      * POST /api/stories/answer
@@ -86,13 +87,13 @@ public class StoryController {
             Long storyId = request.get("storyId");
             Long questionId = request.get("questionId");
             Long answerId = request.get("answerId");
-            
+
             UserStoryProgress progress = storyService.answerQuestion(userId, storyId, questionId, answerId);
-            
+
             Map<String, Object> response = new HashMap<>();
             response.put("success", true);
             response.put("progress", progress);
-            
+
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             Map<String, Object> error = new HashMap<>();
@@ -101,7 +102,7 @@ public class StoryController {
             return ResponseEntity.badRequest().body(error);
         }
     }
-    
+
     /**
      * Завершить историю
      * POST /api/stories/complete
@@ -113,14 +114,14 @@ public class StoryController {
             Long storyId = Long.parseLong(request.get("storyId").toString());
             int correctAnswers = Integer.parseInt(request.get("correctAnswers").toString());
             int totalQuestions = Integer.parseInt(request.get("totalQuestions").toString());
-            
+
             UserStoryProgress progress = storyService.completeStory(userId, storyId, correctAnswers, totalQuestions);
-            
+
             Map<String, Object> response = new HashMap<>();
             response.put("success", true);
             response.put("progress", progress);
             response.put("xpEarned", progress.getStory().getXpReward());
-            
+
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             Map<String, Object> error = new HashMap<>();
@@ -129,7 +130,7 @@ public class StoryController {
             return ResponseEntity.badRequest().body(error);
         }
     }
-    
+
     /**
      * Получить статистику историй пользователя
      * GET /api/stories/stats/{userId}

@@ -63,7 +63,7 @@ public class UserService {
         user.setCurrentStreak(0);
         user.setLongestStreak(0);
         user.setTotalXp(0);
-        user.setVerified(false);
+        user.setIsVerified(false);
 
         // Generate verification code
         String code = String.format("%06d", new java.util.Random().nextInt(999999));
@@ -86,7 +86,7 @@ public class UserService {
         User user = userRepository.findByEmail(email.toLowerCase().trim())
                 .orElseThrow(() -> new RuntimeException("Пользователь с таким email не найден"));
 
-        if (user.isVerified()) {
+        if (Boolean.TRUE.equals(user.getIsVerified())) {
             throw new RuntimeException("Пользователь уже подтвержден");
         }
 
@@ -94,7 +94,7 @@ public class UserService {
             throw new RuntimeException("Неверный код подтверждения");
         }
 
-        user.setVerified(true);
+        user.setIsVerified(true);
         user.setVerificationCode(null);
         userRepository.save(user);
     }
@@ -107,7 +107,7 @@ public class UserService {
             throw new RuntimeException("Неверный username или пароль");
         }
 
-        if (!user.isVerified()) {
+        if (!Boolean.TRUE.equals(user.getIsVerified())) {
             throw new RuntimeException("Пожалуйста, подтвердите ваш email перед входом");
         }
 
@@ -120,7 +120,9 @@ public class UserService {
     }
 
     public Optional<User> findById(Long id) {
-        return userRepository.findById(id);
+        @SuppressWarnings("null")
+        Optional<User> user = userRepository.findById(id);
+        return user;
     }
 
     public List<User> getAllUsers() {
@@ -128,6 +130,7 @@ public class UserService {
     }
 
     public User updateStreak(Long userId, int streak) {
+        @SuppressWarnings("null")
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
@@ -140,6 +143,7 @@ public class UserService {
     }
 
     public User addXp(Long userId, int xp) {
+        @SuppressWarnings("null")
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
@@ -149,6 +153,7 @@ public class UserService {
     }
 
     public void updateLastLogin(Long userId) {
+        @SuppressWarnings("null")
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
 

@@ -19,8 +19,19 @@ export default function LessonExercise() {
   const [animateSuccess, setAnimateSuccess] = useState(false);
   const [lives, setLives] = useState(3);
   const [gameOver, setGameOver] = useState(false);
+  const [isCorrectResult, setIsCorrectResult] = useState(false);
+  const [characterImg, setCharacterImg] = useState('https://d33wubrfki0l68.cloudfront.net/6656201662927237.svg');
+
+  const characterImgs = [
+    'https://d35aaqx5ub95lt.cloudfront.net/images/owls/7113149830589632.svg', // Duo
+    'https://d35aaqx5ub95lt.cloudfront.net/images/leagues/9e49495_7b0d.svg', // Shield
+    'https://d35aaqx5ub95lt.cloudfront.net/images/character-lily.svg',
+    'https://d35aaqx5ub95lt.cloudfront.net/images/character-zari.svg',
+    'https://d35aaqx5ub95lt.cloudfront.net/images/character-junior.svg'
+  ];
 
   useEffect(() => {
+    setCharacterImg(characterImgs[Math.floor(Math.random() * characterImgs.length)]);
     loadLesson();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -140,8 +151,21 @@ export default function LessonExercise() {
 
   const sections = generateSections();
 
+  const speak = (text) => {
+    if (!text) return;
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'ru-RU'; // Для казахского обычно используется RU или TR голос как замена
+    utterance.rate = 0.9;
+    window.speechSynthesis.speak(utterance);
+  };
+
   const handleAnswerSelect = (optionIndex) => {
     if (showResult) return;
+    const currentExercise = lessonData.exercises[currentExerciseIndex];
+    if (currentExercise && currentExercise.options[optionIndex]) {
+      speak(currentExercise.options[optionIndex].optionText);
+    }
     setSelectedAnswer(optionIndex);
   };
 
@@ -149,43 +173,48 @@ export default function LessonExercise() {
     if (selectedAnswer === null) return;
 
     const currentExercise = lessonData.exercises[currentExerciseIndex];
-    const selectedOption = currentExercise.options[selectedAnswer];
+    let isCorrect = false;
 
+    if (currentExercise.exerciseType === 'write') {
+      isCorrect = (selectedAnswer || '').toString().toLowerCase().trim() === (currentExercise.correctAnswer || '').toLowerCase().trim();
+    } else if (currentExercise.exerciseType === 'sentence') {
+      const userJoined = (Array.isArray(selectedAnswer) ? selectedAnswer : [])
+        .map(idx => currentExercise.options[idx]?.optionText || '')
+        .join('');
+
+      const cleanUser = userJoined.replace(/\s+/g, '').toLowerCase();
+      const cleanCorrect = (currentExercise.correctAnswer || '').replace(/\s+/g, '').toLowerCase();
+
+      isCorrect = cleanUser === cleanCorrect;
+    } else if (currentExercise.exerciseType === 'match') {
+      // Logic for match is mostly in handleMatchClick, but we'll set isCorrect here just in case
+      isCorrect = !!selectedAnswer?.isAllMatched;
+    } else {
+      const selectedOption = currentExercise.options[selectedAnswer];
+      isCorrect = selectedOption ? selectedOption.isCorrect : false;
+    }
+
+    setIsCorrectResult(isCorrect);
     setShowResult(true);
 
-    if (selectedOption.isCorrect) {
+    if (isCorrect) {
       setCorrectAnswers(correctAnswers + 1);
       setAnimateSuccess(true);
+      if (currentExercise.exerciseType !== 'write') {
+        speak(currentExercise.options[selectedAnswer].optionText);
+      } else {
+        speak(selectedAnswer);
+      }
     } else {
       setAnimateError(true);
       const newLives = lives - 1;
       setLives(newLives);
       if (newLives === 0) {
         setGameOver(true);
-        setTimeout(() => {
-          window.location.reload();
-        }, 2000);
         return;
       }
     }
     setTimeout(() => { setAnimateError(false); setAnimateSuccess(false); }, 500);
-
-    setTimeout(() => {
-      const currentSectionIndex = sections.findIndex(s => s.id === currentSection);
-      if (currentSectionIndex < sections.length - 1) {
-        // Переход к следующей секции
-        const nextSection = sections[currentSectionIndex + 1];
-        setCurrentSection(nextSection.id);
-        if (nextSection.type === 'exercise') {
-          setCurrentExerciseIndex(nextSection.exerciseIndex);
-        }
-        setSelectedAnswer(null);
-        setShowResult(false);
-      } else {
-        // Завершаем урок
-        handleCompleteLesson();
-      }
-    }, 1500);
   };
 
   const handleCompleteLesson = async () => {
@@ -240,13 +269,14 @@ export default function LessonExercise() {
         setCurrentExerciseIndex(nextSection.exerciseIndex);
         setSelectedAnswer(null);
         setShowResult(false);
+        setIsCorrectResult(false);
       }
     } else {
       handleCompleteLesson();
     }
   };
 
-  const renderContent = () => {
+  const renderContent = (characterImg) => {
     if (!lessonData) return null;
 
     const section = sections.find(s => s.id === currentSection);
@@ -255,73 +285,87 @@ export default function LessonExercise() {
     switch (section.type) {
       case 'theory':
         return (
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              📖 {lessonData.content.theoryTitle || 'Теория'}
-            </h2>
-            <p className="text-base text-gray-800 whitespace-pre-line leading-relaxed">
-              {lessonData.content.theoryText}
-            </p>
+          <div className="animate-fade-in">
+            <div className="flex items-center gap-4 mb-8">
+              <img src={characterImg} className="w-16 h-16 object-contain" alt="Character" />
+              <h2 className="text-3xl font-black text-gray-900 uppercase tracking-tight">
+                {lessonData.content.theoryTitle || 'Теория'}
+              </h2>
+            </div>
+            <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-duo-light">
+              <p className="text-xl text-gray-800 whitespace-pre-line leading-relaxed font-medium">
+                {lessonData.content.theoryText}
+              </p>
+            </div>
           </div>
         );
 
       case 'note':
-        if (section.id === 'grammar') {
-          return (
-            <div className="bg-blue-50 p-6 rounded-xl">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">📖 Грамматика</h3>
-              <p className="text-base text-gray-800 whitespace-pre-line">
-                {lessonData.content.grammarRules}
+        const noteStyles = {
+          grammar: { bg: 'bg-blue-50', border: 'border-blue-200', text: 'text-blue-800', icon: '📝', title: 'Грамматика' },
+          examples: { bg: 'bg-green-50', border: 'border-green-200', text: 'text-green-800', icon: '💡', title: 'Примеры' },
+          tips: { bg: 'bg-yellow-50', border: 'border-yellow-200', text: 'text-yellow-800', icon: '💭', title: 'Советы' },
+          pronunciation: { bg: 'bg-pink-50', border: 'border-pink-200', text: 'text-pink-800', icon: '🗣️', title: 'Произношение' }
+        };
+        const style = noteStyles[section.id] || noteStyles.grammar;
+
+        return (
+          <div className="animate-fade-in">
+            <div className={`p-8 rounded-3xl border-2 ${style.bg} ${style.border}`}>
+              <h3 className={`text-2xl font-black mb-4 flex items-center gap-3 ${style.text}`}>
+                <span>{style.icon}</span> {style.title}
+              </h3>
+              <p className={`text-xl font-medium whitespace-pre-line leading-relaxed ${style.text}`}>
+                {section.id === 'grammar' ? lessonData.content.grammarRules :
+                  section.id === 'examples' ? lessonData.content.examples :
+                    section.id === 'tips' ? lessonData.content.tips :
+                      lessonData.content.pronunciationGuide}
               </p>
             </div>
-          );
-        } else if (section.id === 'examples') {
-          return (
-            <div className="bg-green-50 p-6 rounded-xl">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">💡 Примеры</h3>
-              <p className="text-base text-gray-800 whitespace-pre-line">
-                {lessonData.content.examples}
-              </p>
+            <div className="mt-8 flex justify-center transform transition hover:scale-110">
+              <img src={characterImg} className="w-32 h-32 object-contain" alt="Character" />
             </div>
-          );
-        } else if (section.id === 'tips') {
-          return (
-            <div className="bg-yellow-50 p-6 rounded-xl">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">💭 Советы</h3>
-              <p className="text-base text-gray-800 whitespace-pre-line">
-                {lessonData.content.tips}
-              </p>
-            </div>
-          );
-        } else if (section.id === 'pronunciation') {
-          return (
-            <div className="bg-pink-50 p-6 rounded-xl">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">🗣️ Произношение</h3>
-              <p className="text-base text-gray-800 whitespace-pre-line">
-                {lessonData.content.pronunciationGuide}
-              </p>
-            </div>
-          );
-        }
-        break;
+          </div>
+        );
 
       case 'exercise':
         const exercise = lessonData.exercises[section.exerciseIndex];
 
+        // Duolingo-style Character Speech Bubble
+        const renderQuestionHeader = (question, audio) => (
+          <div className="flex items-end gap-6 mb-8 mt-4 animate-pop">
+            <div className="w-24 h-24 flex-shrink-0">
+              <img src={characterImg} className="w-full h-full object-contain" alt="Character" />
+            </div>
+            <div className="relative bg-white border-2 border-gray-200 rounded-2xl p-5 shadow-duo-light flex-1">
+              <div className="absolute left-[-9px] bottom-6 w-4 h-4 bg-white border-l-2 border-b-2 border-gray-200 rotate-45"></div>
+              <h3 className="text-xl font-bold text-gray-800 leading-tight">
+                {question}
+              </h3>
+              {audio && (
+                <button
+                  onClick={() => speak(question)}
+                  className="mt-3 text-blue-500 hover:text-blue-600 flex items-center gap-2 font-bold transition transform active:scale-95"
+                >
+                  <div className="p-1.5 bg-blue-100 rounded-lg">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm tracking-wide">ПРОСЛУШАТЬ</span>
+                </button>
+              )}
+            </div>
+          </div>
+        );
+
         // --- MATCHING TYPE ---
         if (exercise.exerciseType === 'match') {
-          // Parse pairs: "A=B"
-          // We need state for matching. Ideally we should move this to a sub-component, 
-          // but for now we implement inline or assume simple state.
-          // Since we need complex state, let's use a simple approach: 
-          // Click left item, then click right item.
-
           if (!exercise.pairsParsed) {
             exercise.pairsParsed = exercise.options.map(opt => {
               const parts = opt.optionText.split('=');
               return { id: opt.id, left: parts[0], right: parts[1], original: opt };
             });
-            // Shuffle right side
             exercise.leftItems = exercise.pairsParsed.map(p => ({ id: p.id, text: p.left, matched: false }));
             exercise.rightItems = [...exercise.pairsParsed]
               .sort(() => Math.random() - 0.5)
@@ -330,30 +374,34 @@ export default function LessonExercise() {
 
           const handleMatchClick = (side, item) => {
             if (showResult || item.matched) return;
-
             if (side === 'left') {
               setSelectedAnswer({ ...selectedAnswer, left: item });
             } else {
-              if (!selectedAnswer?.left) return;
+              // Check if the pair is correct based on original pairs
+              const leftText = selectedAnswer.left.text;
+              const rightText = item.text;
 
-              // Check match
-              const isCorrect = selectedAnswer.left.id === item.id;
+              const isCorrect = exercise.pairsParsed.some(p =>
+                (p.left === leftText && p.right === rightText) ||
+                (p.left === rightText && p.right === leftText)
+              );
 
               if (isCorrect) {
-                // Mark as matched
-                exercise.leftItems.find(i => i.id === item.id).matched = true;
-                exercise.rightItems.find(i => i.id === item.id).matched = true;
+                // Find IDs of items that match these texts to mark them as matched
+                // We mark the specific ones selected, but could also mark all identical ones? 
+                // Let's just mark the ones that were successfully matched.
+                // Actually, the current ID system is safer for internal tracking.
+                exercise.leftItems.find(i => i.text === leftText && !i.matched).matched = true;
+                exercise.rightItems.find(i => i.text === rightText && !i.matched).matched = true;
                 setSelectedAnswer(null);
-
-                // Check if all matched
                 if (exercise.leftItems.every(i => i.matched)) {
                   setCorrectAnswers(correctAnswers + 1);
                   setAnimateSuccess(true);
+                  setIsCorrectResult(true);
                   setShowResult(true);
-                  setTimeout(() => { setAnimateSuccess(false); handleNextSection(); }, 1500);
+                  setTimeout(() => { setAnimateSuccess(false); handleNextSection(); }, 2500);
                 }
               } else {
-                // Wrong match visual feedback?
                 setAnimateError(true);
                 const newLives = lives - 1;
                 setLives(newLives);
@@ -361,8 +409,6 @@ export default function LessonExercise() {
                 if (newLives === 0) {
                   setGameOver(true);
                   setTimeout(() => window.location.reload(), 2000);
-                } else {
-                  alert('Неверно! Попробуйте снова.');
                 }
                 setSelectedAnswer(null);
               }
@@ -372,7 +418,6 @@ export default function LessonExercise() {
           return (
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-6">{exercise.questionText}</h3>
-
               <div className="grid grid-cols-2 gap-8">
                 <div className="space-y-4">
                   {exercise.leftItems.map(item => (
@@ -410,19 +455,11 @@ export default function LessonExercise() {
 
         // --- SENTENCE BUILDER ---
         if (exercise.exerciseType === 'sentence') {
-          // State: builtSentence (array of words)
-          // We reuse selectedAnswer as the array of selected word INDICES from options
-          // Initially selectedAnswer needs to be []
-          if (!selectedAnswer && !showResult) {
-            // We need to initialize it differently than 'null'
-            // but we can check if it's an array
-          }
-
           const currentSelection = Array.isArray(selectedAnswer) ? selectedAnswer : [];
 
           const handleWordClick = (word, index) => {
             if (showResult) return;
-            // Add word index to selection
+            speak(word.optionText);
             if (!currentSelection.includes(index)) {
               setSelectedAnswer([...currentSelection, index]);
             }
@@ -433,31 +470,9 @@ export default function LessonExercise() {
             setSelectedAnswer(currentSelection.filter(i => i !== indexToRemove));
           };
 
-          const handleCheckSentence = () => {
-            const builtSentence = currentSelection.map(i => exercise.options[i].optionText).join(' ');
-            const isCorrect = builtSentence === exercise.correctAnswer;
-
-            setShowResult(true);
-            if (isCorrect) {
-              setCorrectAnswers(correctAnswers + 1);
-              setAnimateSuccess(true);
-              setTimeout(() => { setAnimateSuccess(false); handleNextSection(); }, 2000);
-            } else {
-              setAnimateError(true);
-              const newLives = lives - 1;
-              setLives(newLives);
-              setTimeout(() => setAnimateError(false), 500);
-              if (newLives === 0) {
-                setGameOver(true);
-                setTimeout(() => window.location.reload(), 2000);
-              }
-            }
-          };
-
           return (
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-6">{exercise.questionText}</h3>
-
               <div className="min-h-[80px] bg-gray-100 rounded-xl p-4 mb-6 flex flex-wrap gap-2">
                 {currentSelection.map((wordIndex, i) => (
                   <button
@@ -469,7 +484,6 @@ export default function LessonExercise() {
                   </button>
                 ))}
               </div>
-
               <div className="flex flex-wrap gap-3 justify-center">
                 {exercise.options.map((option, index) => (
                   <button
@@ -486,50 +500,41 @@ export default function LessonExercise() {
                   </button>
                 ))}
               </div>
+            </div>
+          );
+        }
 
-              {!showResult && (
-                <button
-                  onClick={handleCheckSentence}
-                  disabled={currentSelection.length === 0}
-                  className="w-full mt-8 bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-2xl transition shadow-[0_4px_0_0_#166534]"
-                >
-                  ПРОВЕРИТЬ
-                </button>
-              )}
-
-              {showResult && (
-                <div className={`mt-6 p-4 rounded-xl text-center ${currentSelection.map(i => exercise.options[i].optionText).join(' ') === exercise.correctAnswer
-                  ? 'bg-green-100 text-green-800'
-                  : 'bg-red-100 text-red-800'
-                  } ${animateSuccess ? 'animate-pop' : ''} ${animateError ? 'animate-shake' : ''}`}>
-                  {currentSelection.map(i => exercise.options[i].optionText).join(' ') === exercise.correctAnswer ? (
-                    <div className="text-xl font-bold">✅ Правильно!</div>
-                  ) : (
-                    <div>
-                      <div className="font-bold">❌ Неправильно</div>
-                      <div className="text-sm mt-1">Правильный ответ: {exercise.correctAnswer}</div>
-                    </div>
-                  )}
-                </div>
-              )}
+        // --- WRITE TYPE ---
+        if (exercise.exerciseType === 'write') {
+          return (
+            <div className="w-full">
+              {renderQuestionHeader(exercise.questionText)}
+              <div className="mb-6">
+                <input
+                  type="text"
+                  autoFocus
+                  placeholder="Введите ответ"
+                  value={selectedAnswer || ''}
+                  onChange={(e) => setSelectedAnswer(e.target.value)}
+                  disabled={showResult}
+                  className={`w-full p-6 text-xl font-bold bg-white border-b-4 rounded-2xl transition outline-none
+                    ${showResult
+                      ? (selectedAnswer?.toLowerCase().trim() === exercise.correctAnswer.toLowerCase().trim()
+                        ? 'border-green-500 bg-green-50 text-green-700'
+                        : 'border-red-500 bg-red-50 text-red-700')
+                      : 'border-gray-200 focus:border-blue-400 focus:bg-blue-50'
+                    }`}
+                />
+              </div>
             </div>
           );
         }
 
         // --- DEFAULT (MULTIPLE CHOICE) ---
         return (
-          <div>
-            <div className="mb-4">
-              <span className="text-sm font-bold text-gray-600">
-                Упражнение {section.exerciseIndex + 1} из {lessonData.exercises.length}
-              </span>
-            </div>
-
-            <h3 className="text-xl font-bold text-gray-900 mb-6">
-              {exercise.questionText}
-            </h3>
-
-            <div className="space-y-3">
+          <div className="w-full">
+            {renderQuestionHeader(exercise.questionText)}
+            <div className="grid grid-cols-1 gap-3">
               {exercise.options.map((option, index) => (
                 <button
                   key={index}
@@ -548,28 +553,6 @@ export default function LessonExercise() {
                 </button>
               ))}
             </div>
-
-            {!showResult && selectedAnswer !== null && (
-              <button
-                onClick={handleCheckAnswer}
-                className="w-full mt-6 bg-pink-300 hover:bg-pink-400 text-white font-bold py-4 px-8 rounded-2xl transition shadow-[0_4px_0_0_#C54554]"
-              >
-                ПРОВЕРИТЬ
-              </button>
-            )}
-
-            {showResult && (
-              <div className={`mt-6 p-4 rounded-xl text-center ${exercise.options[selectedAnswer].isCorrect
-                ? 'bg-green-100 text-green-800'
-                : 'bg-red-100 text-red-800'
-                } ${animateSuccess ? 'animate-pop' : ''}`}>
-                {exercise.options[selectedAnswer].isCorrect ? (
-                  <span className="text-xl">✅ Правильно!</span>
-                ) : (
-                  <span className="text-xl">❌ Неправильно. Правильный ответ: {exercise.correctAnswer}</span>
-                )}
-              </div>
-            )}
           </div>
         );
 
@@ -578,7 +561,6 @@ export default function LessonExercise() {
     }
   };
 
-  // Loading state
   if (loadingLesson) {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FFFECF' }}>
@@ -590,7 +572,6 @@ export default function LessonExercise() {
     );
   }
 
-  // Error state
   if (error && !lessonData) {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FFFECF' }}>
@@ -605,7 +586,6 @@ export default function LessonExercise() {
     );
   }
 
-  // No lesson found
   if (!lessonData) {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FFFECF' }}>
@@ -620,165 +600,142 @@ export default function LessonExercise() {
   }
 
   const currentSectionIndex = sections.findIndex(s => s.id === currentSection);
-  const isLastSection = currentSectionIndex === sections.length - 1;
+  const progress = ((currentSectionIndex + (showResult ? 1 : 0)) / sections.length) * 100;
   const currentSectionData = sections[currentSectionIndex];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#FFFECF' }}>
-      {/* Header */}
-      <header className="px-6 py-4 flex justify-between items-center">
-        <Link to="/">
-          <img
-            src="/fav.png"
-            className="h-18 cursor-pointer hover:opacity-80 transition"
-            alt="Balapan Logo"
-          />
+    <div className="min-h-screen flex flex-col font-sans" style={{ backgroundColor: '#FFFFFF' }}>
+      <header className="max-w-5xl w-full mx-auto px-6 py-6 flex items-center gap-4">
+        <Link to="/lesson" className="text-gray-400 hover:text-gray-600 transition">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
+          </svg>
         </Link>
-        <div className="flex items-center gap-4">
-          {/* Lives Display */}
-          <div className="flex items-center gap-1 bg-white px-4 py-2 rounded-full shadow-sm">
-            {[...Array(3)].map((_, i) => (
-              <span key={i} className="text-2xl">
-                {i < lives ? '❤️' : '🖤'}
-              </span>
-            ))}
-          </div>
-          <Link to="/lesson" className="text-base font-bold text-gray-700 hover:text-gray-900">
-            Уроки
-          </Link>
-          <Link to="/profile">
-            <img
-              src="/ava.jpg"
-              className="w-10 h-10 rounded-full object-cover cursor-pointer hover:ring-2 hover:ring-pink-400"
-              alt="Avatar"
-            />
-          </Link>
+        <div className="flex-1 h-4 bg-gray-200 rounded-full overflow-hidden">
+          <div
+            className="h-full bg-green-500 transition-all duration-500 ease-out rounded-full"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-red-500 text-2xl font-bold">❤️</span>
+          <span className="text-red-500 text-xl font-bold">{lives}</span>
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto px-6 py-6">
-        <div className="flex gap-6">
-          {/* Main Content */}
-          <div className="flex-1">
-            {/* Lesson Header */}
-            <div className="mb-6">
-              <button
-                className="px-6 py-2 rounded-full font-bold text-sm border-2 transition"
-                style={{
-                  backgroundColor: '#FFFECF',
-                  borderColor: '#000000',
-                  color: '#000000'
-                }}
-              >
-                {lessonData.title}
-              </button>
+      <main className="flex-1 flex flex-col items-center justify-center px-4 py-8">
+        <div className="max-w-2xl w-full">
+          {!completed ? (
+            <div className="animate-fade-in">
+              {renderContent(characterImg)}
             </div>
-
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              {/* Error message if any */}
-              {error && (
-                <div className="bg-red-100 border-2 border-red-400 text-red-700 rounded-2xl p-4 mb-6">
-                  <p className="font-bold">❌ Ошибка:</p>
-                  <p className="text-sm">{error}</p>
+          ) : (
+            <div className="text-center animate-pop">
+              <div className="text-8xl mb-6">🏆</div>
+              <h1 className="text-3xl font-black text-gray-900 mb-2">УРОК ЗАВЕРШЕН!</h1>
+              <p className="text-xl text-gray-600 mb-8">Вы отлично поработали и заработали опыт.</p>
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                <div className="bg-orange-100 p-6 rounded-2xl border-2 border-orange-200">
+                  <div className="text-orange-500 font-bold uppercase text-sm mb-1">Очки опыта</div>
+                  <div className="text-3xl font-black text-orange-600">+{lessonData.xpReward} XP</div>
                 </div>
-              )}
+                <div className="bg-blue-100 p-6 rounded-2xl border-2 border-blue-200">
+                  <div className="text-blue-500 font-bold uppercase text-sm mb-1">Точность</div>
+                  <div className="text-3xl font-black text-blue-600">
+                    {Math.round((correctAnswers / (lessonData.exercises?.length || 1)) * 100)}%
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </main>
 
-              {/* Game Over Modal */}
-              {gameOver && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                  <div className="bg-white rounded-2xl p-8 max-w-md mx-4 text-center animate-pop">
-                    <div className="text-6xl mb-4">💔</div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-2">Жизни закончились!</h2>
-                    <p className="text-gray-600 mb-4">Урок начнется заново...</p>
-                    <div className="flex gap-2 justify-center">
-                      <span className="text-3xl">🖤</span>
-                      <span className="text-3xl">🖤</span>
-                      <span className="text-3xl">🖤</span>
-                    </div>
+      {!completed && (
+        <footer className={`py-6 border-t-2 ${showResult
+          ? isCorrectResult
+            ? 'bg-green-100 border-green-200'
+            : 'bg-red-100 border-red-200'
+          : 'bg-white border-gray-100'
+          }`}>
+          <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
+            <div className="flex-1">
+              {showResult && (
+                <div className="flex items-center gap-4">
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white text-2xl font-bold ${isCorrectResult
+                    ? 'bg-green-500' : 'bg-red-500'
+                    }`}>
+                    {isCorrectResult ? '✓' : '✗'}
+                  </div>
+                  <div>
+                    <h4 className={`text-xl font-black ${isCorrectResult
+                      ? 'text-green-700' : 'text-red-700'
+                      }`}>
+                      {isCorrectResult ? 'Правильно!' : 'Не совсем верно'}
+                    </h4>
+                    {!isCorrectResult && (
+                      <p className="text-red-600 font-bold">
+                        Правильный ответ: {lessonData.exercises[currentExerciseIndex]?.correctAnswer}
+                      </p>
+                    )}
                   </div>
                 </div>
               )}
-
-              {/* Render current section content */}
-              {!completed && renderContent()}
-
-              {/* Navigation button */}
-              {!completed && currentSectionData?.type !== 'exercise' && (
-                <button
-                  onClick={handleNextSection}
-                  disabled={loading}
-                  className="w-full mt-6 bg-pink-300 hover:bg-pink-400 text-white font-bold py-4 px-8 rounded-2xl transition shadow-[0_4px_0_0_#C54554] disabled:opacity-50"
-                >
-                  {isLastSection ? (loading ? '⏳ ЗАВЕРШЕНИЕ...' : 'ЗАВЕРШИТЬ УРОК') : 'ДАЛЕЕ →'}
-                </button>
-              )}
-
-              {/* Completion message */}
-              {completed && (
-                <div className="bg-green-100 border-2 border-green-400 rounded-2xl p-6 text-center">
-                  <div className="text-5xl mb-4">✅</div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    Урок завершен!
-                  </h3>
-                  <p className="text-sm text-gray-600">
-                    +{lessonData.xpReward} XP добавлено
-                  </p>
-                  {lessonData.exercises && lessonData.exercises.length > 0 && (
-                    <p className="text-sm text-gray-600 mt-2">
-                      Правильных ответов: {correctAnswers} из {lessonData.exercises.length}
-                    </p>
-                  )}
-                  <p className="text-xs text-gray-500 mt-2">
-                    Перенаправление к урокам...
-                  </p>
-                </div>
-              )}
             </div>
+            <button
+              onClick={showResult ? handleNextSection : (currentSectionData?.type === 'exercise' ? handleCheckAnswer : handleNextSection)}
+              disabled={loading || (currentSectionData?.type === 'exercise' && !showResult &&
+                (currentSectionData.exerciseType === 'match'
+                  ? true
+                  : selectedAnswer === null
+                )
+              )}
+              className={`px-12 py-4 rounded-2xl font-black text-lg transition shadow-duo uppercase tracking-wider
+                ${!showResult
+                  ? (selectedAnswer !== null || currentSectionData?.type !== 'exercise' || currentSectionData.exerciseType === 'match')
+                    ? (currentSectionData.exerciseType === 'match' ? 'bg-gray-200 text-gray-400 cursor-not-allowed shadow-none' : 'bg-green-500 text-white hover:bg-green-400')
+                    : 'bg-gray-200 text-gray-400 cursor-not-allowed shadow-none'
+                  : (isCorrectResult
+                    ? 'bg-green-500 text-white hover:bg-green-400'
+                    : 'bg-red-500 text-white hover:bg-red-400')
+                }`}
+            >
+              {loading ? '...' : (showResult ? 'Продолжить' : (currentSectionData?.type === 'exercise' ? 'Проверить' : 'Далее'))}
+            </button>
           </div>
+        </footer>
+      )}
 
-          {/* Right Sidebar */}
-          <div className="w-80">
-            <div className="rounded-2xl p-0 mb-6 relative" style={{ backgroundColor: '#FFDAEC' }}>
-              <div className="flex justify-center">
-                <img
-                  src="/mal.png"
-                  className="w-30 h-30 object-contain"
-                  alt="Chick"
-                />
-              </div>
-            </div>
-
-            <div className="rounded-2xl p-6 space-y-3" style={{ backgroundColor: '#FFDAEC' }}>
-              <h3 className="text-base font-bold text-gray-900 mb-4">Секции урока:</h3>
-              {sections.map((section, index) => (
-                <button
-                  key={section.id}
-                  onClick={() => {
-                    if (index <= currentSectionIndex || currentSectionData?.type !== 'exercise') {
-                      setCurrentSection(section.id);
-                      if (section.type === 'exercise') {
-                        setCurrentExerciseIndex(section.exerciseIndex);
-                        setSelectedAnswer(null);
-                        setShowResult(false);
-                      }
-                    }
-                  }}
-                  disabled={index > currentSectionIndex && currentSectionData?.type === 'exercise'}
-                  className={`block w-full text-left px-4 py-3 rounded-lg font-bold text-sm border-b-2 border-black transition ${section.id === currentSection
-                    ? 'bg-pink-300'
-                    : index > currentSectionIndex && currentSectionData?.type === 'exercise'
-                      ? 'opacity-50 cursor-not-allowed'
-                      : 'hover:bg-opacity-80'
-                    }`}
-                  style={{ backgroundColor: section.id === currentSection ? '#FF8EC4' : '#FFDAEC' }}
-                >
-                  {section.name}
-                </button>
-              ))}
-            </div>
+      {gameOver && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-6">
+          <div className="bg-white rounded-3xl p-10 max-w-sm w-full text-center shadow-2xl animate-pop">
+            <div className="text-7xl mb-6">💔</div>
+            <h2 className="text-3xl font-black text-gray-900 mb-4">Ой-ой!</h2>
+            <p className="text-xl text-gray-600 mb-8">У вас закончились жизни. Не сдавайтесь, попробуйте еще раз!</p>
+            <button
+              onClick={() => window.location.reload()}
+              className="w-full bg-blue-500 hover:bg-blue-400 text-white font-black py-4 rounded-2xl transition shadow-duo-blue uppercase"
+            >
+              Попробовать снова
+            </button>
           </div>
         </div>
-      </div>
+      )}
+
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        .shadow-duo { box-shadow: 0 4px 0 0 #22c55e; }
+        .shadow-duo:active { box-shadow: none; transform: translateY(4px); }
+        .shadow-duo-blue { box-shadow: 0 4px 0 0 #2563eb; }
+        .shadow-duo-blue:active { box-shadow: none; transform: translateY(4px); }
+        .shadow-duo-light { box-shadow: 0 2px 0 0 #e5e7eb; }
+        @keyframes pop { 0% { transform: scale(0.9) translateY(10px); opacity: 0; } 100% { transform: scale(1) translateY(0); opacity: 1; } }
+        .animate-pop { animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out; }
+        .shadow-duo-red { box-shadow: 0 4px 0 0 #ef4444; }
+        .shadow-duo-red:active { box-shadow: none; transform: translateY(4px); }
+      `}} />
     </div>
   );
 }

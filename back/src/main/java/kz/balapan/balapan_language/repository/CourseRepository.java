@@ -8,8 +8,12 @@ import java.util.Optional;
 
 @Repository
 public interface CourseRepository extends JpaRepository<Course, Long> {
-    
+
     Optional<Course> findByLanguageCode(String languageCode);
-    
+
+    Optional<Course> findByLanguageCodeAndSourceLanguageCode(String languageCode, String sourceLanguageCode);
+
+    List<Course> findBySourceLanguageCode(String sourceLanguageCode);
+
     List<Course> findAllByOrderByCreatedAtDesc();
 }

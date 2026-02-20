@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import jakarta.transaction.Transactional;
 
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,23 +17,23 @@ import java.util.Optional;
 
 @Service
 public class StreakService {
-    
+
     @Autowired
     private DailyActivityRepository dailyActivityRepository;
-    
+
     @Autowired
     private UserRepository userRepository;
-    
+
     /**
      * Записывает активность пользователя за сегодня
      */
     @Transactional
     public DailyActivity recordDailyActivity(Long userId, int xpEarned, int lessonsCompleted, int exercisesCompleted) {
         LocalDate today = LocalDate.now();
-        
+
         // Находим или создаем запись за сегодня
         Optional<DailyActivity> existingActivity = dailyActivityRepository.findByUserIdAndActivityDate(userId, today);
-        
+
         DailyActivity activity;
         if (existingActivity.isPresent()) {
             activity = existingActivity.get();
@@ -42,9 +41,10 @@ public class StreakService {
             activity.setLessonsCompleted(activity.getLessonsCompleted() + lessonsCompleted);
             activity.setExercisesCompleted(activity.getExercisesCompleted() + exercisesCompleted);
         } else {
+            @SuppressWarnings("null")
             User user = userRepository.findById(userId)
-                .orElseThrow(() -> new RuntimeException("User not found"));
-            
+                    .orElseThrow(() -> new RuntimeException("User not found"));
+
             activity = new DailyActivity();
             activity.setUser(user);
             activity.setActivityDate(today);
@@ -52,50 +52,49 @@ public class StreakService {
             activity.setLessonsCompleted(lessonsCompleted);
             activity.setExercisesCompleted(exercisesCompleted);
         }
-        
+
         DailyActivity savedActivity = dailyActivityRepository.save(activity);
-        
+
         // Обновляем streak
         updateStreak(userId);
-        
+
         return savedActivity;
     }
-    
+
     /**
      * Обновляет streak пользователя на основе активности
      */
     @Transactional
     public void updateStreak(Long userId) {
+        @SuppressWarnings("null")
         User user = userRepository.findById(userId)
-            .orElseThrow(() -> new RuntimeException("User not found"));
-        
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
         LocalDate today = LocalDate.now();
-        LocalDate yesterday = today.minusDays(1);
-        
-        // Проверяем активность сегодня
+        // Check activity today
         Optional<DailyActivity> todayActivity = dailyActivityRepository.findByUserIdAndActivityDate(userId, today);
-        
+
         if (!todayActivity.isPresent()) {
             // Нет активности сегодня - streak не меняется
             return;
         }
-        
+
         // Получаем последние 365 дней активности
         LocalDate yearAgo = today.minusDays(365);
         List<DailyActivity> recentActivities = dailyActivityRepository.findRecentActivities(userId, yearAgo);
-        
+
         // Подсчитываем текущий streak
         int currentStreak = calculateCurrentStreak(recentActivities, today);
-        
+
         // Обновляем пользователя
         user.setCurrentStreak(currentStreak);
         if (currentStreak > user.getLongestStreak()) {
             user.setLongestStreak(currentStreak);
         }
-        
+
         userRepository.save(user);
     }
-    
+
     /**
      * Вычисляет текущий streak на основе списка активностей
      */
@@ -103,10 +102,10 @@ public class StreakService {
         if (activities.isEmpty()) {
             return 0;
         }
-        
+
         int streak = 0;
         LocalDate checkDate = today;
-        
+
         // Идем назад по дням и считаем непрерывную последовательность
         for (DailyActivity activity : activities) {
             if (activity.getActivityDate().equals(checkDate)) {
@@ -117,34 +116,35 @@ public class StreakService {
                 break;
             }
         }
-        
+
         return streak;
     }
-    
+
     /**
      * Получает статистику streak пользователя
      */
     public Map<String, Object> getStreakStats(Long userId) {
+        @SuppressWarnings("null")
         User user = userRepository.findById(userId)
-            .orElseThrow(() -> new RuntimeException("User not found"));
-        
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
         LocalDate today = LocalDate.now();
         LocalDate weekAgo = today.minusDays(7);
         LocalDate monthAgo = today.minusDays(30);
-        
+
         // Получаем активности за последние 30 дней
         List<DailyActivity> last30Days = dailyActivityRepository.findRecentActivities(userId, monthAgo);
-        
+
         // Подсчитываем статистику
         long activeDaysThisWeek = dailyActivityRepository.countActiveDays(userId, weekAgo, today);
         long activeDaysThisMonth = dailyActivityRepository.countActiveDays(userId, monthAgo, today);
         Integer xpThisWeek = dailyActivityRepository.getTotalXpInPeriod(userId, weekAgo, today);
         Integer xpThisMonth = dailyActivityRepository.getTotalXpInPeriod(userId, monthAgo, today);
-        
+
         // Проверяем риск потери streak
         Optional<DailyActivity> todayActivity = dailyActivityRepository.findByUserIdAndActivityDate(userId, today);
         boolean streakAtRisk = !todayActivity.isPresent() && user.getCurrentStreak() > 0;
-        
+
         Map<String, Object> stats = new HashMap<>();
         stats.put("currentStreak", user.getCurrentStreak());
         stats.put("longestStreak", user.getLongestStreak());
@@ -154,10 +154,10 @@ public class StreakService {
         stats.put("xpThisWeek", xpThisWeek != null ? xpThisWeek : 0);
         stats.put("xpThisMonth", xpThisMonth != null ? xpThisMonth : 0);
         stats.put("last30DaysActivity", last30Days);
-        
+
         return stats;
     }
-    
+
     /**
      * Получает календарь активности за последние N дней
      */

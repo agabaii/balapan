@@ -8,12 +8,16 @@ import java.util.List;
 
 @Repository
 public interface StoryRepository extends JpaRepository<Story, Long> {
-    
+
     List<Story> findByIsActiveTrue();
-    
+
     List<Story> findByDifficultyLevelAndIsActiveTrue(String difficultyLevel);
-    
+
     List<Story> findByCategoryAndIsActiveTrue(String category);
-    
+
     List<Story> findByDifficultyLevelAndCategoryAndIsActiveTrue(String difficultyLevel, String category);
+
+    List<Story> findByLanguageAndIsActiveTrue(String language);
+
+    List<Story> findByLanguageAndDifficultyLevelAndIsActiveTrue(String language, String difficultyLevel);
 }

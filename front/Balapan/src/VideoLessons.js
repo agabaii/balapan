@@ -3,9 +3,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import apiService from './services/api';
 import { Home, Headphones, Play, BookOpen } from 'lucide-react';
+import { getTranslation } from './translations';
+import { useApp } from './context/AppContext';
+import TopBar from './TopBar';
+
 
 export default function VideoLessons() {
   const navigate = useNavigate();
+  const { interfaceLang } = useApp();
   const [videos, setVideos] = useState([]);
   const [userData, setUserData] = useState(null);
   const [userProgress, setUserProgress] = useState([]);
@@ -14,6 +19,7 @@ export default function VideoLessons() {
   const [currentPage, setCurrentPage] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [clickedLockedVideo, setClickedLockedVideo] = useState(null);
+
 
   const videosPerPage = 5;
 
@@ -48,6 +54,9 @@ export default function VideoLessons() {
     setLoading(false);
   };
 
+  const t = getTranslation(interfaceLang);
+
+
   const isVideoCompleted = (videoId) => {
     return userProgress.some(p => p.videoLesson.id === videoId && p.isCompleted);
   };
@@ -61,12 +70,37 @@ export default function VideoLessons() {
     }
   };
 
+  const getLanguageTitle = () => {
+    const lang = localStorage.getItem('selectedLanguage') || 'kazakh';
+    const interfaceLang = localStorage.getItem('interfaceLanguage') || 'ru';
+
+    if (interfaceLang === 'kk') {
+      switch (lang) {
+        case 'russian': return 'орыс тілінің';
+        case 'english': return 'ағылшын тілінің';
+        default: return 'қазақ тілінің';
+      }
+    } else if (interfaceLang === 'en') {
+      switch (lang) {
+        case 'russian': return 'Russian language';
+        case 'english': return 'English language';
+        default: return 'Kazakh language';
+      }
+    } else {
+      switch (lang) {
+        case 'russian': return 'русского языка';
+        case 'english': return 'английского языка';
+        default: return 'казахского языка';
+      }
+    }
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FFFECF' }}>
         <div className="text-center">
           <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-pink-400 mx-auto mb-4"></div>
-          <p className="text-gray-700 font-medium">Загрузка видео...</p>
+          <p className="text-gray-700 font-medium">{t.loading}</p>
         </div>
       </div>
     );
@@ -116,30 +150,7 @@ export default function VideoLessons() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#FFFECF' }}>
-      <header className="px-6 py-4 flex justify-between items-center" style={{ backgroundColor: '#FFFECF' }}>
-        <Link to="/">
-          <img
-            src="/fav.png"
-            className="h-18 cursor-pointer hover:opacity-80 transition"
-            alt="Balapan Logo"
-          />
-        </Link>
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2 rounded-full px-4 py-2">
-            <span className="text-2xl">🔥</span>
-            <span className="font-bold text-orange-500 text-lg">
-              {userData?.currentStreak || 0}
-            </span>
-          </div>
-          <Link to="/Profile">
-            <img
-              src="/ava.jpg"
-              className="w-10 h-10 rounded-full object-cover"
-              alt="Avatar"
-            />
-          </Link>
-        </div>
-      </header>
+      <TopBar userData={userData} />
 
       <div className="flex" style={{ backgroundColor: '#FFFECF' }}>
         <div className="w-48 px-4 py-6 space-y-2">
@@ -149,23 +160,7 @@ export default function VideoLessons() {
             style={{ color: '#A0A0FF' }}
           >
             <Home size={20} style={{ color: '#A0A0FF' }} />
-            <span>ИЗУЧЕНИЕ</span>
-          </Link>
-          <Link
-            to="/podcasts"
-            className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition"
-            style={{ color: '#A0A0FF' }}
-          >
-            <Headphones size={20} style={{ color: '#A0A0FF' }} />
-            <span>ПОДКАСТЫ</span>
-          </Link>
-          <Link
-            to="/videos"
-            className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition"
-            style={{ backgroundColor: '#FFE0F0', color: '#F9ADD1' }}
-          >
-            <Play size={20} style={{ color: '#F9ADD1' }} />
-            <span>ВИДЕО</span>
+            <span>{t.navHome}</span>
           </Link>
           <Link
             to="/stories"
@@ -173,7 +168,24 @@ export default function VideoLessons() {
             style={{ color: '#A0A0FF' }}
           >
             <BookOpen size={20} style={{ color: '#A0A0FF' }} />
-            <span>ИСТОРИИ</span>
+            <span>{t.navStories}</span>
+          </Link>
+          <Link
+            to="/videos"
+            className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition"
+            style={{ backgroundColor: '#FFE0F0', color: '#F9ADD1' }}
+          >
+            <Play size={20} style={{ color: '#F9ADD1' }} />
+            <span>{t.navVideos}</span>
+          </Link>
+
+          <Link
+            to="/podcasts"
+            className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition"
+            style={{ color: '#A0A0FF' }}
+          >
+            <Headphones size={20} style={{ color: '#A0A0FF' }} />
+            <span>{t.navPodcasts}</span>
           </Link>
         </div>
 
@@ -182,10 +194,10 @@ export default function VideoLessons() {
             <div className="rounded-2xl p-6 mb-6" style={{ backgroundColor: '#FFE0F0' }}>
               <div className="text-center">
                 <h2 className="text-2xl font-black mb-2" style={{ color: '#A0A0FF' }}>
-                  Видео-уроки казахского языка
+                  {t.watchVideos} {getLanguageTitle()}
                 </h2>
                 <p className="text-base font-medium" style={{ color: '#A0A0FF' }}>
-                  Учите через видео
+                  {t.learnThroughVideos}
                 </p>
               </div>
 
@@ -198,26 +210,26 @@ export default function VideoLessons() {
                       setCurrentPage(0);
                     }}
                     className={`px-4 py-2 rounded-full text-xs font-bold transition ${selectedDifficulty === diff
-                        ? 'bg-pink-400 text-white'
-                        : 'bg-white text-gray-700 hover:bg-gray-100'
+                      ? 'bg-pink-400 text-white'
+                      : 'bg-white text-gray-700 hover:bg-gray-100'
                       }`}
                   >
-                    {diff === 'all' ? 'ВСЕ' :
-                      diff === 'beginner' ? 'НАЧАЛЬНЫЙ' :
-                        diff === 'intermediate' ? 'СРЕДНИЙ' : 'ПРОДВИНУТЫЙ'}
+                    {diff === 'all' ? t.difficultyAll.toUpperCase() :
+                      diff === 'beginner' ? t.difficultyBeginner.toUpperCase() :
+                        diff === 'intermediate' ? t.difficultyIntermediate.toUpperCase() : t.difficultyAdvanced.toUpperCase()}
                   </button>
                 ))}
               </div>
 
               <div className="flex items-center justify-center gap-4 mt-4">
                 <span className="text-sm font-bold" style={{ color: '#A0A0FF' }}>
-                  {videos.length} видео
+                  {videos.length} {t.video}
                 </span>
                 {totalPages > 1 && (
                   <>
                     <span className="text-sm" style={{ color: '#A0A0FF' }}>•</span>
                     <span className="text-sm font-bold" style={{ color: '#A0A0FF' }}>
-                      Страница {currentPage + 1} из {totalPages}
+                      {t.page} {currentPage + 1} {t.outOf} {totalPages}
                     </span>
                   </>
                 )}
@@ -247,7 +259,7 @@ export default function VideoLessons() {
                           color: '#F9ADD1',
                           boxShadow: '0 4px 0 0 #FFFB57'
                         }}>
-                        НАЧАТЬ
+                        {t.start}
                       </div>
                     )}
 
@@ -261,7 +273,7 @@ export default function VideoLessons() {
 
                     {!video.unlocked && clickedLockedVideo === video.id && (
                       <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 bg-gray-700 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap z-20">
-                        Пройди предыдущее видео
+                        {t.lockedPreviousVideo}
                       </div>
                     )}
 
@@ -277,8 +289,8 @@ export default function VideoLessons() {
                         }
                       }}
                       className={`relative w-28 h-28 rounded-full flex items-center justify-center transition-all ${video.unlocked
-                          ? 'hover:scale-105 cursor-pointer'
-                          : 'cursor-not-allowed grayscale'
+                        ? 'hover:scale-105 cursor-pointer'
+                        : 'cursor-not-allowed grayscale'
                         }`}
                       style={video.unlocked ? {
                         backgroundColor: video.colors.bg,
@@ -301,7 +313,7 @@ export default function VideoLessons() {
                           {video.title}
                         </p>
                         <p className="text-xs text-gray-500 mt-1">
-                          ⏱️ {video.durationMinutes} мин
+                          ⏱️ {video.durationMinutes} {t.minutes}
                         </p>
                         <p className="text-xs font-bold mt-1" style={{ color: '#F9ADD1' }}>
                           +{video.xpReward} XP
@@ -327,11 +339,11 @@ export default function VideoLessons() {
                   onClick={goToPreviousPage}
                   disabled={currentPage === 0}
                   className={`px-6 py-3 rounded-xl font-bold text-sm transition ${currentPage === 0
-                      ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                      : 'bg-pink-300 hover:bg-pink-400 text-white shadow-[0_4px_0_0_#C54554]'
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : 'bg-pink-300 hover:bg-pink-400 text-white shadow-[0_4px_0_0_#C54554]'
                     }`}
                 >
-                  ← Назад
+                  ← {t.back}
                 </button>
 
                 <div className="flex gap-2">
@@ -357,11 +369,11 @@ export default function VideoLessons() {
                   onClick={goToNextPage}
                   disabled={currentPage === totalPages - 1}
                   className={`px-6 py-3 rounded-xl font-bold text-sm transition ${currentPage === totalPages - 1
-                      ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                      : 'bg-pink-300 hover:bg-pink-400 text-white shadow-[0_4px_0_0_#C54554]'
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : 'bg-pink-300 hover:bg-pink-400 text-white shadow-[0_4px_0_0_#C54554]'
                     }`}
                 >
-                  Далее →
+                  {t.nextBtn} →
                 </button>
               </div>
             )}
@@ -370,10 +382,10 @@ export default function VideoLessons() {
               <div className="text-center py-16">
                 <div className="text-6xl mb-4">🎥</div>
                 <h3 className="text-xl font-bold text-gray-700 mb-2">
-                  Нет видео для этого уровня
+                  {t.noVideosFound}
                 </h3>
                 <p className="text-gray-600">
-                  Выберите другой уровень сложности
+                  {t.chooseDifficulty}
                 </p>
               </div>
             )}

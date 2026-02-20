@@ -11,15 +11,18 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/courses")
 public class CourseController {
-    
+
     @Autowired
     private CourseService courseService;
-    
+
     @GetMapping
-    public ResponseEntity<List<Course>> getAllCourses() {
+    public ResponseEntity<List<Course>> getAllCourses(@RequestParam(required = false) String source) {
+        if (source != null && !source.isEmpty()) {
+            return ResponseEntity.ok(courseService.getCoursesBySource(source));
+        }
         return ResponseEntity.ok(courseService.getAllCourses());
     }
-    
+
     @GetMapping("/{id}")
     public ResponseEntity<Course> getCourse(@PathVariable Long id) {
         return ResponseEntity.ok(courseService.getCourseById(id));

@@ -3,9 +3,11 @@ import { useState, useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import apiService from './services/api';
+import { useApp } from './context/AppContext';
 
 export default function Language() {
   const navigate = useNavigate();
+  const { addCourse, activeCourses } = useApp();
   const [courses, setCourses] = useState([]);
   const [selectedLanguage, setSelectedLanguage] = useState('kazakh');
   const [loading, setLoading] = useState(true);
@@ -19,6 +21,7 @@ export default function Language() {
 
   useEffect(() => {
     loadCourses();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const loadCourses = async () => {
@@ -45,10 +48,18 @@ export default function Language() {
     });
 
     if (selectedCourse) {
-      localStorage.setItem('selectedCourseId', selectedCourse.id);
+      // Сохраняем в AppContext (для переключения курсов в TopBar)
+      addCourse({
+        id: selectedCourse.id,
+        languageCode: selectedCourse.languageCode,
+        title: selectedCourse.title || selectedCourse.languageCode,
+      });
       navigate('/lesson');
     }
   };
+
+  // Проверяем уже добавленный курс
+  const alreadyActive = (courseId) => activeCourses.some(c => String(c.id) === String(courseId));
 
   // Формируем список языков для отображения
   const languages = courses.map(course => {
@@ -80,16 +91,17 @@ export default function Language() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#FFFECF' }}>
-      {/* Header */}
-      <header className="px-6 py-4 flex justify-between items-center">
+      {/* Header — старый дизайн */}
+      <header className="px-6 py-4 flex justify-between items-center" style={{ backgroundColor: '#FFFECF' }}>
         <Link to="/">
           <img
             src="/fav.png"
-            className="h-18 cursor-pointer hover:opacity-80 transition"
+            style={{ height: '80px' }}
+            className="object-contain cursor-pointer hover:opacity-80 transition"
             alt="Balapan Logo"
           />
         </Link>
-        <Link to="/">
+        <Link to={activeCourses.length > 0 ? '/lesson' : '/'}>
           <button className="p-3 mr-8 bg-white rounded-full hover:bg-pink-50 transition shadow-md hover:shadow-lg">
             <ArrowLeft size={24} color="#F9ADD1" strokeWidth={2.5} />
           </button>
@@ -105,37 +117,45 @@ export default function Language() {
 
         {/* Language Cards Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          {languages.map((lang) => (
-            <button
-              key={lang.id}
-              onClick={() => !lang.disabled && setSelectedLanguage(lang.id)}
-              disabled={lang.disabled}
-              className={`relative rounded-2xl p-6 transition-all ${lang.disabled
-                ? 'opacity-50 cursor-not-allowed'
-                : 'hover:scale-105 cursor-pointer'
-                } ${selectedLanguage === lang.id
-                  ? 'ring-4 ring-pink-400'
-                  : ''
-                }`}
-              style={{ backgroundColor: lang.bgColor }}
-            >
-              <div className="flex flex-col items-center">
-                <img
-                  src={lang.image}
-                  alt={lang.name}
-                  className="w-16 h-16 object-contain mb-3"
-                />
-                <p className="text-sm font-medium text-gray-800 text-center">
-                  {lang.name}
-                </p>
-                {lang.disabled && (
-                  <span className="absolute top-2 right-2 text-xs text-gray-600 bg-white px-2 py-1 rounded">
-                    Скоро
-                  </span>
-                )}
-              </div>
-            </button>
-          ))}
+          {languages.map((lang) => {
+            const active = lang.courseId && alreadyActive(lang.courseId);
+            return (
+              <button
+                key={lang.id}
+                onClick={() => !lang.disabled && setSelectedLanguage(lang.id)}
+                disabled={lang.disabled}
+                className={`relative rounded-2xl p-6 transition-all ${lang.disabled
+                  ? 'opacity-50 cursor-not-allowed'
+                  : 'hover:scale-105 cursor-pointer'
+                  } ${selectedLanguage === lang.id
+                    ? 'ring-4 ring-pink-400'
+                    : ''
+                  }`}
+                style={{ backgroundColor: lang.bgColor }}
+              >
+                <div className="flex flex-col items-center">
+                  <img
+                    src={lang.image}
+                    alt={lang.name}
+                    className="w-16 h-16 object-contain mb-3"
+                  />
+                  <p className="text-sm font-medium text-gray-800 text-center">
+                    {lang.name}
+                  </p>
+                  {lang.disabled && (
+                    <span className="absolute top-2 right-2 text-xs text-gray-600 bg-white px-2 py-1 rounded">
+                      Скоро
+                    </span>
+                  )}
+                  {active && (
+                    <span className="absolute top-2 right-2 bg-green-400 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                      Активен
+                    </span>
+                  )}
+                </div>
+              </button>
+            );
+          })}
         </div>
 
         {languages.length === 0 && (

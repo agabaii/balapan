@@ -4,8 +4,11 @@ import { ArrowLeft } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import apiService from './services/api';
 
+import { getTranslation } from './translations';
+
 export default function Register() {
   const navigate = useNavigate();
+  const t = getTranslation();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
@@ -19,37 +22,39 @@ export default function Register() {
     setError('');
     setLoading(true);
 
+    const lang = localStorage.getItem('interfaceLanguage') || 'ru';
+
     if (step === 1) {
       // Валидация
       if (!username || username.length < 3) {
-        setError('Username должен быть минимум 3 символа');
+        setError(t.usernameMin);
         setLoading(false);
         return;
       }
 
       if (!password || password.length < 6) {
-        setError('Пароль должен быть минимум 6 символов');
+        setError(t.passwordMin);
         setLoading(false);
         return;
       }
 
       if (!email || !email.includes('@')) {
-        setError('Введите корректный email');
+        setError(t.invalidEmail);
         setLoading(false);
         return;
       }
 
-      const result = await apiService.register(username, email, password, 'ru');
+      const result = await apiService.register(username, email, password, lang);
 
       if (result.success) {
         setStep(2);
       } else {
-        setError(result.message || 'Ошибка регистрации');
+        setError(result.message || t.error);
       }
     } else {
       // Step 2: Verification
       if (!verificationCode || verificationCode.length < 6) {
-        setError('Введите корректный код (6 цифр)');
+        setError(t.invalidCode);
         setLoading(false);
         return;
       }
@@ -59,7 +64,7 @@ export default function Register() {
       if (result.success) {
         navigate('/language');
       } else {
-        setError(result.message || 'Неверный код');
+        setError(result.message || t.error);
       }
     }
 
@@ -85,7 +90,7 @@ export default function Register() {
 
       <div className="max-w-lg mx-auto px-8 py-16">
         <h1 className="text-2xl font-semibold text-gray-800 text-center mb-10">
-          {step === 1 ? 'Начинаем изучение с Балапан' : 'Подтверждение почты'}
+          {step === 1 ? t.registerTitle : t.verifyTitle}
         </h1>
 
         {error && (
@@ -99,13 +104,13 @@ export default function Register() {
             <>
               <div className="mb-6">
                 <label className="block text-sm font-semibold text-gray-800 mb-2">
-                  Username:
+                  {t.username}:
                 </label>
                 <input
                   type="text"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  placeholder="Введите username (минимум 3 символа)"
+                  placeholder={t.username}
                   className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg bg-white text-gray-800"
                   disabled={loading}
                 />
@@ -113,13 +118,13 @@ export default function Register() {
 
               <div className="mb-6">
                 <label className="block text-sm font-semibold text-gray-800 mb-2">
-                  Password:
+                  {t.password}:
                 </label>
                 <input
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Введите пароль (минимум 6 символов)"
+                  placeholder={t.password}
                   className="w-full px-4 py-3 text-base border border-gray-300 rounded-lg bg-white text-gray-800"
                   disabled={loading}
                 />
@@ -127,7 +132,7 @@ export default function Register() {
 
               <div className="mb-10">
                 <label className="block text-sm font-semibold text-gray-800 mb-2">
-                  Почта:
+                  {t.email}:
                 </label>
                 <input
                   type="email"
@@ -142,10 +147,10 @@ export default function Register() {
           ) : (
             <div className="mb-10 text-center">
               <p className="text-gray-600 mb-6">
-                Мы отправили код подтверждения на <b>{email}</b>. Проверьте вашу почту.
+                {t.verifyCodeSent} <b>{email}</b>. {t.checkEmail}
               </p>
               <label className="block text-sm font-semibold text-gray-800 mb-2 text-left">
-                Код подтверждения:
+                {t.verifyCode}:
               </label>
               <input
                 type="text"
@@ -163,12 +168,12 @@ export default function Register() {
             disabled={loading}
             className="block w-full bg-pink-300 hover:bg-pink-400 text-white font-bold py-4 px-8 rounded-2xl transition shadow-[0_4px_0_0_#C54554] text-center mb-4 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {loading ? 'ПОДОЖДИТЕ...' : step === 1 ? 'ПРОДОЛЖИТЬ' : 'ПОДТВЕРДИТЬ'}
+            {loading ? t.wait : step === 1 ? t.continue : t.confirm}
           </button>
         </form>
 
         <Link to="/login" className="block text-center text-sm text-gray-500">
-          уже есть аккаунт? <span className="text-pink-300 font-semibold">Войти</span>
+          {t.alreadyHaveAccount} <span className="text-pink-300 font-semibold">{t.login}</span>
         </Link>
       </div>
     </div>

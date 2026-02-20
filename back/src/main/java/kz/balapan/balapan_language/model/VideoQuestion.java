@@ -1,4 +1,3 @@
-// back/src/main/java/kz/balapan/balapan_language/model/StoryQuestion.java
 package kz.balapan.balapan_language.model;
 
 import jakarta.persistence.*;
@@ -10,43 +9,34 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.List;
 
 @Entity
-@Table(name = "story_questions")
+@Table(name = "video_questions")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class StoryQuestion {
+public class VideoQuestion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "chapter_id", nullable = false)
-    @JsonBackReference("chapter-questions")
-    private StoryChapter chapter;
+    @JoinColumn(name = "video_lesson_id", nullable = false)
+    @JsonBackReference("video-lesson-questions")
+    private VideoLesson videoLesson;
 
     @Column(name = "question_number", nullable = false)
     private Integer questionNumber;
 
     @Column(columnDefinition = "TEXT", nullable = false)
-    private String questionText; // Internal name or base text
-
-    @Column(name = "question_text_kk", columnDefinition = "TEXT")
-    private String questionTextKk; // Текст на казахском
-
-    @Column(columnDefinition = "TEXT")
-    private String questionTextRu;
-
-    @Column(columnDefinition = "TEXT")
-    private String questionTextEn;
+    private String questionText;
 
     @Column(name = "question_type")
-    private String questionType; // multiple_choice, true_false, fill_blank
+    private String questionType = "multiple_choice";
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
-    @JsonManagedReference("question-answers")
+    @JsonManagedReference("video-question-answers")
     @OrderBy("answerOrder ASC")
-    private List<StoryAnswer> answers;
+    private List<VideoAnswer> answers;
 
     @Column(name = "correct_answer_id")
     private Long correctAnswerId;

@@ -1,6 +1,7 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AppProvider } from './context/AppContext';
 import BalapanLanding from './BalapanLanding';
 import Register from './Register';
 import Login from './Login';
@@ -19,44 +20,52 @@ import VideoLessons from './VideoLessons';
 import VideoPlayer from './VideoPlayer';
 import Stories from './Stories';
 import StoryReader from './StoryReader';
+import AiChat from './AiChat';
+import Vocabulary from './Vocabulary';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        {/* Landing & Auth */}
-        <Route path="/" element={<BalapanLanding />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/password" element={<Password />} />
-        <Route path="/newpass" element={<Newpass />} />
+    <AppProvider>
+      <Router>
+        <Routes>
+          {/* Landing & Auth */}
+          <Route path="/" element={<BalapanLanding />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/password" element={<Password />} />
+          <Route path="/newpass" element={<Newpass />} />
 
-        {/* Language Selection */}
-        <Route path="/language" element={<Language />} />
+          {/* AI Features */}
+          <Route path="/chat" element={<AiChat />} />
+          <Route path="/vocabulary" element={<Vocabulary />} />
 
-        {/* Main Learning */}
-        <Route path="/lesson" element={<Lesson />} />
-        <Route path="/les" element={<Les />} />
-        <Route path="/set" element={<Set />} />
+          {/* Language Selection */}
+          <Route path="/language" element={<Language />} />
 
-        {/* Podcasts */}
-        <Route path="/podcasts" element={<Podcasts />} />
-        <Route path="/podcast/:podcastId" element={<PodcastPlayer />} />
-        <Route path="/podcast-video/:id" element={<PodcastVideoPlayer />} />
+          {/* Main Learning */}
+          <Route path="/lesson" element={<Lesson />} />
+          <Route path="/les" element={<Les />} />
+          <Route path="/set" element={<Set />} />
 
-        {/* Video Lessons */}
-        <Route path="/videos" element={<VideoLessons />} />
-        <Route path="/video/:videoId" element={<VideoPlayer />} />
+          {/* Podcasts */}
+          <Route path="/podcasts" element={<Podcasts />} />
+          <Route path="/podcast/:podcastId" element={<PodcastPlayer />} />
+          <Route path="/podcast-video/:id" element={<PodcastVideoPlayer />} />
 
-        {/* Stories */}
-        <Route path="/stories" element={<Stories />} />
-        <Route path="/story/:storyId" element={<StoryReader />} />
+          {/* Video Lessons */}
+          <Route path="/videos" element={<VideoLessons />} />
+          <Route path="/video/:videoId" element={<VideoPlayer />} />
 
-        {/* Profile */}
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/edit" element={<Edit />} />
-      </Routes>
-    </Router>
+          {/* Stories */}
+          <Route path="/stories" element={<Stories />} />
+          <Route path="/story/:storyId" element={<StoryReader />} />
+
+          {/* Profile */}
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/edit" element={<Edit />} />
+        </Routes>
+      </Router>
+    </AppProvider>
   );
 }
 

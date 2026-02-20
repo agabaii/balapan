@@ -167,9 +167,9 @@ class ApiService {
 
   // ==================== COURSES ====================
 
-  async getCourses() {
+  async getCourses(sourceCode = 'ru') {
     try {
-      const response = await fetch(`${API_BASE_URL}/courses`);
+      const response = await fetch(`${API_BASE_URL}/courses?source=${sourceCode}`);
       const data = await response.json();
       return { success: true, courses: data };
     } catch (error) {
@@ -279,9 +279,10 @@ class ApiService {
 
   async getVideoLessons(difficulty = 'all') {
     try {
+      const language = localStorage.getItem('selectedLanguage') || 'kazakh';
       const endpoint = difficulty === 'all'
-        ? `${this.baseURL}/videos`
-        : `${this.baseURL}/videos/difficulty/${difficulty}`;
+        ? `${this.baseURL}/videos?language=${language}`
+        : `${this.baseURL}/videos/difficulty/${difficulty}?language=${language}`;
 
       const response = await fetch(endpoint);
       const data = await response.json();
@@ -375,9 +376,10 @@ class ApiService {
 
   async getStories(difficulty = 'all') {
     try {
+      const language = localStorage.getItem('selectedLanguage') || 'kazakh';
       const endpoint = difficulty === 'all'
-        ? `${this.baseURL}/stories`
-        : `${this.baseURL}/stories/difficulty/${difficulty}`;
+        ? `${this.baseURL}/stories?language=${language}`
+        : `${this.baseURL}/stories/difficulty/${difficulty}?language=${language}`;
 
       const response = await fetch(endpoint);
       const data = await response.json();

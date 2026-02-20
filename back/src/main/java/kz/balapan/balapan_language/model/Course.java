@@ -29,6 +29,9 @@ public class Course {
     @Column(name = "language_code", nullable = false, length = 20)
     private String languageCode;
 
+    @Column(name = "source_language_code", nullable = true, length = 20)
+    private String sourceLanguageCode;
+
     @Column(columnDefinition = "TEXT")
     private String description;
 

@@ -6,7 +6,8 @@ export const podcastsData = [
         youtubeId: "p7Wxk81aOGY",
         duration: "10:00",
         description: "Первый выпуск нашего подкаста с увлекательными историями на казахском языке.",
-        xpReward: 50
+        xpReward: 50,
+        language: 'kazakh'
     },
     {
         id: 2,
@@ -15,7 +16,8 @@ export const podcastsData = [
         youtubeId: "B9FV_r7LZKQ",
         duration: "12:30",
         description: "Продолжаем изучать казахский язык через интересные рассказы.",
-        xpReward: 50
+        xpReward: 50,
+        language: 'kazakh'
     },
     {
         id: 3,
@@ -24,7 +26,8 @@ export const podcastsData = [
         youtubeId: "fob6eExuIxQ",
         duration: "15:00",
         description: "Слушаем и смотрим сказки, погружаясь в культуру.",
-        xpReward: 60
+        xpReward: 60,
+        language: 'kazakh'
     },
     {
         id: 4,
@@ -33,7 +36,8 @@ export const podcastsData = [
         youtubeId: "J1_2mc36tYM",
         duration: "08:45",
         description: "Советы на каждый день на простом и понятном казахском.",
-        xpReward: 40
+        xpReward: 40,
+        language: 'kazakh'
     },
     {
         id: 5,
@@ -42,7 +46,8 @@ export const podcastsData = [
         youtubeId: "TltWACgOowk",
         duration: "11:20",
         description: "Разговорный казахский в веселых ситуациях.",
-        xpReward: 55
+        xpReward: 55,
+        language: 'kazakh'
     },
     {
         id: 6,
@@ -51,7 +56,8 @@ export const podcastsData = [
         youtubeId: "Dz2sT_o2KGQ",
         duration: "14:15",
         description: "Исторические факты и рассказы.",
-        xpReward: 65
+        xpReward: 65,
+        language: 'kazakh'
     },
     {
         id: 7,
@@ -60,7 +66,8 @@ export const podcastsData = [
         youtubeId: "dBHgiPcz_OA",
         duration: "13:50",
         description: "Познавательный подкаст о науке.",
-        xpReward: 60
+        xpReward: 60,
+        language: 'kazakh'
     },
     {
         id: 8,
@@ -69,7 +76,8 @@ export const podcastsData = [
         youtubeId: "BMfpwT3FMLM",
         duration: "09:30",
         description: "Узнаем больше о природе Казахстана.",
-        xpReward: 45
+        xpReward: 45,
+        language: 'kazakh'
     },
     {
         id: 9,
@@ -78,7 +86,8 @@ export const podcastsData = [
         youtubeId: "JfXacjRc9U0",
         duration: "16:00",
         description: "Беседы об искусстве и культуре.",
-        xpReward: 70
+        xpReward: 70,
+        language: 'kazakh'
     },
     {
         id: 10,
@@ -87,6 +96,7 @@ export const podcastsData = [
         youtubeId: "7nyKHnsNt4M",
         duration: "10:45",
         description: "Мотивационные истории для изучения языка.",
-        xpReward: 50
+        xpReward: 50,
+        language: 'kazakh'
     }
 ];

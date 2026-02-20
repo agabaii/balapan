@@ -6,7 +6,7 @@ import apiService from './services/api';
 export default function StoryReader() {
   const { storyId } = useParams();
   const navigate = useNavigate();
-  
+
   const [story, setStory] = useState(null);
   const [currentChapterIndex, setCurrentChapterIndex] = useState(0);
   const [showTranslation, setShowTranslation] = useState(false);
@@ -25,7 +25,7 @@ export default function StoryReader() {
     const result = await apiService.getStoryById(storyId);
     if (result.success) {
       setStory(result.story);
-      
+
       // Start the story
       const userId = apiService.getCurrentUserId();
       await apiService.startStory(userId, storyId);
@@ -37,6 +37,22 @@ export default function StoryReader() {
   const hasQuestion = currentChapter?.questions?.length > 0;
   const currentQuestion = currentChapter?.questions?.[0];
 
+  // Get text in the language being studied
+  const getMainText = (chapter) => {
+    if (!chapter) return '';
+    if (story?.language === 'russian') return chapter.textRu || chapter.textKk;
+    if (story?.language === 'english') return chapter.textEn || chapter.textKk;
+    return chapter.textKk;
+  };
+
+  // Get translation text (for the "show translation" button)
+  const getTranslationText = (chapter) => {
+    if (!chapter) return '';
+    if (story?.language === 'russian') return chapter.textKk || chapter.textEn;
+    if (story?.language === 'english') return chapter.textKk || chapter.textRu;
+    return chapter.textRu;
+  };
+
   const handleAnswerSelect = (answer) => {
     setSelectedAnswer(answer);
   };
@@ -46,7 +62,7 @@ export default function StoryReader() {
 
     const isCorrect = selectedAnswer.isCorrect;
     setShowResult(true);
-    
+
     if (isCorrect) {
       setScore(prev => ({ ...prev, correct: prev.correct + 1, total: prev.total + 1 }));
     } else {
@@ -89,7 +105,7 @@ export default function StoryReader() {
 
   if (completed) {
     const percentage = score.total > 0 ? Math.round((score.correct / score.total) * 100) : 0;
-    
+
     return (
       <div className="min-h-screen flex items-center justify-center p-6" style={{ backgroundColor: '#FFFECF' }}>
         <div className="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-lg">
@@ -162,7 +178,7 @@ export default function StoryReader() {
             <span>←</span>
             <span>Назад</span>
           </button>
-          
+
           <div className="flex items-center gap-4">
             <span className="text-sm text-gray-600">
               Глава {currentChapterIndex + 1} / {story.chapters.length}
@@ -198,10 +214,10 @@ export default function StoryReader() {
             </div>
           )}
 
-          {/* Kazakh Text */}
+          {/* Main Text in the studied language */}
           <div className="mb-6">
             <p className="text-2xl leading-relaxed text-gray-900 font-medium">
-              {currentChapter?.textKk}
+              {getMainText(currentChapter)}
             </p>
           </div>
 
@@ -214,11 +230,11 @@ export default function StoryReader() {
             <span>{showTranslation ? 'Скрыть перевод' : 'Показать перевод'}</span>
           </button>
 
-          {/* Russian Translation */}
+          {/* Translation */}
           {showTranslation && (
             <div className="bg-gray-50 rounded-xl p-4 mb-6">
               <p className="text-lg text-gray-700 italic">
-                {currentChapter?.textRu}
+                {getTranslationText(currentChapter)}
               </p>
             </div>
           )}
