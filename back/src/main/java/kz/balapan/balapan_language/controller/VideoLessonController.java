@@ -64,4 +64,14 @@ public class VideoLessonController {
     public ResponseEntity<Map<String, Object>> getUserStats(@PathVariable Long userId) {
         return ResponseEntity.ok(videoLessonService.getUserVideoStats(userId));
     }
+
+    @PostMapping("/reseed")
+    public ResponseEntity<?> reseedVideos(@RequestParam(defaultValue = "false") boolean force) {
+        try {
+            videoLessonService.reseedVideoLessons();
+            return ResponseEntity.ok(Map.of("success", true, "message", "Videos reseeded successfully"));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of("success", false, "message", e.getMessage()));
+        }
+    }
 }

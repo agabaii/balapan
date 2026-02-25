@@ -143,26 +143,74 @@ class ApiService {
     }
   }
 
+  async updateProfile(profileData) {
+    const userId = this.getCurrentUserId();
+    if (!userId) return { success: false };
+    try {
+      const response = await fetch(`${API_BASE_URL}/users/${userId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(profileData)
+      });
+      const data = await response.json();
+      return { success: true, user: data };
+    } catch (e) { return { success: false }; }
+  }
+
   async addXp(xpAmount) {
     const userId = this.getCurrentUserId();
-
-    if (!userId) {
-      return { success: false, message: 'Не авторизован' };
-    }
-
+    if (!userId) return { success: false, message: 'Не авторизован' };
     try {
       const response = await fetch(`${API_BASE_URL}/users/${userId}/xp`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ xp: xpAmount })
       });
-
       const data = await response.json();
       return { success: true, user: data };
     } catch (error) {
       console.error('Add XP error:', error);
       return { success: false, message: 'Ошибка добавления XP' };
     }
+  }
+
+  async addGems(amount) {
+    const userId = this.getCurrentUserId();
+    if (!userId) return { success: false };
+    try {
+      const response = await fetch(`${API_BASE_URL}/users/${userId}/gems/add`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount })
+      });
+      return await response.json();
+    } catch (e) { return { success: false }; }
+  }
+
+  async spendGems(amount) {
+    const userId = this.getCurrentUserId();
+    if (!userId) return { success: false };
+    try {
+      const response = await fetch(`${API_BASE_URL}/users/${userId}/gems/spend`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount })
+      });
+      return await response.json();
+    } catch (e) { return { success: false }; }
+  }
+
+  async buyItem(itemType, cost) {
+    const userId = this.getCurrentUserId();
+    if (!userId) return { success: false };
+    try {
+      const response = await fetch(`${API_BASE_URL}/users/${userId}/buy`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ itemType, cost })
+      });
+      return await response.json();
+    } catch (e) { return { success: false }; }
   }
 
   // ==================== COURSES ====================
@@ -279,10 +327,10 @@ class ApiService {
 
   async getVideoLessons(difficulty = 'all') {
     try {
-      const language = localStorage.getItem('selectedLanguage') || 'kazakh';
+      const targetLang = localStorage.getItem('selectedLanguage') || 'kk';
       const endpoint = difficulty === 'all'
-        ? `${this.baseURL}/videos?language=${language}`
-        : `${this.baseURL}/videos/difficulty/${difficulty}?language=${language}`;
+        ? `${this.baseURL}/videos?language=${targetLang}`
+        : `${this.baseURL}/videos/difficulty/${difficulty}?language=${targetLang}`;
 
       const response = await fetch(endpoint);
       const data = await response.json();
@@ -376,7 +424,7 @@ class ApiService {
 
   async getStories(difficulty = 'all') {
     try {
-      const language = localStorage.getItem('selectedLanguage') || 'kazakh';
+      const language = localStorage.getItem('selectedLanguage') || 'kk';
       const endpoint = difficulty === 'all'
         ? `${this.baseURL}/stories?language=${language}`
         : `${this.baseURL}/stories/difficulty/${difficulty}?language=${language}`;
@@ -473,7 +521,7 @@ class ApiService {
 
   async getStreakStats(userId) {
     try {
-      const response = await fetch(`${this.baseURL}/progress/streak/${userId}`);
+      const response = await fetch(`${this.baseURL}/streak/stats/${userId}`);
       const data = await response.json();
       return data;
     } catch (error) {

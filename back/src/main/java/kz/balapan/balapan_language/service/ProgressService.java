@@ -60,11 +60,25 @@ public class ProgressService {
                 + progress.getIsCompleted());
         UserProgress savedProgress = progressRepository.save(progress);
 
-        // Записываем ежедневную активность (только при первом прохождении урока)
+        // Gem Rewards
+        int gemsToAward = 0;
         if (isFirstCompletion) {
-            int exercisesCount = lesson.getExercises() != null ? lesson.getExercises().size() : 0;
-            streakService.recordDailyActivity(userId, xpEarned, 1, exercisesCount);
+            gemsToAward = (progress.getScore() >= 100) ? 5 : 2;
+        } else {
+            gemsToAward = 1; // 1 gem for repeating a lesson
         }
+
+        int currentGems = user.getGems() != null ? user.getGems() : 0;
+        user.setGems(currentGems + gemsToAward);
+        userRepository.save(user);
+
+        // Записываем ежедневную активность
+        // При первом прохождении даем полное XP, при последующих только 3 XP за
+        // повторение
+        int xpToRecord = isFirstCompletion ? xpEarned : 3;
+
+        int exercisesCount = lesson.getExercises() != null ? lesson.getExercises().size() : 0;
+        streakService.recordDailyActivity(userId, xpToRecord, isFirstCompletion ? 1 : 0, exercisesCount);
 
         return savedProgress;
     }

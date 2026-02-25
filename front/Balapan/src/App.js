@@ -11,6 +11,7 @@ import Language from './Language';
 import Lesson from './Lesson';
 import Profile from './Profile';
 import Edit from './Edit';
+import Shop from './Shop';
 import Les from './Les';
 import Set from './Set';
 import Podcasts from './Podcasts';
@@ -63,6 +64,7 @@ function App() {
           {/* Profile */}
           <Route path="/profile" element={<Profile />} />
           <Route path="/edit" element={<Edit />} />
+          <Route path="/shop" element={<Shop />} />
         </Routes>
       </Router>
     </AppProvider>

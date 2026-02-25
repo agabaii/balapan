@@ -107,10 +107,65 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
+    @PostMapping("/{id}/xp/set")
+    public ResponseEntity<User> setXp(@PathVariable Long id, @RequestBody Map<String, Integer> request) {
+        int xp = request.get("xp");
+        User user = userService.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
+        user.setTotalXp(xp);
+        return ResponseEntity.ok(userService.updateUser(user));
+    }
+
     @PostMapping("/{id}/streak")
     public ResponseEntity<User> updateStreak(@PathVariable Long id, @RequestBody Map<String, Integer> request) {
         int streak = request.get("streak");
         User user = userService.updateStreak(id, streak);
+        return ResponseEntity.ok(user);
+    }
+
+    @PostMapping("/{id}/gems/add")
+    public ResponseEntity<User> addGems(@PathVariable Long id, @RequestBody Map<String, Integer> request) {
+        int amount = request.get("amount");
+        User user = userService.addGems(id, amount);
+        return ResponseEntity.ok(user);
+    }
+
+    @PostMapping("/{id}/gems/spend")
+    public ResponseEntity<User> spendGems(@PathVariable Long id, @RequestBody Map<String, Integer> request) {
+        int amount = request.get("amount");
+        User user = userService.spendGems(id, amount);
+        return ResponseEntity.ok(user);
+    }
+
+    @PostMapping("/{id}/gems/set")
+    public ResponseEntity<User> setGems(@PathVariable Long id, @RequestBody Map<String, Integer> request) {
+        int amount = request.get("amount");
+        User user = userService.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
+        user.setGems(amount);
+        return ResponseEntity.ok(userService.updateUser(user));
+    }
+
+    @PostMapping("/{id}/buy")
+    public ResponseEntity<?> buyItem(@PathVariable Long id, @RequestBody Map<String, Object> request) {
+        try {
+            String itemType = (String) request.get("itemType");
+            int cost = (Integer) request.get("cost");
+            User user = userService.buyItem(id, itemType, cost);
+            return ResponseEntity.ok(user);
+        } catch (Exception e) {
+            Map<String, Object> error = new HashMap<>();
+            error.put("success", false);
+            error.put("message", e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+        }
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<User> updateProfile(@PathVariable Long id, @RequestBody Map<String, String> request) {
+        String username = request.get("username");
+        String nativeLanguage = request.get("nativeLanguage");
+        String avatarData = request.get("avatarData");
+
+        User user = userService.updateProfile(id, username, nativeLanguage, avatarData);
         return ResponseEntity.ok(user);
     }
 
@@ -154,5 +209,21 @@ public class UserController {
             error.put("message", e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
         }
+    }
+
+    @PostMapping("/{id}/ban")
+    public ResponseEntity<User> banUser(@PathVariable Long id) {
+        return ResponseEntity.ok(userService.banUser(id));
+    }
+
+    @PostMapping("/{id}/unban")
+    public ResponseEntity<User> unbanUser(@PathVariable Long id) {
+        return ResponseEntity.ok(userService.unbanUser(id));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
+        return ResponseEntity.ok().build();
     }
 }

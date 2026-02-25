@@ -1,6 +1,4 @@
-// src/context/AppContext.js
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
-import apiService from '../services/api';
+import React, { createContext, useContext, useState, useCallback } from 'react';
 
 const AppContext = createContext(null);
 
@@ -43,6 +41,7 @@ export function AppProvider({ children }) {
             localStorage.setItem('activeCourses', JSON.stringify(updated));
             return updated;
         });
+        localStorage.setItem('selectedLanguage', course.languageCode);
         setCurrentCourseId(course.id);
     }, []);
 
@@ -72,9 +71,9 @@ export function AppProvider({ children }) {
     };
 
     const INTERFACE_LANGS = [
-        { code: 'ru', label: 'RU', flag: '🇷🇺' },
-        { code: 'kk', label: 'ҚАЗ', flag: '🇰🇿' },
-        { code: 'en', label: 'EN', flag: '🇺🇸' },
+        { code: 'ru', label: 'RU', flag: '/rf.jpg' },
+        { code: 'kk', label: 'ҚАЗ', flag: '/kt.jpg' },
+        { code: 'en', label: 'EN', flag: '/usa.png' },
     ];
 
     return (

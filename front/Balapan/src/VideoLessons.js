@@ -2,7 +2,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import apiService from './services/api';
-import { Home, Headphones, Play, BookOpen } from 'lucide-react';
+import { Home, Headphones, Play } from 'lucide-react';
 import { getTranslation } from './translations';
 import { useApp } from './context/AppContext';
 import TopBar from './TopBar';
@@ -70,26 +70,33 @@ export default function VideoLessons() {
     }
   };
 
+  const getLocalizedTitle = (video) => {
+    if (!video) return '';
+    if (interfaceLang === 'ru') return video.titleRu || video.title;
+    if (interfaceLang === 'en') return video.titleEn || video.titleRu || video.title;
+    return video.titleKk || video.title;
+  };
+
   const getLanguageTitle = () => {
-    const lang = localStorage.getItem('selectedLanguage') || 'kazakh';
+    const lang = localStorage.getItem('selectedLanguage') || 'kk';
     const interfaceLang = localStorage.getItem('interfaceLanguage') || 'ru';
 
     if (interfaceLang === 'kk') {
       switch (lang) {
-        case 'russian': return 'орыс тілінің';
-        case 'english': return 'ағылшын тілінің';
+        case 'ru': return 'орыс тілінің';
+        case 'en': return 'ағылшын тілінің';
         default: return 'қазақ тілінің';
       }
     } else if (interfaceLang === 'en') {
       switch (lang) {
-        case 'russian': return 'Russian language';
-        case 'english': return 'English language';
+        case 'ru': return 'Russian language';
+        case 'en': return 'English language';
         default: return 'Kazakh language';
       }
     } else {
       switch (lang) {
-        case 'russian': return 'русского языка';
-        case 'english': return 'английского языка';
+        case 'ru': return 'русского языка';
+        case 'en': return 'английского языка';
         default: return 'казахского языка';
       }
     }
@@ -153,41 +160,22 @@ export default function VideoLessons() {
       <TopBar userData={userData} />
 
       <div className="flex" style={{ backgroundColor: '#FFFECF' }}>
-        <div className="w-48 px-4 py-6 space-y-2">
+        <aside className="w-64 fixed left-0 top-[80px] bottom-0 p-6 hidden lg:flex flex-col gap-3">
           <Link
             to="/lesson"
-            className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition"
-            style={{ color: '#A0A0FF' }}
+            className="flex items-center gap-4 px-5 py-4 rounded-2xl font-black text-lg transition duration-200 text-gray-400 hover:bg-white/50 uppercase italic"
           >
-            <Home size={20} style={{ color: '#A0A0FF' }} />
+            <Home size={24} strokeWidth={3} />
             <span>{t.navHome}</span>
           </Link>
           <Link
-            to="/stories"
-            className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition"
-            style={{ color: '#A0A0FF' }}
-          >
-            <BookOpen size={20} style={{ color: '#A0A0FF' }} />
-            <span>{t.navStories}</span>
-          </Link>
-          <Link
-            to="/videos"
-            className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition"
-            style={{ backgroundColor: '#FFE0F0', color: '#F9ADD1' }}
-          >
-            <Play size={20} style={{ color: '#F9ADD1' }} />
-            <span>{t.navVideos}</span>
-          </Link>
-
-          <Link
             to="/podcasts"
-            className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition"
-            style={{ color: '#A0A0FF' }}
+            className="flex items-center gap-4 px-5 py-4 rounded-2xl font-black text-lg transition duration-200 text-gray-400 hover:bg-white/50 uppercase italic"
           >
-            <Headphones size={20} style={{ color: '#A0A0FF' }} />
+            <Headphones size={24} strokeWidth={3} />
             <span>{t.navPodcasts}</span>
           </Link>
-        </div>
+        </aside>
 
         <div className="flex-1 px-6 py-6 flex gap-6" style={{ backgroundColor: '#FFFECF' }}>
           <div className="flex-1">
@@ -310,7 +298,7 @@ export default function VideoLessons() {
                     {video.unlocked && (
                       <div className="text-center mt-2 max-w-[120px]">
                         <p className="text-xs font-medium text-gray-700">
-                          {video.title}
+                          {getLocalizedTitle(video)}
                         </p>
                         <p className="text-xs text-gray-500 mt-1">
                           ⏱️ {video.durationMinutes} {t.minutes}

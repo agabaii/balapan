@@ -1,0 +1,158 @@
+[
+    {
+        "order": 1,
+        "title": "Глаголы движения",
+        "titleRu": "Глаголы движения",
+        "titleKk": "Қозғалыс етістіктері",
+        "titleEn": "Verbs of Motion",
+        "description": "Изучение глаголов идти/ходить, ехать/ездить.",
+        "descriptionRu": "Изучение глаголов идти/ходить, ехать/ездить.",
+        "descriptionKk": "Идти/ходить, ехать/ездить етістіктерін зерттеу.",
+        "descriptionEn": "Learning the verbs to go/walk and to drive/ride.",
+        "youtubeUrl": "https://youtu.be/JB8kolZ0ltg",
+        "youtubeId": "JB8kolZ0ltg",
+        "difficulty": "beginner",
+        "questions": [
+            {
+                "number": 1,
+                "text": "Когда используется глагол «идти»?",
+                "answers": [
+                    "Для движения на транспорте",
+                    "Для движения пешком в одном направлении",
+                    "Для привычного движения туда-обратно"
+                ],
+                "correct": "Для движения пешком в одном направлении"
+            },
+            {
+                "number": 2,
+                "text": "Какой глагол используется для движения пешком обычно?",
+                "answers": [
+                    "Ехать",
+                    "Идти",
+                    "Ходить"
+                ],
+                "correct": "Ходить"
+            }
+        ]
+    },
+    {
+        "order": 2,
+        "title": "Диалог знакомства",
+        "description": "Как знакомиться на русском языке.",
+        "youtubeUrl": "https://youtu.be/_47FHz6GcwE",
+        "youtubeId": "_47FHz6GcwE",
+        "difficulty": "beginner",
+        "questions": [
+            {
+                "number": 1,
+                "text": "Как правильно спросить имя у незнакомца вежливо?",
+                "answers": [
+                    "Как тебя зовут?",
+                    "Как вас зовут?",
+                    "Откуда ты?"
+                ],
+                "correct": "Как вас зовут?"
+            }
+        ]
+    },
+    {
+        "order": 3,
+        "title": "В супермаркете",
+        "description": "Полезные фразы для покупок.",
+        "youtubeUrl": "https://youtu.be/5epHCOYnRBY",
+        "youtubeId": "5epHCOYnRBY",
+        "difficulty": "beginner",
+        "questions": [
+            {
+                "number": 1,
+                "text": "Что спрашивает кассир в супермаркете в начале?",
+                "answers": [
+                    "Карта есть?",
+                    "Пакет нужен?",
+                    "Бонусы списываем?"
+                ],
+                "correct": "Пакет нужен?"
+            }
+        ]
+    },
+    {
+        "order": 4,
+        "title": "В аэропорту",
+        "description": "Диалог при регистрации на рейс.",
+        "youtubeUrl": "https://youtu.be/ahchWNiZBGM",
+        "youtubeId": "ahchWNiZBGM",
+        "difficulty": "beginner",
+        "questions": [
+            {
+                "number": 1,
+                "text": "Что спрашивает работник авиакомпании первым?",
+                "answers": [
+                    "Паспорт, пожалуйста",
+                    "Куда летите?",
+                    "Багаж есть?"
+                ],
+                "correct": "Паспорт, пожалуйста"
+            }
+        ]
+    },
+    {
+        "order": 5,
+        "title": "В парикмахерской",
+        "description": "Как записаться и общаться с парикмахером.",
+        "youtubeUrl": "https://youtu.be/rUzv1y58H1Q",
+        "youtubeId": "rUzv1y58H1Q",
+        "difficulty": "intermediate",
+        "questions": [
+            {
+                "number": 1,
+                "text": "Что говорит клиент при записи?",
+                "answers": [
+                    "Хочу покраситься",
+                    "Записаться на стрижку и окрашивание",
+                    "Подровнять челку"
+                ],
+                "correct": "Записаться на стрижку и окрашивание"
+            }
+        ]
+    },
+    {
+        "order": 6,
+        "title": "Понимаю, но не могу говорить",
+        "description": "Советы по преодолению языкового барьера.",
+        "youtubeUrl": "https://youtu.be/wcqES_rtyNA",
+        "youtubeId": "wcqES_rtyNA",
+        "difficulty": "intermediate",
+        "questions": [
+            {
+                "number": 1,
+                "text": "Почему нельзя научиться говорить без практики?",
+                "answers": [
+                    "Забываешь слова",
+                    "Не ходишь и не падаешь как ребенок",
+                    "Боишься ошибок"
+                ],
+                "correct": "Не ходишь и не падаешь как ребенок"
+            }
+        ]
+    },
+    {
+        "order": 7,
+        "title": "О себе",
+        "description": "Рассказ о возрасте и увлечениях.",
+        "youtubeUrl": "https://youtu.be/R0YagbmLU8A",
+        "youtubeId": "R0YagbmLU8A",
+        "difficulty": "beginner",
+        "questions": [
+            {
+                "number": 1,
+                "text": "Как ответить на «Сколько тебе лет?»",
+                "answers": [
+                    "Родилась в 1993",
+                    "Мне двадцать пять лет",
+                    "В Ейске"
+                ],
+                "correct": "Мне двадцать пять лет"
+            }
+        ]
+    }
+]

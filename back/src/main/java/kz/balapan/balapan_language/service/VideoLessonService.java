@@ -44,7 +44,7 @@ public class VideoLessonService {
                 v1.setXpReward(50);
                 v1.setOrderNumber(1);
                 v1.setIsActive(true);
-                v1.setLanguage("kazakh");
+                v1.setLanguage("kk");
                 v1.setThumbnailUrl("https://img.youtube.com/vi/vU_7Z8P3ZjU/maxresdefault.jpg");
 
                 List<VideoQuestion> q1 = new ArrayList<>();
@@ -83,7 +83,7 @@ public class VideoLessonService {
                 v2.setXpReward(50);
                 v2.setOrderNumber(2);
                 v2.setIsActive(true);
-                v2.setLanguage("kazakh");
+                v2.setLanguage("kk");
                 v2.setThumbnailUrl("https://img.youtube.com/vi/4u9g35WNIJ8/maxresdefault.jpg");
 
                 List<VideoQuestion> q2 = new ArrayList<>();
@@ -117,7 +117,7 @@ public class VideoLessonService {
                 v3.setXpReward(55);
                 v3.setOrderNumber(3);
                 v3.setIsActive(true);
-                v3.setLanguage("kazakh");
+                v3.setLanguage("kk");
                 v3.setThumbnailUrl("https://img.youtube.com/vi/0hG1vDJ5NFw/maxresdefault.jpg");
 
                 List<VideoQuestion> q3 = new ArrayList<>();
@@ -161,7 +161,7 @@ public class VideoLessonService {
                 v4.setXpReward(50);
                 v4.setOrderNumber(4);
                 v4.setIsActive(true);
-                v4.setLanguage("kazakh");
+                v4.setLanguage("kk");
                 v4.setThumbnailUrl("https://img.youtube.com/vi/1BnUbCdTWtw/maxresdefault.jpg");
 
                 List<VideoQuestion> q4 = new ArrayList<>();
@@ -200,7 +200,7 @@ public class VideoLessonService {
                 v5.setXpReward(45);
                 v5.setOrderNumber(5);
                 v5.setIsActive(true);
-                v5.setLanguage("kazakh");
+                v5.setLanguage("kk");
                 v5.setThumbnailUrl("https://img.youtube.com/vi/wsc7PwL1D6c/maxresdefault.jpg");
 
                 List<VideoQuestion> q5 = new ArrayList<>();
@@ -239,7 +239,7 @@ public class VideoLessonService {
                 v6.setXpReward(60);
                 v6.setOrderNumber(6);
                 v6.setIsActive(true);
-                v6.setLanguage("kazakh");
+                v6.setLanguage("kk");
                 v6.setThumbnailUrl("https://img.youtube.com/vi/uJsmZReKJDI/maxresdefault.jpg");
 
                 List<VideoQuestion> q6 = new ArrayList<>();
@@ -283,7 +283,7 @@ public class VideoLessonService {
                 v7.setXpReward(70);
                 v7.setOrderNumber(7);
                 v7.setIsActive(true);
-                v7.setLanguage("kazakh");
+                v7.setLanguage("kk");
                 v7.setThumbnailUrl("https://img.youtube.com/vi/WjJwjoxAytw/maxresdefault.jpg");
 
                 List<VideoQuestion> q7 = new ArrayList<>();
@@ -327,7 +327,7 @@ public class VideoLessonService {
                 v8.setXpReward(50);
                 v8.setOrderNumber(8);
                 v8.setIsActive(true);
-                v8.setLanguage("kazakh");
+                v8.setLanguage("kk");
                 v8.setThumbnailUrl("https://img.youtube.com/vi/kXvFxKZGt6w/maxresdefault.jpg");
 
                 List<VideoQuestion> q8 = new ArrayList<>();
@@ -366,7 +366,7 @@ public class VideoLessonService {
                 v9.setXpReward(55);
                 v9.setOrderNumber(9);
                 v9.setIsActive(true);
-                v9.setLanguage("kazakh");
+                v9.setLanguage("kk");
                 v9.setThumbnailUrl("https://img.youtube.com/vi/0DpQjP-nZqk/maxresdefault.jpg");
 
                 List<VideoQuestion> q9 = new ArrayList<>();
@@ -405,7 +405,7 @@ public class VideoLessonService {
                 v10.setXpReward(60);
                 v10.setOrderNumber(10);
                 v10.setIsActive(true);
-                v10.setLanguage("kazakh");
+                v10.setLanguage("kk");
                 v10.setThumbnailUrl("https://img.youtube.com/vi/hkLp0_T9ymg/maxresdefault.jpg");
 
                 List<VideoQuestion> q10 = new ArrayList<>();
@@ -444,7 +444,7 @@ public class VideoLessonService {
                 v11.setXpReward(80);
                 v11.setOrderNumber(11);
                 v11.setIsActive(true);
-                v11.setLanguage("kazakh");
+                v11.setLanguage("kk");
                 v11.setThumbnailUrl("https://img.youtube.com/vi/5nOnhiBsG8I/maxresdefault.jpg");
 
                 List<VideoQuestion> q11 = new ArrayList<>();
@@ -488,7 +488,7 @@ public class VideoLessonService {
                 v12.setXpReward(50);
                 v12.setOrderNumber(12);
                 v12.setIsActive(true);
-                v12.setLanguage("kazakh");
+                v12.setLanguage("kk");
                 v12.setThumbnailUrl("https://img.youtube.com/vi/rAWPSzIfzcI/maxresdefault.jpg");
 
                 List<VideoQuestion> q12 = new ArrayList<>();
@@ -527,7 +527,7 @@ public class VideoLessonService {
                 v13.setXpReward(75);
                 v13.setOrderNumber(13);
                 v13.setIsActive(true);
-                v13.setLanguage("kazakh");
+                v13.setLanguage("kk");
                 v13.setThumbnailUrl("https://img.youtube.com/vi/A_bdkXO8fXg/maxresdefault.jpg");
 
                 List<VideoQuestion> q13 = new ArrayList<>();
@@ -585,13 +585,13 @@ public class VideoLessonService {
 
         public List<VideoLesson> getAllActiveVideos(String language) {
                 if (language == null)
-                        language = "kazakh";
+                        language = "kk";
                 return videoLessonRepository.findByLanguageAndIsActiveTrueOrderByOrderNumber(language);
         }
 
         public List<VideoLesson> getVideosByDifficulty(String difficulty, String language) {
                 if (language == null)
-                        language = "kazakh";
+                        language = "kk";
                 return videoLessonRepository.findByLanguageAndDifficultyLevelAndIsActiveTrueOrderByOrderNumber(language,
                                 difficulty);
         }
@@ -633,14 +633,21 @@ public class VideoLessonService {
                                 .findByUserIdAndVideoLessonId(userId, videoId)
                                 .orElseThrow(() -> new RuntimeException("Video not started"));
 
+                User user = progress.getUser();
+                boolean wasAlreadyCompleted = progress.getIsCompleted() != null && progress.getIsCompleted();
+
                 progress.setIsCompleted(true);
                 progress.setWatchTimeSeconds(watchTimeSeconds);
                 progress.setCompletedAt(LocalDateTime.now());
 
-                // Add XP
-                VideoLesson video = progress.getVideoLesson();
-                User user = progress.getUser();
-                user.setTotalXp(user.getTotalXp() + video.getXpReward());
+                // Add XP and Gems
+                if (!wasAlreadyCompleted) {
+                        VideoLesson video = progress.getVideoLesson();
+                        user.setTotalXp((user.getTotalXp() != null ? user.getTotalXp() : 0) + video.getXpReward());
+                        user.setGems((user.getGems() != null ? user.getGems() : 0) + 10);
+                } else {
+                        user.setGems((user.getGems() != null ? user.getGems() : 0) + 2); // Repetition reward
+                }
                 userRepository.save(user);
 
                 return userVideoProgressRepository.save(progress);
@@ -659,5 +666,13 @@ public class VideoLessonService {
                 stats.put("progress", allProgress);
 
                 return stats;
+        }
+
+        @Autowired
+        private VideoLessonJsonSeeder videoLessonJsonSeeder;
+
+        @Transactional
+        public String reseedVideoLessons() {
+                return videoLessonJsonSeeder.reseedVideos(true);
         }
 }

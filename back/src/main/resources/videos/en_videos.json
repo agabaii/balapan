@@ -1,0 +1,168 @@
+[
+    {
+        "order": 1,
+        "title": "House and Garden",
+        "titleEn": "House and Garden",
+        "titleKk": "Үй және бақша",
+        "titleRu": "Дом и сад",
+        "description": "Vocabulary about screen doors, bugs, and gazebos.",
+        "descriptionEn": "Vocabulary about screen doors, bugs, and gazebos.",
+        "descriptionKk": "Есіктер, жәндіктер және беседкалар туралы сөздік.",
+        "descriptionRu": "Словарь о дверях-сетках, насекомых и беседках.",
+        "youtubeUrl": "https://youtu.be/ofPPsEXbEKM",
+        "youtubeId": "ofPPsEXbEKM",
+        "difficulty": "beginner",
+        "questions": [
+            {
+                "number": 1,
+                "text": "What does the screen door protect from?",
+                "answers": [
+                    "Rain",
+                    "Bugs",
+                    "Wind"
+                ],
+                "correct": "Bugs"
+            },
+            {
+                "number": 2,
+                "text": "What animal is in the «flock» mentioned?",
+                "answers": [
+                    "Dogs",
+                    "Cows",
+                    "Geese"
+                ],
+                "correct": "Geese"
+            }
+        ]
+    },
+    {
+        "order": 2,
+        "title": "Countryside Life",
+        "description": "Morning routine on a farm.",
+        "youtubeUrl": "https://youtu.be/VsqkTzOVP9U",
+        "youtubeId": "VsqkTzOVP9U",
+        "difficulty": "beginner",
+        "questions": [
+            {
+                "number": 1,
+                "text": "What time does the person usually wake up?",
+                "answers": [
+                    "5 AM",
+                    "7 AM",
+                    "9 AM"
+                ],
+                "correct": "5 AM"
+            },
+            {
+                "number": 2,
+                "text": "What do they cook for breakfast?",
+                "answers": [
+                    "Pancakes",
+                    "Omelette with fresh eggs",
+                    "Cereal"
+                ],
+                "correct": "Omelette with fresh eggs"
+            }
+        ]
+    },
+    {
+        "order": 3,
+        "title": "Probabilities",
+        "description": "Learning math terms in English.",
+        "youtubeUrl": "https://youtu.be/sMkzwmMs0jM",
+        "youtubeId": "sMkzwmMs0jM",
+        "difficulty": "intermediate",
+        "questions": [
+            {
+                "number": 1,
+                "text": "When does the first single-choice question appear?",
+                "answers": [
+                    "At 7th second",
+                    "At 13th second",
+                    "At 21st second"
+                ],
+                "correct": "At 13th second"
+            }
+        ]
+    },
+    {
+        "order": 4,
+        "title": "Mike & Sarah's Dinner",
+        "description": "Discussing daily activities and plans.",
+        "youtubeUrl": "https://youtu.be/VVAw_GdYZSc",
+        "youtubeId": "VVAw_GdYZSc",
+        "difficulty": "beginner",
+        "questions": [
+            {
+                "number": 1,
+                "text": "Why did Sarah say she is vegetarian?",
+                "answers": [
+                    "It's too expensive",
+                    "She doesn't like meat",
+                    "She is vegetarian"
+                ],
+                "correct": "She is vegetarian"
+            }
+        ]
+    },
+    {
+        "order": 5,
+        "title": "Speaking Confidence",
+        "description": "Tips from Emily's English journey.",
+        "youtubeUrl": "https://youtu.be/TQTK5ExCjAM",
+        "youtubeId": "TQTK5ExCjAM",
+        "difficulty": "intermediate",
+        "questions": [
+            {
+                "number": 1,
+                "text": "How does Emily build speaking confidence?",
+                "answers": [
+                    "Daily practice",
+                    "Reading books",
+                    "Watching TV"
+                ],
+                "correct": "Daily practice"
+            }
+        ]
+    },
+    {
+        "order": 6,
+        "title": "Daily Phrasal Verbs",
+        "description": "Putting on glasses, opening windows, and charging phones.",
+        "youtubeUrl": "https://youtu.be/DyZd3FExWoQ",
+        "youtubeId": "DyZd3FExWoQ",
+        "difficulty": "beginner",
+        "questions": [
+            {
+                "number": 1,
+                "text": "Which phrase is correct for putting on glasses?",
+                "answers": [
+                    "I put off my glasses",
+                    "I put on my glasses",
+                    "I take on my glasses"
+                ],
+                "correct": "I put on my glasses"
+            }
+        ]
+    },
+    {
+        "order": 7,
+        "title": "Zootopia: Judy & Nick",
+        "description": "Scene analysis from Zootopia.",
+        "youtubeUrl": "https://youtu.be/aU58RGC4IKw",
+        "youtubeId": "aU58RGC4IKw",
+        "difficulty": "intermediate",
+        "questions": [
+            {
+                "number": 1,
+                "text": "What does Judy Hopps say when she first approaches Nick?",
+                "answers": [
+                    "Hey, buddy, buy a coffee?",
+                    "Good morning! Coffee? There you go.",
+                    "Do you have change for a five?"
+                ],
+                "correct": "Good morning! Coffee? There you go."
+            }
+        ]
+    }
+]

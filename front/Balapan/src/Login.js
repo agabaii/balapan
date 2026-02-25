@@ -68,9 +68,18 @@ export default function BalapanLogin() {
       </header>
 
       {/* Form Container */}
-      <div className="max-w-lg mx-auto px-8 py-16">
+      <div className="max-w-lg mx-auto px-8 py-4">
+        {/* Mascot Image */}
+        <div className="flex justify-center mb-4">
+          <img
+            src="/balapan.png"
+            alt="Balapan Mascot"
+            className="w-32 h-32 object-contain"
+          />
+        </div>
+
         {/* Title */}
-        <h1 className="text-2xl font-semibold text-gray-800 text-center mb-10">
+        <h1 className="text-2xl font-semibold text-gray-800 text-center mb-6">
           {t.haveAccount}
         </h1>
 
@@ -121,10 +130,16 @@ export default function BalapanLogin() {
           </button>
         </form>
 
-        {/* Forgot Password Link */}
-        <Link to="/password" className="block text-center text-sm text-gray-500">
-          {t.dontHaveAccount} <Link to="/register"><span className="text-pink-300 font-semibold">{t.register}</span></Link>
-        </Link>
+        {/* Footer Links */}
+        <div className="space-y-4 text-center">
+          <Link to="/password" className="block text-sm text-pink-400 font-bold hover:underline">
+            {t.forgotPassword}
+          </Link>
+
+          <p className="text-sm text-gray-500">
+            {t.dontHaveAccount} <Link to="/register" className="text-pink-300 font-bold hover:underline">{t.register}</Link>
+          </p>
+        </div>
       </div>
     </div>
   );

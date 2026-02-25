@@ -38,6 +38,9 @@ public class Story {
     @Column(columnDefinition = "TEXT")
     private String descriptionRu;
 
+    @Column(name = "description_kk", columnDefinition = "TEXT")
+    private String descriptionKk;
+
     @Column(columnDefinition = "TEXT")
     private String descriptionEn;
 
@@ -60,7 +63,7 @@ public class Story {
     private Boolean isActive = true;
 
     @Column(name = "language", length = 20)
-    private String language = "kazakh";
+    private String language = "kk";
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;

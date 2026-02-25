@@ -30,6 +30,15 @@ public class VideoQuestion {
     @Column(columnDefinition = "TEXT", nullable = false)
     private String questionText;
 
+    @Column(name = "question_text_kk", columnDefinition = "TEXT")
+    private String questionTextKk;
+
+    @Column(name = "question_text_ru", columnDefinition = "TEXT")
+    private String questionTextRu;
+
+    @Column(name = "question_text_en", columnDefinition = "TEXT")
+    private String questionTextEn;
+
     @Column(name = "question_type")
     private String questionType = "multiple_choice";
 

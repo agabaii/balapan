@@ -1,15 +1,18 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import {
+  Trophy, LogOut, Award, UserPlus, ShoppingBag, Trash2,
+  User, Edit2, Settings, Zap, Star, Flame
+} from 'lucide-react';
 import apiService from './services/api';
-import StreakDisplay from './StreakDisplay';
+import Avatar from './components/Avatar';
 import { getTranslation } from './translations';
 import { useApp } from './context/AppContext';
 import TopBar from './TopBar';
 
-
 export default function Profile() {
   const navigate = useNavigate();
-  const { interfaceLang, activeCourses, currentCourseId, switchCourse } = useApp();
+  const { interfaceLang, activeCourses, currentCourseId, switchCourse, removeCourse } = useApp();
   const t = getTranslation(interfaceLang);
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -93,6 +96,14 @@ export default function Profile() {
     setLoading(false);
   };
 
+  const handleDeleteCourse = (e, courseId) => {
+    e.stopPropagation();
+    const confirmDelete = window.confirm(t.deleteCourseConfirm || 'Вы уверены, что хотите удалить этот курс? Прогресс будет сохранен, но курс исчезнет из вашего списка.');
+    if (confirmDelete) {
+      removeCourse(courseId);
+    }
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FFFECF' }}>
@@ -144,190 +155,290 @@ export default function Profile() {
   );
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#FFFECF' }}>
+    <div className="min-h-screen bg-[#FFFECF] pb-20">
       <TopBar userData={userData} />
 
-      <div className="max-w-6xl mx-auto px-6 py-6">
-        <div className="flex gap-6">
-          {/* Left Column */}
-          <div className="flex-1">
-            {/* User Info Card */}
-            <div className="bg-white rounded-2xl p-6 mb-6 shadow-sm">
-              <div className="flex items-start justify-between">
-                <div className="flex gap-4">
-                  <img
-                    src="/ava.jpg"
-                    className="w-20 h-20 rounded-full object-cover"
-                    alt="Profile"
-                  />
-                  <div>
-                    <h1 className="text-2xl font-bold text-gray-900">
-                      {userData.username}
-                    </h1>
-                    <p className="text-sm text-gray-600 mt-1">
-                      {userData.nativeLanguage === 'kk' ? 'Қазақ тілі' :
-                        userData.nativeLanguage === 'en' ? 'English' : 'Русский язык'}
-                    </p>
-                    <Link to="/edit" className="text-sm font-medium mt-2 flex items-center gap-1 hover:underline" style={{ color: '#F9ADD1' }}>
-                      <span>✏️</span>
-                      <span>{t.editProfile}</span>
-                    </Link>
-                  </div>
+      <div className="max-w-4xl mx-auto px-4 pt-8">
+        {/* Profile Header Card */}
+        <div className="bg-white rounded-[2.5rem] p-8 mb-8 border-2 border-[#F9ADD1] shadow-[0_8px_0_0_#F9ADD1] relative overflow-hidden">
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-8 relative z-10">
+            <div className="relative group">
+              <div className="w-32 h-32 rounded-full border-4 border-[#FFDAEC] bg-[#FFFECF] flex items-center justify-center overflow-hidden shadow-inner p-2">
+                {userData.avatarData ? (
+                  <Avatar size={100} {...JSON.parse(userData.avatarData)} />
+                ) : (
+                  <User size={64} className="text-[#F9ADD1]" />
+                )}
+              </div>
+              <Link
+                to="/edit"
+                className="absolute bottom-0 right-0 bg-[#A0A0FF] text-white p-2 rounded-full border-2 border-white shadow-md hover:scale-110 transition active:scale-95"
+              >
+                <Edit2 size={16} />
+              </Link>
+            </div>
+
+            <div className="flex-1 text-center md:text-left">
+              <div className="flex flex-col md:flex-row md:items-center gap-2 mb-2">
+                <h1 className="text-3xl font-black text-[#C14D7D] uppercase tracking-tight">
+                  {userData.username}
+                </h1>
+                <span className="bg-[#FFE0F0] text-[#F9ADD1] text-xs font-black px-3 py-1 rounded-full border border-[#F9ADD1]">
+                  {userData.email}
+                </span>
+              </div>
+
+              <p className="text-[#A0A0FF] font-black text-lg mb-4 italic uppercase tracking-wider">
+                {birdStages[currentStage].name}
+              </p>
+
+              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                <Link
+                  to="/edit"
+                  className="flex items-center gap-2 bg-white border-2 border-gray-200 px-4 py-2 rounded-2xl font-black text-xs text-gray-400 hover:border-[#F9ADD1] hover:text-[#F9ADD1] transition shadow-sm active:translate-y-0.5"
+                >
+                  <Settings size={14} /> Настройки
+                </Link>
+                <button
+                  onClick={() => { apiService.logout(); navigate('/login'); }}
+                  className="flex items-center gap-2 bg-white border-2 border-red-100 px-4 py-2 rounded-2xl font-black text-xs text-red-300 hover:border-red-400 hover:text-red-500 transition shadow-sm active:translate-y-0.5"
+                >
+                  <LogOut size={14} /> Выйти
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Background Decorative Star */}
+          <div className="absolute right-[-20px] top-[-20px] opacity-5 pointer-events-none">
+            <Star size={200} fill="#F9ADD1" />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Main Content Column */}
+          <div className="lg:col-span-2 space-y-8">
+
+            {/* Stats Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              {/* Streak Card */}
+              <div className="bg-white rounded-3xl p-5 border-2 border-[#FFDAEC] shadow-[0_6px_0_0_#FFDAEC] flex items-center gap-4">
+                <div className="w-12 h-12 bg-orange-50 rounded-2xl flex items-center justify-center">
+                  <span className="text-3xl">🔥</span>
+                </div>
+                <div>
+                  <div className="text-2xl font-black text-orange-500">{userData.currentStreak || 0}</div>
+                  <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Дней марафона</div>
+                </div>
+              </div>
+
+              {/* XP Card */}
+              <div className="bg-white rounded-3xl p-5 border-2 border-[#FFE0F0] shadow-[0_6px_0_0_#FFE0F0] flex items-center gap-4">
+                <div className="w-12 h-12 bg-yellow-50 rounded-2xl flex items-center justify-center">
+                  <span className="text-3xl">⭐</span>
+                </div>
+                <div>
+                  <div className="text-2xl font-black text-yellow-500">{currentXP}</div>
+                  <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Всего опыта</div>
+                </div>
+              </div>
+
+              {/* Gems Card */}
+              <Link to="/shop" className="bg-white rounded-3xl p-5 border-2 border-blue-50 shadow-[0_6px_0_0_rgba(160,160,255,0.2)] flex items-center gap-4 hover:scale-105 transition cursor-pointer">
+                <div className="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center">
+                  <span className="text-3xl">💎</span>
+                </div>
+                <div>
+                  <div className="text-2xl font-black text-blue-400">{userData.gems || 0}</div>
+                  <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Алмазы</div>
+                </div>
+              </Link>
+
+              {/* League Card */}
+              <div className="bg-white rounded-3xl p-5 border-2 border-indigo-50 shadow-[0_6px_0_0_rgba(99,102,241,0.1)] flex items-center gap-4">
+                <div className="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center">
+                  <span className="text-3xl">🛡️</span>
+                </div>
+                <div>
+                  <div className="text-2xl font-black text-indigo-500">БРОНЗА</div>
+                  <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Лига</div>
                 </div>
               </div>
             </div>
 
-            {/* My Courses — multi-course block */}
-            {activeCourses.length > 0 && (
-              <div className="bg-white rounded-2xl p-6 mb-6 shadow-sm">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-bold text-gray-900">
-                    {interfaceLang === 'ru' ? '📚 Мои курсы' : interfaceLang === 'kk' ? '📚 Менің курстарым' : '📚 My Courses'}
-                  </h3>
-                  <Link to="/language" className="text-sm font-medium text-pink-400 hover:underline">
-                    {interfaceLang === 'ru' ? '+ Добавить' : interfaceLang === 'kk' ? '+ Қосу' : '+ Add'}
-                  </Link>
+            {/* Balapan Evolution Card */}
+            <div className="bg-white rounded-[2.5rem] p-8 border-2 border-[#F9ADD1] shadow-[0_8px_0_0_#F9ADD1] relative overflow-hidden flex flex-col md:flex-row items-center gap-8">
+              <div className="w-32 h-32 bg-[#FFFECF] rounded-full flex items-center justify-center border-4 border-[#FFDAEC] shadow-inner relative group shrink-0">
+                <img
+                  src={birdStages[currentStage].image}
+                  alt="Balapan Stage"
+                  className="w-24 h-24 object-contain animate-bounce-slow"
+                />
+                <div className="absolute -bottom-2 bg-[#A0A0FF] text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter shadow-md">
+                  Уровень {currentStage + 1}
                 </div>
-                <div className="flex flex-wrap gap-3">
+              </div>
+
+              <div className="flex-1 text-center md:text-left">
+                <h3 className="text-xl font-black text-[#C14D7D] uppercase tracking-tight mb-2">
+                  Твой Балапан: <span className="text-[#A0A0FF]">{birdStages[currentStage].name}</span>
+                </h3>
+                <p className="text-xs text-gray-400 font-bold mb-6 leading-relaxed">
+                  {birdStages[currentStage].description}
+                </p>
+
+                {/* Evolution Progress */}
+                <div className="space-y-3">
+                  <div className="flex justify-between items-end">
+                    <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">{currentXP} XP</span>
+                    <span className="text-[10px] font-black text-[#F9ADD1] uppercase tracking-widest">Цель: {nextStageXP} XP</span>
+                  </div>
+                  <div className="w-full h-4 bg-gray-100 rounded-full overflow-hidden p-0.5 border border-gray-50 shadow-inner">
+                    <div
+                      className="h-full rounded-full transition-all duration-1000 ease-out relative"
+                      style={{
+                        width: `${progressPercent}%`,
+                        background: 'linear-gradient(90deg, #FFDAEC, #F9ADD1, #FF8EC4)',
+                        boxShadow: '0 0 10px rgba(249, 173, 209, 0.5)'
+                      }}
+                    >
+                      <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
+                    </div>
+                  </div>
+                  <p className="text-[10px] text-[#A0A0FF] font-black uppercase text-right">
+                    {currentStage < 3
+                      ? `Осталось ${nextStageXP - currentXP} XP до эволюции!`
+                      : 'Достигнута финальная форма!'}
+                  </p>
+                </div>
+              </div>
+
+              {/* Decorative decoration */}
+              <div className="absolute right-[-10px] bottom-[-10px] opacity-10 rotate-12">
+                <Zap size={80} fill="#FFDAEC" />
+              </div>
+            </div>
+
+            {/* Active Courses */}
+            {activeCourses.length > 0 && (
+              <div className="bg-white rounded-[2rem] p-8 border-2 border-[#FFDAEC] shadow-sm">
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="font-black text-gray-800 uppercase tracking-tight">Мои курсы</h3>
+                  <Link to="/language" className="text-xs font-black text-[#A0A0FF] hover:underline uppercase tracking-widest">+ добавить</Link>
+                </div>
+                <div className="space-y-3">
                   {activeCourses.map(course => {
-                    const FLAGS = { kk: '🇰🇿', ru: '🇷🇺', en: '🇺🇸' };
-                    const NAMES = {
-                      kk: { ru: 'Казахский', kk: 'Қазақша', en: 'Kazakh' },
-                      ru: { ru: 'Русский', kk: 'Орысша', en: 'Russian' },
-                      en: { ru: 'Английский', kk: 'Ағылшынша', en: 'English' },
-                    };
                     const isActive = String(course.id) === String(currentCourseId);
+                    const NAMES = {
+                      kk: 'Казахский',
+                      ru: 'Русский',
+                      en: 'Английский',
+                    };
+                    const FLAGS = { kk: '/kt.jpg', ru: '/rf.jpg', en: '/usa.png' };
                     return (
-                      <button
+                      <div
                         key={course.id}
-                        onClick={() => { switchCourse(course.id); }}
-                        className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-sm transition border-2 ${isActive
-                            ? 'border-yellow-400 bg-yellow-50 text-yellow-700'
-                            : 'border-gray-200 bg-gray-50 text-gray-700 hover:border-pink-300 hover:bg-pink-50'
+                        onClick={() => switchCourse(course.id)}
+                        className={`w-full flex items-center justify-between p-4 rounded-2xl border-2 transition active:translate-y-1 cursor-pointer ${isActive
+                          ? 'border-[#F9ADD1] bg-[#FFE0F0] text-[#C14D7D]'
+                          : 'border-gray-100 bg-gray-50 text-gray-400 hover:border-[#FFDAEC]'
                           }`}
                       >
-                        <span className="text-xl">{FLAGS[course.languageCode] || '📚'}</span>
-                        <span>{NAMES[course.languageCode]?.[interfaceLang] || course.languageCode}</span>
-                        {isActive && <span className="text-yellow-500">✓</span>}
-                      </button>
+                        <div className="flex items-center gap-4">
+                          <div className="w-10 h-10 overflow-hidden rounded-lg flex-shrink-0 shadow-sm border border-gray-100">
+                            <img src={FLAGS[course.languageCode] || '/fav.png'} alt="flag" className="w-full h-full object-cover" />
+                          </div>
+                          <span className="font-black uppercase tracking-tight">{NAMES[course.languageCode] || course.languageCode}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          {isActive && <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center text-[10px] text-[#F9ADD1] border border-[#F9ADD1]"><Award size={14} /></div>}
+                          <button
+                            onClick={(e) => handleDeleteCourse(e, course.id)}
+                            className="p-2 text-gray-400 hover:text-red-400 hover:bg-red-50 rounded-xl transition cursor-pointer"
+                            title={t.deleteCourse || "Удалить курс"}
+                          >
+                            <Trash2 size={16} />
+                          </button>
+                        </div>
+                      </div>
                     );
                   })}
                 </div>
               </div>
             )}
-
-            <div className="bg-white rounded-2xl p-6 mb-6 shadow-sm">
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-base font-bold text-gray-900">
-                  {currentXP} / {nextStageXP} {t.xpToNext}
-                </span>
-              </div>
-              <div className="w-full h-4 bg-gray-200 rounded-full overflow-hidden">
-                <div
-                  className="h-full rounded-full transition-all duration-500"
-                  style={{
-                    width: `${progressPercent}%`,
-                    background: 'linear-gradient(to right, #FFDAEC, #FF8EC4)'
-                  }}
-                ></div>
-              </div>
-              <p className="text-sm text-gray-600 mt-3">
-                {currentStage < 3
-                  ? `${t.moreXp} ${nextStageXP - currentXP} ${t.andGrow}`
-                  : t.maxLevel}
-              </p>
-            </div>
-
-            {/* NEW: Streak Display */}
-            <StreakDisplay userId={userData.id} />
-
-            {/* AI Learning Tools Section */}
-            <div className="bg-white rounded-2xl p-6 mb-6 shadow-sm border-l-4 border-pink-400">
-              <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <span>🚀</span> AI {t.learning || 'Learning Tools'}
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link to="/chat" className="flex items-center p-4 bg-pink-50 rounded-xl hover:bg-pink-100 transition border border-pink-100 group">
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-2xl mr-4 shadow-sm group-hover:scale-110 transition">💬</div>
-                  <div>
-                    <div className="font-bold text-gray-900">AI Tutor</div>
-                    <div className="text-xs text-gray-500">Practice speaking with AI</div>
-                  </div>
-                </Link>
-                <Link to="/vocabulary" className="flex items-center p-4 bg-purple-50 rounded-xl hover:bg-purple-100 transition border border-purple-100 group">
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-2xl mr-4 shadow-sm group-hover:scale-110 transition">🗂️</div>
-                  <div>
-                    <div className="font-bold text-gray-900">Vocabulary</div>
-                    <div className="text-xs text-gray-500">SRS Word Mastery</div>
-                  </div>
-                </Link>
-              </div>
-            </div>
-
-            {/* Course Progress */}
-            {currentCourse && (
-              <div className="bg-white rounded-2xl p-6 mb-6 shadow-sm">
-                <h3 className="text-lg font-bold text-gray-900 mb-3">
-                  {t.progressCourse}: {currentCourse.name}
-                </h3>
-                <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-gradient-to-r from-green-400 to-green-500 rounded-full transition-all duration-500"
-                    style={{ width: `${courseProgress}%` }}
-                  ></div>
-                </div>
-                <p className="text-sm text-gray-600 mt-2">
-                  {courseProgress}% {t.completed}
-                </p>
-              </div>
-            )}
-
-            {/* Logout Button */}
-            <button
-              onClick={() => {
-                apiService.logout();
-                navigate('/login');
-              }}
-              className="w-full bg-red-500 text-white py-3 rounded-xl font-medium hover:bg-red-600 transition"
-            >
-              {t.logout}
-            </button>
           </div>
 
-          {/* Right Column - Bird Stage */}
-          <div className="w-80">
-            <div className="bg-white rounded-2xl p-6 shadow-sm sticky top-6">
-              <div className="text-center">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {birdStages[currentStage].name}
-                </h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  {birdStages[currentStage].description}
-                </p>
+          {/* Sidebar Column */}
+          <div className="space-y-8">
+            {/* Friends Card Placeholder */}
+            <div className="bg-white rounded-[2rem] p-7 border-2 border-[#FFDAEC] shadow-sm text-center">
+              <div className="w-16 h-16 bg-[#FFFECF] rounded-full flex items-center justify-center mx-auto mb-4 text-[#F9ADD1]">
+                <UserPlus size={32} />
+              </div>
+              <h3 className="font-black text-gray-800 uppercase tracking-tight mb-2 text-sm">Друзья</h3>
+              <p className="text-xs text-gray-400 font-bold mb-6">Учиться вместе веселее! Добавьте друзей, чтобы соревноваться.</p>
+              <button className="w-full py-3 bg-[#A0A0FF] text-white rounded-2xl font-black text-xs shadow-[0_4px_0_0_#7A7AFF] hover:brightness-105 active:translate-y-1 active:shadow-none transition-all uppercase tracking-widest">
+                Найти друзей
+              </button>
+            </div>
 
-                <div className="relative w-48 h-48 mx-auto mb-4">
-                  <img
-                    src={birdStages[currentStage].image}
-                    alt={birdStages[currentStage].name}
-                    className="w-full h-full object-contain animate-bounce-slow"
-                  />
-                </div>
+            {/* Achievements Section */}
+            <div className="bg-white rounded-[2rem] p-7 border-2 border-[#FFDAEC] shadow-sm">
+              <h3 className="font-black text-gray-800 uppercase tracking-tight mb-4 text-sm">Достижения</h3>
+              <div className="flex flex-wrap gap-3">
+                {[1, 2, 3].map(i => (
+                  <div key={i} className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center border-2 border-dashed border-gray-200 grayscale opacity-40">
+                    <Trophy size={20} className="text-gray-400" />
+                  </div>
+                ))}
+              </div>
+              <p className="text-[10px] text-gray-400 font-bold mt-4 uppercase">Больше открытых уроков — больше наград!</p>
+            </div>
 
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-600">{t.totalXp}:</span>
-                    <span className="font-bold text-gray-900">{currentXP}</span>
+            {/* Inventory/Items */}
+            <div className="bg-white rounded-[2rem] p-7 border-2 border-[#FFE0F0] shadow-sm">
+              <h3 className="font-black text-gray-800 uppercase tracking-tight mb-4 text-sm">Мои предметы</h3>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between p-3 bg-gray-50 rounded-xl border border-gray-100">
+                  <div className="flex items-center gap-3">
+                    <Flame size={20} className="text-orange-400" fill="currentColor" />
+                    <span className="text-xs font-black text-gray-600 uppercase">Заморозка</span>
                   </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-600">{t.level}:</span>
-                    <span className="font-bold text-gray-900">{currentStage + 1} / 4</span>
-                  </div>
+                  <span className="bg-[#FFE0F0] text-[#F9ADD1] text-xs font-black px-3 py-1 rounded-full border border-[#F9ADD1]">
+                    {userData.streakFreezes || 0}
+                  </span>
                 </div>
               </div>
+              <p className="text-[10px] text-gray-400 font-bold mt-4 uppercase text-center">Купи больше в магазине!</p>
+            </div>
+
+            {/* Shop Promo Card */}
+            <div className="bg-gradient-to-br from-[#A0A0FF] to-[#7A7AFF] rounded-[2rem] p-6 text-white text-center shadow-lg relative overflow-hidden group hover:scale-[1.02] transition duration-500">
+              <div className="absolute top-[-20%] left-[-20%] w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:scale-150 transition duration-[2s]"></div>
+              <ShoppingBag className="mx-auto mb-2 animate-bounce-slow" fill="white" size={32} />
+              <h3 className="font-black uppercase tracking-widest text-sm mb-1">Магазин Balapan</h3>
+              <p className="text-[10px] font-bold opacity-90 mb-4">Легендарные образы и бонусы!</p>
+              <button
+                onClick={() => navigate('/shop')}
+                className="w-full bg-white text-[#7A7AFF] py-2 rounded-xl font-black text-[10px] shadow-md hover:bg-[#FFFECF] transition active:scale-95"
+              >
+                ПЕРЕЙТИ В МАГАЗИН
+              </button>
             </div>
           </div>
         </div>
       </div>
+
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        @keyframes bounce-slow {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
+        .animate-bounce-slow {
+          animation: bounce-slow 3s ease-in-out infinite;
+        }
+      `}} />
     </div>
   );
 }

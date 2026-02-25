@@ -1,740 +1,636 @@
-// src/Les.jsx
-import { Link, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Headphones, Star } from 'lucide-react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import apiService from './services/api';
+import { useApp } from './context/AppContext';
+import { translations } from './translations';
+
+
 
 export default function LessonExercise() {
   const navigate = useNavigate();
-  const [completed, setCompleted] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const { interfaceLang } = useApp();
   const [lessonData, setLessonData] = useState(null);
-  const [currentSection, setCurrentSection] = useState('theory');
   const [currentExerciseIndex, setCurrentExerciseIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showResult, setShowResult] = useState(false);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [loadingLesson, setLoadingLesson] = useState(true);
-  const [error, setError] = useState(null);
-  const [animateError, setAnimateError] = useState(false);
-  const [animateSuccess, setAnimateSuccess] = useState(false);
-  const [lives, setLives] = useState(3);
+  const [lives, setLives] = useState(5);
   const [gameOver, setGameOver] = useState(false);
   const [isCorrectResult, setIsCorrectResult] = useState(false);
-  const [characterImg, setCharacterImg] = useState('https://d33wubrfki0l68.cloudfront.net/6656201662927237.svg');
+  const [completed, setCompleted] = useState(false);
 
-  const characterImgs = [
-    'https://d35aaqx5ub95lt.cloudfront.net/images/owls/7113149830589632.svg', // Duo
-    'https://d35aaqx5ub95lt.cloudfront.net/images/leagues/9e49495_7b0d.svg', // Shield
-    'https://d35aaqx5ub95lt.cloudfront.net/images/character-lily.svg',
-    'https://d35aaqx5ub95lt.cloudfront.net/images/character-zari.svg',
-    'https://d35aaqx5ub95lt.cloudfront.net/images/character-junior.svg'
-  ];
+  // Matching State
+  const [matchLeft, setMatchLeft] = useState(null);
+  const [matchedPairs, setMatchedPairs] = useState([]); // Array of IDs or strings
+
+  // Story State
+  const [currentStoryLine, setCurrentStoryLine] = useState(0);
+
+  const successSound = useRef(new Audio('https://d35aaqx5ub95lt.cloudfront.net/sounds/7decff4876b55365e64a1329bf0b98eb.mp3'));
+  const errorSound = useRef(new Audio('https://d35aaqx5ub95lt.cloudfront.net/sounds/f0b694389146f2fc71a4f783186ee1be.mp3'));
 
   useEffect(() => {
-    setCharacterImg(characterImgs[Math.floor(Math.random() * characterImgs.length)]);
     loadLesson();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const loadLesson = async () => {
-    console.log('📖 Загрузка урока...');
-
     const courseId = localStorage.getItem('selectedCourseId');
     const lessonId = localStorage.getItem('currentLessonId');
-
-    if (!courseId) {
-      console.log('❌ Курс не выбран');
-      navigate('/lesson');
-      return;
-    }
-
-    if (!lessonId) {
-      console.log('❌ ID урока не найден');
-      navigate('/lesson');
-      return;
-    }
+    if (!courseId || !lessonId) { navigate('/lesson'); return; }
 
     try {
       const result = await apiService.getCourseById(courseId);
-
       if (result.success && result.course.levels) {
-        let foundLesson = null;
-
+        let found = null;
         for (const level of result.course.levels) {
-          if (level.lessons) {
-            foundLesson = level.lessons.find(lesson => lesson.id === parseInt(lessonId));
-            if (foundLesson) break;
+          found = (level.lessons || []).find(l => l.id === parseInt(lessonId));
+          if (found) break;
+        }
+        if (found) {
+          setLessonData(found);
+        }
+      }
+    } catch (e) { console.error(e); } finally { setLoadingLesson(false); }
+  };
+
+  const processedExercises = useMemo(() => {
+    if (!lessonData || !lessonData.exercises) return [];
+    return lessonData.exercises.map(ex => {
+      try {
+        let data = ex.contentJson ? JSON.parse(ex.contentJson) : {};
+        const trans = data.translations && data.translations[interfaceLang] ? data.translations[interfaceLang] : (data.translations?.ru || data.translations?.en);
+        if (trans) {
+          data = { ...data, ...trans };
+        }
+
+        // Prioritize direct database fields from Admin Panel
+        const technicalTs = ['WORD_MATCH', 'TRANSLATE_SENTENCE', 'WORD_TRANSLATE', 'LISTEN_BUILD', 'LISTEN_CHOOSE', 'LISTEN_SIMILAR', 'REPEAT_PHRASE', 'MATCHING', 'TRANSLATION', 'BUILD_SENTENCE', 'CHOOSE_SENTENCE', 'LISTENING'];
+
+        if (ex.questionText && ex.questionText !== "" && !technicalTs.includes(ex.questionText)) {
+          data.question = ex.questionText;
+        }
+
+        if (ex.correctAnswer && ex.correctAnswer !== "") {
+          data.answer = ex.correctAnswer;
+          data.target = ex.correctAnswer;
+        }
+        if (ex.mappings && ex.mappings !== "{}" && ex.mappings !== "") {
+          try {
+            data.pairs = JSON.parse(ex.mappings);
+          } catch (e) { }
+        }
+        if (ex.options && ex.options.length > 0) {
+          const optTexts = ex.options.map(o => o.optionText);
+          if (ex.exerciseType === 'TRANSLATE_SENTENCE' || ex.exerciseType === 'LISTEN_BUILD') {
+            data.words = optTexts;
+          } else {
+            data.options = optTexts;
+            const correctOpt = ex.options.find(o => o.isCorrect);
+            if (correctOpt) {
+              data.answer = correctOpt.optionText;
+              data.target = correctOpt.optionText;
+            }
           }
         }
 
-        if (foundLesson) {
-          console.log('✅ Урок загружен:', foundLesson.title);
-          setLessonData(foundLesson);
-        } else {
-          console.log('⚠️ Урок не найден с ID:', lessonId);
-          setError('Урок не найден');
+        // If it's a sentence builder but we don't have words array, generate it from target
+        if ((ex.exerciseType === 'TRANSLATE_SENTENCE' || ex.exerciseType === 'LISTEN_BUILD') && (!data.words || data.words.length === 0) && data.target) {
+          data.words = data.target.split(' ').sort(() => Math.random() - 0.5);
         }
-      }
-    } catch (error) {
-      console.error('❌ Ошибка загрузки урока:', error);
-      setError('Ошибка загрузки урока: ' + error.message);
-    } finally {
-      setLoadingLesson(false);
-    }
-  };
 
-  // Генерируем секции на основе контента урока
-  const generateSections = () => {
-    if (!lessonData) return [];
+        // Shuffle options if they exist
+        if (data.options && Array.isArray(data.options)) {
+          data.options = [...data.options].sort(() => Math.random() - 0.5);
+        }
 
-    const sections = [];
+        // Shuffle words for sentence builders if they exist
+        if (data.words && Array.isArray(data.words)) {
+          data.words = [...data.words].sort(() => Math.random() - 0.5);
+        }
 
-    // Теория
-    if (lessonData.content?.theoryText) {
-      sections.push({
-        id: 'theory',
-        name: 'ТЕОРИЯ',
-        type: 'theory'
-      });
-    }
+        return { ...ex, data };
+      } catch (e) { return { ...ex, data: {} }; }
+    });
+  }, [lessonData, interfaceLang]);
 
-    // Грамматика
-    if (lessonData.content?.grammarRules) {
-      sections.push({
-        id: 'grammar',
-        name: 'ГРАММАТИКА',
-        type: 'note'
-      });
-    }
-
-    // Примеры
-    if (lessonData.content?.examples) {
-      sections.push({
-        id: 'examples',
-        name: 'ПРИМЕРЫ',
-        type: 'note'
-      });
-    }
-
-    // Советы
-    if (lessonData.content?.tips) {
-      sections.push({
-        id: 'tips',
-        name: 'СОВЕТЫ',
-        type: 'note'
-      });
-    }
-
-    // Произношение
-    if (lessonData.content?.pronunciationGuide) {
-      sections.push({
-        id: 'pronunciation',
-        name: 'ПРОИЗНОШЕНИЕ',
-        type: 'note'
-      });
-    }
-
-    // Упражнения
-    if (lessonData.exercises && lessonData.exercises.length > 0) {
-      lessonData.exercises.forEach((_, index) => {
-        sections.push({
-          id: `exercise-${index}`,
-          name: `УПРАЖНЕНИЕ ${index + 1}`,
-          type: 'exercise',
-          exerciseIndex: index
-        });
-      });
-    }
-
-    return sections;
-  };
-
-  const sections = generateSections();
+  const ex = processedExercises && processedExercises.length > 0
+    ? processedExercises[currentExerciseIndex]
+    : null;
 
   const speak = (text) => {
     if (!text) return;
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'ru-RU'; // Для казахского обычно используется RU или TR голос как замена
+    // Better language detection: if it contains Cyrillic/Kazakh specific letters, it's kk or ru
+    // Kazakh specific: Ә, Ғ, Қ, Ң, Ө, Ұ, Ү, Һ, І
+    const isKazakhOrRussian = /[а-яА-ЯёЁӘғҚңӨұҮһіІ]/.test(text);
+    if (isKazakhOrRussian) {
+      // If we are studying Kazakh course, use kk-KZ
+      utterance.lang = 'kk-KZ';
+    } else {
+      utterance.lang = 'en-US';
+    }
     utterance.rate = 0.9;
     window.speechSynthesis.speak(utterance);
   };
 
-  const handleAnswerSelect = (optionIndex) => {
-    if (showResult) return;
-    const currentExercise = lessonData.exercises[currentExerciseIndex];
-    if (currentExercise && currentExercise.options[optionIndex]) {
-      speak(currentExercise.options[optionIndex].optionText);
-    }
-    setSelectedAnswer(optionIndex);
-  };
-
   const handleCheckAnswer = () => {
-    if (selectedAnswer === null) return;
-
-    const currentExercise = lessonData.exercises[currentExerciseIndex];
+    if (!ex) return;
     let isCorrect = false;
 
-    if (currentExercise.exerciseType === 'write') {
-      isCorrect = (selectedAnswer || '').toString().toLowerCase().trim() === (currentExercise.correctAnswer || '').toLowerCase().trim();
-    } else if (currentExercise.exerciseType === 'sentence') {
-      const userJoined = (Array.isArray(selectedAnswer) ? selectedAnswer : [])
-        .map(idx => currentExercise.options[idx]?.optionText || '')
-        .join('');
-
-      const cleanUser = userJoined.replace(/\s+/g, '').toLowerCase();
-      const cleanCorrect = (currentExercise.correctAnswer || '').replace(/\s+/g, '').toLowerCase();
-
-      isCorrect = cleanUser === cleanCorrect;
-    } else if (currentExercise.exerciseType === 'match') {
-      // Logic for match is mostly in handleMatchClick, but we'll set isCorrect here just in case
-      isCorrect = !!selectedAnswer?.isAllMatched;
+    if (ex.exerciseType === 'STORY' || ex.exerciseType === 'VIDEO') {
+      isCorrect = selectedAnswer === ex.data.answer;
     } else {
-      const selectedOption = currentExercise.options[selectedAnswer];
-      isCorrect = selectedOption ? selectedOption.isCorrect : false;
+      switch (ex.exerciseType) {
+        case 'WORD_TRANSLATE':
+        case 'LISTEN_SIMILAR':
+        case 'LISTEN_CHOOSE':
+          isCorrect = selectedAnswer === ex.data.answer;
+          break;
+        case 'TRANSLATE_SENTENCE':
+        case 'LISTEN_BUILD':
+          const userJoined = (selectedAnswer || []).join(' ').toLowerCase().replace(/[.,!?;]/g, '').trim();
+          const target = ex.data.target.toLowerCase().replace(/[.,!?;]/g, '').trim();
+          isCorrect = userJoined === target;
+          break;
+        case 'WORD_MATCH':
+          isCorrect = matchedPairs.length === Object.keys(ex.data.pairs).length * 2;
+          break;
+        case 'REPEAT_PHRASE':
+          isCorrect = selectedAnswer === ex.data.text;
+          break;
+        default: isCorrect = false;
+      }
     }
 
     setIsCorrectResult(isCorrect);
     setShowResult(true);
-
     if (isCorrect) {
-      setCorrectAnswers(correctAnswers + 1);
-      setAnimateSuccess(true);
-      if (currentExercise.exerciseType !== 'write') {
-        speak(currentExercise.options[selectedAnswer].optionText);
-      } else {
-        speak(selectedAnswer);
-      }
+      setCorrectAnswers(prev => prev + 1);
+      successSound.current.play().catch(() => { });
     } else {
-      setAnimateError(true);
-      const newLives = lives - 1;
-      setLives(newLives);
-      if (newLives === 0) {
-        setGameOver(true);
-        return;
-      }
-    }
-    setTimeout(() => { setAnimateError(false); setAnimateSuccess(false); }, 500);
-  };
-
-  const handleCompleteLesson = async () => {
-    console.log('🎯 ===== ЗАВЕРШЕНИЕ УРОКА =====');
-    setLoading(true);
-    setError(null);
-
-    try {
-      const lessonId = lessonData?.id;
-      const xpToAdd = lessonData?.xpReward || 20;
-      const totalQuestions = lessonData?.exercises?.length || 0;
-
-      if (!lessonId) {
-        throw new Error('ID урока не найден');
-      }
-
-      const result = await apiService.completeLesson(
-        lessonId,
-        correctAnswers,
-        totalQuestions,
-        xpToAdd
-      );
-
-      if (result.success) {
-        console.log('✅ УРОК УСПЕШНО ЗАВЕРШЕН!');
-        setCompleted(true);
-
-        setTimeout(() => {
-          navigate('/lesson');
-        }, 2000);
-      } else {
-        const errorMsg = result.message || 'Неизвестная ошибка при завершении урока';
-        console.error('❌ Ошибка завершения:', errorMsg);
-        setError(errorMsg);
-        alert('Ошибка: ' + errorMsg);
-      }
-    } catch (error) {
-      console.error('❌ КРИТИЧЕСКАЯ ОШИБКА:', error);
-      setError(error.message);
-      alert('Ошибка: ' + error.message);
-    } finally {
-      setLoading(false);
+      setLives(prev => prev - 1);
+      errorSound.current.play().catch(() => { });
+      if (lives <= 1) setGameOver(true);
     }
   };
 
-  const handleNextSection = () => {
-    const currentSectionIndex = sections.findIndex(s => s.id === currentSection);
-    if (currentSectionIndex < sections.length - 1) {
-      const nextSection = sections[currentSectionIndex + 1];
-      setCurrentSection(nextSection.id);
-      if (nextSection.type === 'exercise') {
-        setCurrentExerciseIndex(nextSection.exerciseIndex);
-        setSelectedAnswer(null);
-        setShowResult(false);
-        setIsCorrectResult(false);
-      }
+  const handleNext = () => {
+    if (currentExerciseIndex < lessonData.exercises.length - 1) {
+      setCurrentExerciseIndex(prev => prev + 1);
+      setSelectedAnswer(null);
+      setShowResult(false);
+      setIsCorrectResult(false);
+      setCurrentStoryLine(0);
+      setMatchedPairs([]);
+      setMatchLeft(null);
     } else {
       handleCompleteLesson();
     }
   };
 
-  const renderContent = (characterImg) => {
-    if (!lessonData) return null;
+  const handleCompleteLesson = async () => {
+    const xpReward = lessonData.xpReward || 20;
+    try {
+      await apiService.completeLesson(lessonData.id, correctAnswers, lessonData.exercises.length, xpReward);
+      setCompleted(true);
+    } catch (err) {
+      console.error("Error completing lesson:", err);
+    } finally {
+      // Logic for ending completion could go here if needed
+    }
+  };
 
-    const section = sections.find(s => s.id === currentSection);
-    if (!section) return null;
+  // Memoized shuffles for matching to prevent re-shuffle on every render
+  const shuffleMatch = useMemo(() => {
+    if (!ex || (ex.exerciseType !== 'WORD_MATCH' && ex.exerciseType !== 'MATCHING')) return { left: [], right: [] };
 
-    switch (section.type) {
-      case 'theory':
-        return (
-          <div className="animate-fade-in">
-            <div className="flex items-center gap-4 mb-8">
-              <img src={characterImg} className="w-16 h-16 object-contain" alt="Character" />
-              <h2 className="text-3xl font-black text-gray-900 uppercase tracking-tight">
-                {lessonData.content.theoryTitle || 'Теория'}
-              </h2>
-            </div>
-            <div className="bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-duo-light">
-              <p className="text-xl text-gray-800 whitespace-pre-line leading-relaxed font-medium">
-                {lessonData.content.theoryText}
-              </p>
-            </div>
-          </div>
-        );
+    const pairs = ex.data.pairs || {};
+    const left = Object.keys(pairs).sort(() => Math.random() - 0.5);
+    const right = Object.values(pairs).sort(() => Math.random() - 0.5);
+    return { left, right };
+  }, [ex]);
 
-      case 'note':
-        const noteStyles = {
-          grammar: { bg: 'bg-blue-50', border: 'border-blue-200', text: 'text-blue-800', icon: '📝', title: 'Грамматика' },
-          examples: { bg: 'bg-green-50', border: 'border-green-200', text: 'text-green-800', icon: '💡', title: 'Примеры' },
-          tips: { bg: 'bg-yellow-50', border: 'border-yellow-200', text: 'text-yellow-800', icon: '💭', title: 'Советы' },
-          pronunciation: { bg: 'bg-pink-50', border: 'border-pink-200', text: 'text-pink-800', icon: '🗣️', title: 'Произношение' }
-        };
-        const style = noteStyles[section.id] || noteStyles.grammar;
+  if (loadingLesson) return <div className="min-h-screen bg-white flex items-center justify-center font-black">ЗАГРУЗКА...</div>;
+  if (!lessonData) return <div className="min-h-screen bg-white flex items-center justify-center font-black text-red-500">УРОК НЕ НАЙДЕН</div>;
 
-        return (
-          <div className="animate-fade-in">
-            <div className={`p-8 rounded-3xl border-2 ${style.bg} ${style.border}`}>
-              <h3 className={`text-2xl font-black mb-4 flex items-center gap-3 ${style.text}`}>
-                <span>{style.icon}</span> {style.title}
-              </h3>
-              <p className={`text-xl font-medium whitespace-pre-line leading-relaxed ${style.text}`}>
-                {section.id === 'grammar' ? lessonData.content.grammarRules :
-                  section.id === 'examples' ? lessonData.content.examples :
-                    section.id === 'tips' ? lessonData.content.tips :
-                      lessonData.content.pronunciationGuide}
-              </p>
-            </div>
-            <div className="mt-8 flex justify-center transform transition hover:scale-110">
-              <img src={characterImg} className="w-32 h-32 object-contain" alt="Character" />
-            </div>
-          </div>
-        );
+  // ex is already defined above at line 74 using processedExercises
 
-      case 'exercise':
-        const exercise = lessonData.exercises[section.exerciseIndex];
+  if (!ex && !completed) return <div className="min-h-screen bg-white flex flex-col items-center justify-center p-10 text-center">
+    <div className="text-6xl mb-6">🏗️</div>
+    <h2 className="text-2xl font-black text-gray-800 mb-4 tracking-tight">ЭТОТ УРОК ПОКА ПУСТ</h2>
+    <p className="text-gray-500 font-bold mb-8">Мы еще работаем над наполнением этого раздела. Попробуйте другой урок!</p>
+    <button onClick={() => navigate('/lesson')} className="px-10 py-4 bg-blue-500 text-white font-black rounded-2xl shadow-[0_4px_0_0_#1d4ed8]">
+      ВЕРНУТЬСЯ
+    </button>
+  </div>;
 
-        // Duolingo-style Character Speech Bubble
-        const renderQuestionHeader = (question, audio) => (
-          <div className="flex items-end gap-6 mb-8 mt-4 animate-pop">
-            <div className="w-24 h-24 flex-shrink-0">
-              <img src={characterImg} className="w-full h-full object-contain" alt="Character" />
-            </div>
-            <div className="relative bg-white border-2 border-gray-200 rounded-2xl p-5 shadow-duo-light flex-1">
-              <div className="absolute left-[-9px] bottom-6 w-4 h-4 bg-white border-l-2 border-b-2 border-gray-200 rotate-45"></div>
-              <h3 className="text-xl font-bold text-gray-800 leading-tight">
-                {question}
-              </h3>
-              {audio && (
-                <button
-                  onClick={() => speak(question)}
-                  className="mt-3 text-blue-500 hover:text-blue-600 flex items-center gap-2 font-bold transition transform active:scale-95"
-                >
-                  <div className="p-1.5 bg-blue-100 rounded-lg">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-sm tracking-wide">ПРОСЛУШАТЬ</span>
-                </button>
-              )}
-            </div>
-          </div>
-        );
+  const progress = lessonData.exercises.length > 0
+    ? ((currentExerciseIndex + (showResult ? 1 : 0)) / lessonData.exercises.length) * 100
+    : 100;
 
-        // --- MATCHING TYPE ---
-        if (exercise.exerciseType === 'match') {
-          if (!exercise.pairsParsed) {
-            exercise.pairsParsed = exercise.options.map(opt => {
-              const parts = opt.optionText.split('=');
-              return { id: opt.id, left: parts[0], right: parts[1], original: opt };
-            });
-            exercise.leftItems = exercise.pairsParsed.map(p => ({ id: p.id, text: p.left, matched: false }));
-            exercise.rightItems = [...exercise.pairsParsed]
-              .sort(() => Math.random() - 0.5)
-              .map(p => ({ id: p.id, text: p.right, matched: false }));
+  // --- RENDERS ---
+
+  const renderWordMatch = () => {
+    const data = ex.data;
+    const handleMatch = (side, item) => {
+      if (showResult || matchedPairs.includes(item)) return;
+      if (side === 'left') {
+        setMatchLeft(item);
+        speak(item);
+      } else {
+        if (!matchLeft) return;
+        if (data.pairs[matchLeft] === item) {
+          setMatchedPairs([...matchedPairs, matchLeft, item]);
+          setMatchLeft(null);
+          successSound.current.play().catch(() => { });
+          if (matchedPairs.length + 2 === Object.keys(data.pairs).length * 2) {
+            setIsCorrectResult(true);
+            setShowResult(true);
+            setCorrectAnswers(prev => prev + 1);
           }
+        } else {
+          errorSound.current.play().catch(() => { });
+          setMatchLeft(null);
+          setLives(prev => prev - 1);
+          if (lives <= 1) setGameOver(true);
+        }
+      }
+    };
 
-          const handleMatchClick = (side, item) => {
-            if (showResult || item.matched) return;
-            if (side === 'left') {
-              setSelectedAnswer({ ...selectedAnswer, left: item });
-            } else {
-              // Check if the pair is correct based on original pairs
-              const leftText = selectedAnswer.left.text;
-              const rightText = item.text;
+    return (
+      <div className="w-full max-w-2xl px-4 animate-pop">
+        <h2 className="text-2xl font-black mb-8 text-gray-800 text-center">{data.title || 'Найдите пары'}</h2>
+        <div className="grid grid-cols-2 gap-6">
+          <div className="space-y-3">
+            {shuffleMatch.left.map(item => (
+              <button
+                key={item}
+                onClick={() => handleMatch('left', item)}
+                className={`w-full p-5 rounded-2xl font-bold border-2 transition shadow-[0_4px_0_0_#e5e5e5]
+                    ${matchedPairs.includes(item) ? 'bg-gray-100 border-gray-100 text-gray-300 shadow-none' : (matchLeft === item ? 'bg-blue-100 border-blue-400 text-blue-600' : 'bg-white border-gray-200')}
+                   `}
+              >
+                {item}
+              </button>
+            ))}
+          </div>
+          <div className="space-y-3">
+            {shuffleMatch.right.map(item => (
+              <button
+                key={item}
+                onClick={() => handleMatch('right', item)}
+                className={`w-full p-5 rounded-2xl font-bold border-2 transition shadow-[0_4px_0_0_#e5e5e5]
+                     ${matchedPairs.includes(item) ? 'bg-gray-100 border-gray-100 text-gray-300 shadow-none' : 'bg-white border-gray-200'}
+                    `}
+              >
+                {item}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  };
 
-              const isCorrect = exercise.pairsParsed.some(p =>
-                (p.left === leftText && p.right === rightText) ||
-                (p.left === rightText && p.right === leftText)
-              );
 
-              if (isCorrect) {
-                // Find IDs of items that match these texts to mark them as matched
-                // We mark the specific ones selected, but could also mark all identical ones? 
-                // Let's just mark the ones that were successfully matched.
-                // Actually, the current ID system is safer for internal tracking.
-                exercise.leftItems.find(i => i.text === leftText && !i.matched).matched = true;
-                exercise.rightItems.find(i => i.text === rightText && !i.matched).matched = true;
-                setSelectedAnswer(null);
-                if (exercise.leftItems.every(i => i.matched)) {
-                  setCorrectAnswers(correctAnswers + 1);
-                  setAnimateSuccess(true);
-                  setIsCorrectResult(true);
-                  setShowResult(true);
-                  setTimeout(() => { setAnimateSuccess(false); handleNextSection(); }, 2500);
-                }
-              } else {
-                setAnimateError(true);
-                const newLives = lives - 1;
-                setLives(newLives);
-                setTimeout(() => setAnimateError(false), 500);
-                if (newLives === 0) {
-                  setGameOver(true);
-                  setTimeout(() => window.location.reload(), 2000);
-                }
-                setSelectedAnswer(null);
-              }
-            }
-          };
+  const renderStory = () => {
+    const data = ex.data;
+    const lines = data.lines || [];
+    const isInteractionTime = currentStoryLine >= lines.length;
 
-          return (
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-6">{exercise.questionText}</h3>
-              <div className="grid grid-cols-2 gap-8">
-                <div className="space-y-4">
-                  {exercise.leftItems.map(item => (
-                    <button
-                      key={item.id}
-                      onClick={() => handleMatchClick('left', item)}
-                      disabled={item.matched}
-                      className={`w-full p-4 rounded-xl font-bold transition
-                         ${item.matched ? 'bg-green-100 text-green-800 opacity-50' :
-                          selectedAnswer?.left?.id === item.id ? 'bg-blue-200 border-2 border-blue-400' : 'bg-white border-2 border-gray-200 hover:border-pink-300'}
-                       `}
-                    >
-                      {item.text}
-                    </button>
-                  ))}
-                </div>
-                <div className="space-y-4">
-                  {exercise.rightItems.map(item => (
-                    <button
-                      key={item.id}
-                      onClick={() => handleMatchClick('right', item)}
-                      disabled={item.matched}
-                      className={`w-full p-4 rounded-xl font-bold transition
-                         ${item.matched ? 'bg-green-100 text-green-800 opacity-50' : 'bg-white border-2 border-gray-200 hover:border-pink-300'}
-                       `}
-                    >
-                      {item.text}
-                    </button>
-                  ))}
-                </div>
+    return (
+      <div className="w-full max-w-2xl px-4 animate-fade-in">
+        <div className="space-y-6 mb-12">
+          {lines.slice(0, currentStoryLine + 1).map((line, i) => (
+            <div key={i} className={`flex items-start gap-4 animate-pop ${i === currentStoryLine ? 'opacity-100 scale-100' : 'opacity-60 scale-95'}`}>
+              <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center font-black text-pink-400 border-2 border-pink-200 shadow-sm">
+                {line.char[0]}
+              </div>
+              <div className="bg-white border-2 border-gray-100 p-5 rounded-2xl shadow-sm relative cursor-pointer hover:bg-gray-50 transition" onClick={() => speak(line.text)}>
+                <div className="absolute left-[-8px] top-4 w-4 h-4 bg-white border-l-2 border-b-2 border-gray-100 rotate-45"></div>
+                <p className="font-black text-gray-400 text-[10px] mb-1 uppercase tracking-widest">{line.char}</p>
+                <p className="text-xl font-bold text-gray-800 leading-snug">{line.text}</p>
               </div>
             </div>
-          );
-        }
+          ))}
+        </div>
 
-        // --- SENTENCE BUILDER ---
-        if (exercise.exerciseType === 'sentence') {
-          const currentSelection = Array.isArray(selectedAnswer) ? selectedAnswer : [];
-
-          const handleWordClick = (word, index) => {
-            if (showResult) return;
-            speak(word.optionText);
-            if (!currentSelection.includes(index)) {
-              setSelectedAnswer([...currentSelection, index]);
-            }
-          };
-
-          const handleRemoveWord = (indexToRemove) => {
-            if (showResult) return;
-            setSelectedAnswer(currentSelection.filter(i => i !== indexToRemove));
-          };
-
-          return (
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-6">{exercise.questionText}</h3>
-              <div className="min-h-[80px] bg-gray-100 rounded-xl p-4 mb-6 flex flex-wrap gap-2">
-                {currentSelection.map((wordIndex, i) => (
-                  <button
-                    key={i}
-                    onClick={() => handleRemoveWord(wordIndex)}
-                    className="bg-white px-4 py-2 rounded-lg shadow-sm border font-bold hover:bg-red-50"
-                  >
-                    {exercise.options[wordIndex].optionText}
-                  </button>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-3 justify-center">
-                {exercise.options.map((option, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleWordClick(option, index)}
-                    disabled={currentSelection.includes(index) || showResult}
-                    className={`px-4 py-3 rounded-xl font-bold border-b-4 transition
-                        ${currentSelection.includes(index)
-                        ? 'opacity-0'
-                        : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 active:translate-y-1 active:border-b-0'}
-                      `}
-                  >
-                    {option.optionText}
-                  </button>
-                ))}
-              </div>
-            </div>
-          );
-        }
-
-        // --- WRITE TYPE ---
-        if (exercise.exerciseType === 'write') {
-          return (
-            <div className="w-full">
-              {renderQuestionHeader(exercise.questionText)}
-              <div className="mb-6">
-                <input
-                  type="text"
-                  autoFocus
-                  placeholder="Введите ответ"
-                  value={selectedAnswer || ''}
-                  onChange={(e) => setSelectedAnswer(e.target.value)}
-                  disabled={showResult}
-                  className={`w-full p-6 text-xl font-bold bg-white border-b-4 rounded-2xl transition outline-none
-                    ${showResult
-                      ? (selectedAnswer?.toLowerCase().trim() === exercise.correctAnswer.toLowerCase().trim()
-                        ? 'border-green-500 bg-green-50 text-green-700'
-                        : 'border-red-500 bg-red-50 text-red-700')
-                      : 'border-gray-200 focus:border-blue-400 focus:bg-blue-50'
-                    }`}
-                />
-              </div>
-            </div>
-          );
-        }
-
-        // --- DEFAULT (MULTIPLE CHOICE) ---
-        return (
-          <div className="w-full">
-            {renderQuestionHeader(exercise.questionText)}
+        {!isInteractionTime ? (
+          <button
+            onClick={() => {
+              const nextLine = lines[currentStoryLine + 1];
+              if (nextLine) speak(nextLine.text);
+              setCurrentStoryLine(prev => prev + 1);
+            }}
+            className="w-full py-5 bg-blue-500 text-white font-black rounded-2xl shadow-[0_4px_0_0_#1d4ed8] hover:brightness-110 active:translate-y-1 active:shadow-none transition"
+          >
+            ДАЛЕЕ
+          </button>
+        ) : (
+          <div className="animate-pop bg-blue-50 p-8 rounded-3xl border-2 border-blue-100 shadow-sm">
+            <h3 className="text-2xl font-black text-blue-800 mb-6">{data.question}</h3>
             <div className="grid grid-cols-1 gap-3">
-              {exercise.options.map((option, index) => (
+              {data.options.map(opt => (
                 <button
-                  key={index}
-                  onClick={() => handleAnswerSelect(index)}
-                  disabled={showResult}
-                  className={`w-full p-4 rounded-xl text-left font-medium transition-all ${selectedAnswer === index
-                    ? showResult
-                      ? option.isCorrect
-                        ? 'bg-green-200 border-2 border-green-500'
-                        : 'bg-red-200 border-2 border-red-500'
-                      : 'bg-pink-200 border-2 border-pink-400'
-                    : 'bg-gray-100 hover:bg-gray-200 border-2 border-gray-300'
-                    } ${selectedAnswer === index && animateError ? 'animate-shake' : ''}`}
+                  key={opt}
+                  onClick={() => !showResult && setSelectedAnswer(opt)}
+                  className={`p-5 rounded-2xl font-bold text-left transition border-2 shadow-sm ${selectedAnswer === opt ? 'bg-white border-blue-400 text-blue-600' : 'bg-white border-gray-100 text-gray-700 hover:border-blue-200'}`}
                 >
-                  {option.optionText}
+                  {opt}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  const renderVideo = () => {
+    const data = ex.data;
+    return (
+      <div className="w-full max-w-3xl flex flex-col items-center animate-fade-in">
+        <div className="w-full aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl mb-10 border-4 border-gray-800">
+          <iframe
+            className="w-full h-full"
+            src={`https://www.youtube.com/embed/${data.youtubeId}?autoplay=0&rel=0`}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+        <div className="w-full bg-white p-8 rounded-3xl border-2 border-gray-100 shadow-duo-light">
+          <h3 className="text-2xl font-black mb-6 text-gray-800">{data.question}</h3>
+          <div className="grid grid-cols-1 gap-3">
+            {data.options.map(opt => (
+              <button key={opt} onClick={() => !showResult && setSelectedAnswer(opt)} className={`p-5 rounded-2xl border-2 font-bold text-left transition ${selectedAnswer === opt ? 'border-blue-400 bg-blue-50 text-blue-700' : 'border-gray-100 text-gray-600 hover:bg-gray-50'}`}>
+                {opt}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const renderNormalExercise = () => {
+    const data = ex.data;
+
+    switch (ex.exerciseType) {
+      case 'WORD_TRANSLATE':
+        const wordQuestion = typeof data.question === 'object' ? data.question[interfaceLang] : data.question;
+        return (
+          <div className="w-full max-w-xl animate-pop">
+            <h2 className="text-3xl font-black mb-12 text-gray-800 text-center">
+              {interfaceLang === 'en' ? `How do you say "${wordQuestion}"?` :
+                interfaceLang === 'kk' ? `"${wordQuestion}" қалай аударылады?` :
+                  `Как переводится "${wordQuestion}"?`}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {data.options.map(opt => (
+                <button
+                  key={opt}
+                  onClick={() => { if (!showResult) setSelectedAnswer(opt); speak(opt); }}
+                  className={`p-6 rounded-2xl font-black text-xl transition border-2 shadow-[0_4px_0_0_#e5e5e5] active:translate-y-1 active:shadow-none ${selectedAnswer === opt ? 'bg-blue-100 border-blue-400 text-blue-600 shadow-[0_4px_0_0_#93c5fd]' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50'}`}
+                >
+                  {opt}
                 </button>
               ))}
             </div>
           </div>
         );
+      case 'TRANSLATE_SENTENCE':
+      case 'LISTEN_BUILD':
+        const isListen = ex.exerciseType === 'LISTEN_BUILD';
+        const displayQuestion = typeof data.question === 'object' ? data.question[interfaceLang] : data.question;
 
-      default:
-        return null;
+        return (
+          <div className="w-full max-w-2xl animate-pop">
+            <h2 className="text-3xl font-black mb-12 text-gray-800 text-center">
+              {isListen ? (interfaceLang === 'en' ? 'Listen and assemble' : interfaceLang === 'kk' ? 'Тыңдап, жинаңыз' : 'Слушайте и соберите') :
+                (interfaceLang === 'en' ? 'Translate this sentence' : interfaceLang === 'kk' ? 'Сөйлемді аударыңыз' : 'Переведите предложение')}
+            </h2>
+            <div className="flex items-center gap-8 mb-12">
+              <div className="relative bg-white border-4 border-pink-200 rounded-3xl p-8 shadow-sm flex-1 flex items-center gap-6">
+                <div className="absolute left-[-12px] bottom-10 w-6 h-6 bg-white border-l-4 border-b-4 border-pink-200 rotate-45 rounded-bl-md"></div>
+                {isListen && (
+                  <button
+                    onClick={() => speak(data.target)}
+                    className="p-5 bg-pink-400 text-white rounded-2xl shadow-[0_4px_0_0_#FF8EC4] hover:brightness-110 active:translate-y-1 active:shadow-none transition transform hover:scale-105"
+                  >
+                    <Headphones size={36} />
+                  </button>
+                )}
+                {!isListen && <p className="text-2xl font-black text-gray-700 leading-tight">{displayQuestion}</p>}
+                {isListen && <p className="text-lg font-bold text-pink-300 italic uppercase tracking-wider">{interfaceLang === 'en' ? 'Tap to listen' : interfaceLang === 'kk' ? 'Тыңдау үшін басыңыз' : 'Нажмите чтобы послушать'}</p>}
+              </div>
+            </div>
+            <div className="min-h-[70px] border-b-2 border-gray-200 mb-10 flex flex-wrap gap-2 p-2 bg-gray-50/50 rounded-t-xl">
+              {(Array.isArray(selectedAnswer) ? selectedAnswer : []).map((w, idx) => (
+                <button key={idx} onClick={() => !showResult && setSelectedAnswer(prev => Array.isArray(prev) ? prev.filter((_, i) => i !== idx) : [])} className="bg-white border-2 border-gray-200 rounded-xl px-4 py-2 font-bold shadow-sm animate-pop">
+                  {w}
+                </button>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-3 justify-center">
+              {(data.words || []).map((w, idx) => (
+                <button
+                  key={idx}
+                  disabled={showResult || (Array.isArray(selectedAnswer) && selectedAnswer.includes(w))}
+                  onClick={() => { setSelectedAnswer(prev => [...(Array.isArray(prev) ? prev : []), w]); speak(w); }}
+                  className={`px-5 py-3 rounded-xl font-bold border-2 transition shadow-[0_4px_0_0_#e5e5e5] ${(Array.isArray(selectedAnswer) && selectedAnswer.includes(w)) ? 'bg-gray-100 text-transparent border-gray-100 shadow-none' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300'}`}
+                >
+                  {w}
+                </button>
+              ))}
+            </div>
+          </div>
+        );
+      case 'WORD_MATCH': return renderWordMatch();
+      case 'LISTEN_CHOOSE':
+      case 'LISTEN_SIMILAR':
+        return (
+          <div className="w-full max-w-xl flex flex-col items-center animate-pop">
+            <h2 className="text-3xl font-black mb-12 text-gray-800 text-center">
+              {interfaceLang === 'en' ? 'What do you hear?' : interfaceLang === 'kk' ? 'Не естідіңіз?' : (data.question || 'Что вы слышите?')}
+            </h2>
+            <button
+              onClick={() => speak(data.answer)}
+              className="w-32 h-32 bg-blue-500 rounded-3xl flex items-center justify-center shadow-[0_8px_0_0_#1d4ed8] hover:brightness-110 active:scale-95 transition mb-12 text-white"
+            >
+              <Headphones size={48} strokeWidth={3} />
+            </button>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+              {data.options.map(opt => (
+                <button
+                  key={opt}
+                  onClick={() => { if (!showResult) setSelectedAnswer(opt); speak(opt); }}
+                  className={`p-6 rounded-2xl font-black text-xl transition border-2 shadow-[0_4px_0_0_#e5e5e5] active:translate-y-1 active:shadow-none
+                      ${selectedAnswer === opt ? 'bg-blue-100 border-blue-400 text-blue-600 shadow-[0_4px_0_0_#93c5fd]' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50'}
+                    `}
+                >
+                  {opt}
+                </button>
+              ))}
+            </div>
+          </div>
+        );
+      case 'REPEAT_PHRASE':
+        return (
+          <div className="w-full max-w-xl flex flex-col items-center animate-pop">
+            <h2 className="text-3xl font-black mb-12 text-gray-800 text-center">
+              {interfaceLang === 'en' ? 'Repeat the phrase' : interfaceLang === 'kk' ? 'Фразаны қайталаңыз' : 'Повторите фразу'}
+            </h2>
+            <div className="flex items-center gap-6 mb-12">
+              <button
+                onClick={() => speak(data.text)}
+                className="p-4 bg-blue-500 text-white rounded-2xl shadow-[0_4px_0_0_#1d4ed8]"
+              >
+                <Headphones size={32} />
+              </button>
+              <p className="text-3xl font-black text-gray-800 border-b-4 border-dotted border-gray-300 pb-2">{data.text}</p>
+            </div>
+
+            <div className="relative group">
+              <button
+                onClick={() => {
+                  setSelectedAnswer('recording...');
+                  setTimeout(() => setSelectedAnswer(data.text), 2000);
+                }}
+                className={`w-40 h-40 rounded-full flex items-center justify-center transition-all duration-300
+                  ${selectedAnswer === 'recording...' ? 'bg-red-500 animate-pulse' : 'bg-pink-400 hover:scale-110'}
+                  text-white shadow-xl
+                `}
+              >
+                {selectedAnswer === 'recording...' ? <Star size={64} fill="white" className="animate-spin" /> : <Star size={64} fill="white" />}
+              </button>
+              {selectedAnswer === 'recording...' && (
+                <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-red-500 text-white px-4 py-1 rounded-full font-black text-sm animate-bounce">
+                  {interfaceLang === 'en' ? 'RECORDING...' : interfaceLang === 'kk' ? 'ЖАЗЫЛУДА...' : 'ЗАПИСЬ...'}
+                </div>
+              )}
+            </div>
+            <p className="mt-10 text-gray-400 font-bold uppercase tracking-widest italic">
+              {selectedAnswer === 'recording...' ? (interfaceLang === 'en' ? 'Speaking...' : interfaceLang === 'kk' ? 'Сөйлеңіз...' : 'Говорите...') :
+                (selectedAnswer ? (interfaceLang === 'en' ? 'Analyzed!' : interfaceLang === 'kk' ? 'Талданды!' : 'Проанализировано!') :
+                  (interfaceLang === 'en' ? 'Tap the star and repeat' : interfaceLang === 'kk' ? 'Жұлдызшаны басып қайталаңыз' : 'Нажмите на звезду и повторите'))}
+            </p>
+          </div>
+        );
+      default: return null;
     }
   };
 
-  if (loadingLesson) {
-    return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FFFECF' }}>
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-pink-400 mx-auto mb-4"></div>
-          <p className="text-gray-700 font-medium">Загрузка урока...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (error && !lessonData) {
-    return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FFFECF' }}>
-        <div className="text-center">
-          <div className="text-red-500 text-5xl mb-4">⚠️</div>
-          <p className="text-gray-700 font-medium mb-4">{error}</p>
-          <Link to="/lesson" className="text-pink-400 hover:underline">
-            Вернуться к урокам
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
-  if (!lessonData) {
-    return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FFFECF' }}>
-        <div className="text-center">
-          <p className="text-gray-700 font-medium mb-4">Урок не найден</p>
-          <Link to="/lesson" className="text-pink-400 hover:underline">
-            Вернуться к урокам
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
-  const currentSectionIndex = sections.findIndex(s => s.id === currentSection);
-  const progress = ((currentSectionIndex + (showResult ? 1 : 0)) / sections.length) * 100;
-  const currentSectionData = sections[currentSectionIndex];
-
   return (
-    <div className="min-h-screen flex flex-col font-sans" style={{ backgroundColor: '#FFFFFF' }}>
-      <header className="max-w-5xl w-full mx-auto px-6 py-6 flex items-center gap-4">
-        <Link to="/lesson" className="text-gray-400 hover:text-gray-600 transition">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </Link>
-        <div className="flex-1 h-4 bg-gray-200 rounded-full overflow-hidden">
+    <div className="min-h-screen flex flex-col bg-[#FFFECF]">
+      {/* ProgressBar Top */}
+      <header className="max-w-5xl w-full mx-auto px-6 py-6 md:py-10 flex items-center gap-6">
+        <button onClick={() => navigate('/lesson')} className="text-gray-400 hover:text-pink-400 transition transform hover:scale-110 active:scale-95">
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="4"><path d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+        <div className="flex-1 h-5 bg-white rounded-full overflow-hidden shadow-[inset_0_2px_4px_rgba(0,0,0,0.05)] border-2 border-white">
           <div
-            className="h-full bg-green-500 transition-all duration-500 ease-out rounded-full"
+            className="h-full bg-[#58CC02] transition-all duration-700 rounded-full shadow-[inset_0_-4px_0_0_rgba(0,0,0,0.15)]"
             style={{ width: `${progress}%` }}
           />
         </div>
-        <div className="flex items-center gap-2">
-          <span className="text-red-500 text-2xl font-bold">❤️</span>
-          <span className="text-red-500 text-xl font-bold">{lives}</span>
+        <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-2xl shadow-sm border-2 border-pink-100">
+          <span className="text-pink-400 text-xl">❤️</span>
+          <span className="text-pink-400 text-xl font-black">{lives}</span>
         </div>
       </header>
 
-      <main className="flex-1 flex flex-col items-center justify-center px-4 py-8">
-        <div className="max-w-2xl w-full">
-          {!completed ? (
-            <div className="animate-fade-in">
-              {renderContent(characterImg)}
-            </div>
-          ) : (
-            <div className="text-center animate-pop">
-              <div className="text-8xl mb-6">🏆</div>
-              <h1 className="text-3xl font-black text-gray-900 mb-2">УРОК ЗАВЕРШЕН!</h1>
-              <p className="text-xl text-gray-600 mb-8">Вы отлично поработали и заработали опыт.</p>
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="bg-orange-100 p-6 rounded-2xl border-2 border-orange-200">
-                  <div className="text-orange-500 font-bold uppercase text-sm mb-1">Очки опыта</div>
-                  <div className="text-3xl font-black text-orange-600">+{lessonData.xpReward} XP</div>
-                </div>
-                <div className="bg-blue-100 p-6 rounded-2xl border-2 border-blue-200">
-                  <div className="text-blue-500 font-bold uppercase text-sm mb-1">Точность</div>
-                  <div className="text-3xl font-black text-blue-600">
-                    {Math.round((correctAnswers / (lessonData.exercises?.length || 1)) * 100)}%
-                  </div>
-                </div>
+      {/* Main Area */}
+      <main className="flex-1 flex flex-col items-center justify-center p-6 pb-40">
+        {completed ? (
+          <div className="text-center max-w-sm animate-pop">
+            <div className="text-[140px] mb-8 filter drop-shadow-xl">🏆</div>
+            <h1 className="text-5xl font-black text-gray-800 mb-4 tracking-tighter uppercase">ОТЛИЧНО!</h1>
+            <p className="text-gray-500 font-bold text-xl mb-10 leading-relaxed">Вы завершили этот урок и стали на шаг ближе к цели.</p>
+
+            <div className="flex gap-4 justify-center">
+              <div className="py-6 px-10 bg-white border-4 border-yellow-300 rounded-[2.5rem] shadow-lg animate-bounce duration-2000">
+                <p className="text-yellow-500 font-black text-4xl">+{lessonData.xpReward || 20} XP</p>
+                <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mt-1">Опыт</p>
+              </div>
+
+              <div className="py-6 px-10 bg-white border-4 border-blue-300 rounded-[2.5rem] shadow-lg animate-bounce duration-2000" style={{ animationDelay: '0.2s' }}>
+                <p className="text-blue-500 font-black text-4xl">
+                  +{correctAnswers === lessonData.exercises.length ? 5 : 2} 💎
+                </p>
+                <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mt-1">Алмазы</p>
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        ) : (
+          ex.exerciseType === 'STORY' ? renderStory() : (ex.exerciseType === 'VIDEO' ? renderVideo() : renderNormalExercise())
+        )}
       </main>
 
+      {/* Footer Check Bar */}
       {!completed && (
-        <footer className={`py-6 border-t-2 ${showResult
-          ? isCorrectResult
-            ? 'bg-green-100 border-green-200'
-            : 'bg-red-100 border-red-200'
-          : 'bg-white border-gray-100'
-          }`}>
-          <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
-            <div className="flex-1">
+        <footer className={`fixed bottom-0 left-0 right-0 p-8 md:p-12 border-t-4 transition-all duration-300 z-50
+          ${showResult
+            ? (isCorrectResult ? 'bg-[#D7FFB7] border-[#D7FFB7] translate-y-0' : 'bg-[#FFDADC] border-[#FFDADC] translate-y-0')
+            : 'bg-white border-gray-100'}
+        `}>
+          <div className="max-w-5xl mx-auto flex items-center justify-between">
+            <div className="hidden md:flex flex-col flex-1">
               {showResult && (
-                <div className="flex items-center gap-4">
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white text-2xl font-bold ${isCorrectResult
-                    ? 'bg-green-500' : 'bg-red-500'
-                    }`}>
-                    {isCorrectResult ? '✓' : '✗'}
-                  </div>
-                  <div>
-                    <h4 className={`text-xl font-black ${isCorrectResult
-                      ? 'text-green-700' : 'text-red-700'
-                      }`}>
-                      {isCorrectResult ? 'Правильно!' : 'Не совсем верно'}
-                    </h4>
-                    {!isCorrectResult && (
-                      <p className="text-red-600 font-bold">
-                        Правильный ответ: {lessonData.exercises[currentExerciseIndex]?.correctAnswer}
-                      </p>
-                    )}
-                  </div>
+                <div className="animate-pop pl-4">
+                  <h3 className={`text-3xl font-black mb-1 ${isCorrectResult ? 'text-green-700' : 'text-red-700'}`}>
+                    {isCorrectResult ? 'ПРАВИЛЬНО!' : 'ОШИБКА!'}
+                  </h3>
+                  {!isCorrectResult && (
+                    <p className="text-red-600 font-bold text-xl">Правильный ответ: {ex.data.answer || ex.data.target}</p>
+                  )}
                 </div>
               )}
             </div>
             <button
-              onClick={showResult ? handleNextSection : (currentSectionData?.type === 'exercise' ? handleCheckAnswer : handleNextSection)}
-              disabled={loading || (currentSectionData?.type === 'exercise' && !showResult &&
-                (currentSectionData.exerciseType === 'match'
-                  ? true
-                  : selectedAnswer === null
-                )
-              )}
-              className={`px-12 py-4 rounded-2xl font-black text-lg transition shadow-duo uppercase tracking-wider
+              onClick={showResult ? handleNext : handleCheckAnswer}
+              disabled={(!selectedAnswer && ex.exerciseType !== 'WORD_MATCH' && ex.exerciseType !== 'STORY') || (ex.exerciseType === 'STORY' && currentStoryLine < (ex.data.lines?.length || 0) && !showResult)}
+              className={`
+                px-16 py-5 rounded-2xl font-black text-xl uppercase tracking-widest transition-all duration-200
                 ${!showResult
-                  ? (selectedAnswer !== null || currentSectionData?.type !== 'exercise' || currentSectionData.exerciseType === 'match')
-                    ? (currentSectionData.exerciseType === 'match' ? 'bg-gray-200 text-gray-400 cursor-not-allowed shadow-none' : 'bg-green-500 text-white hover:bg-green-400')
-                    : 'bg-gray-200 text-gray-400 cursor-not-allowed shadow-none'
+                  ? (!selectedAnswer && ex.exerciseType !== 'WORD_MATCH' && ex.exerciseType !== 'STORY'
+                    ? 'bg-[#E5E5E5] text-[#AFAFAF] shadow-none'
+                    : 'bg-[#58CC02] text-white shadow-[0_6px_0_0_#46A302] hover:brightness-110 active:translate-y-1 active:shadow-none')
                   : (isCorrectResult
-                    ? 'bg-green-500 text-white hover:bg-green-400'
-                    : 'bg-red-500 text-white hover:bg-red-400')
-                }`}
+                    ? 'bg-[#58CC02] text-white shadow-[0_6px_0_0_#46A302] hover:brightness-110'
+                    : 'bg-[#FF4B4B] text-white shadow-[0_6px_0_0_#EA2B2B] hover:brightness-110')
+                }
+              `}
             >
-              {loading ? '...' : (showResult ? 'Продолжить' : (currentSectionData?.type === 'exercise' ? 'Проверить' : 'Далее'))}
+              {showResult ? 'ДАЛЬШЕ' : 'ПРОВЕРИТЬ'}
             </button>
           </div>
         </footer>
       )}
 
+      {/* Game Over Modal */}
       {gameOver && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-6">
-          <div className="bg-white rounded-3xl p-10 max-w-sm w-full text-center shadow-2xl animate-pop">
-            <div className="text-7xl mb-6">💔</div>
-            <h2 className="text-3xl font-black text-gray-900 mb-4">Ой-ой!</h2>
-            <p className="text-xl text-gray-600 mb-8">У вас закончились жизни. Не сдавайтесь, попробуйте еще раз!</p>
-            <button
-              onClick={() => window.location.reload()}
-              className="w-full bg-blue-500 hover:bg-blue-400 text-white font-black py-4 rounded-2xl transition shadow-duo-blue uppercase"
-            >
-              Попробовать снова
-            </button>
-          </div>
+        <div className="fixed inset-0 bg-white/98 flex flex-col items-center justify-center z-[100] p-10 text-center animate-fade-in">
+          <div className="text-[150px] mb-10">💔</div>
+          <h1 className="text-6xl font-black text-gray-800 mb-6 tracking-tighter uppercase">Закончились жизни</h1>
+          <p className="text-2xl text-gray-500 font-bold mb-14 max-w-xl">Не сдавайтесь! Ошибки — это путь к знаниям. Попробуйте снова чуть позже.</p>
+          <button onClick={() => navigate('/lesson')} className="px-16 py-6 bg-blue-500 text-white font-black rounded-3xl text-3xl shadow-[0_8px_0_0_#1d4ed8] hover:scale-105 active:translate-y-2 active:shadow-none transition">
+            ВЕРНУТЬСЯ
+          </button>
         </div>
       )}
 
       <style dangerouslySetInnerHTML={{
         __html: `
-        .shadow-duo { box-shadow: 0 4px 0 0 #22c55e; }
-        .shadow-duo:active { box-shadow: none; transform: translateY(4px); }
-        .shadow-duo-blue { box-shadow: 0 4px 0 0 #2563eb; }
-        .shadow-duo-blue:active { box-shadow: none; transform: translateY(4px); }
-        .shadow-duo-light { box-shadow: 0 2px 0 0 #e5e7eb; }
-        @keyframes pop { 0% { transform: scale(0.9) translateY(10px); opacity: 0; } 100% { transform: scale(1) translateY(0); opacity: 1; } }
-        .animate-pop { animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-fade-in { animation: fadeIn 0.3s ease-out; }
-        .shadow-duo-red { box-shadow: 0 4px 0 0 #ef4444; }
-        .shadow-duo-red:active { box-shadow: none; transform: translateY(4px); }
+        @keyframes pop { 0% { transform: scale(0.9); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+        .animate-pop { animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+        @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+        .animate-fade-in { animation: fade-in 0.4s ease-out; }
       `}} />
     </div>
   );

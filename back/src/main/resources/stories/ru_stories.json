@@ -1,0 +1,292 @@
+[
+    {
+        "title": "Приветствие",
+        "category": "dialogue",
+        "difficulty": "beginner",
+        "description": "Простая встреча двух друзей.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Анна",
+                "textRu": "Привет! Как тебя зовут?",
+                "textEn": "Hi! What is your name?",
+                "textKk": "Сәлем! Атың кім?"
+            }
+        ]
+    },
+    {
+        "title": "Знакомство",
+        "category": "story",
+        "difficulty": "beginner",
+        "description": "Рассказ о себе и своем городе.",
+        "chapters": [
+            {
+                "number": 1,
+                "textRu": "Меня зовут Иван, я живу в Алматы.",
+                "textEn": "My name is Ivan, I live in Almaty.",
+                "textKk": "Менің атым Иван, мен Алматыда тұрамын."
+            }
+        ]
+    },
+    {
+        "title": "Моя семья",
+        "category": "dialogue",
+        "difficulty": "beginner",
+        "description": "Разговор о родителях.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Мама",
+                "textRu": "Где твой папа? Он на работе?",
+                "textEn": "Where is your dad? Is he at work?",
+                "textKk": "Әкең қайда? Ол жұмыста ма?"
+            }
+        ]
+    },
+    {
+        "title": "Семейный ужин",
+        "category": "story",
+        "difficulty": "beginner",
+        "description": "Вечер с родственниками.",
+        "chapters": [
+            {
+                "number": 1,
+                "textRu": "Мы все вместе ужинаем по вечерам.",
+                "textEn": "We all have dinner together in the evenings.",
+                "textKk": "Біз кешкісін бәріміз бірге тамақтанамыз."
+            }
+        ]
+    },
+    {
+        "title": "В школе",
+        "category": "dialogue",
+        "difficulty": "beginner",
+        "description": "Первый урок математики.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Учитель",
+                "textRu": "Сколько будет два плюс два?",
+                "textEn": "How much is two plus two?",
+                "textKk": "Екі қосу екі неше болады?"
+            }
+        ]
+    },
+    {
+        "title": "Школьные годы",
+        "category": "story",
+        "difficulty": "beginner",
+        "description": "Воспоминания об учебе.",
+        "chapters": [
+            {
+                "number": 1,
+                "textRu": "Школа - это время новых знаний и друзей.",
+                "textEn": "School is a time for new knowledge and friends.",
+                "textKk": "Мектеп - жаңа білім мен достар уақыты."
+            }
+        ]
+    },
+    {
+        "title": "Казахстан",
+        "category": "dialogue",
+        "difficulty": "beginner",
+        "description": "Туристы в горах.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Турист",
+                "textRu": "Какие красивые горы в Алматы!",
+                "textEn": "What beautiful mountains in Almaty!",
+                "textKk": "Алматыдағы таулар қандай әдемі!"
+            }
+        ]
+    },
+    {
+        "title": "Столица",
+        "category": "story",
+        "difficulty": "beginner",
+        "description": "Рассказ об Астане.",
+        "chapters": [
+            {
+                "number": 1,
+                "textRu": "Астана - современный город в степи.",
+                "textEn": "Astana is a modern city in the steppe.",
+                "textKk": "Астана - даладағы заманауи қала."
+            }
+        ]
+    },
+    {
+        "title": "Грамматика",
+        "category": "dialogue",
+        "difficulty": "beginner",
+        "description": "Изучение падежей.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Ученик",
+                "textRu": "Русский язык сложный, но интересный.",
+                "textEn": "Russian is difficult but interesting.",
+                "textKk": "Орыс тілі қиын, бірақ қызықты."
+            }
+        ]
+    },
+    {
+        "title": "Правила речи",
+        "category": "story",
+        "difficulty": "beginner",
+        "description": "Как правильно говорить.",
+        "chapters": [
+            {
+                "number": 1,
+                "textRu": "Правила помогают нам понимать друг друга.",
+                "textEn": "Rules help us understand each other.",
+                "textKk": "Ережелер бізге бір-бірімізді түсінуге көмектеседі."
+            }
+        ]
+    },
+    {
+        "title": "Магазин",
+        "category": "dialogue",
+        "difficulty": "beginner",
+        "description": "Покупка продуктов.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Продавец",
+                "textRu": "Свежий хлеб стоит сто тенге.",
+                "textEn": "Fresh bread costs one hundred tenge.",
+                "textKk": "Жаңа піскен нан жүз теңге тұрады."
+            }
+        ]
+    },
+    {
+        "title": "На рынке",
+        "category": "story",
+        "difficulty": "beginner",
+        "description": "Выбор фруктов.",
+        "chapters": [
+            {
+                "number": 1,
+                "textRu": "На рынке всегда много свежих овощей.",
+                "textEn": "There are always many fresh vegetables at the market.",
+                "textKk": "Базарда әрқашан жаңа піскен көкөністер көп."
+            }
+        ]
+    },
+    {
+        "title": "Музыка",
+        "category": "dialogue",
+        "difficulty": "beginner",
+        "description": "Разговор о гитаре.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Друг",
+                "textRu": "Ты умеешь играть на гитаре?",
+                "textEn": "Can you play the guitar?",
+                "textKk": "Сен гитарада ойнай аласың ба?"
+            }
+        ]
+    },
+    {
+        "title": "Концерт",
+        "category": "story",
+        "difficulty": "beginner",
+        "description": "Вечер классической музыки.",
+        "chapters": [
+            {
+                "number": 1,
+                "textRu": "Концерт начался в восемь вечера.",
+                "textEn": "The concert started at eight in the evening.",
+                "textKk": "Концерт кешкі сағат сегізде басталды."
+            }
+        ]
+    },
+    {
+        "title": "Дружба",
+        "category": "dialogue",
+        "difficulty": "beginner",
+        "description": "Помощь товарищу.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Мария",
+                "textRu": "Друзья всегда помогают в беде.",
+                "textEn": "Friends always help in trouble.",
+                "textKk": "Достар әрқашан қиындықта көмектеседі."
+            }
+        ]
+    },
+    {
+        "title": "Общение",
+        "category": "story",
+        "difficulty": "beginner",
+        "description": "Важность разговора.",
+        "chapters": [
+            {
+                "number": 1,
+                "textRu": "Нам нужно больше общаться друг с другом.",
+                "textEn": "We need to communicate more with each other.",
+                "textKk": "Бізге бір-бірімізбен көбірек сөйлесу керек."
+            }
+        ]
+    },
+    {
+        "title": "Финал курса",
+        "category": "dialogue",
+        "difficulty": "beginner",
+        "description": "Последний урок.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Учитель",
+                "textRu": "Поздравляю! Вы закончили курс.",
+                "textEn": "Congratulations! You have finished the course.",
+                "textKk": "Құттықтаймын! Сіз курсты аяқтадыңыз."
+            }
+        ]
+    },
+    {
+        "title": "Мои успехи",
+        "category": "story",
+        "difficulty": "beginner",
+        "description": "Результаты обучения.",
+        "chapters": [
+            {
+                "number": 1,
+                "textRu": "Теперь я могу говорить и писать по-русски.",
+                "textEn": "Now I can speak and write in Russian.",
+                "textKk": "Енді мен орысша сөйлеп, жаза аламын."
+            }
+        ]
+    },
+    {
+        "title": "Выходной в кино",
+        "category": "dialogue",
+        "difficulty": "beginner",
+        "description": "Поход в кинотеатр.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Кассир",
+                "textRu": "Билет стоит две тысячи тенге.",
+                "textEn": "The ticket costs two thousand tenge.",
+                "textKk": "Билет екі мың теңге тұрады."
+            }
+        ]
+    },
+    {
+        "title": "Путешествие",
+        "category": "story",
+        "difficulty": "beginner",
+        "description": "Поездка на поезде.",
+        "chapters": [
+            {
+                "number": 1,
+                "textRu": "Поезд прибывает на первую платформу.",
+                "textEn": "The train arrives at the first platform.",
+                "textKk": "Пойыз бірінші платформаға келеді."
+            }
+        ]
+    }
+]

@@ -63,6 +63,8 @@ export const translations = {
         passwordMin: 'Пароль должен быть минимум 6 символов',
         invalidEmail: 'Введите корректный email',
         invalidCode: 'Введите корректный код (6 цифр)',
+        forgotPassword: 'Забыли пароль?',
+        forgotTitle: 'Восстановить пароль',
 
         // Profile
         profile: 'Профиль',
@@ -110,7 +112,20 @@ export const translations = {
         learnThroughStories: 'Учитесь через истории',
         story: 'история',
         lockedPreviousStory: 'Прочитайте предыдущую историю',
-        noStoriesFound: 'Нет историй для этого уровня'
+        noStoriesFound: 'Нет историй для этого уровня',
+        podcastsTitle: 'Подкасты',
+        podcastsDesc: 'Слушайте и учите язык с удовольствием',
+        backToList: 'К списку',
+        iListened: '✓ Я прослушал этот подкаст',
+        descriptionLabel: 'Описание',
+        mistakesPractice: 'РАБОТА НАД ОШИБКАМИ',
+        quiz: 'ТЕСТ',
+        typeHere: 'Пишите здесь',
+        correctAnswer: 'ПРАВИЛЬНЫЙ ОТВЕТ',
+        selectAnswer: 'Выберите ответ',
+        fillBlank: 'Заполните пропуск',
+        deleteCourse: 'Удалить курс',
+        deleteCourseConfirm: 'Вы уверены, что хотите удалить этот курс? Прогресс будет сохранен, но курс исчезнет из вашего списка.'
     },
     kk: {
         hero: 'Балапанмен бірге тілдерді үйренеміз!',
@@ -176,6 +191,8 @@ export const translations = {
         passwordMin: 'Құпия сөз кемінде 6 таңбадан тұруы керек',
         invalidEmail: 'Дұрыс email енгізіңіз',
         invalidCode: 'Дұрыс код енгізіңіз (6 сан)',
+        forgotPassword: 'Құпия сөзді ұмыттыңыз ба?',
+        forgotTitle: 'Құпия сөзді қалпына келтіру',
 
         // Profile
         profile: 'Профиль',
@@ -223,7 +240,20 @@ export const translations = {
         learnThroughStories: 'Әңгімелер арқылы үйреніңіз',
         story: 'әңгіме',
         lockedPreviousStory: 'Алдыңғы әңгімені оқыңыз',
-        noStoriesFound: 'Бұл деңгей үшін әңгімелер жоқ'
+        noStoriesFound: 'Бұл деңгей үшін әңгімелер жоқ',
+        podcastsTitle: 'Подкасттар',
+        podcastsDesc: 'Тілді қызығушылықпен тыңдаңыз және үйреніңіз',
+        backToList: 'Тізімге',
+        iListened: '✓ Мен бұл подкастты тыңдадым',
+        descriptionLabel: 'Сипаттама',
+        mistakesPractice: 'ҚАТЕЛЕРМЕН ЖҰМЫС',
+        quiz: 'ТЕСТ',
+        typeHere: 'Мұнда жазыңыз',
+        correctAnswer: 'ДҰРЫС ЖАУАП',
+        selectAnswer: 'Жауапты таңдаңыз',
+        fillBlank: 'Бос орынды толтырыңыз',
+        deleteCourse: 'Курсты жою',
+        deleteCourseConfirm: 'Бұл курсты жойғыңыз келетініне сенімдісіз бе? Прогресс сақталады, бірақ курс тізімнен жойылады.'
     },
     en: {
         hero: 'Learn languages with Balapan!',
@@ -289,6 +319,8 @@ export const translations = {
         passwordMin: 'Password must be at least 6 characters',
         invalidEmail: 'Enter a valid email',
         invalidCode: 'Enter a valid code (6 digits)',
+        forgotPassword: 'Forgot password?',
+        forgotTitle: 'Recover Password',
 
         // Profile
         profile: 'Profile',
@@ -336,7 +368,20 @@ export const translations = {
         learnThroughStories: 'Learn through stories',
         story: 'story',
         lockedPreviousStory: 'Read the previous story',
-        noStoriesFound: 'No stories for this difficulty'
+        noStoriesFound: 'No stories for this difficulty',
+        podcastsTitle: 'Podcasts',
+        podcastsDesc: 'Listen and learn the language with pleasure',
+        backToList: 'Back to list',
+        iListened: '✓ I listened to this podcast',
+        descriptionLabel: 'Description',
+        mistakesPractice: 'CORRECT MISTAKES',
+        quiz: 'QUIZ',
+        typeHere: 'Type here',
+        correctAnswer: 'CORRECT ANSWER',
+        selectAnswer: 'Select an answer',
+        fillBlank: 'Fill in the blank',
+        deleteCourse: 'Delete course',
+        deleteCourseConfirm: 'Are you sure you want to delete this course? Progress will be saved, but the course will disappear from your list.'
     }
 };
 

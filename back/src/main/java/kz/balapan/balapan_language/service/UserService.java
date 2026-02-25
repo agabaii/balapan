@@ -111,22 +111,66 @@ public class UserService {
             throw new RuntimeException("Пожалуйста, подтвердите ваш email перед входом");
         }
 
+        if (Boolean.TRUE.equals(user.getIsBanned())) {
+            throw new RuntimeException("Ваш аккаунт заблокирован. Пожалуйста, свяжитесь с поддержкой.");
+        }
+
+        initializeUserFields(user);
         updateLastLogin(user.getId());
         return user;
     }
 
     public Optional<User> findByUsername(String username) {
-        return userRepository.findByUsername(username);
+        Optional<User> userOpt = userRepository.findByUsername(username);
+        userOpt.ifPresent(this::initializeUserFields);
+        return userOpt;
     }
 
     public Optional<User> findById(Long id) {
         @SuppressWarnings("null")
-        Optional<User> user = userRepository.findById(id);
-        return user;
+        Optional<User> userOpt = userRepository.findById(id);
+        userOpt.ifPresent(this::initializeUserFields);
+        return userOpt;
+    }
+
+    private void initializeUserFields(User user) {
+        boolean needsUpdate = false;
+        if (user.getGems() == null) {
+            user.setGems(500);
+            needsUpdate = true;
+        }
+        if (user.getStreakFreezes() == null) {
+            user.setStreakFreezes(0);
+            needsUpdate = true;
+        }
+        if (user.getUnlockedItems() == null) {
+            user.setUnlockedItems("");
+            needsUpdate = true;
+        }
+        if (user.getTotalXp() == null) {
+            user.setTotalXp(0);
+            needsUpdate = true;
+        }
+        if (user.getCurrentStreak() == null) {
+            user.setCurrentStreak(0);
+            needsUpdate = true;
+        }
+        if (user.getLongestStreak() == null) {
+            user.setLongestStreak(0);
+            needsUpdate = true;
+        }
+
+        if (needsUpdate) {
+            userRepository.save(user);
+        }
     }
 
     public List<User> getAllUsers() {
         return userRepository.findAll();
+    }
+
+    public User updateUser(User user) {
+        return userRepository.save(user);
     }
 
     public User updateStreak(Long userId, int streak) {
@@ -147,18 +191,76 @@ public class UserService {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
-        user.setTotalXp(user.getTotalXp() + xp);
+        user.setTotalXp((user.getTotalXp() != null ? user.getTotalXp() : 0) + xp);
 
         return userRepository.save(user);
     }
 
-    public void updateLastLogin(Long userId) {
+    public User addGems(Long userId, int amount) {
+        @SuppressWarnings("null")
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("Пользователь не найден! Пайдаланушы табылмады!"));
+
+        int currentGems = user.getGems() != null ? user.getGems() : 0;
+        user.setGems(currentGems + amount);
+        return userRepository.save(user);
+    }
+
+    public User spendGems(Long userId, int amount) {
+        @SuppressWarnings("null")
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        int currentGems = user.getGems() != null ? user.getGems() : 0;
+        if (currentGems < amount) {
+            throw new RuntimeException("Недостаточно алмазов! Не жеткілікті алмаздар!");
+        }
+
+        user.setGems(currentGems - amount);
+
+        return userRepository.save(user);
+    }
+
+    public User buyItem(Long userId, String itemType, int cost) {
+        User user = spendGems(userId, cost);
+
+        if ("streak_freeze".equals(itemType)) {
+            user.setStreakFreezes((user.getStreakFreezes() != null ? user.getStreakFreezes() : 0) + 1);
+        } else {
+            String currentItems = user.getUnlockedItems() != null ? user.getUnlockedItems() : "";
+            if (!currentItems.contains(itemType)) {
+                user.setUnlockedItems(currentItems.isEmpty() ? itemType : currentItems + "," + itemType);
+            }
+        }
+
+        return userRepository.save(user);
+    }
+
+    public User updateLastLogin(Long userId) {
         @SuppressWarnings("null")
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
         user.setLastLogin(LocalDateTime.now());
-        userRepository.save(user);
+        return userRepository.save(user);
+    }
+
+    public User updateProfile(Long userId, String username, String nativeLanguage, String avatarData) {
+        @SuppressWarnings("null")
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        if (username != null && !username.trim().isEmpty()) {
+            user.setUsername(username.trim());
+        }
+        if (nativeLanguage != null) {
+            user.setNativeLanguage(nativeLanguage);
+        }
+        if (avatarData != null) {
+            user.setAvatarData(avatarData);
+        }
+
+        return userRepository.save(user);
     }
 
     public void initiatePasswordReset(String email) {
@@ -201,5 +303,26 @@ public class UserService {
         user.setResetToken(null);
         user.setResetTokenExpiry(null);
         userRepository.save(user);
+    }
+
+    public User banUser(Long userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        user.setIsBanned(true);
+        return userRepository.save(user);
+    }
+
+    public User unbanUser(Long userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        user.setIsBanned(false);
+        return userRepository.save(user);
+    }
+
+    public void deleteUser(Long userId) {
+        if (!userRepository.existsById(userId)) {
+            throw new RuntimeException("User not found");
+        }
+        userRepository.deleteById(userId);
     }
 }

@@ -26,8 +26,23 @@ public class VideoLesson {
     @Column(name = "title_kk", length = 200)
     private String titleKk;
 
+    @Column(name = "title_ru", length = 200)
+    private String titleRu;
+
+    @Column(name = "title_en", length = 200)
+    private String titleEn;
+
     @Column(columnDefinition = "TEXT")
     private String description;
+
+    @Column(name = "description_kk", columnDefinition = "TEXT")
+    private String descriptionKk;
+
+    @Column(name = "description_ru", columnDefinition = "TEXT")
+    private String descriptionRu;
+
+    @Column(name = "description_en", columnDefinition = "TEXT")
+    private String descriptionEn;
 
     @Column(name = "youtube_url", nullable = false)
     private String youtubeUrl; // Полная ссылка или ID
@@ -54,7 +69,7 @@ public class VideoLesson {
     private Boolean isActive = true;
 
     @Column(name = "language", length = 20)
-    private String language = "kazakh";
+    private String language = "kk";
 
     @OneToMany(mappedBy = "videoLesson", cascade = CascadeType.ALL)
     @JsonManagedReference("video-lesson-questions")

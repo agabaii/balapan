@@ -53,6 +53,20 @@ public class StreakService {
             activity.setExercisesCompleted(exercisesCompleted);
         }
 
+        // Check if daily goal reached (e.g. 50 XP)
+        int oldXp = existingActivity.map(DailyActivity::getXpEarned).orElse(0);
+        int newXp = oldXp + xpEarned;
+
+        if (oldXp < 50 && newXp >= 50) {
+            // Award daily goal bonus gems
+            @SuppressWarnings("null")
+            User user = userRepository.findById(userId).orElse(null);
+            if (user != null) {
+                user.setGems((user.getGems() != null ? user.getGems() : 0) + 10);
+                userRepository.save(user);
+            }
+        }
+
         DailyActivity savedActivity = dailyActivityRepository.save(activity);
 
         // Обновляем streak
@@ -153,6 +167,7 @@ public class StreakService {
         stats.put("activeDaysThisMonth", activeDaysThisMonth);
         stats.put("xpThisWeek", xpThisWeek != null ? xpThisWeek : 0);
         stats.put("xpThisMonth", xpThisMonth != null ? xpThisMonth : 0);
+        stats.put("xpToday", todayActivity.isPresent() ? todayActivity.get().getXpEarned() : 0);
         stats.put("last30DaysActivity", last30Days);
 
         return stats;

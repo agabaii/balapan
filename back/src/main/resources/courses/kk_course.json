@@ -1,0 +1,6150 @@
+{
+  "name": "Қазақ тілі",
+  "description": "Базалық деңгейден еркін сөйлеуге дейін",
+  "sections": [
+    {
+      "number": 1,
+      "title": {
+        "ru": "Знакомство",
+        "kk": "Танысу",
+        "en": "Introduction"
+      },
+      "description": {
+        "ru": "Первые слова и приветствия",
+        "kk": "Алғашқы сөздер мен сәлемдесу",
+        "en": "First words and greetings"
+      },
+      "icon": "👋",
+      "lessons": [
+        {
+          "number": 1,
+          "type": "REGULAR",
+          "icon": "👋",
+          "title": {
+            "ru": "Приветствия",
+            "kk": "Сәлемдесу",
+            "en": "Greetings"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "title": "Сопоставьте пары",
+                  "pairs": {
+                    "Сәлем": "Привет",
+                    "Сау бол": "До свидания",
+                    "Рақмет": "Спасибо",
+                    "Кешіріңіз": "Извините",
+                    "Иә": "Да"
+                  }
+                },
+                "en": {
+                  "title": "Match the pairs",
+                  "pairs": {
+                    "Сәлем": "Hello",
+                    "Сау бол": "Goodbye",
+                    "Рақмет": "Thank you",
+                    "Кешіріңіз": "Excuse me",
+                    "Иә": "Yes"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Менің атым Әлібек",
+              "translations": {
+                "ru": {
+                  "question": "Меня зовут Алибек"
+                },
+                "en": {
+                  "question": "My name is Alibek"
+                }
+              },
+              "words": [
+                "Менің",
+                "атым",
+                "Әлібек",
+                "Сәлем",
+                "Рақмет",
+                "Қалай"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "audio": "salem",
+              "target": "Сәлем, мен Әлібекпін",
+              "words": [
+                "Сәлем,",
+                "мен",
+                "Әлібекпін",
+                "Сау",
+                "бол",
+                "атым"
+              ]
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "audio": "un",
+              "options": [
+                "Ұн",
+                "Үн"
+              ],
+              "answer": "Ұн"
+            },
+            {
+              "type": "LISTEN_SIMILAR",
+              "audio": "bala",
+              "options": [
+                "Бала",
+                "Дала"
+              ],
+              "answer": "Бала"
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Рақмет",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Спасибо",
+                    "Привет",
+                    "Пока",
+                    "Да"
+                  ],
+                  "answer": "Спасибо"
+                },
+                "en": {
+                  "options": [
+                    "Thank you",
+                    "Hello",
+                    "Bye",
+                    "Yes"
+                  ],
+                  "answer": "Thank you"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Сәлеметсіз бе!"
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Кешіріңіз",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Извините",
+                    "Хорошо",
+                    "Плохо"
+                  ],
+                  "answer": "Извините"
+                },
+                "en": {
+                  "options": [
+                    "Excuse me",
+                    "Good",
+                    "Bad"
+                  ],
+                  "answer": "Excuse me"
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Қалайсың?",
+              "translations": {
+                "ru": {
+                  "question": "Как ты?"
+                },
+                "en": {
+                  "question": "How are you?"
+                }
+              },
+              "words": [
+                "Қалайсың?",
+                "Жақсы",
+                "Сау",
+                "бол"
+              ]
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "title": "Числа",
+                  "pairs": {
+                    "Бір": "Один",
+                    "Екі": "Два",
+                    "Үш": "Три",
+                    "Төрт": "Четыре",
+                    "Бес": "Пять"
+                  }
+                },
+                "en": {
+                  "title": "Numbers",
+                  "pairs": {
+                    "Бір": "One",
+                    "Екі": "Two",
+                    "Үш": "Three",
+                    "Төрт": "Four",
+                    "Бес": "Five"
+                  }
+                }
+              }
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Иә",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Да",
+                    "Нет",
+                    "Привет"
+                  ],
+                  "answer": "Да"
+                },
+                "en": {
+                  "options": [
+                    "Yes",
+                    "No",
+                    "Hello"
+                  ],
+                  "answer": "Yes"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "type": "REGULAR",
+          "icon": "📖",
+          "title": {
+            "ru": "Основы 1",
+            "kk": "Негіздер 1",
+            "en": "Basics 1"
+          },
+          "exercises": [
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Ана",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Мама",
+                    "Папа",
+                    "Брат"
+                  ],
+                  "answer": "Мама"
+                },
+                "en": {
+                  "options": [
+                    "Mother",
+                    "Father",
+                    "Brother"
+                  ],
+                  "answer": "Mother"
+                }
+              }
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Әке",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Папа",
+                    "Мама",
+                    "Сестра"
+                  ],
+                  "answer": "Папа"
+                },
+                "en": {
+                  "options": [
+                    "Father",
+                    "Mother",
+                    "Sister"
+                  ],
+                  "answer": "Father"
+                }
+              }
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Мектеп",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Школа",
+                    "Дом",
+                    "Парк"
+                  ],
+                  "answer": "Школа"
+                },
+                "en": {
+                  "options": [
+                    "School",
+                    "Home",
+                    "Park"
+                  ],
+                  "answer": "School"
+                }
+              }
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Кітап",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Книга",
+                    "Тетрадь",
+                    "Ручка"
+                  ],
+                  "answer": "Книга"
+                },
+                "en": {
+                  "options": [
+                    "Book",
+                    "Notebook",
+                    "Pen"
+                  ],
+                  "answer": "Book"
+                }
+              }
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Дос": "Друг",
+                    "Қыз": "Девочка",
+                    "Бала": "Мальчик",
+                    "Ұстаз": "Учитель"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Дос": "Friend",
+                    "Қыз": "Girl",
+                    "Бала": "Boy",
+                    "Ұстаз": "Teacher"
+                  }
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Бұл менің мектебім"
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Менің анам жақсы",
+              "words": [
+                "Менің",
+                "анам",
+                "жақсы",
+                "жаман"
+              ]
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Сенің атың кім?",
+              "translations": {
+                "ru": {
+                  "question": "Как тебя зовут?"
+                },
+                "en": {
+                  "question": "What is your name?"
+                }
+              },
+              "words": [
+                "Сенің",
+                "атың",
+                "кім?",
+                "Неге"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Жақсы",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Хорошо",
+                    "Плохо",
+                    "Средне"
+                  ],
+                  "answer": "Хорошо"
+                },
+                "en": {
+                  "options": [
+                    "Good",
+                    "Bad",
+                    "Average"
+                  ],
+                  "answer": "Good"
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Ат",
+                "От"
+              ],
+              "answer": "Ат"
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "type": "REGULAR",
+          "icon": "⭐",
+          "title": {
+            "ru": "Основы 2",
+            "kk": "Негіздер 2",
+            "en": "Basics 2"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Аспан": "Небо",
+                    "Күн": "Солнце",
+                    "Ай": "Луна",
+                    "Жер": "Земля"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Аспан": "Sky",
+                    "Күн": "Sun",
+                    "Ай": "Moon",
+                    "Жер": "Earth"
+                  }
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Күн шықты"
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Су",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Вода",
+                    "Еда",
+                    "Огонь"
+                  ],
+                  "answer": "Вода"
+                },
+                "en": {
+                  "options": [
+                    "Water",
+                    "Food",
+                    "Fire"
+                  ],
+                  "answer": "Water"
+                }
+              }
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Нан",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Хлеб",
+                    "Сыр",
+                    "Молоко"
+                  ],
+                  "answer": "Хлеб"
+                },
+                "en": {
+                  "options": [
+                    "Bread",
+                    "Cheese",
+                    "Milk"
+                  ],
+                  "answer": "Bread"
+                }
+              }
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Маған су беріңізші",
+              "words": [
+                "Маған",
+                "су",
+                "беріңізші",
+                "нан"
+              ]
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Ас дәмді болсын!",
+              "translations": {
+                "ru": {
+                  "question": "Приятного аппетита!"
+                },
+                "en": {
+                  "question": "Enjoy your meal!"
+                }
+              },
+              "words": [
+                "Ас",
+                "дәмді",
+                "болсын!",
+                "Рақмет"
+              ]
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Тұз",
+                "Мұз"
+              ],
+              "answer": "Тұз"
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Сүт",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Молоко",
+                    "Чай",
+                    "Кофе"
+                  ],
+                  "answer": "Молоко"
+                },
+                "en": {
+                  "options": [
+                    "Milk",
+                    "Tea",
+                    "Coffee"
+                  ],
+                  "answer": "Milk"
+                }
+              }
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Алма": "Яблоко",
+                    "Алмұрт": "Груша",
+                    "Жүзім": "Виноград",
+                    "Банан": "Банан"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Алма": "Apple",
+                    "Алмұрт": "Pear",
+                    "Жүзім": "Grapes",
+                    "Банан": "Banana"
+                  }
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Мен алма жеймін"
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "type": "STORY",
+          "icon": "💬",
+          "title": {
+            "ru": "Диалог: Сәлем!",
+            "kk": "Диалог: Сәлем!",
+            "en": "Dialogue: Hi!"
+          },
+          "linkedStoryId": 1
+        },
+        {
+          "number": 5,
+          "type": "VIDEO",
+          "icon": "📺",
+          "title": {
+            "ru": "Видео: Сәлемдесу",
+            "kk": "Видео: Сәлемдесу",
+            "en": "Video: Greetings"
+          },
+          "linkedVideoId": 1
+        },
+        {
+          "number": 6,
+          "type": "STORY",
+          "icon": "📚",
+          "title": {
+            "ru": "История: Семья",
+            "kk": "Әңгіме: Отбасы",
+            "en": "Story: Family"
+          },
+          "linkedStoryId": 2
+        },
+        {
+          "number": 7,
+          "type": "REGULAR",
+          "icon": "🏁",
+          "title": {
+            "ru": "Финал раздела",
+            "kk": "Финалдық сабақ",
+            "en": "Final Lesson"
+          },
+          "exercises": [
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Сәлем",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Привет",
+                    "Пока"
+                  ],
+                  "answer": "Привет"
+                },
+                "en": {
+                  "options": [
+                    "Hello",
+                    "Bye"
+                  ],
+                  "answer": "Hello"
+                }
+              }
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Сау бол",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Пока",
+                    "Привет"
+                  ],
+                  "answer": "Пока"
+                },
+                "en": {
+                  "options": [
+                    "Bye",
+                    "Hello"
+                  ],
+                  "answer": "Bye"
+                }
+              }
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Иә": "Да",
+                    "Жоқ": "Нет",
+                    "Мүмкін": "Возможно"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Иә": "Yes",
+                    "Жоқ": "No",
+                    "Мүмкін": "Maybe"
+                  }
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Рақмет!"
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Сау бол, дос",
+              "words": [
+                "Сау",
+                "бол,",
+                "дос",
+                "сәлем"
+              ]
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Ана": "Мама",
+                    "УРєРµ": "Папа",
+                    "Бала": "Ребенок",
+                    "Дос": "Друг"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Ана": "Mother",
+                    "УРєРµ": "Father",
+                    "Бала": "Child",
+                    "Дос": "Friend"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Бір",
+                "Бар"
+              ],
+              "answer": "Бір"
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Қалайсыз?",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Как вы?",
+                    "Как дела?",
+                    "Кто вы?"
+                  ],
+                  "answer": "Как вы?"
+                },
+                "en": {
+                  "options": [
+                    "How are you?",
+                    "Who are you?",
+                    "Where are you?"
+                  ],
+                  "answer": "How are you?"
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Кеш жарық",
+              "translations": {
+                "ru": {
+                  "question": "Добрый вечер"
+                },
+                "en": {
+                  "question": "Good evening"
+                }
+              },
+              "words": [
+                "Кеш",
+                "жарық",
+                "таң",
+                "қайырлы"
+              ]
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Қош келдіңіз!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": {
+        "ru": "Моя семья",
+        "kk": "Менің отбасым",
+        "en": "My Family"
+      },
+      "description": {
+        "ru": "Члены семьи и дом",
+        "kk": "Отбасы мүшелері мен үй",
+        "en": "Family members and home"
+      },
+      "icon": "👨‍👩‍👧‍👦",
+      "lessons": [
+        {
+          "number": 1,
+          "type": "REGULAR",
+          "icon": "🏠",
+          "title": {
+            "ru": "Семья",
+            "kk": "Отбасы",
+            "en": "Family"
+          },
+          "exercises": [
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Ата",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Дедушка",
+                    "Бабушка",
+                    "Отец"
+                  ],
+                  "answer": "Дедушка"
+                },
+                "en": {
+                  "options": [
+                    "Grandfather",
+                    "Grandmother",
+                    "Father"
+                  ],
+                  "answer": "Grandfather"
+                }
+              }
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Әже",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Бабушка",
+                    "Дедушка",
+                    "Мать"
+                  ],
+                  "answer": "Бабушка"
+                },
+                "en": {
+                  "options": [
+                    "Grandmother",
+                    "Grandfather",
+                    "Mother"
+                  ],
+                  "answer": "Grandmother"
+                }
+              }
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Аға": "Брат",
+                    "УРїРєРµ": "Сестра",
+                    "Іні": "Младший брат",
+                    "Қарындас": "Младшая сестра"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Аға": "Elder brother",
+                    "УРїРєРµ": "Elder sister",
+                    "Іні": "Younger brother",
+                    "Қарындас": "Younger sister"
+                  }
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Менің ата-әжем бар"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "type": "REGULAR",
+          "icon": "🛋️",
+          "title": {
+            "ru": "Мой дом",
+            "kk": "Менің үйім",
+            "en": "My Home"
+          },
+          "exercises": [
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Үй",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Дом",
+                    "Квартира",
+                    "Двор"
+                  ],
+                  "answer": "Дом"
+                },
+                "en": {
+                  "options": [
+                    "House",
+                    "Apartment",
+                    "Yard"
+                  ],
+                  "answer": "House"
+                }
+              }
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Есік": "Дверь",
+                    "Терезе": "Окно",
+                    "Шатыр": "Крыша",
+                    "Қабырға": "Стена"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Есік": "Door",
+                    "Терезе": "Window",
+                    "Шатыр": "Roof",
+                    "Қабырға": "Wall"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Мынау менің үйім",
+              "translations": {
+                "ru": {
+                  "question": "Это мой дом"
+                },
+                "en": {
+                  "question": "This is my house"
+                }
+              },
+              "words": [
+                "Мынау",
+                "менің",
+                "үйім",
+                "сенің",
+                "мектебің"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Терезе үлкен",
+              "words": [
+                "Терезе",
+                "үлкен",
+                "кіші",
+                "жақсы"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Есік",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Дверь",
+                    "Окно",
+                    "Стена"
+                  ],
+                  "answer": "Дверь"
+                },
+                "en": {
+                  "options": [
+                    "Door",
+                    "Window",
+                    "Wall"
+                  ],
+                  "answer": "Door"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Үйге кіріңіз"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Баспалдақ": "Лестница",
+                    "Еден": "Пол",
+                    "Төбе": "Потолок",
+                    "Бақша": "Сад"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Баспалдақ": "Stairs",
+                    "Еден": "Floor",
+                    "Төбе": "Ceiling",
+                    "Бақша": "Garden"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Үй",
+                "Ой"
+              ],
+              "answer": "Үй"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Үй жылы",
+              "translations": {
+                "ru": {
+                  "question": "В доме тепло"
+                },
+                "en": {
+                  "question": "The house is warm"
+                }
+              },
+              "words": [
+                "Үй",
+                "жылы",
+                "суық",
+                "үлкен"
+              ]
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "type": "REGULAR",
+          "icon": "🖼️",
+          "title": {
+            "ru": "Комнаты",
+            "kk": "Бөлмелер",
+            "en": "Rooms"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Асүй": "Кухня",
+                    "Жатын бөлме": "Спальня",
+                    "Қонақ бөлме": "Гостиная",
+                    "Жуынатын бөлме": "Ванная"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Асүй": "Kitchen",
+                    "Жатын бөлме": "Bedroom",
+                    "Қонақ бөлме": "Living room",
+                    "BNathroom": "Ванная"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Асүй таза",
+              "translations": {
+                "ru": {
+                  "question": "Кухня чистая"
+                },
+                "en": {
+                  "question": "The kitchen is clean"
+                }
+              },
+              "words": [
+                "Асүй",
+                "таза",
+                "лас",
+                "үлкен"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Менің бөлмем осында",
+              "words": [
+                "Менің",
+                "бөлмем",
+                "осында",
+                "онда"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Жатын бөлме",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Спальня",
+                    "Кухня",
+                    "Зал"
+                  ],
+                  "answer": "Спальня"
+                },
+                "en": {
+                  "options": [
+                    "Bedroom",
+                    "Kitchen",
+                    "Hall"
+                  ],
+                  "answer": "Bedroom"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Қонақ бөлме кең"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Орындық": "Стул",
+                    "Үстел": "Стол",
+                    "Кереует": "Кровать",
+                    "Шкаф": "Шкаф"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Орындық": "Chair",
+                    "Үстел": "Table",
+                    "Кереует": "Bed",
+                    "Шкаф": "Wardrobe"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Зал",
+                "Бол"
+              ],
+              "answer": "Зал"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Үстел үстінде",
+              "translations": {
+                "ru": {
+                  "question": "На столе"
+                },
+                "en": {
+                  "question": "On the table"
+                }
+              },
+              "words": [
+                "Үстел",
+                "үстінде",
+                "астында",
+                "кітап"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Кереует",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Кровать",
+                    "Диван",
+                    "Стул"
+                  ],
+                  "answer": "Кровать"
+                },
+                "en": {
+                  "options": [
+                    "Bed",
+                    "Sofa",
+                    "Chair"
+                  ],
+                  "answer": "Bed"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "type": "STORY",
+          "icon": "💬",
+          "title": {
+            "ru": "Диалог: Дома",
+            "kk": "Диалог: Үйде",
+            "en": "Dialogue: At home"
+          },
+          "linkedStoryId": 3
+        },
+        {
+          "number": 5,
+          "type": "VIDEO",
+          "icon": "📺",
+          "title": {
+            "ru": "Видео: Моя семья",
+            "kk": "Видео: Менің отбасым",
+            "en": "Video: My family"
+          },
+          "linkedVideoId": 2
+        },
+        {
+          "number": 6,
+          "type": "STORY",
+          "icon": "📚",
+          "title": {
+            "ru": "История: Наш сад",
+            "kk": "Әңгіме: Біздің бақ",
+            "en": "Story: Our garden"
+          },
+          "linkedStoryId": 4
+        },
+        {
+          "number": 7,
+          "type": "REGULAR",
+          "icon": "🏁",
+          "title": {
+            "ru": "Финал 2",
+            "kk": "2-бөлім финалы",
+            "en": "Final 2"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Ата": "Дедушка",
+                    "УР¶Рµ": "Бабушка",
+                    "Үй": "Дом",
+                    "Есік": "Дверь"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Ата": "Grandfather",
+                    "УР¶Рµ": "Grandmother",
+                    "Үй": "House",
+                    "Есік": "Door"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Менің отбасым үлкен",
+              "translations": {
+                "ru": {
+                  "question": "Моя семья большая"
+                },
+                "en": {
+                  "question": "My family is big"
+                }
+              },
+              "words": [
+                "Menің",
+                "otbasym",
+                "ülken",
+                "kіshі",
+                "jaqsı"
+              ]
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Анашым, сүйемін сізді"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Сенім": "Доверие",
+                    "Махаббат": "Любовь",
+                    "Қамқорлық": "Забота",
+                    "Сыйластық": "Уважение"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Сенім": "Trust",
+                    "Махаббат": "Love",
+                    "Қамқорлық": "Care",
+                    "Сыйластық": "Respect"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Біз бақыттымыз",
+              "words": [
+                "Біз",
+                "бақыттымыз",
+                "мұңдымыз",
+                "үлкенбіз"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Сыйластық",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Уважение",
+                    "Доверие",
+                    "Любовь"
+                  ],
+                  "answer": "Уважение"
+                },
+                "en": {
+                  "options": [
+                    "Respect",
+                    "Trust",
+                    "Love"
+                  ],
+                  "answer": "Respect"
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Менің інім бар",
+              "translations": {
+                "ru": {
+                  "question": "У меня есть младший брат"
+                },
+                "en": {
+                  "question": "I have a younger brother"
+                }
+              },
+              "words": [
+                "Менің",
+                "інім",
+                "бар",
+                "әпкем",
+                "жоқ"
+              ]
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Апа",
+                "Ата"
+              ],
+              "answer": "Апа"
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Отбасы — ең бастысы"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": {
+        "ru": "Обучение",
+        "kk": "Оқу-білім",
+        "en": "Education"
+      },
+      "description": {
+        "ru": "Школа, уроки, книги",
+        "kk": "Мектеп, сабақтар, кітаптар",
+        "en": "School, lessons, books"
+      },
+      "icon": "🎓",
+      "lessons": [
+        {
+          "number": 1,
+          "type": "REGULAR",
+          "icon": "✏️",
+          "title": {
+            "ru": "Школа",
+            "kk": "Мектеп",
+            "en": "School"
+          },
+          "exercises": [
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Мектеп",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Школа",
+                    "Класс",
+                    "Книга"
+                  ],
+                  "answer": "Школа"
+                },
+                "en": {
+                  "options": [
+                    "School",
+                    "Class",
+                    "Book"
+                  ],
+                  "answer": "School"
+                }
+              }
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Мұғалім": "Учитель",
+                    "Оқушы": "Ученик",
+                    "Сынып": "Класс",
+                    "Парта": "Парта"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Мұғалім": "Teacher",
+                    "Оқушы": "Student",
+                    "Сынып": "Class",
+                    "Парта": "Desk"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Мұғалім келді",
+              "translations": {
+                "ru": {
+                  "question": "Учитель пришел"
+                },
+                "en": {
+                  "question": "The teacher arrived"
+                }
+              },
+              "words": [
+                "Мұғалім",
+                "келді",
+                "кетті",
+                "оқушы"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Бұл біздің мектеп",
+              "words": [
+                "Бұл",
+                "біздің",
+                "мектеп",
+                "сіздің",
+                "үйіңіз"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Сынып",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Класс",
+                    "Школа",
+                    "Офис"
+                  ],
+                  "answer": "Класс"
+                },
+                "en": {
+                  "options": [
+                    "Class",
+                    "School",
+                    "Office"
+                  ],
+                  "answer": "Class"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Менің мектебім үлкен"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Тақта": "Доска",
+                    "Бор": "Мел",
+                    "КүнРґРµР»С–Рє": "Дневник",
+                    "Қоңырау": "Звонок"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Тақта": "Board",
+                    "Бор": "Chalk",
+                    "КүнРґРµР»С–Рє": "Diary",
+                    "Қоңырау": "Bell"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Оқу",
+                "Оқушы"
+              ],
+              "answer": "Оқушы"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Сабақ басталды",
+              "translations": {
+                "ru": {
+                  "question": "Урок начался"
+                },
+                "en": {
+                  "question": "The lesson started"
+                }
+              },
+              "words": [
+                "Сабақ",
+                "басталды",
+                "аяқталды",
+                "мектеп"
+              ]
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "type": "REGULAR",
+          "icon": "📓",
+          "title": {
+            "ru": "Уроки",
+            "kk": "Сабақтар",
+            "en": "Lessons"
+          },
+          "exercises": [
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Кітап",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Книга",
+                    "Тетрадь",
+                    "Ручка"
+                  ],
+                  "answer": "Книга"
+                },
+                "en": {
+                  "options": [
+                    "Book",
+                    "Notebook",
+                    "Pen"
+                  ],
+                  "answer": "Book"
+                }
+              }
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Дәптер": "Тетрадь",
+                    "Қалам": "Ручка",
+                    "Өшіргіш": "Ластик",
+                    "Сызғыш": "Линейка"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Дәптер": "Notebook",
+                    "Қалам": "Pen",
+                    "Өшіргіш": "Eraser",
+                    "Сызғыш": "Ruler"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Дәптерді бер",
+              "translations": {
+                "ru": {
+                  "question": "Дай тетрадь"
+                },
+                "en": {
+                  "question": "Give the notebook"
+                }
+              },
+              "words": [
+                "Дәптерді",
+                "бер",
+                "ал",
+                "кітапты"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Қаламмен жаз",
+              "words": [
+                "Қаламмен",
+                "жаз",
+                "оқы",
+                "сыз"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Сызғыш",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Линейка",
+                    "Карандаш",
+                    "Ручка"
+                  ],
+                  "answer": "Линейка"
+                },
+                "en": {
+                  "options": [
+                    "Ruler",
+                    "Pencil",
+                    "Pen"
+                  ],
+                  "answer": "Ruler"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Кітап — ақылшы"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Қарандаш": "Карандаш",
+                    "Клей": "Клей",
+                    "Түрлі-түсті": "Разноцветный",
+                    "Сурет": "Рисунок"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Қарандаш": "Pencil",
+                    "Клей": "Glue",
+                    "Түрлі-түсті": "Colorful",
+                    "Сурет": "Drawing"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Оқы",
+                "Тоқы"
+              ],
+              "answer": "Оқы"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Ол сурет салып жатыр",
+              "translations": {
+                "ru": {
+                  "question": "Он рисует"
+                },
+                "en": {
+                  "question": "He is drawing"
+                }
+              },
+              "words": [
+                "Ол",
+                "сурет",
+                "салып",
+                "жатыр",
+                "оқып"
+              ]
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "type": "REGULAR",
+          "icon": "📐",
+          "title": {
+            "ru": "Предметы",
+            "kk": "Пэндер",
+            "en": "Subjects"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Математика": "Математика",
+                    "Тарих": "История",
+                    "Тіл": "Язык",
+                    "Өнер": "Искусство"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Математика": "Math",
+                    "Тарих": "History",
+                    "Тіл": "Language",
+                    "Өнер": "Art"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Маған математика ұнайды",
+              "translations": {
+                "ru": {
+                  "question": "Мне нравится математика"
+                },
+                "en": {
+                  "question": "I like math"
+                }
+              },
+              "words": [
+                "Маған",
+                "математика",
+                "ұнайды",
+                "ұнамайды",
+                "тарих"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Тіл үйрену қызық",
+              "words": [
+                "Тіл",
+                "үйрену",
+                "қызық",
+                "қиын",
+                "оқу"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Өнер",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Искусство",
+                    "Наука",
+                    "Спорт"
+                  ],
+                  "answer": "Искусство"
+                },
+                "en": {
+                  "options": [
+                    "Art",
+                    "Science",
+                    "Sport"
+                  ],
+                  "answer": "Art"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Тарихты білу керек"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Музыка": "Музыка",
+                    "Спорт": "Спорт",
+                    "География": "География",
+                    "Физика": "Физика"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Музыка": "Music",
+                    "Спорт": "Sport",
+                    "География": "Geography",
+                    "Физика": "Physics"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Пән",
+                "Сән"
+              ],
+              "answer": "Пән"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Спорт денсаулыққа пайдалы",
+              "translations": {
+                "ru": {
+                  "question": "Спорт полезен для здоровья"
+                },
+                "en": {
+                  "question": "Sport is healthy"
+                }
+              },
+              "words": [
+                "Спорт",
+                "денсаулыққа",
+                "пайдалы",
+                "зиян"
+              ]
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Білім — басты байлық"
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "type": "STORY",
+          "icon": "💬",
+          "title": {
+            "ru": "В школе",
+            "kk": "Мектепте",
+            "en": "At school"
+          },
+          "linkedStoryId": 5
+        },
+        {
+          "number": 5,
+          "type": "VIDEO",
+          "icon": "📺",
+          "title": {
+            "ru": "Видео: Алфавит",
+            "kk": "Видео: Әліппе",
+            "en": "Video: Alphabet"
+          },
+          "linkedVideoId": 4
+        },
+        {
+          "number": 6,
+          "type": "STORY",
+          "icon": "📚",
+          "title": {
+            "ru": "Первый звонок",
+            "kk": "Алғашқы қоңырау",
+            "en": "First bell"
+          },
+          "linkedStoryId": 6
+        },
+        {
+          "number": 7,
+          "type": "REGULAR",
+          "icon": "🏁",
+          "title": {
+            "ru": "Финал 3",
+            "kk": "3-бөлім финалы",
+            "en": "Final 3"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Мектеп": "Школа",
+                    "Кітап": "Книга",
+                    "Дәптер": "Тетрадь",
+                    "Ұстаз": "Учитель"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Мектеп": "School",
+                    "Кітап": "Book",
+                    "Дәптер": "Notebook",
+                    "Ұстаз": "Teacher"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Бәріне сәттілік",
+              "translations": {
+                "ru": {
+                  "question": "Всем удачи"
+                },
+                "en": {
+                  "question": "Good luck to everyone"
+                }
+              },
+              "words": [
+                "Бәріне",
+                "сәттілік",
+                "бақыт",
+                "сәлем"
+              ]
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Білім — күш"
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Менің бағам жақсы",
+              "words": [
+                "Менің",
+                "бағам",
+                "жақсы",
+                "жаман",
+                "орташа"
+              ]
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Ғылым": "Наука",
+                    "Тарих": "История",
+                    "Тіл": "Язык",
+                    "Өнер": "Искусство"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Ғылым": "Science",
+                    "Тарих": "History",
+                    "Тіл": "Language",
+                    "Өнер": "Art"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Тіл",
+                "Тіс"
+              ],
+              "answer": "Тіл"
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Тарих",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "История",
+                    "География",
+                    "Математика"
+                  ],
+                  "answer": "История"
+                },
+                "en": {
+                  "options": [
+                    "History",
+                    "Geography",
+                    "Math"
+                  ],
+                  "answer": "History"
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Кітап — білім бұлағы",
+              "translations": {
+                "ru": {
+                  "question": "Книга — источник знаний"
+                },
+                "en": {
+                  "question": "Book is a source of knowledge"
+                }
+              },
+              "words": [
+                "Кітап",
+                "—",
+                "білім",
+                "бұлағы",
+                "өмір"
+              ]
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Оқу инемен құдық қазғандай"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": {
+        "ru": "Казахстан",
+        "kk": "Қазақстан",
+        "en": "Kazakhstan"
+      },
+      "description": {
+        "ru": "Природа, города, традиции",
+        "kk": "Табиғат, қалалар, салт-дәстүр",
+        "en": "Nature, cities, traditions"
+      },
+      "icon": "🇰🇿",
+      "lessons": [
+        {
+          "number": 1,
+          "type": "REGULAR",
+          "icon": "🏙️",
+          "title": {
+            "ru": "Астана",
+            "kk": "Астана",
+            "en": "Astana"
+          },
+          "exercises": [
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Қала",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Город",
+                    "Село",
+                    "Улица"
+                  ],
+                  "answer": "Город"
+                },
+                "en": {
+                  "options": [
+                    "City",
+                    "Village",
+                    "Street"
+                  ],
+                  "answer": "City"
+                }
+              }
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Астана": "Астана",
+                    "Алматы": "Алматы",
+                    "Отан": "Родина",
+                    "Ел": "Страна"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Астана": "Astana",
+                    "Алматы": "Almaty",
+                    "Отан": "Homeland",
+                    "Ел": "Country"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Астана — бас қала",
+              "translations": {
+                "ru": {
+                  "question": "Астана — столица"
+                },
+                "en": {
+                  "question": "Astana is the capital"
+                }
+              },
+              "words": [
+                "Астана",
+                "—",
+                "бас",
+                "қала",
+                "үлкен"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Менің Отаным — Қазақстан",
+              "words": [
+                "Менің",
+                "Отаным",
+                "—",
+                "Қазақстан",
+                "Астана"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Ел",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Страна",
+                    "Город",
+                    "Улица"
+                  ],
+                  "answer": "Страна"
+                },
+                "en": {
+                  "options": [
+                    "Country",
+                    "City",
+                    "Street"
+                  ],
+                  "answer": "Country"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Мен Алматыда тұрамын"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Халық": "Народ",
+                    "Ту": "Флаг",
+                    "УРЅТ±СЂР°РЅ": "Гимн",
+                    "Елтаңба": "Герб"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Халық": "People",
+                    "Ту": "Flag",
+                    "УРЅТ±СЂР°РЅ": "Anthem",
+                    "Елтаңба": "Emblem"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Ту",
+                "Бу"
+              ],
+              "answer": "Ту"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Қазақстан — үлкен ел",
+              "translations": {
+                "ru": {
+                  "question": "Казахстан — большая страна"
+                },
+                "en": {
+                  "question": "Kazakhstan is a big country"
+                }
+              },
+              "words": [
+                "Қазақстан",
+                "—",
+                "үлкен",
+                "ел",
+                "кіші"
+              ]
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "type": "REGULAR",
+          "icon": "🌄",
+          "title": {
+            "ru": "Природа",
+            "kk": "Табиғат",
+            "en": "Nature"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Тау": "Гора",
+                    "Көл": "Озеро",
+                    "Өзен": "Река",
+                    "Орман": "Лес"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Тау": "Mountain",
+                    "Көл": "Lake",
+                    "Өзен": "River",
+                    "Орман": "Forest"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Тау өте биік",
+              "translations": {
+                "ru": {
+                  "question": "Гора очень высокая"
+                },
+                "en": {
+                  "question": "The mountain is very high"
+                }
+              },
+              "words": [
+                "Тау",
+                "өте",
+                "биік",
+                "аласа"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Өзен ағып жатыр",
+              "words": [
+                "Өзен",
+                "ағып",
+                "жатыр",
+                "тау"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Көл",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Озеро",
+                    "Море",
+                    "Река"
+                  ],
+                  "answer": "Озеро"
+                },
+                "en": {
+                  "options": [
+                    "Lake",
+                    "Sea",
+                    "River"
+                  ],
+                  "answer": "Lake"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Орманда ағаштар көп"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Шөл": "Пустыня",
+                    "Дала": "Степь",
+                    "Аспан": "Небо",
+                    "Жер": "Земля"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Шөл": "Desert",
+                    "Дала": "Steppe",
+                    "Аспан": "Sky",
+                    "Жер": "Earth"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Тау",
+                "Дау"
+              ],
+              "answer": "Тау"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Аспан ашық",
+              "translations": {
+                "ru": {
+                  "question": "Небо ясное"
+                },
+                "en": {
+                  "question": "The sky is clear"
+                }
+              },
+              "words": [
+                "Аспан",
+                "ашық",
+                "бұлтты",
+                "көк"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Дала",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Степь",
+                    "Поле",
+                    "Лес"
+                  ],
+                  "answer": "Степь"
+                },
+                "en": {
+                  "options": [
+                    "Steppe",
+                    "Field",
+                    "Forest"
+                  ],
+                  "answer": "Steppe"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "type": "REGULAR",
+          "icon": "🍲",
+          "title": {
+            "ru": "Традиции",
+            "kk": "Дәстүрлер",
+            "en": "Traditions"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Наурыз": "Наурыз",
+                    "Домбыра": "Домбра",
+                    "Сәукеле": "Саукеле",
+                    "Киіз үй": "Юрта"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Наурыз": "Nauryz",
+                    "Домбыра": "Dombra",
+                    "Сәукеле": "Saukele",
+                    "Киіз үй": "Yurt"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Біз Наурызды тойлаймыз",
+              "translations": {
+                "ru": {
+                  "question": "Мы празднуем Наурыз"
+                },
+                "en": {
+                  "question": "We celebrate Nauryz"
+                }
+              },
+              "words": [
+                "Біз",
+                "Наурызды",
+                "тойлаймыз",
+                "жемейміз",
+                "келмейміз"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Домбыра тарт",
+              "words": [
+                "Домбыра",
+                "тарт",
+                "оқы",
+                "жаз"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Сәукеле",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Головной убор",
+                    "Обувь",
+                    "Платье"
+                  ],
+                  "answer": "Головной убор"
+                },
+                "en": {
+                  "options": [
+                    "Headwear",
+                    "Shoes",
+                    "Dress"
+                  ],
+                  "answer": "Headwear"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Қонақ келсе, құт келер"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Қонақ": "Гость",
+                    "Тілек": "Пожелание",
+                    "Бата": "Благословение",
+                    "Салт": "Обычай"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Қонақ": "Guest",
+                    "Тілек": "Wish",
+                    "Бата": "Blessing",
+                    "Салт": "Tradition"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Сый",
+                "Би"
+              ],
+              "answer": "Би"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Қазақтың салт-дәстүрлері көп",
+              "translations": {
+                "ru": {
+                  "question": "У казахов много традиций"
+                },
+                "en": {
+                  "question": "Kazakhs have many traditions"
+                }
+              },
+              "words": [
+                "Қазақтың",
+                "салт-дәстүрлері",
+                "көп",
+                "аз",
+                "жоқ"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Бата",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Благословение",
+                    "Проклятие",
+                    "Ссора"
+                  ],
+                  "answer": "Благословение"
+                },
+                "en": {
+                  "options": [
+                    "Blessing",
+                    "Curse",
+                    "Quarrel"
+                  ],
+                  "answer": "Blessing"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Сәлем — сөздің анасы"
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "type": "STORY",
+          "icon": "💬",
+          "title": {
+            "ru": "Путешествие",
+            "kk": "Саяхат",
+            "en": "Travel"
+          },
+          "linkedStoryId": 7
+        },
+        {
+          "number": 5,
+          "type": "VIDEO",
+          "icon": "📺",
+          "title": {
+            "ru": "Видео: Казахстан",
+            "kk": "Видео: Қазақстан",
+            "en": "Video: Kazakhstan"
+          },
+          "linkedVideoId": 11
+        },
+        {
+          "number": 6,
+          "type": "STORY",
+          "icon": "📚",
+          "title": {
+            "ru": "Рассказ о крае",
+            "kk": "Өлке туралы әңгіме",
+            "en": "Regional story"
+          },
+          "linkedStoryId": 8
+        },
+        {
+          "number": 7,
+          "type": "REGULAR",
+          "icon": "🏁",
+          "title": {
+            "ru": "Финал 4",
+            "kk": "4-бөлім финалы",
+            "en": "Final 4"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Астана": "Астана",
+                    "Алматы": "Алматы",
+                    "Тау": "Гора",
+                    "Көл": "Озеро"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Астана": "Astana",
+                    "Алматы": "Almaty",
+                    "Тау": "Mountain",
+                    "Көл": "Lake"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Мен Астананы жақсы көремін",
+              "translations": {
+                "ru": {
+                  "question": "Я люблю Астану"
+                },
+                "en": {
+                  "question": "I love Astana"
+                }
+              },
+              "words": [
+                "Мен",
+                "Астананы",
+                "жақсы",
+                "көремін",
+                "жек",
+                "көремін"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Биік тауларға қара",
+              "words": [
+                "Биік",
+                "тауларға",
+                "қара",
+                "аласа",
+                "көлге"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Көл",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Озеро",
+                    "Река",
+                    "Море"
+                  ],
+                  "answer": "Озеро"
+                },
+                "en": {
+                  "options": [
+                    "Lake",
+                    "River",
+                    "Sea"
+                  ],
+                  "answer": "Lake"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Қазақстанның астанасы — Астана"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Мемлекет": "Государство",
+                    "Шекара": "Граница",
+                    "Ниет": "Намерение",
+                    "Қонақ": "Гость"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Мемлекет": "State",
+                    "Шекара": "Border",
+                    "Ниет": "Intention",
+                    "Қонақ": "Guest"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Ел",
+                "Бел"
+              ],
+              "answer": "Ел"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Біз байтақ елміз",
+              "translations": {
+                "ru": {
+                  "question": "Мы огромная страна"
+                },
+                "en": {
+                  "question": "We are a vast country"
+                }
+              },
+              "words": [
+                "Біз",
+                "байтақ",
+                "елміз",
+                "кіші",
+                "халықпыз"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Отан",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Родина",
+                    "Город",
+                    "Аул"
+                  ],
+                  "answer": "Родина"
+                },
+                "en": {
+                  "options": [
+                    "Homeland",
+                    "City",
+                    "Village"
+                  ],
+                  "answer": "Homeland"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Отан оттан да ыстық"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": {
+        "ru": "Грамматика",
+        "kk": "Грамматика",
+        "en": "Grammar"
+      },
+      "description": {
+        "ru": "Правила и основы языка",
+        "kk": "Тіл ережелері мен негіздері",
+        "en": "Rules and basics"
+      },
+      "icon": "📝",
+      "lessons": [
+        {
+          "number": 1,
+          "type": "REGULAR",
+          "icon": "🔤",
+          "title": {
+            "ru": "Гармония гласных",
+            "kk": "Буын үндестігі",
+            "en": "Vowel harmony"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Жуан": "Твердый",
+                    "Жіңішке": "Мягкий",
+                    "Дауысты": "Гласный",
+                    "Дауыссыз": "Согласный"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Жуан": "Hard",
+                    "Жіңішке": "Soft",
+                    "Дауысты": "Vowel",
+                    "Дауыссыз": "Consonant"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Бұл жуан дауысты",
+              "translations": {
+                "ru": {
+                  "question": "Это твердый гласный"
+                },
+                "en": {
+                  "question": "This is a hard vowel"
+                }
+              },
+              "words": [
+                "Бұл",
+                "жуан",
+                "дауысты",
+                "жіңішке",
+                "согласный"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Буынға бөл",
+              "words": [
+                "Буынға",
+                "бөл",
+                "қос",
+                "ал"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Буын",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Слог",
+                    "Слово",
+                    "Буква"
+                  ],
+                  "answer": "Слог"
+                },
+                "en": {
+                  "options": [
+                    "Syllable",
+                    "Word",
+                    "Letter"
+                  ],
+                  "answer": "Syllable"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Әліпбиді жатта"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "УСЂС–Рї": "Буква",
+                    "Сөз": "Слово",
+                    "Сөйлем": "Предложение",
+                    "Мәтін": "Текст"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "УСЂС–Рї": "Letter",
+                    "Сөз": "Word",
+                    "Сөйлем": "Sentence",
+                    "Мәтін": "Text"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Сөз",
+                "Көз"
+              ],
+              "answer": "Сөз"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Қазақ тілінде тоғыз төл дыбыс бар",
+              "translations": {
+                "ru": {
+                  "question": "В казахском языке 9 специфических звуков"
+                },
+                "en": {
+                  "question": "There are 9 specific sounds in Kazakh"
+                }
+              },
+              "words": [
+                "Қазақ",
+                "тілінде",
+                "тоғыз",
+                "төл",
+                "дыбыс",
+                "бар"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Әріп",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Буква",
+                    "Слово",
+                    "Текст"
+                  ],
+                  "answer": "Буква"
+                },
+                "en": {
+                  "options": [
+                    "Letter",
+                    "Word",
+                    "Text"
+                  ],
+                  "answer": "Letter"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Тіл — қазына"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "type": "REGULAR",
+          "icon": "🔢",
+          "title": {
+            "ru": "Падежи",
+            "kk": "Септіктер",
+            "en": "Cases"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "АтаСѓ": "Именительный",
+                    "Ілік": "Родительный",
+                    "Барыс": "Дательный",
+                    "Табыс": "Винительный"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "АтаСѓ": "Nominative",
+                    "Ілік": "Genitive",
+                    "Барыс": "Dative",
+                    "Табыс": "Accusative"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Кімнің кітабы?",
+              "translations": {
+                "ru": {
+                  "question": "Чья книга?"
+                },
+                "en": {
+                  "question": "Whose book?"
+                }
+              },
+              "words": [
+                "Кімнің",
+                "кітабы?",
+                "ненің",
+                "қаламы?"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Мектепке бар",
+              "words": [
+                "Мектепке",
+                "бар",
+                "кел",
+                "кет"
+              ]
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Жатыс": "Местный",
+                    "Шығыс": "Исходный",
+                    "Көмектес": "Творительный",
+                    "Септік": "Падеж"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Жатыс": "Locative",
+                    "Шығыс": "Ablative",
+                    "Көмектес": "Instrumental",
+                    "Септік": "Case"
+                  }
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Менің қаламым"
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Кім",
+                "Күн"
+              ],
+              "answer": "Кім"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Үйде отырмын",
+              "translations": {
+                "ru": {
+                  "question": "Я сижу дома"
+                },
+                "en": {
+                  "question": "I am at home"
+                }
+              },
+              "words": [
+                "Үйде",
+                "отырмын",
+                "тұрмын",
+                "жатырмын"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Септік",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Падеж",
+                    "Слово",
+                    "Закон"
+                  ],
+                  "answer": "Падеж"
+                },
+                "en": {
+                  "options": [
+                    "Case",
+                    "Word",
+                    "Law"
+                  ],
+                  "answer": "Case"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Кімге бересің?"
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Досымнан алдым",
+              "words": [
+                "Досымнан",
+                "алдым",
+                "бердім",
+                "көрдім"
+              ]
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "type": "REGULAR",
+          "icon": "⏳",
+          "title": {
+            "ru": "Времена",
+            "kk": "Шақтар",
+            "en": "Tenses"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Осы шақ": "Настоящее",
+                    "Өткен шақ": "Прошедшее",
+                    "Келер шақ": "Будущее",
+                    "Уақыт": "Время"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Осы шақ": "Present",
+                    "Өткен шақ": "Past",
+                    "Келер шақ": "Future",
+                    "Уақыт": "Time"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Мен кеше келдім",
+              "translations": {
+                "ru": {
+                  "question": "Я пришел вчера"
+                },
+                "en": {
+                  "question": "I came yesterday"
+                }
+              },
+              "words": [
+                "Мен",
+                "кеше",
+                "келдім",
+                "ертең",
+                "барамын"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Ертең барамын",
+              "words": [
+                "Ертең",
+                "барамын",
+                "кеше",
+                "келдім"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Қазір",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Сейчас",
+                    "Потом",
+                    "Вчера"
+                  ],
+                  "answer": "Сейчас"
+                },
+                "en": {
+                  "options": [
+                    "Now",
+                    "Later",
+                    "Yesterday"
+                  ],
+                  "answer": "Now"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Уақыт — алтын"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Кеше": "Вчера",
+                    "Бүгін": "Сегодня",
+                    "Ертең": "Завтра",
+                    "Қазір": "Сейчас"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Кеше": "Yesterday",
+                    "Бүгін": "Today",
+                    "Ертең": "Tomorrow",
+                    "Қазір": "Now"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Жыл",
+                "Тіл"
+              ],
+              "answer": "Жыл"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Мен қазір оқып жатырмын",
+              "translations": {
+                "ru": {
+                  "question": "Я сейчас читаю"
+                },
+                "en": {
+                  "question": "I am reading now"
+                }
+              },
+              "words": [
+                "Мен",
+                "қазір",
+                "оқып",
+                "жатырмын",
+                "ертең",
+                "жазамын"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Бүгін",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Сегодня",
+                    "Завтра",
+                    "Вчера"
+                  ],
+                  "answer": "Сегодня"
+                },
+                "en": {
+                  "options": [
+                    "Today",
+                    "Tomorrow",
+                    "Yesterday"
+                  ],
+                  "answer": "Today"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Ертеңгі істі бүгін бітір"
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "type": "STORY",
+          "icon": "💬",
+          "title": {
+            "ru": "Урок языка",
+            "kk": "Тіл сабағы",
+            "en": "Language lesson"
+          },
+          "linkedStoryId": 9
+        },
+        {
+          "number": 5,
+          "type": "VIDEO",
+          "icon": "📺",
+          "title": {
+            "ru": "Видео: Грамматика",
+            "kk": "Видео: Грамматика",
+            "en": "Video: Grammar"
+          },
+          "linkedVideoId": 12
+        },
+        {
+          "number": 6,
+          "type": "STORY",
+          "icon": "📚",
+          "title": {
+            "ru": "История правила",
+            "kk": "Ереже тарихы",
+            "en": "Rule history"
+          },
+          "linkedStoryId": 10
+        },
+        {
+          "number": 7,
+          "type": "REGULAR",
+          "icon": "🏁",
+          "title": {
+            "ru": "Финал 5",
+            "kk": "5-бөлім финалы",
+            "en": "Final 5"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Жуан": "Твердый",
+                    "Жіңішке": "Мягкий",
+                    "Септік": "Падеж",
+                    "Шақ": "Время"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Жуан": "Hard",
+                    "Жіңішке": "Soft",
+                    "Септік": "Case",
+                    "Шақ": "Tense"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Септіктерді қайтала",
+              "translations": {
+                "ru": {
+                  "question": "Повтори падежи"
+                },
+                "en": {
+                  "question": "Repeat the cases"
+                }
+              },
+              "words": [
+                "Септіктерді",
+                "қайтала",
+                "оқы",
+                "жаз"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Менің атым Әлібек",
+              "words": [
+                "Менің",
+                "атым",
+                "Әлібек",
+                "сенің"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Жуан",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Твердый",
+                    "Мягкий",
+                    "Громкий"
+                  ],
+                  "answer": "Твердый"
+                },
+                "en": {
+                  "options": [
+                    "Hard",
+                    "Soft",
+                    "Loud"
+                  ],
+                  "answer": "Hard"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Тіл — ұлттың жаны"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Ереже": "Правило",
+                    "Мысал": "Пример",
+                    "Қате": "Ошибка",
+                    "Дұрыс": "Правильно"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Ереже": "Rule",
+                    "Мысал": "Example",
+                    "Қате": "Mistake",
+                    "Дұрыс": "Correct"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Тіл",
+                "Піс"
+              ],
+              "answer": "Тіл"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Сабақ басталды",
+              "translations": {
+                "ru": {
+                  "question": "Урок начался"
+                },
+                "en": {
+                  "question": "The lesson started"
+                }
+              },
+              "words": [
+                "Сабақ",
+                "басталды",
+                "аяқталды",
+                "болды"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Ереже",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Правило",
+                    "Задание",
+                    "Ошибка"
+                  ],
+                  "answer": "Правило"
+                },
+                "en": {
+                  "options": [
+                    "Rule",
+                    "Task",
+                    "Mistake"
+                  ],
+                  "answer": "Rule"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Ана тіліңді қадірле"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": {
+        "ru": "Словарный запас",
+        "kk": "Сөздік қор",
+        "en": "Vocabulary"
+      },
+      "description": {
+        "ru": "Новые слова на каждый день",
+        "kk": "Күнделікті жаңа сөздер",
+        "en": "Daily new words"
+      },
+      "icon": "📕",
+      "lessons": [
+        {
+          "number": 1,
+          "type": "REGULAR",
+          "icon": "🍎",
+          "title": {
+            "ru": "Еда",
+            "kk": "Тамақ",
+            "en": "Food"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Нан": "Хлеб",
+                    "Сүт": "Молоко",
+                    "Су": "Вода",
+                    "Алма": "Яблоко"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Нан": "Bread",
+                    "Сүт": "Milk",
+                    "Су": "Water",
+                    "Алма": "Apple"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Мен алма жеймін",
+              "translations": {
+                "ru": {
+                  "question": "Я ем яблоко"
+                },
+                "en": {
+                  "question": "I eat an apple"
+                }
+              },
+              "words": [
+                "Мен",
+                "алма",
+                "жеймін",
+                "ішемін",
+                "нан"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Сүт іш",
+              "words": [
+                "Сүт",
+                "іш",
+                "же",
+                "су"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Су",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Вода",
+                    "Сок",
+                    "Чай"
+                  ],
+                  "answer": "Вода"
+                },
+                "en": {
+                  "options": [
+                    "Water",
+                    "Juice",
+                    "Tea"
+                  ],
+                  "answer": "Water"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Ас — адамның арқауы"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Шай": "Чай",
+                    "Тәтті": "Сладкий",
+                    "Ащы": "Горький",
+                    "Тұзды": "Соленый"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Шай": "Tea",
+                    "Тәтті": "Sweet",
+                    "Ащы": "Bitter",
+                    "Тұзды": "Salty"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Нан",
+                "Сан"
+              ],
+              "answer": "Нан"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Шай ішесің бе?",
+              "translations": {
+                "ru": {
+                  "question": "Будешь пить чай?"
+                },
+                "en": {
+                  "question": "Will you drink tea?"
+                }
+              },
+              "words": [
+                "Шай",
+                "ішесің",
+                "бе?",
+                "жейсің",
+                "ба?"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Тәтті",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Сладкий",
+                    "Соленый",
+                    "Горький"
+                  ],
+                  "answer": "Сладкий"
+                },
+                "en": {
+                  "options": [
+                    "Sweet",
+                    "Salty",
+                    "Bitter"
+                  ],
+                  "answer": "Sweet"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Бұл өте дәмді"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "type": "REGULAR",
+          "icon": "🧥",
+          "title": {
+            "ru": "Одежда",
+            "kk": "Киім",
+            "en": "Clothing"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Көйлек": "Платье",
+                    "Шалбар": "Брюки",
+                    "Аяқ РєРёС–Рј": "Обувь",
+                    "Бөрік": "Шапка"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Көйлек": "Dress",
+                    "Шалбар": "Pants",
+                    "Аяқ РєРёС–Рј": "Shoes",
+                    "Бөрік": "Hat"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Мына көйлек әдемі",
+              "translations": {
+                "ru": {
+                  "question": "Это платье красивое"
+                },
+                "en": {
+                  "question": "This dress is beautiful"
+                }
+              },
+              "words": [
+                "Мына",
+                "көйлек",
+                "әдемі",
+                "көріксіз",
+                "шала"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Шалбар ки",
+              "words": [
+                "Шалбар",
+                "ки",
+                "шеш",
+                "көйлек"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Аяқ киім",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Обувь",
+                    "Одежда",
+                    "Шапка"
+                  ],
+                  "answer": "Обувь"
+                },
+                "en": {
+                  "options": [
+                    "Shoes",
+                    "Clothing",
+                    "Hat"
+                  ],
+                  "answer": "Shoes"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Киімді күтіп ки"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Жейде": "Рубашка",
+                    "Күрте": "Куртка",
+                    "ҚолТ“Р°Рї": "Перчатки",
+                    "Шұлық": "Носки"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Жейде": "Shirt",
+                    "Күрте": "Jacket",
+                    "ҚолТ“Р°Рї": "Gloves",
+                    "Шұлық": "Socks"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Ки",
+                "Жи"
+              ],
+              "answer": "Ки"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Күрте жылы ма?",
+              "translations": {
+                "ru": {
+                  "question": "Куртка теплая?"
+                },
+                "en": {
+                  "question": "Is the jacket warm?"
+                }
+              },
+              "words": [
+                "Күрте",
+                "жылы",
+                "ма?",
+                "суық",
+                "па?"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Жейде",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Рубашка",
+                    "Брюки",
+                    "Носки"
+                  ],
+                  "answer": "Рубашка"
+                },
+                "en": {
+                  "options": [
+                    "Shirt",
+                    "Pants",
+                    "Socks"
+                  ],
+                  "answer": "Shirt"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Жаңа киім құтты болсын!"
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "type": "REGULAR",
+          "icon": "🏥",
+          "title": {
+            "ru": "Здоровье",
+            "kk": "Денсаулық",
+            "en": "Health"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Дәрігер": "Врач",
+                    "Аурухана": "Больница",
+                    "Дәрі": "Лекарство",
+                    "Денсаулық": "Здоровье"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Дәрігер": "Doctor",
+                    "Аурухана": "Hospital",
+                    "Дәрі": "Medicine",
+                    "Денсаулық": "Health"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Денсаулық — зор байлық",
+              "translations": {
+                "ru": {
+                  "question": "Здоровье — это большое богатство"
+                },
+                "en": {
+                  "question": "Health is a great wealth"
+                }
+              },
+              "words": [
+                "Денсаулық",
+                "—",
+                "зор",
+                "байлық",
+                "ақша"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Дәрігерге бар",
+              "words": [
+                "Дәрігерге",
+                "бар",
+                "кел",
+                "ауруханаға"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Дәрі",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Лекарство",
+                    "Еда",
+                    "Вода"
+                  ],
+                  "answer": "Лекарство"
+                },
+                "en": {
+                  "options": [
+                    "Medicine",
+                    "Food",
+                    "Water"
+                  ],
+                  "answer": "Medicine"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Ауырмаңыз!"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Тіс": "Зуб",
+                    "Бас": "Голова",
+                    "Жүрек": "Сердце",
+                    "Ауыру": "Болеть"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Тіс": "Tooth",
+                    "Бас": "Head",
+                    "Жүрек": "Heart",
+                    "Ауыру": "Pain/Ache"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Тіс",
+                "Тіл"
+              ],
+              "answer": "Тіс"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Басым ауырып тұр",
+              "translations": {
+                "ru": {
+                  "question": "У меня болит голова"
+                },
+                "en": {
+                  "question": "My head hurts"
+                }
+              },
+              "words": [
+                "Басым",
+                "ауырып",
+                "тұр",
+                "жатыр",
+                "тісім"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Денсаулық",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Здоровье",
+                    "Болезнь",
+                    "Врач"
+                  ],
+                  "answer": "Здоровье"
+                },
+                "en": {
+                  "options": [
+                    "Health",
+                    "Disease",
+                    "Doctor"
+                  ],
+                  "answer": "Health"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Шынықсаң шымыр боласың"
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "type": "STORY",
+          "icon": "💬",
+          "title": {
+            "ru": "В магазине",
+            "kk": "Дүкенде",
+            "en": "In a shop"
+          },
+          "linkedStoryId": 11
+        },
+        {
+          "number": 5,
+          "type": "VIDEO",
+          "icon": "📺",
+          "title": {
+            "ru": "Видео: Словарь",
+            "kk": "Видео: Сөздік",
+            "en": "Video: Vocabulary"
+          },
+          "linkedVideoId": 13
+        },
+        {
+          "number": 6,
+          "type": "STORY",
+          "icon": "📚",
+          "title": {
+            "ru": "Покупки",
+            "kk": "Сауда",
+            "en": "Shopping"
+          },
+          "linkedStoryId": 12
+        },
+        {
+          "number": 7,
+          "type": "REGULAR",
+          "icon": "🏁",
+          "title": {
+            "ru": "Финал 6",
+            "kk": "6-бөлім финалы",
+            "en": "Final 6"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Нан": "Хлеб",
+                    "Киім": "Одежда",
+                    "Дәрі": "Лекарство",
+                    "Дүкен": "Магазин"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Нан": "Bread",
+                    "Киім": "Clothing",
+                    "Дәрі": "Medicine",
+                    "Дүкен": "Shop"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Дүкеннен нан сатып ал",
+              "translations": {
+                "ru": {
+                  "question": "Купи хлеб в магазине"
+                },
+                "en": {
+                  "question": "Buy bread in the shop"
+                }
+              },
+              "words": [
+                "Дүкеннен",
+                "нан",
+                "сатып",
+                "ал",
+                "сүт"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Мен жаңа киім алдым",
+              "words": [
+                "Мен",
+                "жаңа",
+                "киім",
+                "алдым",
+                "бердім"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Дүкен",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Магазин",
+                    "Рынок",
+                    "Аптека"
+                  ],
+                  "answer": "Магазин"
+                },
+                "en": {
+                  "options": [
+                    "Shop",
+                    "Market",
+                    "Pharmacy"
+                  ],
+                  "answer": "Shop"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Саудаң болсын!"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Баға": "Цена",
+                    "Ақша": "Деньги",
+                    "Сатушы": "Продавец",
+                    "Сатып алушы": "Покупатель"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Баға": "Price",
+                    "Ақша": "Money",
+                    "Сатушы": "Seller",
+                    "Сатып алушы": "Buyer"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Сүт",
+                "Су"
+              ],
+              "answer": "Сүт"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Бағасы қанша?",
+              "translations": {
+                "ru": {
+                  "question": "Сколько стоит?"
+                },
+                "en": {
+                  "question": "How much is it?"
+                }
+              },
+              "words": [
+                "Бағасы",
+                "қанша?",
+                "неше?",
+                "не?"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Ақша",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Деньги",
+                    "Цена",
+                    "Товар"
+                  ],
+                  "answer": "Деньги"
+                },
+                "en": {
+                  "options": [
+                    "Money",
+                    "Price",
+                    "Product"
+                  ],
+                  "answer": "Money"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Керемет таңдау!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": {
+        "ru": "Музыка и Песни",
+        "kk": "Музыка мен Әндер",
+        "en": "Music and Songs"
+      },
+      "description": {
+        "ru": "Изучение через песни",
+        "kk": "Әндер арқылы үйрену",
+        "en": "Learning through songs"
+      },
+      "icon": "🎶",
+      "lessons": [
+        {
+          "number": 1,
+          "type": "REGULAR",
+          "icon": "🎵",
+          "title": {
+            "ru": "Ритм",
+            "kk": "Ритм",
+            "en": "Rhythm"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "УРЅ": "Песня",
+                    "Күй": "Кюй",
+                    "Ритм": "Ритм",
+                    "Өлең": "Стих/Песня"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "УРЅ": "Song",
+                    "Күй": "Kuy",
+                    "Ритм": "Rhythm",
+                    "Өлең": "Poem/Song"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Бұл әдемі ән",
+              "translations": {
+                "ru": {
+                  "question": "Это красивая песня"
+                },
+                "en": {
+                  "question": "This is a beautiful song"
+                }
+              },
+              "words": [
+                "Бұл",
+                "әдемі",
+                "ән",
+                "жаман",
+                "өлең"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Күй тыңда",
+              "words": [
+                "Күй",
+                "тыңда",
+                "айт",
+                "оқы"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Ритм",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Ритм",
+                    "Мелодия",
+                    "Слова"
+                  ],
+                  "answer": "Ритм"
+                },
+                "en": {
+                  "options": [
+                    "Rhythm",
+                    "Melody",
+                    "Lyrics"
+                  ],
+                  "answer": "Rhythm"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Ән көңілдің ажары"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "УСѓРµРЅ": "Мелодия",
+                    "Дыбыс": "Звук",
+                    "Би": "Танец",
+                    "Өнер": "Искусство"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "УСѓРµРЅ": "Melody",
+                    "Дыбыс": "Sound",
+                    "Би": "Dance",
+                    "Өнер": "Art"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Ән",
+                "Сән"
+              ],
+              "answer": "Ән"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Маған музыка ұнайды",
+              "translations": {
+                "ru": {
+                  "question": "Мне нравится музыка"
+                },
+                "en": {
+                  "question": "I like music"
+                }
+              },
+              "words": [
+                "Маған",
+                "музыка",
+                "ұнайды",
+                "ұнамайды",
+                "би"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Әуен",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Мелодия",
+                    "Ритм",
+                    "Би"
+                  ],
+                  "answer": "Мелодия"
+                },
+                "en": {
+                  "options": [
+                    "Melody",
+                    "Rhythm",
+                    "Dance"
+                  ],
+                  "answer": "Melody"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Би билейік"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "type": "REGULAR",
+          "icon": "🎸",
+          "title": {
+            "ru": "Инструменты",
+            "kk": "Аспаптар",
+            "en": "Instruments"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Домбыра": "Домбра",
+                    "Қобыз": "Кобыз",
+                    "Аспап": "Инструмент",
+                    "Дауыс": "Голос"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Домбыра": "Dombra",
+                    "Қобыз": "Kobyz",
+                    "Аспап": "Instrument",
+                    "Дауыс": "Voice"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Домбыра — қазақтың жаны",
+              "translations": {
+                "ru": {
+                  "question": "Домбра — душа казаха"
+                },
+                "en": {
+                  "question": "Dombra is the soul of Kazakhs"
+                }
+              },
+              "words": [
+                "Домбыра",
+                "—",
+                "қазақтың",
+                "жаны",
+                "тәні"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Қобыз тарт",
+              "words": [
+                "Қобыз",
+                "тарт",
+                "ұр",
+                "үзіл"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Аспап",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Инструмент",
+                    "Посуда",
+                    "Мебель"
+                  ],
+                  "answer": "Инструмент"
+                },
+                "en": {
+                  "options": [
+                    "Instrument",
+                    "Tableware",
+                    "Furniture"
+                  ],
+                  "answer": "Instrument"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Нағыз қазақ домбыра"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Жетіген": "Жетыген",
+                    "Сыбызғы": "Сыбызгы",
+                    "Шертер": "Шертер",
+                    "Дауылпаз": "Дауылпаз"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Жетіген": "Zhetigen",
+                    "Сыбызғы": "Sybizgy",
+                    "Шертер": "Sherter",
+                    "Дауылпаз": "Dauylpaz"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Күй",
+                "Түй"
+              ],
+              "answer": "Күй"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Дауысың өте әдемі",
+              "translations": {
+                "ru": {
+                  "question": "Твой голос очень красивый"
+                },
+                "en": {
+                  "question": "Your voice is very beautiful"
+                }
+              },
+              "words": [
+                "Дауысың",
+                "өте",
+                "әдемі",
+                "көріксіз",
+                "ащы"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Қобыз",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Кобыз",
+                    "Домбра",
+                    "Гитара"
+                  ],
+                  "answer": "Кобыз"
+                },
+                "en": {
+                  "options": [
+                    "Kobyz",
+                    "Dombra",
+                    "Guitar"
+                  ],
+                  "answer": "Kobyz"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Күй қанатты сөз"
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "type": "REGULAR",
+          "icon": "🎤",
+          "title": {
+            "ru": "Пение",
+            "kk": "Ән айту",
+            "en": "Singing"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Әнші": "Певец",
+                    "Сахна": "Сцена",
+                    "Тыңдау": "Слушать",
+                    "Айту": "Петь/Говорить"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Әнші": "Singer",
+                    "Сахна": "Stage",
+                    "Тыңдау": "Listen",
+                    "Айту": "Sing/Say"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Ол сахнада ән айтты",
+              "translations": {
+                "ru": {
+                  "question": "Он пел на сцене"
+                },
+                "en": {
+                  "question": "He sang on the stage"
+                }
+              },
+              "words": [
+                "Ол",
+                "сахнада",
+                "ән",
+                "айтты",
+                "биледі"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Әнді тыңда",
+              "words": [
+                "Әнді",
+                "тыңда",
+                "оқы",
+                "жаз"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Әнші",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Певец",
+                    "Учитель",
+                    "Врач"
+                  ],
+                  "answer": "Певец"
+                },
+                "en": {
+                  "options": [
+                    "Singer",
+                    "Teacher",
+                    "Doctor"
+                  ],
+                  "answer": "Singer"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Өнерлі өрге жүзер"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Шапалақ": "Аплодисменты",
+                    "Танымал": "Популярный",
+                    "Дарын": "Талант",
+                    "Шабыт": "Вдохновение"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Шапалақ": "Applause",
+                    "Танымал": "Famous",
+                    "Дарын": "Talent",
+                    "Шабыт": "Inspiration"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Айт",
+                "Қайт"
+              ],
+              "answer": "Айт"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Бұл менің шабытым",
+              "translations": {
+                "ru": {
+                  "question": "Это мое вдохновение"
+                },
+                "en": {
+                  "question": "This is my inspiration"
+                }
+              },
+              "words": [
+                "Бұл",
+                "менің",
+                "шабытым",
+                "танымалым",
+                "дарыным"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Сахна",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Сцена",
+                    "Зал",
+                    "Театр"
+                  ],
+                  "answer": "Сцена"
+                },
+                "en": {
+                  "options": [
+                    "Stage",
+                    "Hall",
+                    "Theater"
+                  ],
+                  "answer": "Stage"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Халыққа ән айт"
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "type": "STORY",
+          "icon": "💬",
+          "title": {
+            "ru": "Концерт",
+            "kk": "Концерт",
+            "en": "Concert"
+          },
+          "linkedStoryId": 13
+        },
+        {
+          "number": 5,
+          "type": "VIDEO",
+          "icon": "📺",
+          "title": {
+            "ru": "Видео: Песня",
+            "kk": "Видео: Өлең",
+            "en": "Video: Song"
+          },
+          "linkedVideoId": 9
+        },
+        {
+          "number": 6,
+          "type": "STORY",
+          "icon": "📚",
+          "title": {
+            "ru": "О музыке",
+            "kk": "Музыка туралы",
+            "en": "About music"
+          },
+          "linkedStoryId": 14
+        },
+        {
+          "number": 7,
+          "type": "REGULAR",
+          "icon": "🏁",
+          "title": {
+            "ru": "Финал 7",
+            "kk": "7-бөлім финалы",
+            "en": "Final 7"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "УРЅ": "Песня",
+                    "Музыка": "Музыка",
+                    "Аспап": "Инструмент",
+                    "Сахна": "Сцена"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "УРЅ": "Song",
+                    "Музыка": "Music",
+                    "Аспап": "Instrument",
+                    "Сахна": "Stage"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Біз концертке барамыз",
+              "translations": {
+                "ru": {
+                  "question": "Мы пойдем на концерт"
+                },
+                "en": {
+                  "question": "We are going to the concert"
+                }
+              },
+              "words": [
+                "Біз",
+                "концертке",
+                "барамыз",
+                "келеміз",
+                "киноға"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Өнер — таусылмас қазына",
+              "words": [
+                "Өнер",
+                "—",
+                "таусылмас",
+                "қазына",
+                "ақша"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Музыка",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Музыка",
+                    "Спорт",
+                    "Оқу"
+                  ],
+                  "answer": "Музыка"
+                },
+                "en": {
+                  "options": [
+                    "Music",
+                    "Sport",
+                    "Study"
+                  ],
+                  "answer": "Music"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Ән мен күй егіз"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Талант": "Талант",
+                    "Мереке": "Праздник",
+                    "Қуаныш": "Радость",
+                    "Көңіл-күй": "Настроение"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Талант": "Talent",
+                    "Мереке": "Holiday",
+                    "Қуаныш": "Joy",
+                    "Көңіл-күй": "Mood"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Ән",
+                "Тәң"
+              ],
+              "answer": "Ән"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Биіңіз әдемі екен",
+              "translations": {
+                "ru": {
+                  "question": "Ваш танец красивый"
+                },
+                "en": {
+                  "question": "Your dance is beautiful"
+                }
+              },
+              "words": [
+                "Биіңіз",
+                "әдемі",
+                "екен",
+                "көріксіз",
+                "жаман"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Мереке",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Праздник",
+                    "Будни",
+                    "Урок"
+                  ],
+                  "answer": "Праздник"
+                },
+                "en": {
+                  "options": [
+                    "Holiday",
+                    "Weekdays",
+                    "Lesson"
+                  ],
+                  "answer": "Holiday"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Өнер иесі бол"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": {
+        "ru": "Общение",
+        "kk": "Қарым-қатынас",
+        "en": "Communication"
+      },
+      "description": {
+        "ru": "Диалоги и разговоры",
+        "kk": "Диалогтар мен сөйлесу",
+        "en": "Dialogues and talks"
+      },
+      "icon": "🗣️",
+      "lessons": [
+        {
+          "number": 1,
+          "type": "REGULAR",
+          "icon": "📱",
+          "title": {
+            "ru": "Телефон",
+            "kk": "Телефон",
+            "en": "Phone"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Телефон": "Телефон",
+                    "Хабарласу": "Связаться",
+                    "Қоңырау": "Звонок",
+                    "Нөмір": "Номер"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Телефон": "Phone",
+                    "Хабарласу": "Contact",
+                    "Қоңырау": "Call",
+                    "Нөмір": "Number"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Маған телефон соқ",
+              "translations": {
+                "ru": {
+                  "question": "Позвони мне"
+                },
+                "en": {
+                  "question": "Call me"
+                }
+              },
+              "words": [
+                "Маған",
+                "телефон",
+                "соқ",
+                "бер",
+                "айт"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Нөміріңді айт",
+              "words": [
+                "Нөміріңді",
+                "айт",
+                "жаз",
+                "есіміңді"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Қоңырау",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Звонок",
+                    "Сообщение",
+                    "Письмо"
+                  ],
+                  "answer": "Звонок"
+                },
+                "en": {
+                  "options": [
+                    "Call",
+                    "Message",
+                    "Letter"
+                  ],
+                  "answer": "Call"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Сәлеметсіз бе, бұл кім?"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Желі": "Сеть",
+                    "Хабарлама": "Сообщение",
+                    "Дауыстық": "Голосовой",
+                    "Тұтқа": "Трубка"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Желі": "Network",
+                    "Хабарлама": "Message",
+                    "Дауыстық": "Voice",
+                    "Тұтқа": "Receiver"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Сөз",
+                "Көз"
+              ],
+              "answer": "Сөз"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Желі нашар ұстап тұр",
+              "translations": {
+                "ru": {
+                  "question": "Сеть плохо ловит"
+                },
+                "en": {
+                  "question": "The network is poor"
+                }
+              },
+              "words": [
+                "Желі",
+                "нашар",
+                "ұстап",
+                "тұр",
+                "жақсы"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Хабарлама",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Сообщение",
+                    "Звонок",
+                    "Письмо"
+                  ],
+                  "answer": "Сообщение"
+                },
+                "en": {
+                  "options": [
+                    "Message",
+                    "Call",
+                    "Letter"
+                  ],
+                  "answer": "Message"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Кейінірек хабарласамын"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "type": "REGULAR",
+          "icon": "💌",
+          "title": {
+            "ru": "Письма",
+            "kk": "Хаттар",
+            "en": "Letters"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Хат": "Письмо",
+                    "Пошта": "Почта",
+                    "Жазу": "Писать",
+                    "Оқу": "Читать"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Хат": "Letter",
+                    "Пошта": "Mail",
+                    "Жазу": "Write",
+                    "Оқу": "Read"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Мен хат жазып жатырмын",
+              "translations": {
+                "ru": {
+                  "question": "Я пишу письмо"
+                },
+                "en": {
+                  "question": "I am writing a letter"
+                }
+              },
+              "words": [
+                "Мен",
+                "хат",
+                "жазып",
+                "жатырмын",
+                "оқып"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Поштаға бар",
+              "words": [
+                "Поштаға",
+                "бар",
+                "кел",
+                "дүкенге"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Хат",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Письмо",
+                    "Книга",
+                    "Газета"
+                  ],
+                  "answer": "Письмо"
+                },
+                "en": {
+                  "options": [
+                    "Letter",
+                    "Book",
+                    "Newspaper"
+                  ],
+                  "answer": "Letter"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Хат таныған — азамат"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Мекенжай": "Адрес",
+                    "Марка": "Марка",
+                    "Конверт": "Конверт",
+                    "Жіберу": "Отправить"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Мекенжай": "Address",
+                    "Марка": "Stamp",
+                    "Конверт": "Envelope",
+                    "Жіберу": "Send"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Хат",
+                "Қат"
+              ],
+              "answer": "Хат"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Сенің мекенжайың қандай?",
+              "translations": {
+                "ru": {
+                  "question": "Какой твой адрес?"
+                },
+                "en": {
+                  "question": "What is your address?"
+                }
+              },
+              "words": [
+                "Сенің",
+                "мекенжайың",
+                "қандай?",
+                "кім?",
+                "не?"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Жіберу",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Отправить",
+                    "Получить",
+                    "Удалить"
+                  ],
+                  "answer": "Отправить"
+                },
+                "en": {
+                  "options": [
+                    "Send",
+                    "Receive",
+                    "Delete"
+                  ],
+                  "answer": "Send"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Жауап күтемін"
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "type": "REGULAR",
+          "icon": "🤝",
+          "title": {
+            "ru": "Встреча",
+            "kk": "Кездесу",
+            "en": "Meeting"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Кездесу": "Встреча",
+                    "Уақыт": "Время",
+                    "Орын": "Место",
+                    "Сөйлесу": "Разговаривать"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Кездесу": "Meeting",
+                    "Уақыт": "Time",
+                    "Орын": "Place",
+                    "Сөйлесу": "Talk"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Бүгін кездесеміз бе?",
+              "translations": {
+                "ru": {
+                  "question": "Встретимся сегодня?"
+                },
+                "en": {
+                  "question": "Shall we meet today?"
+                }
+              },
+              "words": [
+                "Бүгін",
+                "кездесеміз",
+                "бе?",
+                "ертең",
+                "барамыз"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Уақыт пен орын",
+              "words": [
+                "Уақыт",
+                "пен",
+                "орын",
+                "адам"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Кездесу",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Встреча",
+                    "Прощание",
+                    "Урок"
+                  ],
+                  "answer": "Встреча"
+                },
+                "en": {
+                  "options": [
+                    "Meeting",
+                    "Farewell",
+                    "Lesson"
+                  ],
+                  "answer": "Meeting"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Көріскенше күн жақсы!"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Танысу": "Знакомство",
+                    "ДосС‚С‹Т›": "Дружба",
+                    "Сыйластық": "Уважение",
+                    "Сұхбат": "Интервью/Беседа"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Танысу": "Acquaintance",
+                    "ДосС‚С‹Т›": "Friendship",
+                    "Сыйластық": "Respect",
+                    "Сұхбат": "Interview/Conversation"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Дос",
+                "Бос"
+              ],
+              "answer": "Дос"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Біз доспыз",
+              "translations": {
+                "ru": {
+                  "question": "Мы друзья"
+                },
+                "en": {
+                  "question": "We are friends"
+                }
+              },
+              "words": [
+                "Біз",
+                "доспыз",
+                "көршіміз",
+                "туыспыз"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Орын",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Место",
+                    "Время",
+                    "Предмет"
+                  ],
+                  "answer": "Место"
+                },
+                "en": {
+                  "options": [
+                    "Place",
+                    "Time",
+                    "Object"
+                  ],
+                  "answer": "Place"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Келістік пе?"
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "type": "STORY",
+          "icon": "💬",
+          "title": {
+            "ru": "Разговор",
+            "kk": "Әңгіме",
+            "en": "Talk"
+          },
+          "linkedStoryId": 15
+        },
+        {
+          "number": 5,
+          "type": "VIDEO",
+          "icon": "📺",
+          "title": {
+            "ru": "Видео: Диалог",
+            "kk": "Видео: Диалог",
+            "en": "Video: Dialogue"
+          },
+          "linkedVideoId": 8
+        },
+        {
+          "number": 6,
+          "type": "STORY",
+          "icon": "📚",
+          "title": {
+            "ru": "История дружбы",
+            "kk": "Достық тарихы",
+            "en": "Friendship story"
+          },
+          "linkedStoryId": 16
+        },
+        {
+          "number": 7,
+          "type": "REGULAR",
+          "icon": "🏁",
+          "title": {
+            "ru": "Финал 8",
+            "kk": "8-бөлім финалы",
+            "en": "Final 8"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Телефон": "Телефон",
+                    "Хат": "Письмо",
+                    "Кездесу": "Встреча",
+                    "Сөйлесу": "Разговаривать"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Телефон": "Phone",
+                    "Хат": "Letter",
+                    "Кездесу": "Meeting",
+                    "Сөйлесу": "Talk"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Телефонмен сөйлесу",
+              "translations": {
+                "ru": {
+                  "question": "Разговаривать по телефону"
+                },
+                "en": {
+                  "question": "Talking on the phone"
+                }
+              },
+              "words": [
+                "Телефонмен",
+                "сөйлесу",
+                "жазысу",
+                "көрісу"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Хатыңды алдым",
+              "words": [
+                "Хатыңды",
+                "алдым",
+                "бердім",
+                "көрдім"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Хабарласу",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Связаться",
+                    "Забыть",
+                    "Уйти"
+                  ],
+                  "answer": "Связаться"
+                },
+                "en": {
+                  "options": [
+                    "Contact",
+                    "Forget",
+                    "Leave"
+                  ],
+                  "answer": "Contact"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Байланыста болайық!"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Дос": "Друг",
+                    "Көрші": "Сосед",
+                    "Туыс": "Родственник",
+                    "Таныс": "Знакомый"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Дос": "Friend",
+                    "Көрші": "Neighbor",
+                    "Туыс": "Relative",
+                    "Таныс": "Acquaintance"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Хат",
+                "Сат"
+              ],
+              "answer": "Хат"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Сені көргеніме қуаныштымын",
+              "translations": {
+                "ru": {
+                  "question": "Я рад тебя видеть"
+                },
+                "en": {
+                  "question": "I am glad to see you"
+                }
+              },
+              "words": [
+                "Сені",
+                "көргеніме",
+                "қуаныштымын",
+                "ренжулімін"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Қоңырау",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Звонок",
+                    "Хабарлама",
+                    "Адрес"
+                  ],
+                  "answer": "Звонок"
+                },
+                "en": {
+                  "options": [
+                    "Call",
+                    "Message",
+                    "Address"
+                  ],
+                  "answer": "Call"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Кездескенше!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": {
+        "ru": "Итоговый раздел",
+        "kk": "Қорытынды бөлім",
+        "en": "Final Review"
+      },
+      "description": {
+        "ru": "Повторение всего курса",
+        "kk": "Барлық курсты қайталау",
+        "en": "Reviewing the whole course"
+      },
+      "icon": "🏆",
+      "lessons": [
+        {
+          "number": 1,
+          "type": "REGULAR",
+          "icon": "🔄",
+          "title": {
+            "ru": "Повторение 1",
+            "kk": "Қайталау 1",
+            "en": "Review 1"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Сәлем": "Привет",
+                    "Рақмет": "Спасибо",
+                    "Ана": "Мама",
+                    "УРєРµ": "Папа"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Сәлем": "Hello",
+                    "Рақмет": "Thank you",
+                    "Ана": "Mother",
+                    "УРєРµ": "Father"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Ана — ең қымбат адам",
+              "translations": {
+                "ru": {
+                  "question": "Мама — самый дорогой человек"
+                },
+                "en": {
+                  "question": "Mother is the most precious person"
+                }
+              },
+              "words": [
+                "Ана",
+                "—",
+                "ең",
+                "қымбат",
+                "адам",
+                "арзан"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Әкеңе сәлем айт",
+              "words": [
+                "Әкеңе",
+                "сәлем",
+                "айт",
+                "бер",
+                "анаңа"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Рақмет",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Спасибо",
+                    "Пожалуйста",
+                    "Привет"
+                  ],
+                  "answer": "Спасибо"
+                },
+                "en": {
+                  "options": [
+                    "Thank you",
+                    "You're welcome",
+                    "Hello"
+                  ],
+                  "answer": "Thank you"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Көп рақмет!"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Бұл": "Это",
+                    "Ол": "Он/Она",
+                    "Біз": "Мы",
+                    "Сен": "Ты"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Бұл": "This",
+                    "Ол": "He/She",
+                    "Біз": "We",
+                    "Сен": "You"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Сен",
+                "Мен"
+              ],
+              "answer": "Сен"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Менің атым — Балапан",
+              "translations": {
+                "ru": {
+                  "question": "Меня зовут — Балапан"
+                },
+                "en": {
+                  "question": "My name is — Balapan"
+                }
+              },
+              "words": [
+                "Менің",
+                "атым",
+                "—",
+                "Балапан",
+                "сенің"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Сәлем",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Привет",
+                    "Пока",
+                    "Удачи"
+                  ],
+                  "answer": "Привет"
+                },
+                "en": {
+                  "options": [
+                    "Hello",
+                    "Bye",
+                    "Luck"
+                  ],
+                  "answer": "Hello"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Аман бол!"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "type": "REGULAR",
+          "icon": "🔄",
+          "title": {
+            "ru": "Повторение 2",
+            "kk": "Қайталау 2",
+            "en": "Review 2"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Үй": "Дом",
+                    "Мектеп": "Школа",
+                    "Кітап": "Книга",
+                    "Дос": "Друг"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Үй": "Home",
+                    "Мектеп": "School",
+                    "Кітап": "Book",
+                    "Дос": "Friend"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Мен мектепке барамын",
+              "translations": {
+                "ru": {
+                  "question": "Я иду в школу"
+                },
+                "en": {
+                  "question": "I am going to school"
+                }
+              },
+              "words": [
+                "Мен",
+                "мектепке",
+                "барамын",
+                "келемін",
+                "үйге"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Кітапты оқы",
+              "words": [
+                "Кітапты",
+                "оқы",
+                "жаз",
+                "айт"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Дос",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Друг",
+                    "Враг",
+                    "Сосед"
+                  ],
+                  "answer": "Друг"
+                },
+                "en": {
+                  "options": [
+                    "Friend",
+                    "Enemy",
+                    "Neighbor"
+                  ],
+                  "answer": "Friend"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Үйге кел!"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Мұғалім": "Учитель",
+                    "Оқушы": "Ученик",
+                    "Дәптер": "Тетрадь",
+                    "Қалам": "Ручка"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Мұғалім": "Teacher",
+                    "Оқушы": "Student",
+                    "Дәптер": "Notebook",
+                    "Қалам": "Pen"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Дос",
+                "Бос"
+              ],
+              "answer": "Дос"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Ол менің досым",
+              "translations": {
+                "ru": {
+                  "question": "Он мой друг"
+                },
+                "en": {
+                  "question": "He is my friend"
+                }
+              },
+              "words": [
+                "Ол",
+                "менің",
+                "досым",
+                "дұшпаным",
+                "көршім"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Мектеп",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Школа",
+                    "Дом",
+                    "Магазин"
+                  ],
+                  "answer": "Школа"
+                },
+                "en": {
+                  "options": [
+                    "School",
+                    "Home",
+                    "Shop"
+                  ],
+                  "answer": "School"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Досы көпті жау алмас"
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "type": "REGULAR",
+          "icon": "🔄",
+          "title": {
+            "ru": "Повторение 3",
+            "kk": "Қайталау 3",
+            "en": "Review 3"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Астана": "Астана",
+                    "Отан": "Родина",
+                    "Ел": "Страна",
+                    "Қала": "Город"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Астана": "Astana",
+                    "Отан": "Homeland",
+                    "Ел": "Country",
+                    "Қала": "City"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Қазақстан — менің Отаным",
+              "translations": {
+                "ru": {
+                  "question": "Казахстан — моя Родина"
+                },
+                "en": {
+                  "question": "Kazakhstan is my homeland"
+                }
+              },
+              "words": [
+                "Қазақстан",
+                "—",
+                "менің",
+                "Отаным",
+                "сенің"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Қала әдемі",
+              "words": [
+                "Қала",
+                "әдемі",
+                "үлкен",
+                "кіші"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Ел",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Страна",
+                    "Город",
+                    "Аул"
+                  ],
+                  "answer": "Страна"
+                },
+                "en": {
+                  "options": [
+                    "Country",
+                    "City",
+                    "Village"
+                  ],
+                  "answer": "Country"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Отаныңды сүй!"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Тау": "Гора",
+                    "Көл": "Озеро",
+                    "Өзен": "Река",
+                    "Орман": "Лес"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Тау": "Mountain",
+                    "Көл": "Lake",
+                    "Өзен": "River",
+                    "Орман": "Forest"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Тау",
+                "Дау"
+              ],
+              "answer": "Тау"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Тауға шығайық",
+              "translations": {
+                "ru": {
+                  "question": "Давай поднимемся в горы"
+                },
+                "en": {
+                  "question": "Let's climb the mountains"
+                }
+              },
+              "words": [
+                "Тауға",
+                "шығайық",
+                "түсейік",
+                "барайық"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Отан",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Родина",
+                    "Қала",
+                    "Мектеп"
+                  ],
+                  "answer": "Родина"
+                },
+                "en": {
+                  "options": [
+                    "Homeland",
+                    "City",
+                    "School"
+                  ],
+                  "answer": "Homeland"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Туған жер алтын бесік"
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "type": "STORY",
+          "icon": "💬",
+          "title": {
+            "ru": "Финальный диалог",
+            "kk": "Финалдық диалог",
+            "en": "Final dialogue"
+          },
+          "linkedStoryId": 17
+        },
+        {
+          "number": 5,
+          "type": "VIDEO",
+          "icon": "📺",
+          "title": {
+            "ru": "Видео: Обзор",
+            "kk": "Видео: Шолу",
+            "en": "Video: Overview"
+          },
+          "linkedVideoId": 3
+        },
+        {
+          "number": 6,
+          "type": "STORY",
+          "icon": "📚",
+          "title": {
+            "ru": "Мои успехи",
+            "kk": "Менің жетістігім",
+            "en": "My success"
+          },
+          "linkedStoryId": 18
+        },
+        {
+          "number": 7,
+          "type": "REGULAR",
+          "icon": "🏁",
+          "title": {
+            "ru": "Экзамен",
+            "kk": "Емтихан",
+            "en": "Exam"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Қазақстан": "Казахстан",
+                    "Тіл": "Язык",
+                    "Мәдениет": "Культура",
+                    "Болашақ": "Будущее"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Қазақстан": "Kazakhstan",
+                    "Тіл": "Language",
+                    "Мәдениет": "Culture",
+                    "Болашақ": "Future"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Болашақ — сенің қолыңда",
+              "translations": {
+                "ru": {
+                  "question": "Будущее — в твоих руках"
+                },
+                "en": {
+                  "question": "The future is in your hands"
+                }
+              },
+              "words": [
+                "Болашақ",
+                "—",
+                "сенің",
+                "қолыңда",
+                "менің"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Қазақ тілін үйрен",
+              "words": [
+                "Қазақ",
+                "тілін",
+                "үйрен",
+                "оқы",
+                "жаз"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Мәдениет",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Культура",
+                    "Спорт",
+                    "Өнер"
+                  ],
+                  "answer": "Культура"
+                },
+                "en": {
+                  "options": [
+                    "Culture",
+                    "Sport",
+                    "Art"
+                  ],
+                  "answer": "Culture"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Курс аяқталды!"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Жетістік": "Успех",
+                    "Білім": "Знание",
+                    "Тәжірибе": "Опыт",
+                    "Мақсат": "Цель"
+                  }
+                },
+                "en": {
+                  "pairs": {
+                    "Жетістік": "Success",
+                    "Білім": "Knowledge",
+                    "Тәжірибе": "Experience",
+                    "Мақсат": "Goal"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Тіл",
+                "Тіс"
+              ],
+              "answer": "Тіл"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Сіздің біліміңіз зор",
+              "translations": {
+                "ru": {
+                  "question": "Ваши знания велики"
+                },
+                "en": {
+                  "question": "Your knowledge is great"
+                }
+              },
+              "words": [
+                "Сіздің",
+                "біліміңіз",
+                "зор",
+                "аз",
+                "жоқ"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Жеңіс",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Победа",
+                    "Поражение",
+                    "Игра"
+                  ],
+                  "answer": "Победа"
+                },
+                "en": {
+                  "options": [
+                    "Victory",
+                    "Defeat",
+                    "Game"
+                  ],
+                  "answer": "Victory"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Сәттілік тілеймін!"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

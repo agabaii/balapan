@@ -140,4 +140,10 @@ public class StoryController {
         Map<String, Object> stats = storyService.getUserStoryStats(userId);
         return ResponseEntity.ok(stats);
     }
+
+    @PostMapping("/reseed")
+    public ResponseEntity<?> reseedStories(@RequestParam(defaultValue = "false") boolean force) {
+        String result = storyService.reseedStories();
+        return ResponseEntity.ok(Map.of("message", result));
+    }
 }

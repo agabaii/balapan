@@ -38,6 +38,18 @@ public class User {
     @Column(name = "total_xp")
     private Integer totalXp = 0;
 
+    @Column(name = "gems")
+    private Integer gems = 500;
+
+    @Column(name = "streak_freezes")
+    private Integer streakFreezes = 0;
+
+    @Column(name = "unlocked_items", columnDefinition = "TEXT")
+    private String unlockedItems = "";
+
+    @Column(name = "avatar_data", columnDefinition = "TEXT")
+    private String avatarData;
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
@@ -55,6 +67,9 @@ public class User {
 
     @Column(name = "is_verified")
     private Boolean isVerified = false;
+
+    @Column(name = "is_banned")
+    private Boolean isBanned = false;
 
     @PrePersist
     protected void onCreate() {

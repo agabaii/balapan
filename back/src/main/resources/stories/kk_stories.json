@@ -1,0 +1,2024 @@
+[
+    {
+        "id": 1,
+        "title": "Саябақта",
+        "titleKk": "Саябақта",
+        "titleRu": "В парке",
+        "titleEn": "In the Park",
+        "difficulty": "beginner",
+        "category": "dialogue",
+        "description": "Арман мен Әлияның саябақтағы кездесуі.",
+        "descriptionRu": "Встреча Армана и Алии в парке.",
+        "descriptionEn": "Meeting of Arman and Aliya in the park.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Арман",
+                "textKk": "Сәлем, Әлия! Қалайсың?",
+                "textRu": "Привет, Алия! Как ты?",
+                "textEn": "Hi, Aliya! How are you?",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "text": "Арман Әлиямен қалай амандасты?",
+                        "textKk": "Арман Әлиямен қалай амандасты?",
+                        "textRu": "Как Арман поздоровался с Алией?",
+                        "answers": [
+                            {
+                                "text": "Сәлем деді",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Сау бол деді",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "number": 2,
+                "character": "Әлия",
+                "textKk": "Сәлем, Арман! Мен жақсымын, рахмет. Сен ше?",
+                "textRu": "Привет, Арман! У меня всё хорошо, спасибо. А у тебя?",
+                "textEn": "Hi, Arman! I'm good, thanks. And you?",
+                "questions": [
+                    {
+                        "type": "grammar_fill",
+                        "text": "Сен ___? (А у тебя?)",
+                        "textKk": "Сен ___? (А у тебя?)",
+                        "textRu": "Вставьте пропущенное слово",
+                        "answers": [
+                            {
+                                "text": "ше",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "ма",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "number": 3,
+                "character": "Арман",
+                "textKk": "Мен де жақсымын. Бүгін күн өте шуақты.",
+                "textRu": "Я тоже хорошо. Сегодня очень солнечный день.",
+                "textEn": "I'm also good. Today is a very sunny day.",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "text": "Бүгін күн қандай?",
+                        "textKk": "Бүгін күн қандай?",
+                        "textRu": "Какая сегодня погода?",
+                        "answers": [
+                            {
+                                "text": "Шуақты",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Жаңбырлы",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "number": 4,
+                "character": "Әлия",
+                "textKk": "Иә, саябақта серуендеу өте керемет!",
+                "textRu": "Да, гулять в парке очень здорово!",
+                "textEn": "Yes, walking in the park is great!",
+                "questions": [
+                    {
+                        "type": "grammar_fill",
+                        "text": "Саябақ___ серуендеу керемет. (В парке)",
+                        "textKk": "Саябақ___ серуендеу керемет. (В парке)",
+                        "textRu": "Вставьте окончание местного падежа",
+                        "answers": [
+                            {
+                                "text": "та",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "қа",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Менің отбасым",
+        "titleKk": "Менің отбасым",
+        "titleRu": "Моя семья",
+        "titleEn": "My Family",
+        "difficulty": "beginner",
+        "category": "story",
+        "description": "Арман өзінің отбасы туралы айтып береді.",
+        "descriptionRu": "Арман рассказывает о своей семье.",
+        "descriptionEn": "Arman tells about his family.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Арман",
+                "textKk": "Әлия, қарашы! Бұл менің отбасымның суреті.",
+                "textRu": "Алия, посмотри! Это фото моей семьи.",
+                "textEn": "Aliya, look! This is a photo of my family.",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "text": "Арман не көрсетті?",
+                        "textKk": "Арман не көрсетті?",
+                        "textRu": "Что показал Арман?",
+                        "answers": [
+                            {
+                                "text": "Отбасының суретін",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Кітапты",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "number": 2,
+                "character": "Әлия",
+                "textKk": "Керемет! Мынау кім? Сенің әкең ба?",
+                "textRu": "Здорово! Кто это? Твой папа?",
+                "textEn": "Great! Who is this? Is it your father?",
+                "questions": [
+                    {
+                        "type": "grammar_fill",
+                        "text": "Сенің әке___ ба? (Твой папа?)",
+                        "textKk": "Сенің әке___ ба? (Твой папа?)",
+                        "textRu": "Вставьте притяжательное окончание",
+                        "answers": [
+                            {
+                                "text": "ң",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "м",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "number": 3,
+                "character": "Арман",
+                "textKk": "Иә, бұл менің әкем. Ал мынау менің анам.",
+                "textRu": "Да, это мой папа. А это моя мама.",
+                "textEn": "Yes, this is my father. And this is my mother.",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "text": "Суретте кімдер бар?",
+                        "textKk": "Суретте кімдер бар?",
+                        "textRu": "Кто на фотографии?",
+                        "answers": [
+                            {
+                                "text": "Әкесі мен анасы",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Достары",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "number": 4,
+                "character": "Әлия",
+                "textKk": "Сенің отбасың өте тату екен!",
+                "textRu": "Твоя семья очень дружная!",
+                "textEn": "Your family is very close!",
+                "questions": [
+                    {
+                        "type": "grammar_fill",
+                        "text": "Сенің отбасы___ тату. (Твоя семья)",
+                        "textKk": "Сенің отбасы___ тату. (Твоя семья)",
+                        "textRu": "Вставьте окончание",
+                        "answers": [
+                            {
+                                "text": "ң",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "м",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Үйде көмектесу",
+        "titleKk": "Үйде көмектесу",
+        "titleRu": "Помощь по дому",
+        "titleEn": "Helping at Home",
+        "difficulty": "beginner",
+        "category": "dialogue",
+        "description": "Арман анасына көмектеседі.",
+        "descriptionRu": "Арман помогает маме.",
+        "descriptionEn": "Arman helps his mother.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Анасы",
+                "textKk": "Арман, бөлмеңді жинауға көмектесесің бе?",
+                "textRu": "Арман, поможешь убрать в комнате?",
+                "textEn": "Arman, will you help clean the room?",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "text": "Анасы Арманнан не сұрады?",
+                        "textKk": "Анасы Арманнан не сұрады?",
+                        "textRu": "О чем мама попросила Армана?",
+                        "answers": [
+                            {
+                                "text": "Бөлмені жинауды",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Далаға шығуды",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "number": 2,
+                "character": "Арман",
+                "textKk": "Әрине, анашым! Мен қазір ойыншықтарымды жинаймын.",
+                "textRu": "Конечно, мамочка! Я сейчас соберу свои игрушки.",
+                "textEn": "Of course, mommy! I will collect my toys now.",
+                "questions": [
+                    {
+                        "type": "grammar_fill",
+                        "text": "Мен ойыншықтарым___ жинаймын. (свои игрушки)",
+                        "textKk": "Мен ойыншықтарым___ жинаймын. (свои игрушки)",
+                        "textRu": "Вставьте окончание винительного падежа",
+                        "answers": [
+                            {
+                                "text": "ды",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "мен",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "number": 3,
+                "character": "Анасы",
+                "textKk": "Рахмет, балам! Сосын гүлдерге су құйшы.",
+                "textRu": "Спасибо, мой дорогой! Потом полей цветы.",
+                "textEn": "Thank you, my son! Then water the flowers.",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "text": "Арман тағы не істеуі керек?",
+                        "textKk": "Арман тағы не істеуі керек?",
+                        "textRu": "Что еще должен сделать Арман?",
+                        "answers": [
+                            {
+                                "text": "Гүлдерге су құю",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Ұйықтау",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "number": 4,
+                "character": "Арман",
+                "textKk": "Жақсы, мен бәрін тез істеймін!",
+                "textRu": "Хорошо, я всё сделаю быстро!",
+                "textEn": "Okay, I will do everything quickly!",
+                "questions": [
+                    {
+                        "type": "grammar_fill",
+                        "text": "Мен бәрін тез ___! (сделаю)",
+                        "textKk": "Мен бәрін тез ___! (сделаю)",
+                        "textRu": "Вставьте глагол",
+                        "answers": [
+                            {
+                                "text": "істеймін",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "істедім",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Біздің бақша",
+        "titleKk": "Біздің бақша",
+        "titleRu": "Наш сад",
+        "titleEn": "Our Garden",
+        "difficulty": "beginner",
+        "category": "story",
+        "description": "Бақшадағы жемістер.",
+        "descriptionRu": "Фрукты в саду.",
+        "descriptionEn": "Fruits in the garden.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Әжесі",
+                "textKk": "Арман, қарашы, бақшада алмалар пісіпті!",
+                "textRu": "Арман, посмотри, в саду яблоки созрели!",
+                "textEn": "Arman, look, the apples are ripe in the garden!",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "text": "Бақшада не пісті?",
+                        "textKk": "Бақшада ne пісті?",
+                        "textRu": "Что созрело в саду?",
+                        "answers": [
+                            {
+                                "text": "Алмалар",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Гүлдер",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "number": 2,
+                "character": "Арман",
+                "textKk": "Ой, қандай қызыл алмалар! Әже, мен оларды терейінші.",
+                "textRu": "Ой, какие красные яблоки! Бабушка, давай я их соберу.",
+                "textEn": "Oh, what red apples! Grandma, let me pick them.",
+                "questions": [
+                    {
+                        "type": "grammar_fill",
+                        "text": "Қандай ___ алмалар! (красные)",
+                        "textKk": "Қандай ___ алмалар! (красные)",
+                        "textRu": "Вставьте прилагательное",
+                        "answers": [
+                            {
+                                "text": "қызыл",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "жасыл",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "number": 3,
+                "character": "Әжесі",
+                "textKk": "Жарайды, балам. Абайла, биікке шықпа.",
+                "textRu": "Хорошо, сынок. Осторожно, не лезь высоко.",
+                "textEn": "Okay, son. Be careful, don't go high.",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "text": "Әжесі не деп ескертті?",
+                        "textKk": "Әжесі не деп ескертті?",
+                        "textRu": "О чем предупредила бабушка?",
+                        "answers": [
+                            {
+                                "text": "Абайла, биікке шықпа",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Тез жүгір",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "number": 4,
+                "character": "Арман",
+                "textKk": "Уайымдамаңыз, мен себетті алып келемін.",
+                "textRu": "Не переживайте, я принесу корзину.",
+                "textEn": "Don't worry, I'll bring the basket.",
+                "questions": [
+                    {
+                        "type": "grammar_fill",
+                        "text": "Мен себет___ алып келемін. (корзину)",
+                        "textKk": "Мен себет___ алып келемін. (корзину)",
+                        "textRu": "Вставьте окончание винительного падежа",
+                        "answers": [
+                            {
+                                "text": "ті",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "ке",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Мектепте",
+        "titleKk": "Мектепте",
+        "titleRu": "В школе",
+        "titleEn": "At School",
+        "difficulty": "beginner",
+        "category": "dialogue",
+        "description": "Мұғалім мен оқушының әңгімесі.",
+        "descriptionRu": "Разговор учителя и ученика.",
+        "descriptionEn": "Teacher and student talk.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Мұғалім",
+                "textKk": "Сәлеметсің бе, Арман! Бүгін сабаққа дайынсың ба?",
+                "textRu": "Здравствуй, Арман! Ты готов сегодня к уроку?",
+                "textEn": "Hello, Arman! Are you ready for the lesson today?",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "text": "Мұғалім кімнен сұрады?",
+                        "textKk": "Мұғалім кімнен сұрады?",
+                        "textRu": "Кому учитель задал вопрос?",
+                        "answers": [
+                            {
+                                "text": "Арманнан",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Әлиядан",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "number": 2,
+                "character": "Арман",
+                "textKk": "Сәлеметсіз бе, мұғалім! Иә, мен бәрін оқыдым.",
+                "textRu": "Здравствуйте, учитель! Да, я всё прочитал.",
+                "textEn": "Hello, teacher! Yes, I read everything.",
+                "questions": [
+                    {
+                        "type": "grammar_fill",
+                        "text": "Мен бәрін ___. (прочитал)",
+                        "textKk": "Мен бәрін ___. (прочитал)",
+                        "textRu": "Вставьте глагол в прошедшем времени",
+                        "answers": [
+                            {
+                                "text": "оқыдым",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "оқимын",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "number": 3,
+                "character": "Мұғалім",
+                "textKk": "Өте жақсы! Ендеше, кітабыңды аш та, мәтінді оқы.",
+                "textRu": "Очень хорошо! Тогда открой книгу и читай текст.",
+                "textEn": "Very good! Then open your book and read the text.",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "text": "Мұғалім не істеуді тапсырды?",
+                        "textKk": "Мұғалім не істеуді тапсырды?",
+                        "textRu": "Что поручил учитель?",
+                        "answers": [
+                            {
+                                "text": "Кітапты ашып, оқуды",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Далаға шығуды",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "number": 4,
+                "character": "Арман",
+                "textKk": "Жақсы, мен қазір бастаймын.",
+                "textRu": "Хорошо, я сейчас начну.",
+                "textEn": "Okay, I'll start now.",
+                "questions": [
+                    {
+                        "type": "grammar_fill",
+                        "text": "Мен қазір ___. (начну)",
+                        "textKk": "Мен қазір ___. (начну)",
+                        "textRu": "Вставьте глагол будущего времени",
+                        "answers": [
+                            {
+                                "text": "бастаймын",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "бастадым",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Алғашқы қоңырау",
+        "titleKk": "Алғашқы қоңырау",
+        "titleRu": "Первый звонок",
+        "titleEn": "The First Bell",
+        "difficulty": "beginner",
+        "category": "story",
+        "description": "Мектептегі алғашқы күн туралы.",
+        "descriptionRu": "О первом дне в школе.",
+        "descriptionEn": "About the first day at school.",
+        "chapters": [
+            {
+                "number": 1,
+                "textKk": "Бүгін - бірінші қыркүйек. Барлық балалар мектепке барады.",
+                "textRu": "Сегодня - первое сентября. Все дети идут в школу.",
+                "textEn": "Today is the first of September. All children go to school.",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "textKk": "Бүгін қандай күн?",
+                        "textRu": "Какой сегодня день?",
+                        "textEn": "What day is today?",
+                        "answers": [
+                            {
+                                "text": "Бірінші қыркүйек",
+                                "textRu": "Первое сентября",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Бірінші қаңтар",
+                                "textRu": "Первое января",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Жиырма бесінші мамыр",
+                                "textRu": "Двадцать пятое мая",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "plot",
+                        "textKk": "Балалар қайда барады?",
+                        "textRu": "Куда идут дети?",
+                        "textEn": "Where do the children go?",
+                        "answers": [
+                            {
+                                "text": "Мектепке",
+                                "textRu": "В школу",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Саябаққа",
+                                "textRu": "В парк",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Дүкенге",
+                                "textRu": "В магазин",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Балалар мектеп___ барады. (барыс септік: қайда? қайға?)",
+                        "textRu": "Вставьте аффикс дательного падежа (куда?).",
+                        "textEn": "Fill in the dative case suffix.",
+                        "correctAnswer": "мектепке",
+                        "answers": [
+                            {
+                                "text": "мектепке",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "мектепте",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "мектептен",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Барлық балалар мектепке бара___. (осы шақ: барады)",
+                        "textRu": "Вставьте глагол в настоящем времени.",
+                        "textEn": "Fill in the present tense verb.",
+                        "correctAnswer": "барады",
+                        "answers": [
+                            {
+                                "text": "барады",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "барды",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "барамын",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Астанаға саяхат",
+        "titleKk": "Астанаға саяхат",
+        "titleRu": "Путешествие в Астану",
+        "titleEn": "Trip to Astana",
+        "difficulty": "beginner",
+        "category": "dialogue",
+        "description": "Достардың елорда туралы әңгімесі.",
+        "descriptionRu": "Разговор друзей о столице.",
+        "descriptionEn": "Friends talking about the capital.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Арман",
+                "textKk": "Астана - өте әдемі қала. Саған Бәйтерек ұнады ма?",
+                "textRu": "Астана - очень красивый город. Тебе понравился Байтерек?",
+                "textEn": "Astana is a very beautiful city. Did you like Bayterek?",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "textKk": "Арман Астана туралы не айтты?",
+                        "textRu": "Что Арман сказал об Астане?",
+                        "textEn": "What did Arman say about Astana?",
+                        "answers": [
+                            {
+                                "text": "Өте әдемі қала",
+                                "textRu": "Очень красивый город",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Кішкентай қала",
+                                "textRu": "Маленький город",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Ескі қала",
+                                "textRu": "Старый город",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "plot",
+                        "textKk": "Арман досынан не туралы сұрады?",
+                        "textRu": "О чём Арман спросил друга?",
+                        "textEn": "What did Arman ask his friend about?",
+                        "answers": [
+                            {
+                                "text": "Бәйтерек ұнады ма деп",
+                                "textRu": "Понравился ли Байтерек",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Тамаққа бардың ба деп",
+                                "textRu": "Ходил ли поесть",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Мектепке бардың ба деп",
+                                "textRu": "Ходил ли в школу",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Астана — өте әдемі қала___. (атау септік, жіктеу)",
+                        "textRu": "Выберите правильную форму прилагательного.",
+                        "textEn": "Choose the correct adjective form.",
+                        "correctAnswer": "әдемі",
+                        "answers": [
+                            {
+                                "text": "әдемі",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "әдемісі",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "әдемілер",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Саған Бәйтерек ұна___ ма? (өткен шақ: ұнады)",
+                        "textRu": "Вставьте глагол в прошедшем времени.",
+                        "textEn": "Fill in the past tense verb.",
+                        "correctAnswer": "ұнады",
+                        "answers": [
+                            {
+                                "text": "ұнады",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "ұнайды",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "ұнаймын",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Туған өлкем",
+        "titleKk": "Туған өлкем",
+        "titleRu": "Родной край",
+        "titleEn": "My Homeland",
+        "difficulty": "beginner",
+        "category": "story",
+        "description": "Қазақстанның табиғаты туралы.",
+        "descriptionRu": "О природе Казахстана.",
+        "descriptionEn": "About the nature of Kazakhstan.",
+        "chapters": [
+            {
+                "number": 1,
+                "textKk": "Қазақстанның табиғаты өте бай. Мұнда кең дала мен биік таулар бар.",
+                "textRu": "Природа Казахстана очень богата. Здесь есть широкая степь и высокие горы.",
+                "textEn": "The nature of Kazakhstan is very rich. There are wide steppes and high mountains here.",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "textKk": "Қазақстанның табиғаты қандай?",
+                        "textRu": "Какова природа Казахстана?",
+                        "textEn": "What is the nature of Kazakhstan like?",
+                        "answers": [
+                            {
+                                "text": "Өте бай",
+                                "textRu": "Очень богата",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Өте кедей",
+                                "textRu": "Очень бедна",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Қарапайым",
+                                "textRu": "Простая",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "plot",
+                        "textKk": "Қазақстанда не бар?",
+                        "textRu": "Что есть в Казахстане?",
+                        "textEn": "What is there in Kazakhstan?",
+                        "answers": [
+                            {
+                                "text": "Кең дала мен биік таулар",
+                                "textRu": "Широкая степь и высокие горы",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Тек теңіз бар",
+                                "textRu": "Только море",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Тек орман бар",
+                                "textRu": "Только лес",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Қазақстан___ табиғаты өте бай. (ілік септік: кімнің? ненің?)",
+                        "textRu": "Вставьте аффикс родительного падежа (чья природа?).",
+                        "textEn": "Fill in the genitive case suffix.",
+                        "correctAnswer": "Қазақстанның",
+                        "answers": [
+                            {
+                                "text": "Қазақстанның",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Қазақстанда",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Қазақстанға",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Мұнда кең дала мен биік таулар ___. (бар/жоқ)",
+                        "textRu": "Вставьте слово «есть» или «нет» (бар / жоқ).",
+                        "textEn": "Fill in 'there is' (бар) or 'there is not' (жоқ).",
+                        "correctAnswer": "бар",
+                        "answers": [
+                            {
+                                "text": "бар",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "жоқ",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "болады",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "title": "Қазақ тілі сабағында",
+        "titleKk": "Қазақ тілі сабағында",
+        "titleRu": "На уроке казахского языка",
+        "titleEn": "In Kazakh Class",
+        "difficulty": "beginner",
+        "category": "dialogue",
+        "description": "Грамматика туралы диалог.",
+        "descriptionRu": "Диалог о грамматике.",
+        "descriptionEn": "Dialogue about grammar.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Оқушы",
+                "textKk": "Мұғалім, септіктерді қалай тез жаттауға болады?",
+                "textRu": "Учитель, как быстро выучить падежи?",
+                "textEn": "Teacher, how can I quickly learn the cases?",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "textKk": "Оқушы мұғалімнен не туралы сұрады?",
+                        "textRu": "О чём ученик спросил учителя?",
+                        "textEn": "What did the student ask the teacher?",
+                        "answers": [
+                            {
+                                "text": "Септіктерді қалай жаттау керек деп",
+                                "textRu": "Как выучить падежи",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Сөздерді қалай жаттау керек деп",
+                                "textRu": "Как выучить слова",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Ән қалай айту керек деп",
+                                "textRu": "Как петь песни",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "plot",
+                        "textKk": "Диалог қайда өтеді?",
+                        "textRu": "Где происходит диалог?",
+                        "textEn": "Where does the dialogue take place?",
+                        "answers": [
+                            {
+                                "text": "Қазақ тілі сабағында",
+                                "textRu": "На уроке казахского языка",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Саябақта",
+                                "textRu": "В парке",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Дүкенде",
+                                "textRu": "В магазине",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Септіктер___ қалай жаттауға болады? (табыс септік: нені?)",
+                        "textRu": "Вставьте аффикс винительного падежа.",
+                        "textEn": "Fill in the accusative case suffix.",
+                        "correctAnswer": "септіктерді",
+                        "answers": [
+                            {
+                                "text": "септіктерді",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "септіктерде",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "септіктерге",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Мен мұғалім___ сұрадым. (барыс септік: кімге?)",
+                        "textRu": "Вставьте аффикс дательного падежа (кому?).",
+                        "textEn": "Fill in the dative case suffix.",
+                        "correctAnswer": "мұғалімге",
+                        "answers": [
+                            {
+                                "text": "мұғалімге",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "мұғалімде",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "мұғалімнен",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "title": "Тіл - байлығымыз",
+        "titleKk": "Тіл - байлығымыз",
+        "titleRu": "Язык - наше богатство",
+        "titleEn": "Language is Our Wealth",
+        "difficulty": "beginner",
+        "category": "story",
+        "description": "Ана тілінің маңызы туралы.",
+        "descriptionRu": "О важности родного языка.",
+        "descriptionEn": "About the importance of the mother tongue.",
+        "chapters": [
+            {
+                "number": 1,
+                "textKk": "Тіл - халықтың қазынасы. Қазақ тілі өте бай және көркем тіл.",
+                "textRu": "Язык - сокровище народа. Казахский язык очень богатый и красивый.",
+                "textEn": "Language is the treasure of the people. Kazakh is a very rich and beautiful language.",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "textKk": "Тіл — бұл не?",
+                        "textRu": "Что такое язык?",
+                        "textEn": "What is language?",
+                        "answers": [
+                            {
+                                "text": "Халықтың қазынасы",
+                                "textRu": "Сокровище народа",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Халықтың мәселесі",
+                                "textRu": "Проблема народа",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Жай ғана сөздер",
+                                "textRu": "Просто слова",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "plot",
+                        "textKk": "Қазақ тілі қандай тіл?",
+                        "textRu": "Каким является казахский язык?",
+                        "textEn": "What kind of language is Kazakh?",
+                        "answers": [
+                            {
+                                "text": "Өте бай және көркем тіл",
+                                "textRu": "Очень богатый и красивый",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Қиын тіл",
+                                "textRu": "Сложный язык",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Ескі тіл",
+                                "textRu": "Старый язык",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Тіл — халық___ қазынасы. (ілік септік: кімнің?)",
+                        "textRu": "Вставьте аффикс родительного падежа.",
+                        "textEn": "Fill in the genitive case suffix.",
+                        "correctAnswer": "халықтың",
+                        "answers": [
+                            {
+                                "text": "халықтың",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "халықта",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "халыққа",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Қазақ тілі өте бай ___ көркем тіл. (жалғаулық шылау)",
+                        "textRu": "Вставьте союз «и» на казахском.",
+                        "textEn": "Fill in the conjunction 'and'.",
+                        "correctAnswer": "және",
+                        "answers": [
+                            {
+                                "text": "және",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "бірақ",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "немесе",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "title": "Дүкенде",
+        "titleKk": "Дүкенде",
+        "titleRu": "В магазине",
+        "titleEn": "At the Store",
+        "difficulty": "beginner",
+        "category": "dialogue",
+        "description": "Азық-түлік сатып алу.",
+        "descriptionRu": "Покупка продуктов.",
+        "descriptionEn": "Buying groceries.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Сатушы",
+                "textKk": "Қайырлы күн! Сізге не керек?",
+                "textRu": "Добрый день! Что вам нужно?",
+                "textEn": "Good day! What do you need?",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "textKk": "Диалог қайда өтеді?",
+                        "textRu": "Где происходит диалог?",
+                        "textEn": "Where does this dialogue take place?",
+                        "answers": [
+                            {
+                                "text": "Дүкенде",
+                                "textRu": "В магазине",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Мектепте",
+                                "textRu": "В школе",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Саябақта",
+                                "textRu": "В парке",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "plot",
+                        "textKk": "Сатушы не деді?",
+                        "textRu": "Что сказал продавец?",
+                        "textEn": "What did the seller say?",
+                        "answers": [
+                            {
+                                "text": "Қайырлы күн! Сізге не керек?",
+                                "textRu": "Добрый день! Что вам нужно?",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Сәлеметсіз бе! Отырыңыз!",
+                                "textRu": "Здравствуйте! Садитесь!",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Қош келдіңіз! Рахмет!",
+                                "textRu": "Добро пожаловать! Спасибо!",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Сіз___ не керек? (барыс септік: кімге?)",
+                        "textRu": "Вставьте местоимение в дательном падеже (Вам).",
+                        "textEn": "Fill in the dative pronoun.",
+                        "correctAnswer": "Сізге",
+                        "answers": [
+                            {
+                                "text": "Сізге",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Сіздің",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Сізде",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Мен дүкен___ келдім. (жатыс септік: қайда?)",
+                        "textRu": "Вставьте аффикс местного падежа.",
+                        "textEn": "Fill in the locative case suffix.",
+                        "correctAnswer": "дүкенге",
+                        "answers": [
+                            {
+                                "text": "дүкенге",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "дүкенде",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "дүкеннен",
+                                "isCorrect": false
+                            }
+                        ],
+                        "note": "Мен дүкенге келдім — барыс септік (куда пришёл?). Правильный ответ: дүкенге",
+                        "correctAnswer": "дүкенге",
+                        "answers": [
+                            {
+                                "text": "дүкенге",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "дүкенде",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "дүкеннен",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "title": "Менің сүйікті тағамым",
+        "titleKk": "Менің сүйікті тағамым",
+        "titleRu": "Моя любимая еда",
+        "titleEn": "My Favorite Food",
+        "difficulty": "beginner",
+        "category": "story",
+        "description": "Ұлттық тағамдар туралы.",
+        "descriptionRu": "О национальных блюдах.",
+        "descriptionEn": "About national dishes.",
+        "chapters": [
+            {
+                "number": 1,
+                "textKk": "Маған қазақтың ұлттық тағамдары ұнайды. Әсіресе, бауырсақ пен ет өте дәмді.",
+                "textRu": "Мне нравятся казахские национальные блюда. Особенно баурсаки и мясо очень вкусные.",
+                "textEn": "I like Kazakh national dishes. Especially baursaks and meat are very tasty.",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "textKk": "Авторға не ұнайды?",
+                        "textRu": "Что нравится автору?",
+                        "textEn": "What does the author like?",
+                        "answers": [
+                            {
+                                "text": "Қазақтың ұлттық тағамдары",
+                                "textRu": "Казахские национальные блюда",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Орыс тағамдары",
+                                "textRu": "Русские блюда",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Жапон тағамдары",
+                                "textRu": "Японские блюда",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "plot",
+                        "textKk": "Қандай тағам өте дәмді деп айтылған?",
+                        "textRu": "Какая еда названа очень вкусной?",
+                        "textEn": "What food is described as very tasty?",
+                        "answers": [
+                            {
+                                "text": "Бауырсақ пен ет",
+                                "textRu": "Баурсаки и мясо",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Нан мен сүт",
+                                "textRu": "Хлеб и молоко",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Алма мен жүзім",
+                                "textRu": "Яблоки и виноград",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Маған қазақтың ұлттық тағамдары ұна___. (осы шақ: ұнайды)",
+                        "textRu": "Вставьте глагол в настоящем времени.",
+                        "textEn": "Fill in the present tense verb.",
+                        "correctAnswer": "ұнайды",
+                        "answers": [
+                            {
+                                "text": "ұнайды",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "ұнады",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "ұнаймын",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Бауырсақ пен ет өте дәм___. (сын есім: дәмді)",
+                        "textRu": "Вставьте прилагательное (вкусный).",
+                        "textEn": "Fill in the adjective.",
+                        "correctAnswer": "дәмді",
+                        "answers": [
+                            {
+                                "text": "дәмді",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "дәмсіз",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "дәмдер",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "title": "Домбыра үйірмесінде",
+        "titleKk": "Домбыра үйірмесінде",
+        "titleRu": "В кружке домбры",
+        "titleEn": "In the Dombra Club",
+        "difficulty": "beginner",
+        "category": "dialogue",
+        "description": "Музыкалық аспаптар туралы диалог.",
+        "descriptionRu": "Диалог о музыкальных инструментах.",
+        "descriptionEn": "Dialogue about musical instruments.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Мұғалім",
+                "textKk": "Домбыра - қазақтың қасиетті аспабы. Күйді тыңдайық.",
+                "textRu": "Домбра - священный инструмент казахов. Давайте послушаем кюй.",
+                "textEn": "Dombra is a sacred instrument of the Kazakhs. Let's listen to a kyu.",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "textKk": "Диалог қайда өтеді?",
+                        "textRu": "Где проходит занятие?",
+                        "textEn": "Where does the class take place?",
+                        "answers": [
+                            {
+                                "text": "Домбыра үйірмесінде",
+                                "textRu": "В кружке домбры",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Саябақта",
+                                "textRu": "В парке",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Мектеп асханасында",
+                                "textRu": "В школьной столовой",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "plot",
+                        "textKk": "Домбыра — бұл не?",
+                        "textRu": "Что такое домбра?",
+                        "textEn": "What is the dombra?",
+                        "answers": [
+                            {
+                                "text": "Қазақтың қасиетті аспабы",
+                                "textRu": "Священный инструмент казахов",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Орыстың аспабы",
+                                "textRu": "Русский инструмент",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Жай ғана ойыншық",
+                                "textRu": "Просто игрушка",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Домбыра — қазақ___ қасиетті аспабы. (ілік септік: кімнің?)",
+                        "textRu": "Вставьте аффикс родительного падежа.",
+                        "textEn": "Fill in the genitive case suffix.",
+                        "correctAnswer": "қазақтың",
+                        "answers": [
+                            {
+                                "text": "қазақтың",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "қазақта",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "қазаққа",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Күйді тыңда___. (бұйрық рай, көпше: тыңдайық)",
+                        "textRu": "Вставьте глагол в форме побудительного наклонения (давайте послушаем).",
+                        "textEn": "Fill in the imperative plural form.",
+                        "correctAnswer": "тыңдайық",
+                        "answers": [
+                            {
+                                "text": "тыңдайық",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "тыңдадым",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "тыңдайды",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "title": "Музыка әлемі",
+        "titleKk": "Музыка әлемі",
+        "titleRu": "Мир музыки",
+        "titleEn": "World of Music",
+        "difficulty": "beginner",
+        "category": "story",
+        "description": "Қазақ әндері мен күйлері туралы.",
+        "descriptionRu": "О казахских песнях и кюях.",
+        "descriptionEn": "About Kazakh songs and kyus.",
+        "chapters": [
+            {
+                "number": 1,
+                "textKk": "Қазақ халқы - өнерлі халық. Біздің әндеріміз өте мағыналы.",
+                "textRu": "Казахский народ - талантливый народ. Наши песни очень содержательны.",
+                "textEn": "The Kazakh people are a talented people. Our songs are very meaningful.",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "textKk": "Қазақ халқы қандай халық?",
+                        "textRu": "Каким народом является казахский?",
+                        "textEn": "What kind of people are the Kazakhs?",
+                        "answers": [
+                            {
+                                "text": "Өнерлі халық",
+                                "textRu": "Талантливый народ",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Байсалды халық",
+                                "textRu": "Спокойный народ",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Жас халық",
+                                "textRu": "Молодой народ",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "plot",
+                        "textKk": "Қазақтың әндері қандай?",
+                        "textRu": "Какими являются казахские песни?",
+                        "textEn": "What are Kazakh songs like?",
+                        "answers": [
+                            {
+                                "text": "Өте мағыналы",
+                                "textRu": "Очень содержательные",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Өте қысқа",
+                                "textRu": "Очень короткие",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Өте қарапайым",
+                                "textRu": "Очень простые",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Біздің ән___ өте мағыналы. (тәуелдік жалғау, көпше: әндеріміз)",
+                        "textRu": "Вставьте притяжательный аффикс (наши песни).",
+                        "textEn": "Fill in the possessive suffix.",
+                        "correctAnswer": "әндеріміз",
+                        "answers": [
+                            {
+                                "text": "әндеріміз",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "әндерің",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "әндері",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Қазақ халқы өнер___ халық. (сын есім тіркесі: өнерлі)",
+                        "textRu": "Вставьте прилагательное (талантливый).",
+                        "textEn": "Fill in the adjective.",
+                        "correctAnswer": "өнерлі",
+                        "answers": [
+                            {
+                                "text": "өнерлі",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "өнерсіз",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "өнерлер",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "title": "Достармен кездесу",
+        "titleKk": "Достармен кездесу",
+        "titleRu": "Встреча с друзьями",
+        "titleEn": "Meeting Friends",
+        "difficulty": "beginner",
+        "category": "dialogue",
+        "description": "Достардың бос уақыт туралы әңгімесі.",
+        "descriptionRu": "Разговор друзей о свободном времени.",
+        "descriptionEn": "Friends talking about free time.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Әлия",
+                "textKk": "Ертең киноға барамыз ба? Қызықты фильм шығыпты.",
+                "textRu": "Пойдем завтра в кино? Вышел интересный фильм.",
+                "textEn": "Shall we go to the cinema tomorrow? An interesting movie is out.",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "textKk": "Әлия достарын қайда шақырды?",
+                        "textRu": "Куда Алия пригласила друзей?",
+                        "textEn": "Where did Aliya invite her friends?",
+                        "answers": [
+                            {
+                                "text": "Киноға",
+                                "textRu": "В кино",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Саябаққа",
+                                "textRu": "В парк",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Дүкенге",
+                                "textRu": "В магазин",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "plot",
+                        "textKk": "Олар қашан барғысы келеді?",
+                        "textRu": "Когда они хотят пойти?",
+                        "textEn": "When do they want to go?",
+                        "answers": [
+                            {
+                                "text": "Ертең",
+                                "textRu": "Завтра",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Бүгін",
+                                "textRu": "Сегодня",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Бір аптадан кейін",
+                                "textRu": "Через неделю",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Кино___ барамыз ба? (барыс септік: қайға?)",
+                        "textRu": "Вставьте аффикс дательного падежа (в кино).",
+                        "textEn": "Fill in the dative case suffix.",
+                        "correctAnswer": "киноға",
+                        "answers": [
+                            {
+                                "text": "киноға",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "кинода",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "кинодан",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Біз кино___ бара___. (1-жақ, көпше, осы/келер шақ: барамыз)",
+                        "textRu": "Вставьте глагол (мы идём / пойдём).",
+                        "textEn": "Fill in the verb (we go).",
+                        "correctAnswer": "барамыз",
+                        "answers": [
+                            {
+                                "text": "барамыз",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "барады",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "бардық",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "title": "Достық - баға жетпес байлық",
+        "titleKk": "Достық - баға жетпес байлық",
+        "titleRu": "Дружба - неоценимое богатство",
+        "titleEn": "Friendship is Priceless",
+        "difficulty": "beginner",
+        "category": "story",
+        "description": "Адал достық туралы әңгіме.",
+        "descriptionRu": "Рассказ о настоящей дружбе.",
+        "descriptionEn": "A story about true friendship.",
+        "chapters": [
+            {
+                "number": 1,
+                "textKk": "Нағыз дос әрқашан көмекке келеді. Достық адамды бақытты етеді.",
+                "textRu": "Настоящий друг всегда придет на помощь. Дружба делает человека счастливым.",
+                "textEn": "A true friend always comes to the rescue. Friendship makes a person happy.",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "textKk": "Нағыз дос не істейді?",
+                        "textRu": "Что делает настоящий друг?",
+                        "textEn": "What does a true friend do?",
+                        "answers": [
+                            {
+                                "text": "Әрқашан көмекке келеді",
+                                "textRu": "Всегда приходит на помощь",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Ешқашан келмейді",
+                                "textRu": "Никогда не приходит",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Тек ойнайды",
+                                "textRu": "Только играет",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "plot",
+                        "textKk": "Достық адамды қалай етеді?",
+                        "textRu": "Каким делает человека дружба?",
+                        "textEn": "How does friendship make a person feel?",
+                        "answers": [
+                            {
+                                "text": "Бақытты",
+                                "textRu": "Счастливым",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Жалқы",
+                                "textRu": "Одиноким",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Мұңды",
+                                "textRu": "Грустным",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Нағыз дос көмек___ келеді. (барыс септік: неге? қайға?)",
+                        "textRu": "Вставьте аффикс дательного падежа (на помощь).",
+                        "textEn": "Fill in the dative case suffix.",
+                        "correctAnswer": "көмекке",
+                        "answers": [
+                            {
+                                "text": "көмекке",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "көмекте",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "көмектен",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Достық адамды бақыт___ етеді. (табыс септік: нені? — бақытты)",
+                        "textRu": "Вставьте прилагательное в нужной форме (счастливым).",
+                        "textEn": "Fill in the adjective (happy).",
+                        "correctAnswer": "бақытты",
+                        "answers": [
+                            {
+                                "text": "бақытты",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "бақытсыз",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "бақыттар",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "title": "Қорытынды емтихан",
+        "titleKk": "Қорытынды емтихан",
+        "titleRu": "Итоговый экзамен",
+        "titleEn": "Final Exam",
+        "difficulty": "beginner",
+        "category": "dialogue",
+        "description": "Курсты аяқтау туралы диалог.",
+        "descriptionRu": "Диалог об окончании курса.",
+        "descriptionEn": "Dialogue about finishing the course.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Мұғалім",
+                "textKk": "Құттықтаймын! Сен барлық деңгейден өттің. Енді қазақша жақсы сөйлейсің.",
+                "textRu": "Поздравляю! Ты прошел все уровни. Теперь ты хорошо говоришь по-казахски.",
+                "textEn": "Congratulations! You've passed all levels. Now you speak Kazakh well.",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "textKk": "Мұғалім оқушыны неге құттықтады?",
+                        "textRu": "За что учитель поздравил ученика?",
+                        "textEn": "Why did the teacher congratulate the student?",
+                        "answers": [
+                            {
+                                "text": "Барлық деңгейден өткені үшін",
+                                "textRu": "За прохождение всех уровней",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Ән айтқаны үшін",
+                                "textRu": "За пение песни",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Жақсы ойнағаны үшін",
+                                "textRu": "За хорошую игру",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "plot",
+                        "textKk": "Оқушы қазір не істей алады?",
+                        "textRu": "Что теперь умеет ученик?",
+                        "textEn": "What can the student do now?",
+                        "answers": [
+                            {
+                                "text": "Қазақша жақсы сөйлейді",
+                                "textRu": "Хорошо говорит по-казахски",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Тек оқи алады",
+                                "textRu": "Только читает",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Ешнәрсе білмейді",
+                                "textRu": "Ничего не знает",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Сен барлық деңгей___ өттің. (шығыс септік: қайдан? неден?)",
+                        "textRu": "Вставьте аффикс исходного падежа (все уровни прошёл).",
+                        "textEn": "Fill in the ablative case suffix.",
+                        "correctAnswer": "деңгейден",
+                        "answers": [
+                            {
+                                "text": "деңгейден",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "деңгейге",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "деңгейде",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Енді сен қазақша жақсы сөйле___. (осы шақ, 2-жақ жекеше: сөйлейсің)",
+                        "textRu": "Вставьте глагол в настоящем времени (ты говоришь).",
+                        "textEn": "Fill in the present tense verb (you speak).",
+                        "correctAnswer": "сөйлейсің",
+                        "answers": [
+                            {
+                                "text": "сөйлейсің",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "сөйлеймін",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "сөйлейді",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "title": "Менің жетістігім",
+        "titleKk": "Менің жетістігім",
+        "titleRu": "Мои достижения",
+        "titleEn": "My Success",
+        "difficulty": "beginner",
+        "category": "story",
+        "description": "Тіл үйренудегі нәтижелер.",
+        "descriptionRu": "Результаты в изучении языка.",
+        "descriptionEn": "Results in learning the language.",
+        "chapters": [
+            {
+                "number": 1,
+                "textKk": "Мен қазақ тілін үйренгеніме қуаныштымын. Бұл - менің үлкен жетістігім.",
+                "textRu": "Я рад, что выучил казахский язык. Это мое большое достижение.",
+                "textEn": "I am glad that I learned the Kazakh language. This is my big achievement.",
+                "questions": [
+                    {
+                        "type": "plot",
+                        "textKk": "Автор неге қуаныштымын деді?",
+                        "textRu": "Почему автор говорит, что рад?",
+                        "textEn": "Why is the author glad?",
+                        "answers": [
+                            {
+                                "text": "Қазақ тілін үйренгендіктен",
+                                "textRu": "Потому что выучил казахский",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Демалысқа шыққандықтан",
+                                "textRu": "Потому что ушёл в отпуск",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Сыйлық алғандықтан",
+                                "textRu": "Потому что получил подарок",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "plot",
+                        "textKk": "Автор өзінің жетістігін қалай бағалайды?",
+                        "textRu": "Как автор оценивает своё достижение?",
+                        "textEn": "How does the author evaluate their achievement?",
+                        "answers": [
+                            {
+                                "text": "Үлкен жетістік деп",
+                                "textRu": "Как большое достижение",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Кішкентай нәрсе деп",
+                                "textRu": "Как маленькую вещь",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "Маңызды емес деп",
+                                "textRu": "Как незначительное",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Бұл — ___ үлкен жетістігім. (тәуелдік: менің)",
+                        "textRu": "Вставьте притяжательное местоимение (моё).",
+                        "textEn": "Fill in the possessive pronoun (my).",
+                        "correctAnswer": "менің",
+                        "answers": [
+                            {
+                                "text": "менің",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "сенің",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "біздің",
+                                "isCorrect": false
+                            }
+                        ]
+                    },
+                    {
+                        "type": "grammar_fill",
+                        "textKk": "Мен қазақ тіл___ үйрендім. (табыс септік: нені?)",
+                        "textRu": "Вставьте аффикс винительного падежа (казахский язык).",
+                        "textEn": "Fill in the accusative case suffix.",
+                        "correctAnswer": "тілін",
+                        "answers": [
+                            {
+                                "text": "тілін",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "тілде",
+                                "isCorrect": false
+                            },
+                            {
+                                "text": "тілге",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

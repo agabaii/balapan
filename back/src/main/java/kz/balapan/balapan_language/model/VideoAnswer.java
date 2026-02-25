@@ -25,6 +25,15 @@ public class VideoAnswer {
     @Column(name = "answer_text", nullable = false)
     private String answerText;
 
+    @Column(name = "answer_text_kk")
+    private String answerTextKk;
+
+    @Column(name = "answer_text_ru")
+    private String answerTextRu;
+
+    @Column(name = "answer_text_en")
+    private String answerTextEn;
+
     @Column(name = "answer_order")
     private Integer answerOrder;
 

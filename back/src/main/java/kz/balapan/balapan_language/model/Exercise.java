@@ -50,4 +50,7 @@ public class Exercise {
 
     @Column(name = "mappings", columnDefinition = "TEXT")
     private String mappings; // JSON: {"word": "translation"}
+
+    @Column(name = "content_json", columnDefinition = "TEXT")
+    private String contentJson; // multilingual exercise content in JSON
 }

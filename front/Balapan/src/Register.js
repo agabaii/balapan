@@ -88,8 +88,17 @@ export default function Register() {
         </Link>
       </header>
 
-      <div className="max-w-lg mx-auto px-8 py-16">
-        <h1 className="text-2xl font-semibold text-gray-800 text-center mb-10">
+      <div className="max-w-lg mx-auto px-8 py-4">
+        {/* Mascot Image */}
+        <div className="flex justify-center mb-4">
+          <img
+            src="/balapan.png"
+            alt="Balapan Mascot"
+            className="w-32 h-32 object-contain"
+          />
+        </div>
+
+        <h1 className="text-2xl font-semibold text-gray-800 text-center mb-6">
           {step === 1 ? t.registerTitle : t.verifyTitle}
         </h1>
 

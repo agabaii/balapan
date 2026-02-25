@@ -2,8 +2,12 @@ import { useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import apiService from './services/api';
+import { getTranslation } from './translations';
+import { useApp } from './context/AppContext';
 
 export default function BalapanForgotPassword() {
+  const { interfaceLang } = useApp();
+  const t = getTranslation(interfaceLang);
   const [email, setEmail] = useState('');
   const [code, setCode] = useState('');
   const [step, setStep] = useState(1); // 1: Email, 2: Code
@@ -14,7 +18,7 @@ export default function BalapanForgotPassword() {
 
   const handleSendCode = async () => {
     if (!email) {
-      setError('Введите email');
+      setError(t.invalidEmail);
       return;
     }
 
@@ -26,16 +30,17 @@ export default function BalapanForgotPassword() {
     setLoading(false);
 
     if (result.success) {
-      setMessage(result.message);
+      // Logic to show a success message based on step
+      setMessage(t.verifyCodeSent + " " + email);
       setStep(2);
     } else {
-      setError(result.message || 'Ошибка отправки кода');
+      setError(result.message || t.error);
     }
   };
 
   const handleNext = () => {
     if (!code || code.length < 6) {
-      setError('Введите корректный код');
+      setError(t.invalidCode);
       return;
     }
     // Navigate to new password page with email and code
@@ -45,23 +50,23 @@ export default function BalapanForgotPassword() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#FFFECF' }}>
       <header className="px-6 py-4 flex justify-between items-center">
-        <a href="/">
+        <Link to="/">
           <img
             src="/fav.png"
             className="h-18 cursor-pointer hover:opacity-80 transition"
             alt="Balapan Logo"
           />
-        </a>
-        <a href="/login">
+        </Link>
+        <Link to="/login">
           <button className="p-3 mr-8 bg-white rounded-full hover:bg-pink-50 transition shadow-md hover:shadow-lg">
             <ArrowLeft size={24} color="#F9ADD1" strokeWidth={2.5} />
           </button>
-        </a>
+        </Link>
       </header>
 
       <div className="max-w-lg mx-auto px-6 pt-16">
         <h1 className="text-2xl font-semibold text-gray-800 text-center mb-10">
-          Восстановить пароль
+          {t.forgotTitle}
         </h1>
 
         {error && <div className="mb-4 text-red-500 text-center">{error}</div>}
@@ -69,7 +74,7 @@ export default function BalapanForgotPassword() {
 
         <div className="mb-6">
           <label className="block text-sm font-semibold text-gray-800 mb-2">
-            Gmail:
+            {t.email}:
           </label>
           <input
             type="email"
@@ -95,7 +100,7 @@ export default function BalapanForgotPassword() {
               />
             </div>
             <p className="text-sm text-gray-600 mt-2 text-center">
-              Введите код, который пришел вам на почту
+              {t.checkEmail}
             </p>
           </div>
         )}
@@ -104,16 +109,16 @@ export default function BalapanForgotPassword() {
           <button
             onClick={handleSendCode}
             disabled={loading}
-            className="block w-full bg-pink-300 hover:bg-pink-400 text-white font-bold py-4 px-8 rounded-2xl transition shadow-[0_4px_0_0_#C54554] text-center mt-6"
+            className="block w-full bg-pink-300 hover:bg-pink-400 text-white font-bold py-4 px-8 rounded-2xl transition shadow-[0_4px_0_0_#C54554] text-center mt-6 uppercase"
           >
-            {loading ? 'ОТПРАВКА...' : 'ПОЛУЧИТЬ КОД'}
+            {loading ? t.wait : t.confirm}
           </button>
         ) : (
           <button
             onClick={handleNext}
-            className="block w-full bg-pink-300 hover:bg-pink-400 text-white font-bold py-4 px-8 rounded-2xl transition shadow-[0_4px_0_0_#C54554] text-center mt-6"
+            className="block w-full bg-pink-300 hover:bg-pink-400 text-white font-bold py-4 px-8 rounded-2xl transition shadow-[0_4px_0_0_#C54554] text-center mt-6 uppercase"
           >
-            ПРОДОЛЖИТЬ
+            {t.continue}
           </button>
         )}
       </div>

@@ -32,12 +32,27 @@ export default function Stories() {
     }
 
     const userId = apiService.getCurrentUserId();
+    const language = localStorage.getItem('selectedLanguage') || 'kk';
 
-    // Load stories
-    const language = localStorage.getItem('selectedLanguage') || 'kazakh';
-    const storiesResult = await apiService.getStories(selectedDifficulty);
-    if (storiesResult.success) {
-      setStories(storiesResult.stories);
+    // Load stories filtered by target language
+    try {
+      let url = `http://localhost:8081/api/stories?language=${language}`;
+      if (selectedDifficulty && selectedDifficulty !== 'all') {
+        url += `&difficulty=${selectedDifficulty}`;
+      }
+      const res = await fetch(url, {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setStories(Array.isArray(data) ? data : data.stories || []);
+      }
+    } catch (e) {
+      // Fallback to apiService if direct fetch fails
+      const storiesResult = await apiService.getStories(selectedDifficulty, language);
+      if (storiesResult.success) {
+        setStories(storiesResult.stories);
+      }
     }
 
     // Load user stats
@@ -55,10 +70,10 @@ export default function Stories() {
   // Helper to get content based on TARGET language
   const getTargetContent = (obj, fieldBase) => {
     if (!obj) return '';
-    const targetLang = localStorage.getItem('selectedLanguage') || 'kazakh';
+    const targetLang = localStorage.getItem('selectedLanguage') || 'kk';
 
-    if (targetLang === 'russian') return obj[fieldBase + 'Ru'] || obj[fieldBase];
-    if (targetLang === 'english') return obj[fieldBase + 'En'] || obj[fieldBase];
+    if (targetLang === 'ru') return obj[fieldBase + 'Ru'] || obj[fieldBase];
+    if (targetLang === 'en') return obj[fieldBase + 'En'] || obj[fieldBase];
     // Default kazakh
     return obj[fieldBase + 'Kk'] || obj[fieldBase];
   };
@@ -103,10 +118,10 @@ export default function Stories() {
   };
 
   const getLanguageTitle = () => {
-    const lang = localStorage.getItem('selectedLanguage') || 'kazakh';
+    const lang = localStorage.getItem('selectedLanguage') || 'kk';
     switch (lang) {
-      case 'russian': return 'на русском';
-      case 'english': return 'на английском';
+      case 'ru': return 'на русском';
+      case 'en': return 'на английском';
       default: return 'на казахском';
     }
   };
@@ -138,40 +153,22 @@ export default function Stories() {
       <TopBar userData={{ currentStreak: userStats?.currentStreak || 0 }} />
 
       <div className="flex">
-        <div className="w-48 px-4 py-6 space-y-2">
+        <aside className="w-64 fixed left-0 top-[80px] bottom-0 p-6 hidden lg:flex flex-col gap-3">
           <Link
             to="/lesson"
-            className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition"
-            style={{ color: '#A0A0FF' }}
+            className="flex items-center gap-4 px-5 py-4 rounded-2xl font-black text-lg transition duration-200 text-gray-400 hover:bg-white/50 uppercase italic"
           >
-            <Home size={20} style={{ color: '#A0A0FF' }} />
+            <Home size={24} strokeWidth={3} />
             <span>{t.navHome}</span>
           </Link>
           <Link
-            to="/stories"
-            className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition"
-            style={{ backgroundColor: '#FFE0F0', color: '#F9ADD1' }}
-          >
-            <BookOpen size={20} style={{ color: '#F9ADD1' }} />
-            <span>{t.navStories}</span>
-          </Link>
-          <Link
-            to="/videos"
-            className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition"
-            style={{ color: '#A0A0FF' }}
-          >
-            <Play size={20} style={{ color: '#A0A0FF' }} />
-            <span>{t.navVideos}</span>
-          </Link>
-          <Link
             to="/podcasts"
-            className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition"
-            style={{ color: '#A0A0FF' }}
+            className="flex items-center gap-4 px-5 py-4 rounded-2xl font-black text-lg transition duration-200 text-gray-400 hover:bg-white/50 uppercase italic"
           >
-            <Headphones size={20} style={{ color: '#A0A0FF' }} />
+            <Headphones size={24} strokeWidth={3} />
             <span>{t.navPodcasts}</span>
           </Link>
-        </div>
+        </aside>
 
         <div className="flex-1 px-6 py-4">
           {/* Title */}

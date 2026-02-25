@@ -1,0 +1,4664 @@
+{
+  "name": "English",
+  "description": "Learn English from basic to fluent",
+  "sections": [
+    {
+      "number": 1,
+      "title": {
+        "ru": "Введение",
+        "kk": "Кіріспе",
+        "en": "Introduction"
+      },
+      "description": {
+        "ru": "Приветствия и основные фразы",
+        "kk": "Сәлемдесу және негізгі тіркестер",
+        "en": "Greetings and basic phrases"
+      },
+      "icon": "🇬🇧",
+      "lessons": [
+        {
+          "number": 1,
+          "type": "REGULAR",
+          "icon": "👋",
+          "title": {
+            "ru": "Приветствия",
+            "kk": "Сәлемдесу",
+            "en": "Greetings"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "title": "Найдите пары",
+                  "pairs": {
+                    "Hello": "Привет",
+                    "Goodbye": "Пока",
+                    "Mother": "Мама",
+                    "Father": "Папа"
+                  }
+                },
+                "kk": {
+                  "title": "Жұптарды табыңыз",
+                  "pairs": {
+                    "Hello": "Сәлем",
+                    "Goodbye": "Сау бол",
+                    "Mother": "Ана",
+                    "Father": "Әке"
+                  }
+                }
+              }
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Hello",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Привет",
+                    "Пока",
+                    "Мама"
+                  ],
+                  "answer": "Привет"
+                },
+                "kk": {
+                  "options": [
+                    "Сәлем",
+                    "Сау бол",
+                    "Ана"
+                  ],
+                  "answer": "Сәлем"
+                }
+              }
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Yes": "Да",
+                    "No": "Нет",
+                    "Maybe": "Возможно",
+                    "Thanks": "Спасибо"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Yes": "Иә",
+                    "No": "Жоқ",
+                    "Maybe": "Мүмкін",
+                    "Thanks": "Рақмет"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "My name is Alibek",
+              "translations": {
+                "ru": {
+                  "question": "Меня зовут Әлібек"
+                },
+                "kk": {
+                  "question": "Менің атым Әлібек"
+                }
+              },
+              "words": [
+                "My",
+                "name",
+                "is",
+                "Alibek",
+                "Hello",
+                "Thanks"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "audio": "hello",
+              "target": "Hello, I am Alibek",
+              "words": [
+                "Hello,",
+                "I",
+                "am",
+                "Alibek",
+                "Goodbye"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Goodbye",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Пока",
+                    "Привет",
+                    "Да"
+                  ],
+                  "answer": "Пока"
+                },
+                "kk": {
+                  "options": [
+                    "Сау бол",
+                    "Сәлем",
+                    "Иә"
+                  ],
+                  "answer": "Сау бол"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "How are you?"
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Thanks",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Спасибо",
+                    "Пожалуйста",
+                    "Извините"
+                  ],
+                  "answer": "Спасибо"
+                },
+                "kk": {
+                  "options": [
+                    "Рақмет",
+                    "Өтінемін",
+                    "Кешіріңіз"
+                  ],
+                  "answer": "Рақмет"
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "High",
+                "Bye"
+              ],
+              "answer": "Bye"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "I am fine",
+              "translations": {
+                "ru": {
+                  "question": "Я в порядке"
+                },
+                "kk": {
+                  "question": "Мен жақсымын"
+                }
+              },
+              "words": [
+                "I",
+                "am",
+                "fine",
+                "and",
+                "you?"
+              ]
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "type": "REGULAR",
+          "icon": "📖",
+          "title": {
+            "ru": "Phrases 1",
+            "kk": "Фразалар 1",
+            "en": "Phrases 1"
+          },
+          "exercises": [
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "How are you?",
+              "translations": {
+                "ru": {
+                  "question": "Как дела?"
+                },
+                "kk": {
+                  "question": "Қалайсың?"
+                }
+              },
+              "words": [
+                "How",
+                "are",
+                "you?",
+                "fine",
+                "thanks",
+                "good"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Good morning",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Доброе утро",
+                    "Добрый день",
+                    "Добрый вечер"
+                  ],
+                  "answer": "Доброе утро"
+                },
+                "kk": {
+                  "options": [
+                    "Қайырлы таң",
+                    "Қайырлы күн",
+                    "Қайырлы кеш"
+                  ],
+                  "answer": "Қайырлы таң"
+                }
+              }
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Good morning": "Доброе утро",
+                    "Good night": "Спокойной ночи",
+                    "Good afternoon": "Добрый день",
+                    "Good evening": "Добрый вечер"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Good morning": "Қайырлы таң",
+                    "Good night": "Қайырлы түн",
+                    "Good afternoon": "Қайырлы күн",
+                    "Good evening": "Қайырлы кеш"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Nice to meet you",
+              "translations": {
+                "ru": {
+                  "question": "Приятно познакомиться"
+                },
+                "kk": {
+                  "question": "Танысқаныма қуаныштымын"
+                }
+              },
+              "words": [
+                "Nice",
+                "to",
+                "meet",
+                "you",
+                "too",
+                "fine"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "See you later",
+              "words": [
+                "See",
+                "you",
+                "later",
+                "again",
+                "soon"
+              ]
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "What is up?"
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Welcome",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Добро пожаловать",
+                    "До свидания",
+                    "Пожалуйста"
+                  ],
+                  "answer": "Добро пожаловать"
+                },
+                "kk": {
+                  "options": [
+                    "Қош келдіңіз",
+                    "Сау болыңыз",
+                    "Кешіріңіз"
+                  ],
+                  "answer": "Қош келдіңіз"
+                }
+              }
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Brother": "Брат",
+                    "Sister": "Сестра",
+                    "Baby": "Малыш",
+                    "Friend": "Друг"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Brother": "Аға",
+                    "Sister": "Әпке",
+                    "Baby": "Сәби",
+                    "Friend": "Дос"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Meat",
+                "Meet"
+              ],
+              "answer": "Meet"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Have a nice day",
+              "translations": {
+                "ru": {
+                  "question": "Хорошего дня"
+                },
+                "kk": {
+                  "question": "Күніңіз сәтті өтсін"
+                }
+              },
+              "words": [
+                "Have",
+                "a",
+                "nice",
+                "day",
+                "bad",
+                "night"
+              ]
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "type": "REGULAR",
+          "icon": "⭐",
+          "title": {
+            "ru": "Phrases 2",
+            "kk": "Фразалар 2",
+            "en": "Phrases 2"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "title": "Найдите пары",
+                  "pairs": {
+                    "Please": "Пожалуйста",
+                    "Thank you": "Спасибо",
+                    "Sorry": "Извините",
+                    "Welcome": "Добро пожаловать"
+                  }
+                },
+                "kk": {
+                  "title": "Жұптарды табыңыз",
+                  "pairs": {
+                    "Please": "Өтінемін",
+                    "Thank you": "Рақмет",
+                    "Sorry": "Кешіріңіз",
+                    "Welcome": "Қош келдіңіз"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Thank you very much",
+              "translations": {
+                "ru": {
+                  "question": "Большое спасибо"
+                },
+                "kk": {
+                  "question": "Көп рақмет"
+                }
+              },
+              "words": [
+                "Thank",
+                "you",
+                "very",
+                "much",
+                "please",
+                "sorry"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Excuse me",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Извините",
+                    "Спасибо",
+                    "Пожалуйста"
+                  ],
+                  "answer": "Извините"
+                },
+                "kk": {
+                  "options": [
+                    "Кешіріңіз",
+                    "Рақмет",
+                    "Өтінемін"
+                  ],
+                  "answer": "Кешіріңіз"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Can you help me?"
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "I am sorry",
+              "words": [
+                "I",
+                "am",
+                "sorry",
+                "fine",
+                "happy"
+              ]
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Of course": "Конечно",
+                    "Maybe": "Может быть",
+                    "Never": "Никогда",
+                    "Always": "Всегда"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Of course": "Әрине",
+                    "Maybe": "Мүмкін",
+                    "Never": "Ешқашан",
+                    "Always": "Әрқашан"
+                  }
+                }
+              }
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "You are welcome",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Пожалуйста (в ответ)",
+                    "Привет",
+                    "Пока"
+                  ],
+                  "answer": "Пожалуйста (в ответ)"
+                },
+                "kk": {
+                  "options": [
+                    "Оқасы жоқ",
+                    "Сәлем",
+                    "Сау бол"
+                  ],
+                  "answer": "Оқасы жоқ"
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Help",
+                "Held"
+              ],
+              "answer": "Help"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "No problem",
+              "translations": {
+                "ru": {
+                  "question": "Нет проблем"
+                },
+                "kk": {
+                  "question": "Ешқандай проблема жоқ"
+                }
+              },
+              "words": [
+                "No",
+                "problem",
+                "yes",
+                "thanks"
+              ]
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Where": "Где",
+                    "When": "Когда",
+                    "Who": "Кто",
+                    "Why": "Почему"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Where": "Қайда",
+                    "When": "Қашан",
+                    "Who": "Кім",
+                    "Why": "Неге"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "type": "STORY",
+          "icon": "💬",
+          "title": {
+            "ru": "Диалог",
+            "kk": "Диалог",
+            "en": "Dialogue"
+          },
+          "linkedStoryId": 39
+        },
+        {
+          "number": 5,
+          "type": "VIDEO",
+          "icon": "📺",
+          "title": {
+            "ru": "Видео",
+            "kk": "Бейне",
+            "en": "Video"
+          },
+          "linkedVideoId": 1
+        },
+        {
+          "number": 6,
+          "type": "STORY",
+          "icon": "📚",
+          "title": {
+            "ru": "История",
+            "kk": "Әңгіме",
+            "en": "Story"
+          },
+          "linkedStoryId": 40
+        },
+        {
+          "number": 7,
+          "type": "REGULAR",
+          "icon": "🏁",
+          "title": {
+            "ru": "Финал",
+            "kk": "Финал",
+            "en": "Final"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Apple": "Яблоко",
+                    "Water": "Вода",
+                    "School": "Школа",
+                    "Teacher": "Учитель"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Apple": "Алма",
+                    "Water": "Су",
+                    "School": "Мектеп",
+                    "Teacher": "Ұстаз"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Good luck!",
+              "translations": {
+                "ru": {
+                  "question": "Удачи!"
+                },
+                "kk": {
+                  "question": "Сәттілік!"
+                }
+              },
+              "words": [
+                "Good",
+                "luck!",
+                "Bad",
+                "day"
+              ]
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Everything is possible"
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "See you soon",
+              "words": [
+                "See",
+                "you",
+                "soon",
+                "later"
+              ]
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Sun": "Солнце",
+                    "Moon": "Луна",
+                    "Star": "Звезда",
+                    "Sky": "Небо"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Sun": "Күн",
+                    "Moon": "Ай",
+                    "Star": "Жұлдыз",
+                    "Sky": "Аспан"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Soon",
+                "Sun"
+              ],
+              "answer": "Soon"
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Possible",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Возможно",
+                    "Невозможно"
+                  ],
+                  "answer": "Возможно"
+                },
+                "kk": {
+                  "options": [
+                    "Мүмкін",
+                    "Мүмкін емес"
+                  ],
+                  "answer": "Мүмкін"
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Trust me",
+              "translations": {
+                "ru": {
+                  "question": "Доверяй мне"
+                },
+                "kk": {
+                  "question": "Маған сеніңіз"
+                }
+              },
+              "words": [
+                "Trust",
+                "me",
+                "don't",
+                "go"
+              ]
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Big": "Большой",
+                    "Small": "Маленький",
+                    "New": "Новый",
+                    "Old": "Старый"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Big": "Үлкен",
+                    "Small": "Кіші",
+                    "New": "Жаңа",
+                    "Old": "Ескі"
+                  }
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Have a great time!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": {
+        "ru": "Моя семья",
+        "kk": "Менің отбасым",
+        "en": "My Family"
+      },
+      "description": {
+        "ru": "Семья и дом",
+        "kk": "Отбасы мен үй",
+        "en": "Family and home"
+      },
+      "icon": "🏠",
+      "lessons": [
+        {
+          "number": 1,
+          "type": "REGULAR",
+          "title": {
+            "ru": "Члены семьи",
+            "kk": "Отбасы мүшелері",
+            "en": "Family Members"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Grandfather": "Дедушка",
+                    "Grandmother": "Бабушка",
+                    "Aunt": "Тётя",
+                    "Uncle": "Дядя"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Grandfather": "Ата",
+                    "Grandmother": "Әже",
+                    "Aunt": "Тәте",
+                    "Uncle": "Аға"
+                  }
+                }
+              }
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Sister",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Сестра",
+                    "Брат",
+                    "Тётя"
+                  ],
+                  "answer": "Сестра"
+                },
+                "kk": {
+                  "options": [
+                    "Әпке/Қарындас",
+                    "Аға/Іні",
+                    "Дос"
+                  ],
+                  "answer": "Әпке/Қарындас"
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "This is my family",
+              "translations": {
+                "ru": {
+                  "question": "Это моя семья"
+                },
+                "kk": {
+                  "question": "Бұл менің отбасым"
+                }
+              },
+              "words": [
+                "This",
+                "is",
+                "my",
+                "family",
+                "big"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "I love my mother",
+              "words": [
+                "I",
+                "love",
+                "my",
+                "mother",
+                "father"
+              ]
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Do you have siblings?"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Husband": "Муж",
+                    "Wife": "Жена",
+                    "Son": "Сын",
+                    "Daughter": "Дочь"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Husband": "Күйеуі",
+                    "Wife": "Әйелі",
+                    "Son": "Ұлы",
+                    "Daughter": "Қызы"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Son",
+                "Sun"
+              ],
+              "answer": "Son"
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Brother",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Брат",
+                    "Сестра",
+                    "Тётя"
+                  ],
+                  "answer": "Брат"
+                },
+                "kk": {
+                  "options": [
+                    "Аға/Іні",
+                    "Әпке/Қарындас",
+                    "Дос"
+                  ],
+                  "answer": "Аға/Іні"
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "He is my cousin",
+              "translations": {
+                "ru": {
+                  "question": "Он мой двоюродный брат"
+                },
+                "kk": {
+                  "question": "Ол менің бөлем"
+                }
+              },
+              "words": [
+                "He",
+                "is",
+                "my",
+                "cousin",
+                "friend"
+              ]
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "My family is very important"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "type": "REGULAR",
+          "icon": "👨‍👩‍👧‍👦",
+          "title": {
+            "ru": "Родственники",
+            "kk": "Туыстар",
+            "en": "Relatives"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Aunt": "Тётя",
+                    "Uncle": "Дядя",
+                    "Nephew": "Племянник",
+                    "Niece": "Племянница"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Aunt": "Тәте",
+                    "Uncle": "Аға",
+                    "Nephew": "Жиен (ұл)",
+                    "Niece": "Жиен (қыз)"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "This is my aunt",
+              "translations": {
+                "ru": {
+                  "question": "Это моя тётя"
+                },
+                "kk": {
+                  "question": "Бұл менің тәтем"
+                }
+              },
+              "words": [
+                "This",
+                "is",
+                "my",
+                "aunt",
+                "uncle",
+                "mother"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Aunt and uncle",
+              "words": [
+                "Aunt",
+                "and",
+                "uncle",
+                "brother",
+                "sister"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Nephew",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Племянник",
+                    "Племянница",
+                    "Сосед"
+                  ],
+                  "answer": "Племянник"
+                },
+                "kk": {
+                  "options": [
+                    "Жиен (ұл)",
+                    "Жиен (қыз)",
+                    "Бөле"
+                  ],
+                  "answer": "Жиен (ұл)"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "I have a big family"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Cousin": "Двоюродный",
+                    "Sibling": "Родной",
+                    "Older": "Старший",
+                    "Younger": "Младший"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Cousin": "Бөле",
+                    "Sibling": "Туған",
+                    "Older": "Үлкен",
+                    "Younger": "Кіші"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Brother",
+                "Bort"
+              ],
+              "answer": "Brother"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "He is my older brother",
+              "translations": {
+                "ru": {
+                  "question": "Он мой старший брат"
+                },
+                "kk": {
+                  "question": "Ол менің үлкен ағам"
+                }
+              },
+              "words": [
+                "He",
+                "is",
+                "my",
+                "older",
+                "brother",
+                "younger"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Older",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Старший",
+                    "Младший",
+                    "Средний"
+                  ],
+                  "answer": "Старший"
+                },
+                "kk": {
+                  "options": [
+                    "Үлкен",
+                    "Кіші",
+                    "Ортаңғы"
+                  ],
+                  "answer": "Үлкен"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "I am the oldest in the family"
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "type": "REGULAR",
+          "icon": "📝",
+          "title": {
+            "ru": "Описания",
+            "kk": "Сипаттамалар",
+            "en": "Descriptions"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Kind": "Добрый",
+                    "Angry": "Злой",
+                    "Smart": "Умный",
+                    "Cheerful": "Весёлый"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Kind": "Мейірімді",
+                    "Angry": "Ашулы",
+                    "Smart": "Ақылды",
+                    "Cheerful": "Көңілді"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "My dad is kind",
+              "translations": {
+                "ru": {
+                  "question": "Мой папа добрый"
+                },
+                "kk": {
+                  "question": "Менің әкем мейірімді"
+                }
+              },
+              "words": [
+                "My",
+                "dad",
+                "is",
+                "kind",
+                "angry",
+                "mom"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Smart and cheerful",
+              "words": [
+                "Smart",
+                "and",
+                "cheerful",
+                "sad",
+                "silly"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Cheerful",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Весёлый",
+                    "Грустный",
+                    "Злой"
+                  ],
+                  "answer": "Весёлый"
+                },
+                "kk": {
+                  "options": [
+                    "Көңілді",
+                    "Мұңды",
+                    "Ашулы"
+                  ],
+                  "answer": "Көңілді"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "She is very beautiful"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Tall": "Высокий",
+                    "Short": "Низкий",
+                    "Beautiful": "Красивый",
+                    "Strong": "Сильный"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Tall": "Ұзын/Биік",
+                    "Short": "Аласа",
+                    "Beautiful": "Әдемі",
+                    "Strong": "Күшті"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Smart",
+                "Smarty"
+              ],
+              "answer": "Smart"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "My mom is the best",
+              "translations": {
+                "ru": {
+                  "question": "Моя мама самая лучшая"
+                },
+                "kk": {
+                  "question": "Менің анам ең жақсы"
+                }
+              },
+              "words": [
+                "My",
+                "mom",
+                "is",
+                "the",
+                "best",
+                "worst"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Strong",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Сильный",
+                    "Слабый",
+                    "Высокий"
+                  ],
+                  "answer": "Сильный"
+                },
+                "kk": {
+                  "options": [
+                    "Күшті",
+                    "Әлсіз",
+                    "Ұзын"
+                  ],
+                  "answer": "Күшті"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Be kind to everyone"
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "type": "STORY",
+          "icon": "💬",
+          "title": {
+            "ru": "Семейный ужин",
+            "kk": "Отбасылық кешкі ас",
+            "en": "Family Dinner"
+          },
+          "linkedStoryId": 41
+        },
+        {
+          "number": 5,
+          "type": "VIDEO",
+          "icon": "📺",
+          "title": {
+            "ru": "Видео про семью",
+            "kk": "Отбасы туралы бейне",
+            "en": "Video about family"
+          },
+          "linkedVideoId": 2
+        },
+        {
+          "number": 6,
+          "type": "STORY",
+          "icon": "📚",
+          "title": {
+            "ru": "История дедушки",
+            "kk": "Атаның әңгімесі",
+            "en": "Grandpa's Story"
+          },
+          "linkedStoryId": 42
+        },
+        {
+          "number": 7,
+          "type": "REGULAR",
+          "icon": "🏁",
+          "title": {
+            "ru": "Финал 2",
+            "kk": "2-бөлім финалы",
+            "en": "Final 2"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Family": "Семья",
+                    "Home": "Дом",
+                    "Children": "Дети",
+                    "Love": "Любовь"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Family": "Отбасы",
+                    "Home": "Үй",
+                    "Children": "Балалар",
+                    "Love": "Махаббат"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "I love my family",
+              "translations": {
+                "ru": {
+                  "question": "Я люблю свою семью"
+                },
+                "kk": {
+                  "question": "Мен өз отбасымды жақсы көремін"
+                }
+              },
+              "words": [
+                "I",
+                "love",
+                "my",
+                "family",
+                "hate"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Mom, dad and me",
+              "words": [
+                "Mom,",
+                "dad",
+                "and",
+                "me",
+                "brother"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Children",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Дети",
+                    "Взрослые",
+                    "Родители"
+                  ],
+                  "answer": "Дети"
+                },
+                "kk": {
+                  "options": [
+                    "Балалар",
+                    "Үлкендер",
+                    "Ата-аналар"
+                  ],
+                  "answer": "Балалар"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Family is the most important"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Grandmother": "Бабушка",
+                    "Grandfather": "Дедушка",
+                    "Grandson": "Внук",
+                    "Granddaughter": "Внучка"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Grandmother": "Әже",
+                    "Grandfather": "Ата",
+                    "Grandson": "Немере (ұл)",
+                    "Granddaughter": "Немере (қыз)"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Home",
+                "Ham"
+              ],
+              "answer": "Home"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "This is my grandfather",
+              "translations": {
+                "ru": {
+                  "question": "Это мой дедушка"
+                },
+                "kk": {
+                  "question": "Бұл менің атам"
+                }
+              },
+              "words": [
+                "This",
+                "is",
+                "my",
+                "grandfather",
+                "grandmother",
+                "son"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Son",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Сын",
+                    "Дочь",
+                    "Брат"
+                  ],
+                  "answer": "Сын"
+                },
+                "kk": {
+                  "options": [
+                    "Ұлы",
+                    "Қызы",
+                    "Ағасы"
+                  ],
+                  "answer": "Ұлы"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Be happy!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": {
+        "ru": "Числа и счёт",
+        "kk": "Сандар және есептеу",
+        "en": "Numbers and Counting"
+      },
+      "description": {
+        "ru": "Учимся считать по-английски",
+        "kk": "Ағылшынша санап үйренеміз",
+        "en": "Learn to count in English"
+      },
+      "icon": "🔢",
+      "lessons": [
+        {
+          "number": 1,
+          "type": "REGULAR",
+          "icon": "1️⃣",
+          "title": {
+            "ru": "Числа 1-10",
+            "kk": "1-10 сандары",
+            "en": "Numbers 1-10"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "One": "Один",
+                    "Two": "Два",
+                    "Three": "Три",
+                    "Four": "Четыре"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "One": "Бір",
+                    "Two": "Екі",
+                    "Three": "Үш",
+                    "Four": "Төрт"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "I am five years old",
+              "translations": {
+                "ru": {
+                  "question": "Мне пять лет"
+                },
+                "kk": {
+                  "question": "Маған бес жас"
+                }
+              },
+              "words": [
+                "I",
+                "am",
+                "five",
+                "years",
+                "old",
+                "three",
+                "year"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "One, two, three",
+              "words": [
+                "One,",
+                "two,",
+                "three",
+                "four",
+                "five"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Five",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Пять",
+                    "Шесть",
+                    "Четыре"
+                  ],
+                  "answer": "Пять"
+                },
+                "kk": {
+                  "options": [
+                    "Бес",
+                    "Алты",
+                    "Төрт"
+                  ],
+                  "answer": "Бес"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "One plus one is two"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Five": "Пять",
+                    "Ten": "Десять",
+                    "How many": "Сколько",
+                    "Many": "Много"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Five": "Бес",
+                    "Ten": "Он",
+                    "How many": "Қанша",
+                    "Many": "Көп"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Three",
+                "Tree"
+              ],
+              "answer": "Three"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "I have two apples",
+              "translations": {
+                "ru": {
+                  "question": "У меня два яблока"
+                },
+                "kk": {
+                  "question": "Менде екі алма бар"
+                }
+              },
+              "words": [
+                "I",
+                "have",
+                "two",
+                "apples",
+                "three",
+                "almu"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Ten",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Десять",
+                    "Восемь",
+                    "Девять"
+                  ],
+                  "answer": "Десять"
+                },
+                "kk": {
+                  "options": [
+                    "Он",
+                    "Тоғыз",
+                    "Сегіз"
+                  ],
+                  "answer": "Он"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Count to ten"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "type": "REGULAR",
+          "icon": "🔢",
+          "title": {
+            "ru": "Числа 11-20",
+            "kk": "11-20 сандары",
+            "en": "Numbers 11-20"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Eleven": "Одиннадцать",
+                    "Twelve": "Двенадцать",
+                    "Thirteen": "Тринадцать",
+                    "Fourteen": "Четырнадцать"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Eleven": "Он бір",
+                    "Twelve": "Он екі",
+                    "Thirteen": "Он үш",
+                    "Fourteen": "Он төрт"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "I am fifteen years old",
+              "translations": {
+                "ru": {
+                  "question": "Мне пятнадцать лет"
+                },
+                "kk": {
+                  "question": "Маған он бес жас"
+                }
+              },
+              "words": [
+                "I",
+                "am",
+                "fifteen",
+                "years",
+                "old",
+                "twenty",
+                "year"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Eleven, twelve, thirteen",
+              "words": [
+                "Eleven,",
+                "twelve,",
+                "thirteen",
+                "fourteen"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Twenty",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Двадцать",
+                    "Десять",
+                    "Тридцать"
+                  ],
+                  "answer": "Двадцать"
+                },
+                "kk": {
+                  "options": [
+                    "Жиырма",
+                    "Он",
+                    "Отыз"
+                  ],
+                  "answer": "Жиырма"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "I live in apartment twelve"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Sixteen": "Шестнадцать",
+                    "Seventeen": "Семнадцать",
+                    "Eighteen": "Восемнадцать",
+                    "Nineteen": "Девятнадцать"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Sixteen": "Он алты",
+                    "Seventeen": "Он жеті",
+                    "Eighteen": "Он сегіз",
+                    "Nineteen": "Он тоғыз"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Nineteen",
+                "Ninetieth"
+              ],
+              "answer": "Nineteen"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "How old are you?",
+              "translations": {
+                "ru": {
+                  "question": "Сколько тебе лет?"
+                },
+                "kk": {
+                  "question": "Жасың қаншада?"
+                }
+              },
+              "words": [
+                "How",
+                "old",
+                "are",
+                "you?",
+                "me",
+                "him"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Eighteen",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Восемнадцать",
+                    "Шестнадцать",
+                    "Восемь"
+                  ],
+                  "answer": "Восемнадцать"
+                },
+                "kk": {
+                  "options": [
+                    "Он сегіз",
+                    "Жиырма",
+                    "Сегіз"
+                  ],
+                  "answer": "Он сегіз"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "I am already nineteen"
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "type": "REGULAR",
+          "icon": "📊",
+          "title": {
+            "ru": "Большие числа",
+            "kk": "Үлкен сандар",
+            "en": "Big Numbers"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Hundred": "Сто",
+                    "Thousand": "Тысяча",
+                    "Million": "Миллион",
+                    "Zero": "Ноль"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Hundred": "Жүз",
+                    "Thousand": "Мың",
+                    "Million": "Миллион",
+                    "Zero": "Нөл"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "This costs a hundred dollars",
+              "translations": {
+                "ru": {
+                  "question": "Это стоит сто долларов"
+                },
+                "kk": {
+                  "question": "Бұл жүз доллар тұрады"
+                }
+              },
+              "words": [
+                "This",
+                "costs",
+                "a",
+                "hundred",
+                "dollars",
+                "thousands"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "One thousand years",
+              "words": [
+                "One",
+                "thousand",
+                "years",
+                "hundred",
+                "million"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Hundred",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Сто",
+                    "Десять",
+                    "Тысяча"
+                  ],
+                  "answer": "Сто"
+                },
+                "kk": {
+                  "options": [
+                    "Жүз",
+                    "Он",
+                    "Мың"
+                  ],
+                  "answer": "Жүз"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Million is a lot"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Five hundred": "Пятьсот",
+                    "Three hundred": "Триста",
+                    "Much/Many": "Много",
+                    "Little/Few": "Мало"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Five hundred": "Бес жүз",
+                    "Three hundred": "Үш жүз",
+                    "Much/Many": "Көп",
+                    "Little/Few": "Аз"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Thousand",
+                "Tousand"
+              ],
+              "answer": "Thousand"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "I have little time",
+              "translations": {
+                "ru": {
+                  "question": "У меня мало времени"
+                },
+                "kk": {
+                  "question": "Менде уақыт аз"
+                }
+              },
+              "words": [
+                "I",
+                "have",
+                "little",
+                "time",
+                "much",
+                "money"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Little/Few",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Мало",
+                    "Много",
+                    "Немного"
+                  ],
+                  "answer": "Мало"
+                },
+                "kk": {
+                  "options": [
+                    "Аз",
+                    "Көп",
+                    "Біраз"
+                  ],
+                  "answer": "Аз"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Ten thousand steps"
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "type": "STORY",
+          "icon": "🛒",
+          "title": {
+            "ru": "На рынке",
+            "kk": "Базарда",
+            "en": "At the Market"
+          },
+          "linkedStoryId": 43
+        },
+        {
+          "number": 5,
+          "type": "VIDEO",
+          "icon": "📺",
+          "title": {
+            "ru": "Считаем вместе",
+            "kk": "Бірге санаймыз",
+            "en": "Counting Together"
+          },
+          "linkedVideoId": 4
+        },
+        {
+          "number": 6,
+          "type": "REGULAR",
+          "icon": "🏁",
+          "title": {
+            "ru": "Финал 3",
+            "kk": "3-бөлім финалы",
+            "en": "Final 3"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "First": "Первый",
+                    "Second": "Второй",
+                    "Third": "Третий",
+                    "Last": "Последний"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "First": "Бірінші",
+                    "Second": "Екінші",
+                    "Third": "Үшінші",
+                    "Last": "Соңғы"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "I live on the second floor",
+              "translations": {
+                "ru": {
+                  "question": "Я живу на втором этаже"
+                },
+                "kk": {
+                  "question": "Мен екінші қабатта тұрамын"
+                }
+              },
+              "words": [
+                "I",
+                "live",
+                "on",
+                "the",
+                "second",
+                "floor",
+                "first"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "One, two, three, go!",
+              "words": [
+                "One,",
+                "two,",
+                "three,",
+                "go!",
+                "four"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Last",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Последний",
+                    "Первый",
+                    "Следующий"
+                  ],
+                  "answer": "Последний"
+                },
+                "kk": {
+                  "options": [
+                    "Соңғы",
+                    "Бірінші",
+                    "Келесі"
+                  ],
+                  "answer": "Соңғы"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Five minutes is not long"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Half": "Половина",
+                    "Quarter": "Четверть",
+                    "Number": "Номер",
+                    "Address": "Адрес"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Half": "Жарты",
+                    "Quarter": "Ширек",
+                    "Number": "Нөмір",
+                    "Address": "Мекен-жай"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Number",
+                "Namber"
+              ],
+              "answer": "Number"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "What is your phone number?",
+              "translations": {
+                "ru": {
+                  "question": "Какой ваш номер телефона?"
+                },
+                "kk": {
+                  "question": "Телефон нөміріңіз қандай?"
+                }
+              },
+              "words": [
+                "What",
+                "is",
+                "your",
+                "phone",
+                "number?",
+                "address"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Half",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Половина",
+                    "Целый",
+                    "Четверть"
+                  ],
+                  "answer": "Половина"
+                },
+                "kk": {
+                  "options": [
+                    "Жарты",
+                    "Бүтін",
+                    "Ширек"
+                  ],
+                  "answer": "Жарты"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Today is the twenty-third"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": {
+        "ru": "Город и природа",
+        "kk": "Қала мен Табиғат",
+        "en": "City and Nature"
+      },
+      "description": {
+        "ru": "Окружающий мир",
+        "kk": "Қоршаған орта",
+        "en": "World around us"
+      },
+      "icon": "🏙️",
+      "lessons": [
+        {
+          "number": 1,
+          "type": "REGULAR",
+          "icon": "🏢",
+          "title": {
+            "ru": "В городе",
+            "kk": "Қалада",
+            "en": "In the city"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Shop": "Магазин",
+                    "Pharmacy": "Аптека",
+                    "Street": "Улица",
+                    "Park": "Парк"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Shop": "Дүкен",
+                    "Pharmacy": "Дәріхана",
+                    "Street": "Көше",
+                    "Park": "Саябақ"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Where is the shop?",
+              "translations": {
+                "ru": {
+                  "question": "Где находится магазин?"
+                },
+                "kk": {
+                  "question": "Дүкен қайда?"
+                }
+              },
+              "words": [
+                "Where",
+                "is",
+                "the",
+                "shop?",
+                "street",
+                "pharmacy"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Go straight along the street",
+              "words": [
+                "Go",
+                "straight",
+                "along",
+                "the",
+                "street",
+                "left",
+                "right"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Pharmacy",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Аптека",
+                    "Магазин",
+                    "Больница"
+                  ],
+                  "answer": "Аптека"
+                },
+                "kk": {
+                  "options": [
+                    "Дәріхана",
+                    "Дүкен",
+                    "Аурухана"
+                  ],
+                  "answer": "Дәріхана"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "I live in this city"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Center": "Центр",
+                    "House": "Дом",
+                    "Work": "Работа",
+                    "Bus stop": "Остановка"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Center": "Орталық",
+                    "House": "Үй",
+                    "Work": "Жұмыс",
+                    "Bus stop": "Аялдама"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "House",
+                "Hose"
+              ],
+              "answer": "House"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "This is my work",
+              "translations": {
+                "ru": {
+                  "question": "Это моя работа"
+                },
+                "kk": {
+                  "question": "Бұл менің жұмысым"
+                }
+              },
+              "words": [
+                "This",
+                "is",
+                "my",
+                "work",
+                "study",
+                "house"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Bus stop",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Остановка",
+                    "Автобус",
+                    "Вокзал"
+                  ],
+                  "answer": "Остановка"
+                },
+                "kk": {
+                  "options": [
+                    "Аялдама",
+                    "Автобус",
+                    "Әуежай"
+                  ],
+                  "answer": "Аялдама"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "The city never sleeps"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "type": "REGULAR",
+          "icon": "🌲",
+          "title": {
+            "ru": "На природе",
+            "kk": "Табиғатта",
+            "en": "In nature"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Tree": "Дерево",
+                    "Flower": "Цветок",
+                    "Grass": "Трава",
+                    "Forest": "Лес"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Tree": "Ағаш",
+                    "Flower": "Гүл",
+                    "Grass": "Шөп",
+                    "Forest": "Орман"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "The forest is very beautiful",
+              "translations": {
+                "ru": {
+                  "question": "Лес очень красивый"
+                },
+                "kk": {
+                  "question": "Орман өте әдемі"
+                }
+              },
+              "words": [
+                "The",
+                "forest",
+                "is",
+                "very",
+                "beautiful",
+                "scary",
+                "big"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Look at these flowers",
+              "words": [
+                "Look",
+                "at",
+                "these",
+                "flowers",
+                "trees"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Tree",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Дерево",
+                    "Куст",
+                    "Лист"
+                  ],
+                  "answer": "Дерево"
+                },
+                "kk": {
+                  "options": [
+                    "Ағаш",
+                    "Бұта",
+                    "Жапырақ"
+                  ],
+                  "answer": "Ағаш"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Protect the nature!"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "River": "Река",
+                    "Lake": "Озеро",
+                    "Mountain": "Гора",
+                    "Sky": "Небо"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "River": "Өзен",
+                    "Lake": "Көл",
+                    "Mountain": "Тау",
+                    "Sky": "Аспан"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Forest",
+                "First"
+              ],
+              "answer": "Forest"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "The sky is blue today",
+              "translations": {
+                "ru": {
+                  "question": "Небо сегодня синее"
+                },
+                "kk": {
+                  "question": "Аспан бүгін көк"
+                }
+              },
+              "words": [
+                "The",
+                "sky",
+                "is",
+                "blue",
+                "today",
+                "gray",
+                "red"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Mountain",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Гора",
+                    "Холм",
+                    "Равнина"
+                  ],
+                  "answer": "Гора"
+                },
+                "kk": {
+                  "options": [
+                    "Тау",
+                    "Төбе",
+                    "Жазық"
+                  ],
+                  "answer": "Тау"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Nature is our home"
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "type": "STORY",
+          "icon": "💬",
+          "title": {
+            "ru": "Прогулка в парке",
+            "kk": "Саябақтағы серуен",
+            "en": "Walk in the Park"
+          },
+          "linkedStoryId": 44
+        },
+        {
+          "number": 4,
+          "type": "VIDEO",
+          "icon": "📺",
+          "title": {
+            "ru": "Фильм о природе",
+            "kk": "Табиғат туралы фильм",
+            "en": "Movie about nature"
+          },
+          "linkedVideoId": 3
+        },
+        {
+          "number": 5,
+          "type": "STORY",
+          "icon": "📚",
+          "title": {
+            "ru": "Лесная сказка",
+            "kk": "Орман ертегісі",
+            "en": "Forest Fairy Tale"
+          },
+          "linkedStoryId": 45
+        },
+        {
+          "number": 6,
+          "type": "REGULAR",
+          "icon": "🏁",
+          "title": {
+            "ru": "Финал 4",
+            "kk": "4-бөлім финалы",
+            "en": "Final 4"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "City": "Город",
+                    "Village": "Деревня",
+                    "Sun": "Солнце",
+                    "Moon": "Луна"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "City": "Қала",
+                    "Village": "Ауыл",
+                    "Sun": "Күн",
+                    "Moon": "Ай"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "I love the sun",
+              "translations": {
+                "ru": {
+                  "question": "Я люблю солнце"
+                },
+                "kk": {
+                  "question": "Мен күнді жақсы көремін"
+                }
+              },
+              "words": [
+                "I",
+                "love",
+                "the",
+                "sun",
+                "moon",
+                "stars"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Moon and stars",
+              "words": [
+                "Moon",
+                "and",
+                "stars",
+                "sun",
+                "sky"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Village",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Деревня",
+                    "Город",
+                    "Столица"
+                  ],
+                  "answer": "Деревня"
+                },
+                "kk": {
+                  "options": [
+                    "Ауыл",
+                    "Қала",
+                    "Елді мекен"
+                  ],
+                  "answer": "Ауыл"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "What a beautiful day!"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Air": "Воздух",
+                    "Water": "Вода",
+                    "Earth": "Земля",
+                    "Fire": "Огонь"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Air": "Ауа",
+                    "Water": "Су",
+                    "Earth": "Жер",
+                    "Fire": "От"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "View",
+                "Wiew"
+              ],
+              "answer": "View"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Clean water",
+              "translations": {
+                "ru": {
+                  "question": "Чистая вода"
+                },
+                "kk": {
+                  "question": "Таза су"
+                }
+              },
+              "words": [
+                "Clean",
+                "water",
+                "dirty",
+                "cold"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Earth",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Земля",
+                    "Вода",
+                    "Небо"
+                  ],
+                  "answer": "Земля"
+                },
+                "kk": {
+                  "options": [
+                    "Жер",
+                    "Су",
+                    "Ауа"
+                  ],
+                  "answer": "Жер"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Be kind to nature!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": {
+        "ru": "Еда и покупки",
+        "kk": "Тамақ пен Сатып алу",
+        "en": "Food and Shopping"
+      },
+      "description": {
+        "ru": "В ресторане и магазине",
+        "kk": "Мейрамханада және дүкенде",
+        "en": "At the restaurant and shop"
+      },
+      "icon": "🍕",
+      "lessons": [
+        {
+          "number": 1,
+          "type": "REGULAR",
+          "icon": "🍴",
+          "title": {
+            "ru": "В ресторане",
+            "kk": "Мейрамханада",
+            "en": "At the restaurant"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Menu": "Меню",
+                    "Water": "Вода",
+                    "Food": "Еда",
+                    "Bill": "Счёт"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Menu": "Мәзір",
+                    "Water": "Су",
+                    "Food": "Тамақ",
+                    "Bill": "Шот"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Can I have the bill, please?",
+              "translations": {
+                "ru": {
+                  "question": "Можно мне счёт, пожалуйста?"
+                },
+                "kk": {
+                  "question": "Шотты әкелесіз бе, өтінемін?"
+                }
+              },
+              "words": [
+                "Can",
+                "I",
+                "have",
+                "the",
+                "bill,",
+                "please?",
+                "water",
+                "food"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "I want some water",
+              "words": [
+                "I",
+                "want",
+                "some",
+                "water",
+                "tea",
+                "coffee"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Menu",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Меню",
+                    "Блюдо",
+                    "Напиток"
+                  ],
+                  "answer": "Меню"
+                },
+                "kk": {
+                  "options": [
+                    "Мәзір",
+                    "Тағам",
+                    "Сусын"
+                  ],
+                  "answer": "Мәзір"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Waitress, please!"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Bread": "Хлеб",
+                    "Salt": "Соль",
+                    "Sugar": "Сахар",
+                    "Tea": "Чай"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Bread": "Нан",
+                    "Salt": "Тұз",
+                    "Sugar": "Қант",
+                    "Tea": "Шай"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Meat",
+                "Meet"
+              ],
+              "answer": "Meat"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "This food is delicious",
+              "translations": {
+                "ru": {
+                  "question": "Эта еда очень вкусная"
+                },
+                "kk": {
+                  "question": "Бұл тамақ өте дәмді"
+                }
+              },
+              "words": [
+                "This",
+                "food",
+                "is",
+                "delicious",
+                "bad",
+                "hot"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Tea",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Чай",
+                    "Кофе",
+                    "Сок"
+                  ],
+                  "answer": "Чай"
+                },
+                "kk": {
+                  "options": [
+                    "Шай",
+                    "Кофе",
+                    "Шырын"
+                  ],
+                  "answer": "Шай"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Bon appetit!"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "type": "REGULAR",
+          "icon": "🛒",
+          "title": {
+            "ru": "В магазине",
+            "kk": "Дүкенде",
+            "en": "At the shop"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Fruit": "Фрукты",
+                    "Vegetables": "Овощи",
+                    "Milk": "Молоко",
+                    "Price": "Цена"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Fruit": "Жемістер",
+                    "Vegetables": "Көкөністер",
+                    "Milk": "Сүт",
+                    "Price": "Баға"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "How much does it cost?",
+              "translations": {
+                "ru": {
+                  "question": "Сколько это стоит?"
+                },
+                "kk": {
+                  "question": "Бұл қанша тұрады?"
+                }
+              },
+              "words": [
+                "How",
+                "much",
+                "does",
+                "it",
+                "cost?",
+                "price",
+                "expensive"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "I need some milk",
+              "words": [
+                "I",
+                "need",
+                "some",
+                "milk",
+                "water",
+                "juice"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Price",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Цена",
+                    "Деньги",
+                    "Сдача"
+                  ],
+                  "answer": "Цена"
+                },
+                "kk": {
+                  "options": [
+                    "Баға",
+                    "Ақша",
+                    "Сдача"
+                  ],
+                  "answer": "Баға"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "That is too expensive"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Apple": "Яблоко",
+                    "Banana": "Банан",
+                    "Orange": "Апельсин",
+                    "Juice": "Сок"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Apple": "Алма",
+                    "Banana": "Банан",
+                    "Orange": "Апельсин",
+                    "Juice": "Шырын"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Cheese",
+                "Chase"
+              ],
+              "answer": "Cheese"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "I like fresh fruit",
+              "translations": {
+                "ru": {
+                  "question": "Я люблю свежие фрукты"
+                },
+                "kk": {
+                  "question": "Мен жас жемістерді жақсы көремін"
+                }
+              },
+              "words": [
+                "I",
+                "like",
+                "fresh",
+                "fruit",
+                "rotten",
+                "bad"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Apple",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Яблоко",
+                    "Банан",
+                    "Груша"
+                  ],
+                  "answer": "Яблоко"
+                },
+                "kk": {
+                  "options": [
+                    "Алма",
+                    "Банан",
+                    "Алмұрт"
+                  ],
+                  "answer": "Алма"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Have a nice day!"
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "type": "STORY",
+          "icon": "💬",
+          "title": {
+            "ru": "Поход за продуктами",
+            "kk": "Азық-түлік алу",
+            "en": "Grocery Shopping"
+          },
+          "linkedStoryId": 46
+        },
+        {
+          "number": 4,
+          "type": "VIDEO",
+          "icon": "📺",
+          "title": {
+            "ru": "Готовим вместе",
+            "kk": "Бірге пісіреміз",
+            "en": "Cooking Together"
+          },
+          "linkedVideoId": 5
+        },
+        {
+          "number": 5,
+          "type": "REGULAR",
+          "icon": "🏁",
+          "title": {
+            "ru": "Финал 5",
+            "kk": "5-бөлім финалы",
+            "en": "Final 5"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Eat": "Есть",
+                    "Drink": "Пить",
+                    "Hungry": "Голодный",
+                    "Thirsty": "Жаждущий"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Eat": "Жеу",
+                    "Drink": "Ішу",
+                    "Hungry": "Аш",
+                    "Thirsty": "Шөлдеген"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "I am hungry",
+              "translations": {
+                "ru": {
+                  "question": "Я голоден"
+                },
+                "kk": {
+                  "question": "Менің қарным ашты"
+                }
+              },
+              "words": [
+                "I",
+                "am",
+                "hungry",
+                "thirsty",
+                "full"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Eat and drink",
+              "words": [
+                "Eat",
+                "and",
+                "drink",
+                "sleep",
+                "walk"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Hungry",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Голодный",
+                    "Сытый",
+                    "Жаждущий"
+                  ],
+                  "answer": "Голодный"
+                },
+                "kk": {
+                  "options": [
+                    "Аш",
+                    "Тоқ",
+                    "Шөлдеген"
+                  ],
+                  "answer": "Аш"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Everything was very tasty"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Breakfast": "Завтрак",
+                    "Lunch": "Обед",
+                    "Dinner": "Ужин",
+                    "Snack": "Перекус"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Breakfast": "Таңғы ас",
+                    "Lunch": "Түскі ас",
+                    "Dinner": "Кешкі ас",
+                    "Snack": "Жеңіл тамақ"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Lunch",
+                "Launch"
+              ],
+              "answer": "Lunch"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "What's for dinner?",
+              "translations": {
+                "ru": {
+                  "question": "Что на ужин?"
+                },
+                "kk": {
+                  "question": "Кешкіге не бар?"
+                }
+              },
+              "words": [
+                "What's",
+                "for",
+                "dinner?",
+                "breakfast",
+                "lunch"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Breakfast",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Завтрак",
+                    "Обед",
+                    "Ужин"
+                  ],
+                  "answer": "Завтрак"
+                },
+                "kk": {
+                  "options": [
+                    "Таңғы ас",
+                    "Түскі ас",
+                    "Кешкі ас"
+                  ],
+                  "answer": "Таңғы ас"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Enjoy your meal!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": {
+        "ru": "Путешествия",
+        "kk": "Саяхат",
+        "en": "Travel"
+      },
+      "description": {
+        "ru": "Поездки и новые места",
+        "kk": "Сапарлар мен жаңа жерлер",
+        "en": "Trips and new places"
+      },
+      "icon": "✈️",
+      "lessons": [
+        {
+          "number": 1,
+          "type": "REGULAR",
+          "icon": "🏨",
+          "title": {
+            "ru": "В отеле",
+            "kk": "Қонақ үйде",
+            "en": "In the hotel"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Room": "Комната",
+                    "Key": "Ключ",
+                    "Passport": "Паспорт",
+                    "Reservation": "Бронь"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Room": "Бөлме",
+                    "Key": "Кілт",
+                    "Passport": "Төлқұжат",
+                    "Reservation": "Брондау"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "I have a reservation",
+              "translations": {
+                "ru": {
+                  "question": "У меня есть бронирование номера"
+                },
+                "kk": {
+                  "question": "Менде брондау бар"
+                }
+              },
+              "words": [
+                "I",
+                "have",
+                "a",
+                "reservation",
+                "key",
+                "passport"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Here is your key",
+              "words": [
+                "Here",
+                "is",
+                "your",
+                "key",
+                "passport",
+                "room"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Passport",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Паспорт",
+                    "Билет",
+                    "Виза"
+                  ],
+                  "answer": "Паспорт"
+                },
+                "kk": {
+                  "options": [
+                    "Төлқұжат",
+                    "Билет",
+                    "Ақша"
+                  ],
+                  "answer": "Төлқұжат"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Where is the elevator?"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Floor": "Этаж",
+                    "Wifi": "Интернет",
+                    "Towels": "Полотенца",
+                    "Breakfast": "Завтрак"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Floor": "Қабат",
+                    "Wifi": "Интернет",
+                    "Towels": "Сүлгілер",
+                    "Breakfast": "Таңғы ас"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Key",
+                "Kee"
+              ],
+              "answer": "Key"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "The room is on the third floor",
+              "translations": {
+                "ru": {
+                  "question": "Номер на третьем этаже"
+                },
+                "kk": {
+                  "question": "Бөлме үшінші қабатта"
+                }
+              },
+              "words": [
+                "The",
+                "room",
+                "is",
+                "on",
+                "the",
+                "third",
+                "floor",
+                "second"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Floor",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Этаж",
+                    "Потолок",
+                    "Пол"
+                  ],
+                  "answer": "Этаж"
+                },
+                "kk": {
+                  "options": [
+                    "Қабат",
+                    "Төбе",
+                    "Еден"
+                  ],
+                  "answer": "Қабат"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Enjoy your stay!"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "type": "REGULAR",
+          "icon": "✈️",
+          "title": {
+            "ru": "В аэропорту",
+            "kk": "Әуежайда",
+            "en": "At the airport"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Plane": "Самолёт",
+                    "Ticket": "Билет",
+                    "Luggage": "Багаж",
+                    "Gate": "Выход"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Plane": "Ұшақ",
+                    "Ticket": "Билет",
+                    "Luggage": "Жүк",
+                    "Gate": "Шығу қақпасы"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Where is my gate?",
+              "translations": {
+                "ru": {
+                  "question": "Где находится мой выход на посадку?"
+                },
+                "kk": {
+                  "question": "Менің шығу қақпам қайда?"
+                }
+              },
+              "words": [
+                "Where",
+                "is",
+                "my",
+                "gate?",
+                "plane",
+                "ticket"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Show your ticket, please",
+              "words": [
+                "Show",
+                "your",
+                "ticket,",
+                "please",
+                "luggage",
+                "passport"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Plane",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Самолёт",
+                    "Билет",
+                    "Аэропорт"
+                  ],
+                  "answer": "Самолёт"
+                },
+                "kk": {
+                  "options": [
+                    "Ұшақ",
+                    "Билет",
+                    "Әуежай"
+                  ],
+                  "answer": "Ұшақ"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Fasten your seatbelts"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Pilot": "Пилот",
+                    "Flight": "Рейс",
+                    "Delay": "Задержка",
+                    "Arrival": "Прибытие"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Pilot": "Ұшқыш",
+                    "Flight": "Рейс",
+                    "Delay": "Кешігу",
+                    "Arrival": "Келу"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Gate",
+                "Get"
+              ],
+              "answer": "Gate"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "The flight is delayed",
+              "translations": {
+                "ru": {
+                  "question": "Рейс задерживается"
+                },
+                "kk": {
+                  "question": "Рейс кешігіп жатыр"
+                }
+              },
+              "words": [
+                "The",
+                "flight",
+                "is",
+                "delayed",
+                "early",
+                "late"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Luggage",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Багаж",
+                    "Сумка",
+                    "Кошелёк"
+                  ],
+                  "answer": "Багаж"
+                },
+                "kk": {
+                  "options": [
+                    "Жүк",
+                    "Сөмке",
+                    "Әмиян"
+                  ],
+                  "answer": "Жүк"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Have a safe flight!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": {
+        "ru": "Учёба и работа",
+        "kk": "Оқу мен Жұмыс",
+        "en": "Study and Work"
+      },
+      "description": {
+        "ru": "Профессии и знания",
+        "kk": "Мамандықтар мен білім",
+        "en": "Professions and knowledge"
+      },
+      "icon": "🎓",
+      "lessons": [
+        {
+          "number": 1,
+          "type": "REGULAR",
+          "icon": "👨‍🏫",
+          "title": {
+            "ru": "В школе",
+            "kk": "Мектепте",
+            "en": "At school"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Teacher": "Учитель",
+                    "Student": "Ученик",
+                    "Lesson": "Урок",
+                    "Classroom": "Класс"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Teacher": "Мұғалім",
+                    "Student": "Оқушы",
+                    "Lesson": "Сабақ",
+                    "Classroom": "Сынып"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "The teacher is in the classroom",
+              "translations": {
+                "ru": {
+                  "question": "Учитель в классе"
+                },
+                "kk": {
+                  "question": "Мұғалім сыныпта"
+                }
+              },
+              "words": [
+                "The",
+                "teacher",
+                "is",
+                "in",
+                "the",
+                "classroom",
+                "school",
+                "library"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "I like this lesson",
+              "words": [
+                "I",
+                "like",
+                "this",
+                "lesson",
+                "teacher",
+                "book"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Student",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Ученик",
+                    "Учитель",
+                    "Директор"
+                  ],
+                  "answer": "Ученик"
+                },
+                "kk": {
+                  "options": [
+                    "Оқушы",
+                    "Мұғалім",
+                    "Директор"
+                  ],
+                  "answer": "Оқушы"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Open your books"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Pen": "Ручка",
+                    "Notebook": "Тетрадь",
+                    "Homework": "Домашнее задание",
+                    "Grade": "Оценка"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Pen": "Қалам",
+                    "Notebook": "Дәптер",
+                    "Homework": "Үй жұмысы",
+                    "Grade": "Баға"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "School",
+                "Skull"
+              ],
+              "answer": "School"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Do you have homework?",
+              "translations": {
+                "ru": {
+                  "question": "У тебя есть домашнее задание?"
+                },
+                "kk": {
+                  "question": "Үй жұмысың бар ма?"
+                }
+              },
+              "words": [
+                "Do",
+                "you",
+                "have",
+                "homework?",
+                "pen",
+                "notebook"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Homework",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Домашнее задание",
+                    "Классная работа",
+                    "Задача"
+                  ],
+                  "answer": "Домашнее задание"
+                },
+                "kk": {
+                  "options": [
+                    "Үй жұмысы",
+                    "Сынып жұмысы",
+                    "Жұмыс"
+                  ],
+                  "answer": "Үй жұмысы"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Learn something new everyday"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "type": "REGULAR",
+          "icon": "💼",
+          "title": {
+            "ru": "В офисе",
+            "kk": "Кеңседе",
+            "en": "In the office"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Job": "Работа",
+                    "Colleague": "Коллега",
+                    "Meeting": "Собрание",
+                    "Computer": "Компьютер"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Job": "Жұмыс",
+                    "Colleague": "Әріптес",
+                    "Meeting": "Жиналыс",
+                    "Computer": "Компьютер"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "I have a meeting at ten",
+              "translations": {
+                "ru": {
+                  "question": "У меня собрание в десять"
+                },
+                "kk": {
+                  "question": "Сағат онда жиналысым бар"
+                }
+              },
+              "words": [
+                "I",
+                "have",
+                "a",
+                "meeting",
+                "at",
+                "ten",
+                "nine",
+                "work"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Look at the computer",
+              "words": [
+                "Look",
+                "at",
+                "the",
+                "computer",
+                "desk",
+                "phone"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Colleague",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Коллега",
+                    "Друг",
+                    "Начальник"
+                  ],
+                  "answer": "Коллега"
+                },
+                "kk": {
+                  "options": [
+                    "Әріптес",
+                    "Дос",
+                    "Бастық"
+                  ],
+                  "answer": "Әріптес"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Send me an email, please"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Salary": "Зарплата",
+                    "Manager": "Менеджер",
+                    "Client": "Клиент",
+                    "Deadline": "Дедлайн"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Salary": "Жалақы",
+                    "Manager": "Менеджер",
+                    "Client": "Клиент",
+                    "Deadline": "Мерзім"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Work",
+                "Walk"
+              ],
+              "answer": "Work"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "The deadline is tomorrow",
+              "translations": {
+                "ru": {
+                  "question": "Дедлайн завтра"
+                },
+                "kk": {
+                  "question": "Дедлайн ертең"
+                }
+              },
+              "words": [
+                "The",
+                "deadline",
+                "is",
+                "tomorrow",
+                "today",
+                "yesterday"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Salary",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Зарплата",
+                    "Бонус",
+                    "Налог"
+                  ],
+                  "answer": "Зарплата"
+                },
+                "kk": {
+                  "options": [
+                    "Жалақы",
+                    "Бонус",
+                    "Салық"
+                  ],
+                  "answer": "Жалақы"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Hard work pays off"
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "type": "STORY",
+          "icon": "💬",
+          "title": {
+            "ru": "Собеседование",
+            "kk": "Жұмысқа орналасу",
+            "en": "Job Interview"
+          },
+          "linkedStoryId": 47
+        },
+        {
+          "number": 4,
+          "type": "VIDEO",
+          "icon": "📺",
+          "title": {
+            "ru": "Мой рабочий день",
+            "kk": "Менің жұмыс күнім",
+            "en": "My work day"
+          },
+          "linkedVideoId": 6
+        },
+        {
+          "number": 5,
+          "type": "REGULAR",
+          "icon": "🏁",
+          "title": {
+            "ru": "Финал 7",
+            "kk": "7-бөлім финалы",
+            "en": "Final 7"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Doctor": "Врач",
+                    "Engineer": "Инженер",
+                    "Artist": "Художник",
+                    "Chef": "Повар"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Doctor": "Дәрігер",
+                    "Engineer": "Инженер",
+                    "Artist": "Суретші",
+                    "Chef": "Аспаз"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "My brother is an engineer",
+              "translations": {
+                "ru": {
+                  "question": "Мой брат инженер"
+                },
+                "kk": {
+                  "question": "Менің ағам инженер"
+                }
+              },
+              "words": [
+                "My",
+                "brother",
+                "is",
+                "an",
+                "engineer",
+                "doctor",
+                "chef"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "She is a good doctor",
+              "words": [
+                "She",
+                "is",
+                "a",
+                "good",
+                "doctor",
+                "teacher"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Chef",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Повар",
+                    "Художник",
+                    "Директор"
+                  ],
+                  "answer": "Повар"
+                },
+                "kk": {
+                  "options": [
+                    "Аспаз",
+                    "Суретші",
+                    "Директор"
+                  ],
+                  "answer": "Аспаз"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Follow your dreams"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Office": "Офис",
+                    "Company": "Компания",
+                    "Business": "Бизнес",
+                    "Success": "Успех"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Office": "Кеңсе",
+                    "Company": "Компания",
+                    "Business": "Бизнес",
+                    "Success": "Жетістік"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Dream",
+                "Drum"
+              ],
+              "answer": "Dream"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "I love my job",
+              "translations": {
+                "ru": {
+                  "question": "Я люблю свою работу"
+                },
+                "kk": {
+                  "question": "Мен жұмысымды жақсы көремін"
+                }
+              },
+              "words": [
+                "I",
+                "love",
+                "my",
+                "job",
+                "hate",
+                "boring"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Business",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Бизнес",
+                    "Работа",
+                    "Дело"
+                  ],
+                  "answer": "Бизнес"
+                },
+                "kk": {
+                  "options": [
+                    "Бизнес",
+                    "Жұмыс",
+                    "Іс"
+                  ],
+                  "answer": "Бизнес"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Success takes time"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": {
+        "ru": "Здоровье и спорт",
+        "kk": "Денсаулық пен Спорт",
+        "en": "Health and Sports"
+      },
+      "description": {
+        "ru": "Организм и активный отдых",
+        "kk": "Организм және белсенді демалыс",
+        "en": "Body and active rest"
+      },
+      "icon": "🏥",
+      "lessons": [
+        {
+          "number": 1,
+          "type": "REGULAR",
+          "icon": "🏥",
+          "title": {
+            "ru": "У врача",
+            "kk": "Дәрігерде",
+            "en": "At the doctor"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Health": "Здоровье",
+                    "Medicine": "Лекарство",
+                    "Pain": "Боль",
+                    "Help": "Помощь"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Health": "Денсаулық",
+                    "Medicine": "Дәрі",
+                    "Pain": "Ауырсыну",
+                    "Help": "Көмек"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "I feel better now",
+              "translations": {
+                "ru": {
+                  "question": "Я чувствую себя намного лучше"
+                },
+                "kk": {
+                  "question": "Қазір өзімді жақсы сезінемін"
+                }
+              },
+              "words": [
+                "I",
+                "feel",
+                "better",
+                "now",
+                "worse",
+                "sick"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Take this medicine",
+              "words": [
+                "Take",
+                "this",
+                "medicine",
+                "water",
+                "food"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Health",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Здоровье",
+                    "Болезнь",
+                    "Лечение"
+                  ],
+                  "answer": "Здоровье"
+                },
+                "kk": {
+                  "options": [
+                    "Денсаулық",
+                    "Ауру",
+                    "Өлім"
+                  ],
+                  "answer": "Денсаулық"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Where is the pharmacy?"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Head": "Голова",
+                    "Hand": "Рука",
+                    "Leg": "Нога",
+                    "Back": "Спина"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Head": "Бас",
+                    "Hand": "Қол",
+                    "Leg": "Аяқ",
+                    "Back": "Арқа"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Pain",
+                "Pan"
+              ],
+              "answer": "Pain"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "My head hurts",
+              "translations": {
+                "ru": {
+                  "question": "У меня болит голова"
+                },
+                "kk": {
+                  "question": "Менің басым ауырып тұр"
+                }
+              },
+              "words": [
+                "My",
+                "head",
+                "hurts",
+                "hand",
+                "leg"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Back",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Спина",
+                    "Живот",
+                    "Грудь"
+                  ],
+                  "answer": "Спина"
+                },
+                "kk": {
+                  "options": [
+                    "Арқа",
+                    "Іш",
+                    "Кеуде"
+                  ],
+                  "answer": "Арқа"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Stay healthy!"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "type": "REGULAR",
+          "icon": "⚽",
+          "title": {
+            "ru": "Спорт",
+            "kk": "Спорт",
+            "en": "Sports"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Football": "Футбол",
+                    "Basketball": "Баскетбол",
+                    "Tennis": "Теннис",
+                    "Ball": "Мяч"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Football": "Футбол",
+                    "Basketball": "Баскетбол",
+                    "Tennis": "Теннис",
+                    "Ball": "Доп"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "I like playing football",
+              "translations": {
+                "ru": {
+                  "question": "Я люблю играть в футбол"
+                },
+                "kk": {
+                  "question": "Маған футбол ойнаған ұнайды"
+                }
+              },
+              "words": [
+                "I",
+                "like",
+                "playing",
+                "football",
+                "basketball",
+                "tennis"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Let's play together",
+              "words": [
+                "Let's",
+                "play",
+                "together",
+                "run",
+                "jump"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Ball",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Мяч",
+                    "Гол",
+                    "Корт"
+                  ],
+                  "answer": "Мяч"
+                },
+                "kk": {
+                  "options": [
+                    "Доп",
+                    "Гол",
+                    "Алаң"
+                  ],
+                  "answer": "Доп"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "He is a fast runner"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Winner": "Победитель",
+                    "Game": "Игра",
+                    "Team": "Команда",
+                    "Train": "Тренироваться"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Winner": "Жеңімпаз",
+                    "Game": "Ойын",
+                    "Team": "Команда",
+                    "Train": "Жаттығу"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Team",
+                "Time"
+              ],
+              "answer": "Team"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Our team is the best",
+              "translations": {
+                "ru": {
+                  "question": "Наша команда лучшая"
+                },
+                "kk": {
+                  "question": "Біздің командамыз ең үздік"
+                }
+              },
+              "words": [
+                "Our",
+                "team",
+                "is",
+                "the",
+                "best",
+                "worst",
+                "good"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Winner",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Победитель",
+                    "Проигравший",
+                    "Судья"
+                  ],
+                  "answer": "Победитель"
+                },
+                "kk": {
+                  "options": [
+                    "Жеңімпаз",
+                    "Жеңілген",
+                    "Төреші"
+                  ],
+                  "answer": "Жеңімпаз"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Never give up!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": {
+        "ru": "Итоговый экзамен",
+        "kk": "Қорытынды емтихан",
+        "en": "Final Exam"
+      },
+      "description": {
+        "ru": "Проверка всех знаний",
+        "kk": "Барлық білімді тексеру",
+        "en": "Check all knowledge"
+      },
+      "icon": "🎓",
+      "lessons": [
+        {
+          "number": 1,
+          "type": "REGULAR",
+          "icon": "🎯",
+          "title": {
+            "ru": "Итоговый тест",
+            "kk": "Қорытынды тест",
+            "en": "Final Test"
+          },
+          "exercises": [
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Hello": "Привет",
+                    "Family": "Семья",
+                    "Number": "Число",
+                    "World": "Мир"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Hello": "Сәлем",
+                    "Family": "Отбасы",
+                    "Number": "Сан",
+                    "World": "Әлем"
+                  }
+                }
+              }
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "I successfully finished the course",
+              "translations": {
+                "ru": {
+                  "question": "Я успешно завершил курс"
+                },
+                "kk": {
+                  "question": "Мен курсты сәтті аяқтадым"
+                }
+              },
+              "words": [
+                "I",
+                "successfully",
+                "finished",
+                "the",
+                "course",
+                "failed"
+              ]
+            },
+            {
+              "type": "LISTEN_BUILD",
+              "target": "Thank you for attention",
+              "words": [
+                "Thank",
+                "you",
+                "for",
+                "attention",
+                "help",
+                "lesson"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "World",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Мир",
+                    "Страна",
+                    "Город"
+                  ],
+                  "answer": "Мир"
+                },
+                "kk": {
+                  "options": [
+                    "Әлем",
+                    "Ел",
+                    "Қала"
+                  ],
+                  "answer": "Әлем"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "See you soon!"
+            },
+            {
+              "type": "WORD_MATCH",
+              "translations": {
+                "ru": {
+                  "pairs": {
+                    "Friendship": "Дружба",
+                    "Knowledge": "Знания",
+                    "Future": "Будущее",
+                    "Time": "Время"
+                  }
+                },
+                "kk": {
+                  "pairs": {
+                    "Friendship": "Достық",
+                    "Knowledge": "Білім",
+                    "Future": "Болашақ",
+                    "Time": "Уақыт"
+                  }
+                }
+              }
+            },
+            {
+              "type": "LISTEN_CHOOSE",
+              "options": [
+                "Success",
+                "Try again"
+              ],
+              "answer": "Success"
+            },
+            {
+              "type": "TRANSLATE_SENTENCE",
+              "target": "Knowledge is power",
+              "translations": {
+                "ru": {
+                  "question": "Знания — это сила"
+                },
+                "kk": {
+                  "question": "Білім — күш"
+                }
+              },
+              "words": [
+                "Knowledge",
+                "is",
+                "power",
+                "weakness"
+              ]
+            },
+            {
+              "type": "WORD_TRANSLATE",
+              "question": "Future",
+              "translations": {
+                "ru": {
+                  "options": [
+                    "Будущее",
+                    "Прошлое",
+                    "Настоящее"
+                  ],
+                  "answer": "Будущее"
+                },
+                "kk": {
+                  "options": [
+                    "Болашақ",
+                    "Өткен",
+                    "Қазір"
+                  ],
+                  "answer": "Болашақ"
+                }
+              }
+            },
+            {
+              "type": "REPEAT_PHRASE",
+              "text": "Good luck with everything!"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

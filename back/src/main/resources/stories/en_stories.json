@@ -1,0 +1,695 @@
+[
+    {
+        "id": 1,
+        "title": "Welcome",
+        "titleEn": "Welcome",
+        "titleRu": "Добро пожаловать",
+        "titleKk": "Қош келдіңіз",
+        "difficulty": "beginner",
+        "category": "dialogue",
+        "description": "Greeting a new friend.",
+        "descriptionRu": "Приветствие нового друга.",
+        "descriptionKk": "Жаңа досты сәлемдеу.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "John",
+                "textEn": "Hi! Welcome to our city.",
+                "textRu": "Привет! Добро пожаловать в наш город.",
+                "textKk": "Сәлем! Біздің қаламызға қош келдіңіз.",
+                "questions": [
+                    {
+                        "text": "What does John say?",
+                        "textEn": "What does John say?",
+                        "textRu": "Что говорит Джон?",
+                        "textKk": "Джон не дейді?",
+                        "answers": [
+                            {
+                                "text": "Welcome to our city",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Goodbye, see you later",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "My Morning",
+        "titleEn": "My Morning",
+        "titleRu": "Моё утро",
+        "titleKk": "Менің таңым",
+        "difficulty": "beginner",
+        "category": "story",
+        "description": "Daily routine.",
+        "descriptionRu": "Ежедневный распорядок дня.",
+        "descriptionKk": "Күнделікті тәртіп.",
+        "chapters": [
+            {
+                "number": 1,
+                "textEn": "I wake up at seven o'clock every morning.",
+                "textRu": "Я просыпаюсь в семь утра каждое утро.",
+                "textKk": "Мен күн сайын таңғы сағат жетіде оянамын.",
+                "questions": [
+                    {
+                        "text": "What time does the person wake up?",
+                        "textEn": "What time does the person wake up?",
+                        "textRu": "В котором часу просыпается автор?",
+                        "textKk": "Адам сағат нешеде оянады?",
+                        "answers": [
+                            {
+                                "text": "Seven o'clock",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Nine o'clock",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Big Family",
+        "titleEn": "Big Family",
+        "titleRu": "Большая семья",
+        "titleKk": "Үлкен отбасы",
+        "difficulty": "beginner",
+        "category": "dialogue",
+        "description": "Talking about brothers and sisters.",
+        "descriptionRu": "Разговор о братьях и сёстрах.",
+        "descriptionKk": "Аға-іні мен әпке-сіңлілер туралы әңгіме.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Sarah",
+                "textEn": "Do you have any brothers or sisters?",
+                "textRu": "У тебя есть братья или сестры?",
+                "textKk": "Сенің аға-інілерің немесе әпке-сіңлілерің бар ма?",
+                "questions": [
+                    {
+                        "text": "What is Sarah asking about?",
+                        "textEn": "What is Sarah asking about?",
+                        "textRu": "О чём спрашивает Сара?",
+                        "textKk": "Сара не туралы сұрайды?",
+                        "answers": [
+                            {
+                                "text": "Brothers or sisters",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Pets",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Our House",
+        "titleEn": "Our House",
+        "titleRu": "Наш дом",
+        "titleKk": "Біздің үй",
+        "difficulty": "beginner",
+        "category": "story",
+        "description": "Describing the home.",
+        "descriptionRu": "Описание дома.",
+        "descriptionKk": "Үйді сипаттау.",
+        "chapters": [
+            {
+                "number": 1,
+                "textEn": "Our house is big and has a small garden.",
+                "textRu": "Наш дом большой, и у него есть маленький сад.",
+                "textKk": "Біздің үйіміз үлкен және оның кішкентай бақшасы бар.",
+                "questions": [
+                    {
+                        "text": "What does the house have?",
+                        "textEn": "What does the house have?",
+                        "textRu": "Что есть у дома?",
+                        "textKk": "Үйде не бар?",
+                        "answers": [
+                            {
+                                "text": "A small garden",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "A swimming pool",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "At School",
+        "titleEn": "At School",
+        "titleRu": "В школе",
+        "titleKk": "Мектепте",
+        "difficulty": "beginner",
+        "category": "dialogue",
+        "description": "Math class conversation.",
+        "descriptionRu": "Разговор на уроке математики.",
+        "descriptionKk": "Математика сабағындағы диалог.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Teacher",
+                "textEn": "Please solve this task on the board.",
+                "textRu": "Пожалуйста, реши эту задачу на доске.",
+                "textKk": "Бұл есепті тақтада шығаршы.",
+                "questions": [
+                    {
+                        "text": "Where does the teacher ask to solve the task?",
+                        "textEn": "Where does the teacher ask to solve the task?",
+                        "textRu": "Где учитель просит решить задачу?",
+                        "textKk": "Мұғалім есепті қайда шығаруды сұрайды?",
+                        "answers": [
+                            {
+                                "text": "On the board",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "In the notebook",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "title": "New Knowledge",
+        "titleEn": "New Knowledge",
+        "titleRu": "Новые знания",
+        "titleKk": "Жаңа білім",
+        "difficulty": "beginner",
+        "category": "story",
+        "description": "The learning process.",
+        "descriptionRu": "Процесс обучения.",
+        "descriptionKk": "Оқу үдерісі.",
+        "chapters": [
+            {
+                "number": 1,
+                "textEn": "Studying is hard but very rewarding.",
+                "textRu": "Учиться сложно, но очень полезно.",
+                "textKk": "Оқу қиын, бірақ өте пайдалы.",
+                "questions": [
+                    {
+                        "text": "How is studying described?",
+                        "textEn": "How is studying described?",
+                        "textRu": "Как описывается учёба?",
+                        "textKk": "Оқу қалай сипатталады?",
+                        "answers": [
+                            {
+                                "text": "Hard but rewarding",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Easy and boring",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Visiting Kazakhstan",
+        "titleEn": "Visiting Kazakhstan",
+        "titleRu": "Путешествие по Казахстану",
+        "titleKk": "Қазақстанға саяхат",
+        "difficulty": "beginner",
+        "category": "dialogue",
+        "description": "Talking about the steppe.",
+        "descriptionRu": "Разговор о степи.",
+        "descriptionKk": "Дала туралы әңгіме.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Ali",
+                "textEn": "The steppe in Kazakhstan is so wide!",
+                "textRu": "Степь в Казахстане такая широкая!",
+                "textKk": "Қазақстанның даласы сондай кең!",
+                "questions": [
+                    {
+                        "text": "What does Ali say about the steppe?",
+                        "textEn": "What does Ali say about the steppe?",
+                        "textRu": "Что Али говорит о степи?",
+                        "textKk": "Али дала туралы не дейді?",
+                        "answers": [
+                            {
+                                "text": "It is very wide",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "It is very cold",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Astana Sights",
+        "titleEn": "Astana Sights",
+        "titleRu": "Достопримечательности Астаны",
+        "titleKk": "Астана көрікті жерлері",
+        "difficulty": "beginner",
+        "category": "story",
+        "description": "The famous Baiterek tower.",
+        "descriptionRu": "Знаменитая башня Байтерек.",
+        "descriptionKk": "Атақты Бәйтерек мұнарасы.",
+        "chapters": [
+            {
+                "number": 1,
+                "textEn": "Baiterek is the most famous sight in Astana.",
+                "textRu": "Байтерек - самая известная достопримечательность Астаны.",
+                "textKk": "Бәйтерек - Астанадағы ең танымал көрікті жер.",
+                "questions": [
+                    {
+                        "text": "What is the most famous sight in Astana?",
+                        "textEn": "What is the most famous sight in Astana?",
+                        "textRu": "Какая самая известная достопримечательность Астаны?",
+                        "textKk": "Астанадағы ең танымал көрікті жер қандай?",
+                        "answers": [
+                            {
+                                "text": "Baiterek",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Khan Shatyr",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "title": "The Verb To Be",
+        "titleEn": "The Verb To Be",
+        "titleRu": "Глагол To Be",
+        "titleKk": "To Be етістігі",
+        "difficulty": "beginner",
+        "category": "dialogue",
+        "description": "Learning grammar.",
+        "descriptionRu": "Изучение грамматики.",
+        "descriptionKk": "Грамматиканы үйрену.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Student",
+                "textEn": "Is 'I am' correct grammar?",
+                "textRu": "Правильно ли говорить 'I am'?",
+                "textKk": "'I am' деп айту грамматикалық тұрғыдан дұрыс па?",
+                "questions": [
+                    {
+                        "text": "What grammar point is the student asking about?",
+                        "textEn": "What grammar point is the student asking about?",
+                        "textRu": "О каком грамматическом правиле спрашивает ученик?",
+                        "textKk": "Оқушы қандай грамматика туралы сұрайды?",
+                        "answers": [
+                            {
+                                "text": "The verb to be",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Plural nouns",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "title": "Learning Nouns",
+        "titleEn": "Learning Nouns",
+        "titleRu": "Изучение существительных",
+        "titleKk": "Зат есімдерді үйрену",
+        "difficulty": "beginner",
+        "category": "story",
+        "description": "Plural forms of nouns.",
+        "descriptionRu": "Формы множественного числа существительных.",
+        "descriptionKk": "Зат есімдердің көпше түрі.",
+        "chapters": [
+            {
+                "number": 1,
+                "textEn": "Most nouns take an -s in the plural.",
+                "textRu": "Большинство существительных получают -s во множественном числе.",
+                "textKk": "Зат есімдердің көбі көпше түрде -s жалғауын алады.",
+                "questions": [
+                    {
+                        "text": "What ending do most nouns take in the plural?",
+                        "textEn": "What ending do most nouns take in the plural?",
+                        "textRu": "Какое окончание получают существительные во множественном числе?",
+                        "textKk": "Зат есімдер көпше түрде қандай жалғау алады?",
+                        "answers": [
+                            {
+                                "text": "-s",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "-ed",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "title": "New Vocabulary",
+        "titleEn": "New Vocabulary",
+        "titleRu": "Новые слова",
+        "titleKk": "Жаңа сөздер",
+        "difficulty": "beginner",
+        "category": "dialogue",
+        "description": "Learning unknown words.",
+        "descriptionRu": "Изучение незнакомых слов.",
+        "descriptionKk": "Белгісіз сөздерді үйрену.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Friend",
+                "textEn": "What does this new word mean?",
+                "textRu": "Что означает это новое слово?",
+                "textKk": "Бұл жаңа сөз нені білдіреді?",
+                "questions": [
+                    {
+                        "text": "What is the friend asking about?",
+                        "textEn": "What is the friend asking about?",
+                        "textRu": "О чём спрашивает друг?",
+                        "textKk": "Дос не туралы сұрайды?",
+                        "answers": [
+                            {
+                                "text": "The meaning of a new word",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "The spelling of a word",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "title": "In the Forest",
+        "titleEn": "In the Forest",
+        "titleRu": "В лесу",
+        "titleKk": "Орманда",
+        "difficulty": "beginner",
+        "category": "story",
+        "description": "A walk in nature.",
+        "descriptionRu": "Прогулка на природе.",
+        "descriptionKk": "Табиғатта серуен.",
+        "chapters": [
+            {
+                "number": 1,
+                "textEn": "Bears and foxes live in this forest.",
+                "textRu": "Медведи и лисы живут в этом лесу.",
+                "textKk": "Бұл орманда аюлар мен түлкілер тұрады.",
+                "questions": [
+                    {
+                        "text": "Which animals live in the forest?",
+                        "textEn": "Which animals live in the forest?",
+                        "textRu": "Какие животные живут в лесу?",
+                        "textKk": "Орманда қандай жануарлар тұрады?",
+                        "answers": [
+                            {
+                                "text": "Bears and foxes",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Lions and elephants",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "title": "Favorite Music",
+        "titleEn": "Favorite Music",
+        "titleRu": "Любимая музыка",
+        "titleKk": "Сүйікті музыка",
+        "difficulty": "beginner",
+        "category": "dialogue",
+        "description": "Rock vs Pop music.",
+        "descriptionRu": "Рок против поп-музыки.",
+        "descriptionKk": "Рок пен поп музыка.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Peter",
+                "textEn": "I like rock music, it is very loud.",
+                "textRu": "Я люблю рок-музыку, она очень громкая.",
+                "textKk": "Мен рок-музыканы жақсы көремін, ол өте қатты.",
+                "questions": [
+                    {
+                        "text": "What kind of music does Peter like?",
+                        "textEn": "What kind of music does Peter like?",
+                        "textRu": "Какую музыку любит Питер?",
+                        "textKk": "Питер қандай музыканы жақсы көреді?",
+                        "answers": [
+                            {
+                                "text": "Rock music",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Classical music",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "title": "The Dombra",
+        "titleEn": "The Dombra",
+        "titleRu": "Домбра",
+        "titleKk": "Домбыра",
+        "difficulty": "beginner",
+        "category": "story",
+        "description": "A traditional Kazakh instrument.",
+        "descriptionRu": "Традиционный казахский инструмент.",
+        "descriptionKk": "Қазақтың дәстүрлі аспабы.",
+        "chapters": [
+            {
+                "number": 1,
+                "textEn": "Dombra is a traditional Kazakh instrument.",
+                "textRu": "Домбра - традиционный казахский инструмент.",
+                "textKk": "Домбыра - қазақтың дәстүрлі аспабы.",
+                "questions": [
+                    {
+                        "text": "What is the Dombra?",
+                        "textEn": "What is the Dombra?",
+                        "textRu": "Что такое домбра?",
+                        "textKk": "Домбыра дегеніміз не?",
+                        "answers": [
+                            {
+                                "text": "A traditional Kazakh instrument",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "A type of Kazakh food",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "title": "Good Friends",
+        "titleEn": "Good Friends",
+        "titleRu": "Хорошие друзья",
+        "titleKk": "Жақсы достар",
+        "difficulty": "beginner",
+        "category": "dialogue",
+        "description": "Small talk with a friend.",
+        "descriptionRu": "Лёгкий разговор с другом.",
+        "descriptionKk": "Досымен жеңіл әңгіме.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Ben",
+                "textEn": "Let's go for a walk in the park.",
+                "textRu": "Давай погуляем в парке.",
+                "textKk": "Саябақта серуендеп қайтайық.",
+                "questions": [
+                    {
+                        "text": "Where does Ben suggest going?",
+                        "textEn": "Where does Ben suggest going?",
+                        "textRu": "Куда предлагает пойти Бен?",
+                        "textKk": "Бен қайда баруды ұсынады?",
+                        "answers": [
+                            {
+                                "text": "The park",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "The cinema",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "title": "Future Career",
+        "titleEn": "Future Career",
+        "titleRu": "Будущая карьера",
+        "titleKk": "Болашақ мамандық",
+        "difficulty": "beginner",
+        "category": "story",
+        "description": "Dreams of becoming a doctor.",
+        "descriptionRu": "Мечта стать врачом.",
+        "descriptionKk": "Дәрігер болу арманы.",
+        "chapters": [
+            {
+                "number": 1,
+                "textEn": "I want to be a doctor in the future.",
+                "textRu": "Я хочу стать врачом в будущем.",
+                "textKk": "Мен болашақта дәрігер болғым келеді.",
+                "questions": [
+                    {
+                        "text": "What does the person want to be in the future?",
+                        "textEn": "What does the person want to be in the future?",
+                        "textRu": "Кем хочет стать автор в будущем?",
+                        "textKk": "Адам болашақта кім болғысы келеді?",
+                        "answers": [
+                            {
+                                "text": "A doctor",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "A teacher",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "title": "Course Finish",
+        "titleEn": "Course Finish",
+        "titleRu": "Конец курса",
+        "titleKk": "Курстың соңы",
+        "difficulty": "beginner",
+        "category": "dialogue",
+        "description": "Passing the final exam.",
+        "descriptionRu": "Сдача итогового теста.",
+        "descriptionKk": "Қорытынды тестті тапсыру.",
+        "chapters": [
+            {
+                "number": 1,
+                "character": "Teacher",
+                "textEn": "You passed the final test!",
+                "textRu": "Вы прошли итоговый тест!",
+                "textKk": "Сіз қорытынды тесттен өттіңіз!",
+                "questions": [
+                    {
+                        "text": "What did the student do?",
+                        "textEn": "What did the student do?",
+                        "textRu": "Что сделал ученик?",
+                        "textKk": "Оқушы не істеді?",
+                        "answers": [
+                            {
+                                "text": "Passed the final test",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "Failed the exam",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "title": "My Certificate",
+        "titleEn": "My Certificate",
+        "titleRu": "Мой сертификат",
+        "titleKk": "Менің сертификатым",
+        "difficulty": "beginner",
+        "category": "story",
+        "description": "Final results of the course.",
+        "descriptionRu": "Итоговые результаты курса.",
+        "descriptionKk": "Курстың қорытынды нәтижелері.",
+        "chapters": [
+            {
+                "number": 1,
+                "textEn": "Now I have a certificate in English.",
+                "textRu": "Теперь у меня есть сертификат по английскому.",
+                "textKk": "Енді менің ағылшын тілінен сертификатым бар.",
+                "questions": [
+                    {
+                        "text": "What does the person have now?",
+                        "textEn": "What does the person have now?",
+                        "textRu": "Что теперь есть у автора?",
+                        "textKk": "Адамда енді не бар?",
+                        "answers": [
+                            {
+                                "text": "A certificate in English",
+                                "isCorrect": true
+                            },
+                            {
+                                "text": "A new job",
+                                "isCorrect": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
